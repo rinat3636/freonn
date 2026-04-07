@@ -1,25 +1,43 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+/*
+ * FREONN HOME PAGE — Bold Technical Expressionism
+ * Assembles all sections in order matching ceds.ru structure
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
+import ObjectsSection from "@/components/ObjectsSection";
+import ProcessSection from "@/components/ProcessSection";
+import PricingSection from "@/components/PricingSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import AdvantagesSection from "@/components/AdvantagesSection";
+import PartnersSection from "@/components/PartnersSection";
+import ReviewsSection from "@/components/ReviewsSection";
+import BlogSection from "@/components/BlogSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 
+export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+      <Header />
+      <main className="flex-1">
+        <HeroSection />
+        <ServicesSection />
+        <AboutSection />
+        <ObjectsSection />
+        <ProcessSection />
+        <PricingSection />
+        <ProjectsSection />
+        <AdvantagesSection />
+        <PartnersSection />
+        <ReviewsSection />
+        <BlogSection />
+        <ContactSection />
       </main>
+      <Footer />
+      <FloatingButtons />
     </div>
   );
 }
