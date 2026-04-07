@@ -6,9 +6,12 @@
 import { motion } from "framer-motion";
 import { Factory, Building2, Home, CheckCircle2 } from "lucide-react";
 
-const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/industrial-bg-NRt3Z5ap3SEDAe8ot7uJ9a.webp";
-const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/commercial-bg-KhLj3tUVWU84qMm3Vn2D3L.webp";
-const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/premium-bg-9ain3ygiBABDJLZfbQNZXK.webp";
+// Industrial: Russian warehouse with HVAC ventilation ducts on ceiling
+const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-warehouse-hvac_c17201cc.jpg";
+// Commercial: Moscow Neo Geo Business Center modern office interior
+const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-office-interior_6b0621cc.jpg";
+// Premium: Russian premium apartment interior design Moscow
+const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-premium-apartment_ec67ced3.webp";
 
 export default function ObjectsSection() {
   return (

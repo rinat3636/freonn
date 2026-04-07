@@ -10,37 +10,43 @@ const projects = [
     title: "Монтаж вентиляции в производственном цеху",
     category: "Промышленность",
     area: "2400 м²",
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
+    // Russian factory HVAC installation — workers on lift installing ducts
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-hvac-install-factory_dd6a13b6.jpg",
   },
   {
     title: "Кондиционирование в бизнес-центре",
     category: "Коммерция",
     area: "5800 м²",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+    // Moscow Neo Geo Business Center modern interior
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-office-interior_6b0621cc.jpg",
   },
   {
     title: "Система дымоудаления в торговом центре",
     category: "Коммерция",
     area: "12000 м²",
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80",
+    // Russian ventilation ducts in commercial building ceiling
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-ventilation-ceiling_2cd3f4b6.jpg",
   },
   {
     title: "Вентиляция и отопление в складском комплексе",
     category: "Промышленность",
     area: "8500 м²",
-    img: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80",
+    // Russian warehouse with HVAC ventilation system
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-warehouse-hvac_c17201cc.jpg",
   },
   {
     title: "Умный климат-контроль в премиум-апартаментах",
     category: "Премиум",
     area: "320 м²",
-    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
+    // Russian premium apartment interior design
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-premium-apartment_ec67ced3.webp",
   },
   {
     title: "Промышленное охлаждение на пищевом производстве",
     category: "Промышленность",
     area: "3200 м²",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+    // Russian production facility ventilation ducts installation
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-hvac-production_2fc3fdd7.jpg",
   },
 ];
 

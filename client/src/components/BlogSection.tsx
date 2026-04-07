@@ -10,21 +10,24 @@ const articles = [
     title: "Как правильно выбрать систему вентиляции для производственного цеха",
     category: "Вентиляция",
     date: "15 марта 2025",
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&q=80",
+    // Russian production facility with HVAC ventilation ducts
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-hvac-production_2fc3fdd7.jpg",
     excerpt: "Разбираем ключевые параметры при выборе вентиляционной системы для промышленных объектов.",
   },
   {
     title: "VRF системы vs традиционное кондиционирование: что выбрать для офиса",
     category: "Кондиционирование",
     date: "28 февраля 2025",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80",
+    // Moscow modern office interior with air conditioning
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-office-modern_634b4f4c.jpg",
     excerpt: "Сравниваем два подхода к климат-контролю офисных помещений по стоимости и эффективности.",
   },
   {
     title: "Система дымоудаления: требования нормативов и практика монтажа",
     category: "Дымоудаление",
     date: "10 февраля 2025",
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=80",
+    // Russian ventilation ducts ceiling installation
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-industrial-ventilation_4939c0aa.jpg",
     excerpt: "Обзор актуальных требований к системам дымоудаления и типичные ошибки при проектировании.",
   },
 ];
