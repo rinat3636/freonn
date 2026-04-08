@@ -1,6 +1,6 @@
 /*
  * FREONN HEADER — Bold Technical Expressionism
- * Transparent on hero section, white background on scroll
+ * Always transparent background — never white
  * Mobile: only ЗАЯВКА button + burger menu
  * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
@@ -35,15 +35,8 @@ const navItems = [
 const topBarLinks = ["Акции", "Оплата и доставка", "Гарантии", "Сертификаты"];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -61,151 +54,84 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      {/* Main header bar */}
-      <div
-        className={`transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-md border-b border-gray-100"
-            : "bg-transparent"
-        }`}
-      >
+      {/* Always transparent header bar */}
+      <div className="bg-transparent">
         <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
-          {/* Logo */}
+          {/* Logo — always white (inverted) */}
           <a href="/" className="flex-shrink-0">
             <img
               src={LOGO_URL}
               alt="Freonn"
-              className={`h-9 sm:h-11 w-auto transition-all duration-300 ${
-                !scrolled ? "brightness-0 invert" : ""
-              }`}
+              className="h-9 sm:h-11 w-auto brightness-0 invert"
             />
           </a>
 
           <div className="flex-1" />
 
-          {/* Phone — desktop only, visible when scrolled */}
-          {scrolled && (
-            <a
-              href="tel:88001012009"
-              className="hidden lg:flex items-center gap-1.5 text-[#0F1340] font-heading font-semibold text-sm whitespace-nowrap"
-            >
-              <Phone size={14} className="text-[#ED1C24]" />
-              8(800)101-2009
-            </a>
-          )}
-
-          {/* Desktop nav links — shown when scrolled */}
-          {scrolled && (
-            <nav className="hidden lg:flex items-center gap-0">
-              {navItems.map(item => (
-                <div key={item.label} className="relative group flex-shrink-0">
-                  <a
-                    href={item.href}
-                    className="flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm text-[#1A1A2E] hover:text-[#2D3092] font-heading font-medium uppercase tracking-wide transition-colors"
-                  >
-                    {item.label}
-                    {item.children && (
-                      <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-200" />
-                    )}
-                  </a>
+          {/* Desktop nav links */}
+          <nav className="hidden lg:flex items-center gap-0">
+            {navItems.map(item => (
+              <div key={item.label} className="relative group flex-shrink-0">
+                <a
+                  href={item.href}
+                  className="flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm text-white hover:text-white/70 font-heading font-medium uppercase tracking-wide transition-colors"
+                >
+                  {item.label}
                   {item.children && (
-                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D3092] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
-                      {item.children.map(child => (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F0F2FF] hover:text-[#2D3092] font-body border-b border-gray-50 last:border-0"
-                        >
-                          {child.label}
-                        </a>
-                      ))}
-                    </div>
+                    <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-200" />
                   )}
-                </div>
-              ))}
-            </nav>
-          )}
+                </a>
+                {item.children && (
+                  <div className="absolute top-full left-0 w-64 bg-[#0F1340]/95 backdrop-blur-sm border-t-2 border-[#ED1C24] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
+                    {item.children.map(child => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        className="block px-4 py-2.5 text-sm text-white/80 hover:bg-white/10 hover:text-white font-body border-b border-white/10 last:border-0"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
 
-          {/* CTA button — desktop */}
+          {/* CTA button — desktop, always white outline */}
           <a
             href="#contacts"
-            className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 ${
-              scrolled
-                ? "bg-[#ED1C24] text-white hover:bg-[#c91a1f]"
-                : "border-2 border-white text-white hover:bg-white hover:text-[#ED1C24]"
-            }`}
+            className="hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide border-2 border-white text-white hover:bg-white hover:text-[#0F1340] transition-all duration-300 flex-shrink-0"
           >
             Заявка
           </a>
 
-          {/* Mobile CTA button */}
+          {/* Mobile CTA button — always white outline */}
           <a
             href="#contacts"
-            className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
-              scrolled
-                ? "bg-[#ED1C24] text-white hover:bg-[#c91a1f]"
-                : "border-2 border-white text-white hover:bg-white hover:text-[#ED1C24]"
-            }`}
+            className="lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 border-white text-white hover:bg-white hover:text-[#0F1340] transition-all duration-300"
           >
             Заявка
           </a>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile menu toggle — always white */}
           <button
-            className={`lg:hidden p-2 flex-shrink-0 transition-colors duration-300 ${
-              scrolled ? "text-[#2D3092]" : "text-white"
-            }`}
+            className="lg:hidden p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
-          {/* Desktop burger (when not scrolled — show nav toggle) */}
-          {!scrolled && (
-            <button
-              className="hidden lg:flex p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Меню"
-            >
-              <Menu size={22} />
-            </button>
-          )}
+          {/* Desktop burger */}
+          <button
+            className="hidden lg:flex p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Меню"
+          >
+            <Menu size={22} />
+          </button>
         </div>
-
-        {/* Desktop Navigation bar — shown when scrolled */}
-        {scrolled && (
-          <nav className="hidden lg:block border-t border-gray-100 bg-white">
-            <div className="container flex items-center gap-0 overflow-x-auto">
-              {navItems.map(item => (
-                <div key={item.label} className="relative group flex-shrink-0">
-                  <a
-                    href={item.href}
-                    className="nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap text-[#1A1A2E] hover:text-[#2D3092]"
-                  >
-                    {item.label}
-                    {item.children && (
-                      <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
-                    )}
-                  </a>
-                  {item.children && (
-                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D3092] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
-                      {item.children.map(child => (
-                        <a
-                          key={child.label}
-                          href={child.href}
-                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F0F2FF] hover:text-[#2D3092] font-body border-b border-gray-50 last:border-0"
-                        >
-                          {child.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </nav>
-        )}
       </div>
 
       {/* Mobile menu — full screen overlay */}
