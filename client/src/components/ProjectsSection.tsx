@@ -10,43 +10,43 @@ const projects = [
     title: "Монтаж вентиляции в производственном цеху",
     category: "Промышленность",
     area: "2400 м²",
-    // Russian factory HVAC installation — workers on lift installing ducts
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-hvac-install-factory_dd6a13b6.jpg",
+    // Industrial ventilation duct installation in factory
+    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
   },
   {
     title: "Кондиционирование в бизнес-центре",
     category: "Коммерция",
     area: "5800 м²",
-    // Moscow Neo Geo Business Center modern interior
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-office-interior_6b0621cc.jpg",
+    // Office ceiling with cassette AC units — commercial HVAC
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
     title: "Система дымоудаления в торговом центре",
     category: "Коммерция",
     area: "12000 м²",
-    // Russian ventilation ducts in commercial building ceiling
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-ventilation-ceiling_2cd3f4b6.jpg",
+    // Shopping mall ceiling with sprinkler and smoke extraction system
+    img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80",
   },
   {
     title: "Вентиляция и отопление в складском комплексе",
     category: "Промышленность",
     area: "8500 м²",
-    // Russian warehouse with HVAC ventilation system
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-warehouse-hvac_c17201cc.jpg",
+    // Large warehouse interior with industrial ventilation and heating
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
   },
   {
     title: "Умный климат-контроль в премиум-апартаментах",
     category: "Премиум",
     area: "320 м²",
-    // Russian premium apartment interior design
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-premium-apartment_ec67ced3.webp",
+    // Premium apartment with hidden ceiling HVAC fan coil units
+    img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
   },
   {
     title: "Промышленное охлаждение на пищевом производстве",
     category: "Промышленность",
     area: "3200 м²",
-    // Russian production facility ventilation ducts installation
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-hvac-production_2fc3fdd7.jpg",
+    // Industrial refrigeration and cooling system in food production facility
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
   },
 ];
 
