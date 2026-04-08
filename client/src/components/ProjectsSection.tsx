@@ -114,8 +114,8 @@ export default function ProjectsSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Выполненные объекты
             </h2>
-            <a href="#contacts" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
-              Все проекты <ArrowRight size={16} />
+            <a href="/obekty" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
+              Все объекты <ArrowRight size={16} />
             </a>
           </div>
         </motion.div>

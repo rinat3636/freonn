@@ -20,6 +20,7 @@ const plans = [
     ],
     featured: false,
     cta: "Заказать проект",
+    href: "/ceny/proektirovanie",
   },
   {
     title: "Подбор и поставка",
@@ -34,6 +35,7 @@ const plans = [
     ],
     featured: false,
     cta: "Получить КП",
+    href: "/ceny/postavka-oborudovaniya",
   },
   {
     title: "Монтажные работы",
@@ -48,6 +50,7 @@ const plans = [
     ],
     featured: false,
     cta: "Обсудить монтаж",
+    href: "/ceny/montazh",
   },
   {
     title: "Комплексная реализация",
@@ -62,6 +65,7 @@ const plans = [
     ],
     featured: true,
     cta: "Обсудить проект",
+    href: "/ceny/kompleksnaya-realizaciya",
   },
 ];
 
@@ -143,7 +147,7 @@ export default function PricingSection() {
                 </ul>
 
                 <a
-                  href="#contacts"
+                  href={plan.href}
                   className={`flex items-center justify-center gap-2 py-3 font-heading font-semibold uppercase text-sm tracking-wide transition-all rounded-full ${
                     plan.featured
                       ? "bg-[#ED1C24] text-white hover:bg-red-700"
@@ -173,7 +177,7 @@ export default function PricingSection() {
               Отправьте его нам для пересчёта. Предложим вариант, который может оказаться не только выгоднее по цене, но и лучше соответствовать вашим потребностям.
             </p>
           </div>
-          <a href="#contacts" className="btn-primary flex-shrink-0">
+          <a href="/contacts" className="btn-primary flex-shrink-0">
             Отправить на пересчёт
           </a>
         </motion.div>

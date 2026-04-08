@@ -16,6 +16,7 @@ const services = [
   {
     id: 1,
     slug: "service-ventilation",
+    href: "/ventilyaciya",
     icon: Wind,
     title: "Вентиляция",
     shortTitle: "Вентиляция",
@@ -28,6 +29,7 @@ const services = [
   {
     id: 2,
     slug: "service-conditioning",
+    href: "/kondicionirovanie",
     icon: Thermometer,
     title: "Кондиционирование",
     shortTitle: "Кондиционирование",
@@ -40,6 +42,7 @@ const services = [
   {
     id: 3,
     slug: "service-smoke",
+    href: "/dymoudalenie",
     icon: ShieldAlert,
     title: "Дымоудаление",
     shortTitle: "Дымоудаление",
@@ -52,6 +55,7 @@ const services = [
   {
     id: 4,
     slug: "service-heating",
+    href: "/otoplenie",
     icon: Flame,
     title: "Отопление и теплоснабжение",
     shortTitle: "Отопление",
@@ -64,6 +68,7 @@ const services = [
   {
     id: 5,
     slug: "service-cooling",
+    href: "/holodosnabzhenie",
     icon: Snowflake,
     title: "Холодоснабжение",
     shortTitle: "Холодоснабжение",
@@ -76,6 +81,7 @@ const services = [
   {
     id: 6,
     slug: "service-water",
+    href: "/vodosnabzhenie",
     icon: Droplets,
     title: "Водоснабжение и канализация",
     shortTitle: "Водоснабжение",
@@ -88,6 +94,7 @@ const services = [
   {
     id: 7,
     slug: "service-sandblast",
+    href: "/peskostrujnaya-obrabotka",
     icon: Hammer,
     title: "Пескоструйная обработка",
     shortTitle: "Пескоструй",
@@ -100,6 +107,7 @@ const services = [
   {
     id: 8,
     slug: "service-electrical",
+    href: "/elektrosnabzhenie",
     icon: Zap,
     title: "Электроснабжение и освещение",
     shortTitle: "Электроснабжение",
@@ -200,10 +208,10 @@ export default function ServicesSection() {
                   </div>
 
                   <a
-                    href="#contacts"
+                    href={service.href}
                     className="inline-flex items-center gap-2 text-[#ED1C24] font-heading font-semibold text-sm uppercase tracking-wide hover:gap-3 transition-all duration-200 group/link"
                   >
-                    Получить консультацию
+                    Подробнее
                     <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-1" />
                   </a>
                 </div>

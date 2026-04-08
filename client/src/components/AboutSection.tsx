@@ -127,7 +127,7 @@ export default function AboutSection() {
               ))}
             </div>
             <div className="mt-8">
-              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
                 Связаться по проекту
               </a>
             </div>

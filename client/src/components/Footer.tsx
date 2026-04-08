@@ -6,72 +6,72 @@ import { Phone, Mail, MapPin, Clock, Youtube } from "lucide-react";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png";
 
-const footerLinks = {
+const footerLinks: Record<string, { label: string; href: string }[]> = {
   "О компании": [
-    "О нас",
-    "Новости",
-    "Лицензии и сертификаты",
-    "Реквизиты",
-    "Документы",
-    "Оплата и доставка",
-    "Вакансии",
-    "Сотрудники",
-    "Видео кейсы",
-    "Полезные материалы",
-    "Партнёрам",
-    "Контакты",
+    { label: "О нас", href: "/o-kompanii" },
+    { label: "Новости", href: "/novosti" },
+    { label: "Лицензии и сертификаты", href: "/licenzii-i-sertifikaty" },
+    { label: "Реквизиты", href: "/rekvizity" },
+    { label: "Документы", href: "/dokumenty" },
+    { label: "Оплата и доставка", href: "/oplata-i-dostavka" },
+    { label: "Вакансии", href: "/vakansii" },
+    { label: "Сотрудники", href: "/sotrudniki" },
+    { label: "Видео кейсы", href: "/video-kejsy" },
+    { label: "Полезные материалы", href: "/poleznye-materialy" },
+    { label: "Партнёрам", href: "/partneram" },
+    { label: "Контакты", href: "#contacts" },
   ],
   "Инженерные системы": [
-    "Проектирование ОВиК",
-    "Монтаж ОВиК",
-    "Установка вентиляции",
-    "Установка кондиционирования",
-    "Установка дымоудаления",
-    "Воздушное отопление",
-    "Холодоснабжение",
-    "Водоснабжение и канализация",
-    "Электроснабжение и освещение",
-    "Пескоструйная обработка",
-    "Пусконаладочные работы",
-    "Сервисное обслуживание",
+    { label: "Проектирование ОВиК", href: "/proektirovanie-ovik" },
+    { label: "Монтаж ОВиК", href: "/montazh-ovik" },
+    { label: "Установка вентиляции", href: "/ustanovka-ventilyacii" },
+    { label: "Установка кондиционирования", href: "/ustanovka-kondicionirovaniya" },
+    { label: "Установка дымоудаления", href: "/ustanovka-dymoudaleniya" },
+    { label: "Воздушное отопление", href: "/vozdushnoe-otoplenie" },
+    { label: "Холодоснабжение", href: "/holodosnabzhenie" },
+    { label: "Водоснабжение и канализация", href: "/vodosnabzhenie-i-kanalizaciya" },
+    { label: "Электроснабжение и освещение", href: "/elektrosnabzhenie-i-osveshchenie" },
+    { label: "Пескоструйная обработка", href: "/peskostrujnaya-obrabotka" },
+    { label: "Пусконаладочные работы", href: "/puskonaladochnye-raboty" },
+    { label: "Сервисное обслуживание", href: "/servisnoe-obsluzhivanie" },
   ],
   "Стоимость и прайсы": [
-    "Цены на монтаж вентиляции",
-    "Цены на монтаж кондиционирования",
-    "Цены на монтаж дымоудаления",
-    "Цены на монтаж инженерных систем",
-    "Цены на пескоструй",
+    { label: "Цены на монтаж вентиляции", href: "/ceny-na-montazh-ventilyacii" },
+    { label: "Цены на монтаж кондиционирования", href: "/ceny-na-montazh-kondicionirovaniya" },
+    { label: "Цены на монтаж дымоудаления", href: "/ceny-na-montazh-dymoudaleniya" },
+    { label: "Цены на монтаж инженерных систем", href: "/ceny-na-montazh-inzhenernyh-sistem" },
+    { label: "Цены на пескоструй", href: "/ceny-na-peskostruj" },
   ],
   "Блог": [
-    "Кратность и расчёт воздухообмена",
-    "Вентиляционное оборудование",
-    "Рекуператор",
-    "Кондиционирование воздуха",
-    "Фильтры для вытяжек",
-    "Канальные вентиляторы",
-    "Монтаж вентиляции",
-    "Автоматизация систем",
-    "Технический аудит",
+    { label: "Кратность и расчёт воздухообмена", href: "/blog/kratnost-i-raschet-vozduhoobmena" },
+    { label: "Вентиляционное оборудование", href: "/blog/ventilyacionnoe-oborudovanie" },
+    { label: "Рекуператор", href: "/blog/rekuperator" },
+    { label: "Кондиционирование воздуха", href: "/blog/kondicionirovanie-vozduha" },
+    { label: "Фильтры для вытяжек", href: "/blog/filtry-dlya-vytyazhek" },
+    { label: "Канальные вентиляторы", href: "/blog/kanalnye-ventilyatory" },
+    { label: "Монтаж вентиляции", href: "/blog/montazh-ventilyacii" },
+    { label: "Автоматизация систем", href: "/blog/avtomatizaciya-sistem" },
+    { label: "Технический аудит", href: "/blog/tekhnicheskij-audit" },
   ],
 };
 
-const cities = [
-  "Москва",
-  "Московская область",
-  "Дзержинский",
-  "Люберцы",
-  "Мытищи",
-  "Одинцово",
-  "Подольск",
-  "Зеленоград",
-  "Раменское",
-  "Долгопрудный",
-  "Ногинск",
-  "Истра",
-  "Домодедово",
-  "Клин",
-  "Коломна",
-  "Дмитров",
+const cities: { label: string; href: string }[] = [
+  { label: "Москва", href: "/moskva" },
+  { label: "Московская область", href: "/moskovskaya-oblast" },
+  { label: "Дзержинский", href: "/dzerzhinskij" },
+  { label: "Люберцы", href: "/lyubery" },
+  { label: "Мытищи", href: "/mytishchi" },
+  { label: "Одинцово", href: "/odincovo" },
+  { label: "Подольск", href: "/podolsk" },
+  { label: "Зеленоград", href: "/zelenograd" },
+  { label: "Раменское", href: "/ramenskoe" },
+  { label: "Долгопрудный", href: "/dolgoprudnyj" },
+  { label: "Ногинск", href: "/noginsk" },
+  { label: "Истра", href: "/istra" },
+  { label: "Домодедово", href: "/domodedovo" },
+  { label: "Клин", href: "/klin" },
+  { label: "Коломна", href: "/kolomna" },
+  { label: "Дмитров", href: "/dmitrov" },
 ];
 
 export default function Footer() {
@@ -103,13 +103,13 @@ export default function Footer() {
             </div>
             {/* Social */}
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors" title="YouTube">
+              <a href="https://www.youtube.com/@freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors" title="YouTube">
                 <Youtube size={16} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors text-xs font-bold" title="ВКонтакте">
+              <a href="https://vk.com/freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors text-xs font-bold" title="ВКонтакте">
                 ВК
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors text-xs font-bold" title="Яндекс Дзен">
+              <a href="https://dzen.ru/freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors text-xs font-bold" title="Яндекс Дзен">
                 Дз
               </a>
               <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#ED1C24] flex items-center justify-center transition-colors" title="MAX — наши работы">
@@ -128,9 +128,9 @@ export default function Footer() {
               </h4>
               <ul className="space-y-1.5">
                 {links.map(link => (
-                  <li key={link}>
-                    <a href="#" className="text-white/50 hover:text-[#ED1C24] transition-colors text-xs font-body leading-relaxed">
-                      {link}
+                  <li key={link.label}>
+                    <a href={link.href} className="text-white/50 hover:text-[#ED1C24] transition-colors text-xs font-body leading-relaxed">
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -145,9 +145,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5">
               {cities.map(city => (
-                <li key={city}>
-                  <a href="#" className="text-white/50 hover:text-[#ED1C24] transition-colors text-xs font-body">
-                    {city}
+                <li key={city.label}>
+                  <a href={city.href} className="text-white/50 hover:text-[#ED1C24] transition-colors text-xs font-body">
+                    {city.label}
                   </a>
                 </li>
               ))}
@@ -161,8 +161,8 @@ export default function Footer() {
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/30 font-body">
           <div>© 2011 ООО «Фреонн». Сайт носит исключительно информационный характер и не является публичной офертой.</div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white/60 transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Карта сайта</a>
+            <a href="/politika-konfidencialnosti" className="hover:text-white/60 transition-colors">Политика конфиденциальности</a>
+            <a href="/karta-sajta" className="hover:text-white/60 transition-colors">Карта сайта</a>
           </div>
         </div>
       </div>

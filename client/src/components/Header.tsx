@@ -18,27 +18,32 @@ const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRP
 const DARK_SECTION_IDS = ["hero", "about", "advantages-dark", "contacts"];
 
 const navItems = [
-  { label: "О компании", href: "#about" },
+  { label: "О компании", href: "/o-kompanii" },
   {
-    label: "Услуги", href: "#services", children: [
-      { label: "Вентиляция", href: "#services" },
-      { label: "Кондиционирование", href: "#services" },
-      { label: "Дымоудаление", href: "#services" },
-      { label: "Отопление и теплоснабжение", href: "#services" },
-      { label: "Холодоснабжение", href: "#services" },
-      { label: "Водоснабжение и канализация", href: "#services" },
-      { label: "Электроснабжение", href: "#services" },
-      { label: "Пескоструйная обработка", href: "#services" },
+    label: "Услуги", href: "/uslugi", children: [
+      { label: "Вентиляция", href: "/ustanovka-ventilyacii" },
+      { label: "Кондиционирование", href: "/ustanovka-kondicionirovaniya" },
+      { label: "Дымоудаление", href: "/ustanovka-dymoudaleniya" },
+      { label: "Отопление и теплоснабжение", href: "/vozdushnoe-otoplenie" },
+      { label: "Холодоснабжение", href: "/holodosnabzhenie" },
+      { label: "Водоснабжение и канализация", href: "/vodosnabzhenie-i-kanalizaciya" },
+      { label: "Электроснабжение", href: "/elektrosnabzhenie-i-osveshchenie" },
+      { label: "Пескоструйная обработка", href: "/peskostrujnaya-obrabotka" },
     ]
   },
-  { label: "Цены", href: "#pricing" },
-  { label: "Объекты", href: "#projects" },
-  { label: "Блог", href: "#blog" },
-  { label: "Вопросы", href: "#faq" },
-  { label: "Контакты", href: "#contacts" },
+  { label: "Цены", href: "/ceny" },
+  { label: "Объекты", href: "/obekty" },
+  { label: "Блог", href: "/blog" },
+  { label: "Вопросы", href: "/faq" },
+  { label: "Контакты", href: "/contacts" },
 ];
 
-const topBarLinks = ["Акции", "Оплата и доставка", "Гарантии", "Сертификаты"];
+const topBarLinks = [
+  { label: "Акции", href: "/akcii" },
+  { label: "Оплата и доставка", href: "/oplata-i-dostavka" },
+  { label: "Гарантии", href: "/garantii" },
+  { label: "Сертификаты", href: "/sertifikaty" },
+];
 
 export default function Header() {
   const [isDark, setIsDark] = useState(true); // hero is dark by default
@@ -140,7 +145,7 @@ export default function Header() {
 
           {/* CTA button — desktop */}
           <a
-            href="#contacts"
+            href="/contacts"
             className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 border-2 ${
               isDark
                 ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
@@ -152,7 +157,7 @@ export default function Header() {
 
           {/* Mobile CTA button */}
           <a
-            href="#contacts"
+            href="/contacts"
             className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 transition-all duration-300 ${
               isDark
                 ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
@@ -262,7 +267,7 @@ export default function Header() {
 
             {/* Bottom CTA */}
             <div className="p-4 mt-2 flex flex-col gap-3">
-              <a href="#contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
+              <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
                 Вызвать инженера
               </a>
               <button onClick={() => { handleTopLink(); setMobileOpen(false); }} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
@@ -282,9 +287,9 @@ export default function Header() {
             {/* Footer links in mobile menu */}
             <div className="px-4 pb-6 flex flex-wrap gap-3">
               {topBarLinks.map(link => (
-                <button key={link} onClick={handleTopLink} className="text-white/40 text-xs font-body hover:text-white/70 transition-colors">
-                  {link}
-                </button>
+                <a key={link.href} href={link.href} className="text-white/40 text-xs font-body hover:text-white/70 transition-colors">
+                  {link.label}
+                </a>
               ))}
             </div>
           </motion.div>

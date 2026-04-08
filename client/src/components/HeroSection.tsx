@@ -79,10 +79,10 @@ export default function HeroSection() {
               </div>
 
               <div className="flex flex-col gap-3">
-                <a href="#contacts" className="btn-primary flex items-center gap-2 text-sm sm:text-base">
+                <a href="/contacts" className="btn-primary flex items-center gap-2 text-sm sm:text-base">
                   <Phone size={15} /> Вызвать инженера
                 </a>
-                <a href="#about" className="btn-outline flex items-center gap-2 text-sm sm:text-base border-white/40 text-white hover:bg-white hover:text-[#0F1340]">
+                <a href="/o-kompanii" className="btn-outline flex items-center gap-2 text-sm sm:text-base border-white/40 text-white hover:bg-white hover:text-[#0F1340]">
                   О компании <ArrowRight size={15} />
                 </a>
                 <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center gap-2 text-sm sm:text-base">

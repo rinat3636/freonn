@@ -131,8 +131,8 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Обсудить проект <ArrowRight size={16} />
+              <a href="/promyshlennye-obekty" className="btn-primary inline-flex items-center gap-2">
+                Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>
 
@@ -224,8 +224,8 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Получить расчёт <ArrowRight size={16} />
+              <a href="/kommercheskie-obekty" className="btn-primary inline-flex items-center gap-2">
+                Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>
           </div>
@@ -288,8 +288,8 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Узнать стоимость <ArrowRight size={16} />
+              <a href="/premium-obekty" className="btn-primary inline-flex items-center gap-2">
+                Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>
 

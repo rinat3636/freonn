@@ -86,7 +86,7 @@ export default function FAQSection() {
               Собрали ответы на самые частые вопросы наших клиентов. Если не нашли нужного — напишите нам.
             </p>
             <a
-              href="#contacts"
+              href="/contacts"
               className="inline-flex items-center gap-2 bg-[#ED1C24] text-white font-heading font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#c91219] transition-colors"
             >
               Задать вопрос

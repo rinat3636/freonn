@@ -115,7 +115,7 @@ export default function ProcessSection() {
               Организуем выезд инженера для оценки объекта и подготовки коммерческого предложения.
             </p>
           </div>
-          <a href="#contacts" className="btn-primary flex-shrink-0">
+          <a href="/contacts" className="btn-primary flex-shrink-0">
             Вызвать инженера
           </a>
         </motion.div>
