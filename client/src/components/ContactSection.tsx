@@ -11,14 +11,32 @@ export default function ContactSection() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          email: form.email,
+          service: form.type,
+          message: form.message,
+        }),
+      });
+      if (res.ok) {
+        toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
+        setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
+      } else {
+        toast.error("Ошибка при отправке. Позвоните нам: 8(800)101-2009");
+      }
+    } catch {
+      toast.error("Ошибка соединения. Позвоните нам: 8(800)101-2009");
+    } finally {
       setSending(false);
-      toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
-      setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
-    }, 1200);
+    }
   };
 
   return (
