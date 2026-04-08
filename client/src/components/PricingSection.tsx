@@ -103,7 +103,7 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`flex flex-col relative overflow-hidden transition-all duration-300 hover:-translate-y-1 ${
+              className={`flex flex-col relative overflow-hidden transition-all duration-300 hover:-translate-y-1 rounded-2xl ${
                 plan.featured
                   ? "bg-[#0F1340] text-white shadow-2xl"
                   : "bg-white border border-gray-200 hover:border-[#2D3092]/40 hover:shadow-lg"
@@ -144,7 +144,7 @@ export default function PricingSection() {
 
                 <a
                   href="#contacts"
-                  className={`flex items-center justify-center gap-2 py-3 font-heading font-semibold uppercase text-sm tracking-wide transition-all ${
+                  className={`flex items-center justify-center gap-2 py-3 font-heading font-semibold uppercase text-sm tracking-wide transition-all rounded-full ${
                     plan.featured
                       ? "bg-[#ED1C24] text-white hover:bg-red-700"
                       : "bg-[#0F1340] text-white hover:bg-[#2D3092]"
@@ -163,7 +163,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 bg-white border-l-4 border-[#2D3092] p-6 flex flex-col md:flex-row items-center gap-6"
+          className="mt-8 bg-white border-l-4 border-[#2D3092] p-6 flex flex-col md:flex-row items-center gap-6 rounded-2xl"
         >
           <div className="flex-1">
             <h3 className="font-heading font-semibold text-[#0F1340] text-lg mb-1">

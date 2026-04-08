@@ -98,7 +98,7 @@ export default function BlogSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 group cursor-pointer"
           >
-            <div className="overflow-hidden aspect-[16/8] mb-4 relative">
+            <div className="overflow-hidden aspect-[16/8] mb-4 relative rounded-2xl">
               <img
                 src={articles[0].img}
                 alt={articles[0].title}
@@ -108,7 +108,7 @@ export default function BlogSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F1340]/50 to-transparent" />
             </div>
             <div className="flex items-center gap-3 mb-3">
-              <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide ${categoryColors[articles[0].category] || "bg-gray-100 text-gray-600"}`}>
+              <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide rounded-full ${categoryColors[articles[0].category] || "bg-gray-100 text-gray-600"}`}>
                 {articles[0].category}
               </span>
               <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
@@ -135,7 +135,7 @@ export default function BlogSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group cursor-pointer flex gap-4 border-b border-gray-100 pb-5 last:border-0"
               >
-                <div className="w-20 h-16 flex-shrink-0 overflow-hidden">
+                <div className="w-20 h-16 flex-shrink-0 overflow-hidden rounded-lg">
                   <img
                     src={article.img}
                     alt={article.title}
@@ -145,7 +145,7 @@ export default function BlogSection() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className={`text-xs font-heading font-semibold uppercase px-2 py-0.5 tracking-wide ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
+                    <span className={`text-xs font-heading font-semibold uppercase px-2 py-0.5 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                       {article.category}
                     </span>
                     <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
@@ -172,7 +172,7 @@ export default function BlogSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="overflow-hidden aspect-[16/9] mb-3">
+              <div className="overflow-hidden aspect-[16/9] mb-3 rounded-xl">
                 <img
                   src={article.img}
                   alt={article.title}
@@ -181,7 +181,7 @@ export default function BlogSection() {
                 />
               </div>
               <div className="flex items-center gap-3 mb-2">
-                <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
+                <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                   {article.category}
                 </span>
                 <span className="flex items-center gap-1 text-gray-400 text-xs font-body">

@@ -65,7 +65,7 @@ export default function Header() {
               <Phone size={12} /> 8(800)101-2009
             </a>
             <button onClick={handleTopLink}
-              className="bg-[#ED1C24] text-white px-3 py-1 text-xs font-heading font-semibold uppercase tracking-wide hover:bg-red-700 transition-colors">
+              className="bg-[#ED1C24] text-white px-4 py-1 text-xs font-heading font-semibold uppercase tracking-wide hover:bg-red-700 transition-colors rounded-full">
               Обратный звонок
             </button>
           </div>
@@ -111,7 +111,7 @@ export default function Header() {
             </AnimatePresence>
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="bg-[#2D3092] text-white p-2 hover:bg-[#ED1C24] transition-colors"
+              className="bg-[#2D3092] text-white p-2 hover:bg-[#ED1C24] transition-colors rounded-full"
             >
               <Search size={16} />
             </button>
@@ -122,7 +122,7 @@ export default function Header() {
             <a href="#contacts" className="btn-primary text-sm">
               Вызвать инженера
             </a>
-            <button onClick={handleTopLink} className="btn-outline text-sm border-[#2D3092] text-[#2D3092] hover:bg-[#2D3092] hover:text-white">
+            <button onClick={handleTopLink} className="btn-outline text-sm border-[#2D3092] text-[#2D3092] hover:bg-[#2D3092] hover:text-white rounded-full">
               Пригласить в тендер
             </button>
           </div>

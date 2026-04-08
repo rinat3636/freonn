@@ -125,7 +125,7 @@ export default function ObjectsSection() {
               {/* Object types */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {industrialObjects.map((obj) => (
-                  <span key={obj} className="text-xs px-3 py-1.5 bg-[#0F1340] text-white font-body">
+                  <span key={obj} className="text-xs px-3 py-1.5 bg-[#0F1340] text-white font-body rounded-full">
                     {obj}
                   </span>
                 ))}
@@ -218,7 +218,7 @@ export default function ObjectsSection() {
               <p className="text-xs text-gray-400 font-body uppercase tracking-wider mb-3">С какими объектами работаем:</p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {commercialObjects.map((obj) => (
-                  <span key={obj} className="text-xs px-3 py-1.5 border border-gray-200 text-gray-600 font-body hover:border-[#2D3092] hover:text-[#2D3092] transition-colors">
+                  <span key={obj} className="text-xs px-3 py-1.5 border border-gray-200 text-gray-600 font-body hover:border-[#2D3092] hover:text-[#2D3092] transition-colors rounded-full">
                     {obj}
                   </span>
                 ))}
@@ -269,7 +269,7 @@ export default function ObjectsSection() {
               {/* Premium tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {premiumTags.map((tag) => (
-                  <span key={tag} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body">
+                  <span key={tag} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body rounded-full">
                     {tag}
                   </span>
                 ))}

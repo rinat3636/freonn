@@ -117,7 +117,7 @@ export default function AboutSection() {
                   transition={{ duration: 0.4, delay: i * 0.07 }}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#ED1C24] flex-shrink-0 group-hover:scale-150 transition-transform" />
+                  <div className="w-1.5 h-1.5 bg-[#ED1C24] flex-shrink-0 group-hover:scale-150 transition-transform rounded-full" />
                   <span className="text-white/80 font-body text-sm group-hover:text-white transition-colors">{item}</span>
                 </motion.div>
               ))}

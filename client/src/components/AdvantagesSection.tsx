@@ -138,7 +138,7 @@ export default function AdvantagesSection() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="flex gap-4 p-6 border-b border-r border-gray-100 hover:bg-[#F7F8FF] transition-colors duration-300 group"
               >
-                <div className="w-10 h-10 bg-[#F7F8FF] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2D3092] transition-colors duration-300">
+                <div className="w-10 h-10 bg-[#F7F8FF] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2D3092] transition-colors duration-300 rounded-full">
                   <adv.icon size={20} className="text-[#2D3092] group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>

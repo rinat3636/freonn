@@ -73,7 +73,7 @@ export default function HeroSection() {
               {/* Service tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {services.map((s) => (
-                  <span key={s} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors cursor-default">
+                  <span key={s} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors cursor-default rounded-full">
                     {s}
                   </span>
                 ))}
@@ -113,9 +113,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
-                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/15 p-5 hover:bg-white/15 hover:border-[#ED1C24]/50 transition-all duration-300"
+                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/15 p-5 hover:bg-white/15 hover:border-[#ED1C24]/50 transition-all duration-300 rounded-2xl"
               >
-                <div className="flex-shrink-0 w-10 h-10 bg-[#ED1C24]/15 flex items-center justify-center group-hover:bg-[#ED1C24] transition-colors">
+                <div className="w-10 h-10 bg-[#ED1C24]/15 flex items-center justify-center group-hover:bg-[#ED1C24] transition-colors rounded-full">
                   <item.icon size={18} className="text-[#ED1C24] group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -133,7 +133,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.55 }}
-              className="bg-[#ED1C24] p-5 mt-2"
+              className="bg-[#ED1C24] p-5 mt-2 rounded-2xl"
             >
               <div className="text-white/80 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
               <a href="tel:88001012009" className="font-heading font-bold text-white text-xl hover:text-white/90 transition-colors">

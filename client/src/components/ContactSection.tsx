@@ -67,7 +67,7 @@ export default function ContactSection() {
                     type="text"
                     value={form.name}
                     onChange={e => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors"
+                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
                     placeholder="Иван Иванов"
                   />
                 </div>
@@ -78,7 +78,7 @@ export default function ContactSection() {
                     type="tel"
                     value={form.phone}
                     onChange={e => setForm({ ...form, phone: e.target.value })}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors"
+                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
                     placeholder="+7 (___) ___-__-__"
                   />
                 </div>
@@ -89,7 +89,7 @@ export default function ContactSection() {
                   type="email"
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors"
+                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
                   placeholder="email@company.ru"
                 />
               </div>
@@ -98,7 +98,7 @@ export default function ContactSection() {
                 <select
                   value={form.type}
                   onChange={e => setForm({ ...form, type: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors"
+                  className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
                 >
                   {["Монтаж", "Проектирование", "Обслуживание", "Комплексный проект", "Консультация"].map(opt => (
                     <option key={opt} value={opt} className="bg-[#0F1340]">{opt}</option>
@@ -111,7 +111,7 @@ export default function ContactSection() {
                   rows={4}
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors resize-none"
+                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors resize-none rounded-xl"
                   placeholder="Опишите ваш объект и задачу..."
                 />
               </div>
@@ -145,7 +145,7 @@ export default function ContactSection() {
               <h3 className="font-heading font-semibold text-xl mb-6">Контактная информация</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
                     <Phone size={18} className="text-[#ED1C24]" />
                   </div>
                   <div>
@@ -157,7 +157,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
                     <Mail size={18} className="text-[#ED1C24]" />
                   </div>
                   <div>
@@ -168,7 +168,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
                     <MapPin size={18} className="text-[#ED1C24]" />
                   </div>
                   <div>
@@ -177,7 +177,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
                     <Clock size={18} className="text-[#ED1C24]" />
                   </div>
                   <div>
@@ -189,7 +189,7 @@ export default function ContactSection() {
             </div>
 
             {/* Реквизиты */}
-            <div className="bg-white/10 border border-white/20 p-6">
+            <div className="bg-white/10 border border-white/20 p-6 rounded-2xl">
               <h4 className="font-heading font-semibold text-white text-base mb-4 uppercase tracking-wide">
                 Реквизиты компании
               </h4>

@@ -57,7 +57,7 @@ export default function ProcessSection() {
                   className="flex flex-col items-center text-center px-3 group"
                 >
                   {/* Circle */}
-                  <div className="w-16 h-16 bg-white border-2 border-gray-200 group-hover:border-[#ED1C24] flex items-center justify-center mb-5 transition-colors duration-300 relative z-10">
+                  <div className="w-16 h-16 bg-white border-2 border-gray-200 group-hover:border-[#ED1C24] flex items-center justify-center mb-5 transition-colors duration-300 relative z-10 rounded-full">
                     <span className="font-display text-xl text-[#2D3092] group-hover:text-[#ED1C24] transition-colors font-bold">
                       {step.num}
                     </span>
@@ -88,7 +88,7 @@ export default function ProcessSection() {
                 <div className="absolute left-6 top-12 bottom-0 w-px bg-gray-200" />
               )}
               {/* Circle */}
-              <div className="w-12 h-12 bg-white border-2 border-[#2D3092] flex items-center justify-center flex-shrink-0 relative z-10">
+              <div className="w-12 h-12 bg-white border-2 border-[#2D3092] flex items-center justify-center flex-shrink-0 relative z-10 rounded-full">
                 <span className="font-display text-sm text-[#2D3092] font-bold">{step.num}</span>
               </div>
               <div className="pt-2">
@@ -105,7 +105,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 bg-[#F7F8FF] border-l-4 border-[#ED1C24] p-6 flex flex-col md:flex-row items-center gap-6"
+          className="mt-12 bg-[#F7F8FF] border-l-4 border-[#ED1C24] p-6 flex flex-col md:flex-row items-center gap-6 rounded-2xl"
         >
           <div className="flex-1">
             <h3 className="font-heading font-semibold text-[#0F1340] text-lg mb-1">

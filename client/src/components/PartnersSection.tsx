@@ -33,7 +33,7 @@ export default function PartnersSection() {
           {[...brands, ...brands].map((brand, i) => (
             <div
               key={`${brand}-${i}`}
-              className="flex-shrink-0 px-6 py-3 bg-white border border-gray-200 text-gray-500 font-heading font-semibold text-sm hover:text-[#2D3092] hover:border-[#2D3092] transition-colors cursor-default"
+              className="flex-shrink-0 px-6 py-3 bg-white border border-gray-200 text-gray-500 font-heading font-semibold text-sm hover:text-[#2D3092] hover:border-[#2D3092] transition-colors cursor-default rounded-full"
             >
               {brand}
             </div>

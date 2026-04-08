@@ -110,7 +110,7 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 ${
+              className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl ${
                 i === 0 ? "lg:col-span-2 lg:row-span-1" : ""
               }`}
             >
@@ -122,7 +122,7 @@ export default function ProjectsSection() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F1340]/70 via-[#0F1340]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className={`absolute top-3 left-3 px-2.5 py-1 text-xs font-heading font-semibold uppercase tracking-wide ${categoryColors[project.category] || "bg-gray-700 text-white"}`}>
+                <div className={`absolute top-3 left-3 px-2.5 py-1 text-xs font-heading font-semibold uppercase tracking-wide rounded-full ${categoryColors[project.category] || "bg-gray-700 text-white"}`}>
                   {project.category}
                 </div>
                 {/* Hover overlay text */}

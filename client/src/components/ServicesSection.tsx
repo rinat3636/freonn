@@ -150,7 +150,7 @@ export default function ServicesSection() {
                 <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center">
                   <div className="flex items-start gap-4 mb-3">
                     <div
-                      className="w-10 h-10 flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+                      className="w-10 h-10 flex items-center justify-center flex-shrink-0 transition-colors duration-300 rounded-full"
                       style={{ backgroundColor: `${service.color}15` }}
                     >
                       <Icon size={20} style={{ color: service.color }} />
@@ -171,7 +171,7 @@ export default function ServicesSection() {
                     {service.items.map((item) => (
                       <span
                         key={item}
-                        className="text-xs px-3 py-1 bg-gray-100 text-gray-600 font-body hover:bg-[#ED1C24] hover:text-white transition-colors cursor-default"
+                        className="text-xs px-3 py-1 bg-gray-100 text-gray-600 font-body hover:bg-[#ED1C24] hover:text-white transition-colors cursor-default rounded-full"
                       >
                         {item}
                       </span>
