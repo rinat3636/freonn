@@ -1,11 +1,12 @@
 /*
  * FREONN HEADER — Bold Technical Expressionism
- * Fully responsive: mobile, tablet, desktop
+ * Transparent on hero section, white background on scroll
+ * Mobile: only ЗАЯВКА button + burger menu
  * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Search, ChevronDown, Menu, X } from "lucide-react";
+import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { toast } from "sonner";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png";
@@ -44,7 +45,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent background scroll when mobile menu is open (without position:fixed which breaks sticky header)
+  // Prevent background scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -60,88 +61,151 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
-      {/* Main header — transparent background */}
-      <div className="bg-white shadow-sm border-b border-gray-100">
-        <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-2.5 sm:py-3">
+      {/* Main header bar */}
+      <div
+        className={`transition-all duration-300 ${
+          scrolled
+            ? "bg-white shadow-md border-b border-gray-100"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
-            <img src={LOGO_URL} alt="Freonn" className="h-9 sm:h-11 w-auto" />
+            <img
+              src={LOGO_URL}
+              alt="Freonn"
+              className={`h-9 sm:h-11 w-auto transition-all duration-300 ${
+                !scrolled ? "brightness-0 invert" : ""
+              }`}
+            />
           </a>
-
-          {/* Address & hours — desktop only */}
-          <div className="hidden xl:flex flex-col text-sm ml-2 min-w-0">
-            <div className="flex items-center gap-1.5 text-gray-600">
-              <MapPin size={13} className="text-[#2D3092] flex-shrink-0" />
-              <span className="font-body truncate">Московская обл., г. Дзержинский, ул. Ленина 2Б</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-gray-500 text-xs mt-0.5">
-              <Clock size={12} className="text-[#ED1C24] flex-shrink-0" />
-              <span className="font-body">Пн-Сб: 9:00 – 19:00</span>
-            </div>
-          </div>
 
           <div className="flex-1" />
 
-          {/* Phone — tablet visible */}
-          <a href="tel:88001012009" className="hidden md:flex lg:hidden items-center gap-1.5 text-[#0F1340] font-heading font-semibold text-sm whitespace-nowrap">
-            <Phone size={14} className="text-[#ED1C24]" />
-            8(800)101-2009
+          {/* Phone — desktop only, visible when scrolled */}
+          {scrolled && (
+            <a
+              href="tel:88001012009"
+              className="hidden lg:flex items-center gap-1.5 text-[#0F1340] font-heading font-semibold text-sm whitespace-nowrap"
+            >
+              <Phone size={14} className="text-[#ED1C24]" />
+              8(800)101-2009
+            </a>
+          )}
+
+          {/* Desktop nav links — shown when scrolled */}
+          {scrolled && (
+            <nav className="hidden lg:flex items-center gap-0">
+              {navItems.map(item => (
+                <div key={item.label} className="relative group flex-shrink-0">
+                  <a
+                    href={item.href}
+                    className="flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm text-[#1A1A2E] hover:text-[#2D3092] font-heading font-medium uppercase tracking-wide transition-colors"
+                  >
+                    {item.label}
+                    {item.children && (
+                      <ChevronDown size={12} className="group-hover:rotate-180 transition-transform duration-200" />
+                    )}
+                  </a>
+                  {item.children && (
+                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D3092] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
+                      {item.children.map(child => (
+                        <a
+                          key={child.label}
+                          href={child.href}
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F0F2FF] hover:text-[#2D3092] font-body border-b border-gray-50 last:border-0"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+          )}
+
+          {/* CTA button — desktop */}
+          <a
+            href="#contacts"
+            className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 ${
+              scrolled
+                ? "bg-[#ED1C24] text-white hover:bg-[#c91a1f]"
+                : "border-2 border-white text-white hover:bg-white hover:text-[#ED1C24]"
+            }`}
+          >
+            Заявка
           </a>
 
-          {/* CTA buttons — desktop */}
-          <div className="hidden lg:flex gap-2 xl:gap-3 flex-shrink-0">
-            <a href="#contacts" className="btn-primary text-sm py-2 px-4 xl:px-6">
-              Вызвать инженера
-            </a>
-            <button onClick={handleTopLink} className="btn-outline text-sm py-2 px-4 xl:px-6 border-[#2D3092] text-[#2D3092] hover:bg-[#2D3092] hover:text-white rounded-full">
-              В тендер
-            </button>
-          </div>
-
-          {/* Mobile CTA */}
-          <a href="#contacts" className="md:hidden text-xs py-2 px-4 flex-shrink-0 border-2 border-[#ED1C24] text-[#ED1C24] font-heading font-bold uppercase tracking-wide rounded-full hover:bg-[#ED1C24] hover:text-white transition-colors">
+          {/* Mobile CTA button */}
+          <a
+            href="#contacts"
+            className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full transition-all duration-300 ${
+              scrolled
+                ? "bg-[#ED1C24] text-white hover:bg-[#c91a1f]"
+                : "border-2 border-white text-white hover:bg-white hover:text-[#ED1C24]"
+            }`}
+          >
             Заявка
           </a>
 
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden p-2 flex-shrink-0 text-[#2D3092]"
+            className={`lg:hidden p-2 flex-shrink-0 transition-colors duration-300 ${
+              scrolled ? "text-[#2D3092]" : "text-white"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
+
+          {/* Desktop burger (when not scrolled — show nav toggle) */}
+          {!scrolled && (
+            <button
+              className="hidden lg:flex p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Меню"
+            >
+              <Menu size={22} />
+            </button>
+          )}
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:block border-t border-gray-100 bg-white">
-          <div className="container flex items-center gap-0 overflow-x-auto">
-            {navItems.map(item => (
-              <div key={item.label} className="relative group flex-shrink-0">
-                <a
-                  href={item.href}
-                  className="nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap text-[#1A1A2E] hover:text-[#2D3092]"
-                >
-                  {item.label}
-                  {item.children && <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />}
-                </a>
-                {item.children && (
-                  <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D3092] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
-                    {item.children.map(child => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F0F2FF] hover:text-[#2D3092] font-body border-b border-gray-50 last:border-0"
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </nav>
+        {/* Desktop Navigation bar — shown when scrolled */}
+        {scrolled && (
+          <nav className="hidden lg:block border-t border-gray-100 bg-white">
+            <div className="container flex items-center gap-0 overflow-x-auto">
+              {navItems.map(item => (
+                <div key={item.label} className="relative group flex-shrink-0">
+                  <a
+                    href={item.href}
+                    className="nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap text-[#1A1A2E] hover:text-[#2D3092]"
+                  >
+                    {item.label}
+                    {item.children && (
+                      <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
+                    )}
+                  </a>
+                  {item.children && (
+                    <div className="absolute top-full left-0 w-64 bg-white shadow-xl border-t-2 border-[#2D3092] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
+                      {item.children.map(child => (
+                        <a
+                          key={child.label}
+                          href={child.href}
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-[#F0F2FF] hover:text-[#2D3092] font-body border-b border-gray-50 last:border-0"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </nav>
+        )}
       </div>
 
       {/* Mobile menu — full screen overlay */}
@@ -152,7 +216,7 @@ export default function Header() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.25 }}
-            className="lg:hidden fixed inset-0 top-0 bg-[#0F1340] text-white z-[100] overflow-y-auto"
+            className="fixed inset-0 top-0 bg-[#0F1340] text-white z-[100] overflow-y-auto"
           >
             {/* Mobile menu header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
@@ -223,7 +287,7 @@ export default function Header() {
               <a href="#contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
                 Вызвать инженера
               </a>
-              <button onClick={() => { handleTopLink(); setMobileOpen(false); }} className="btn-outline text-center text-base py-3 border-white text-white">
+              <button onClick={() => { handleTopLink(); setMobileOpen(false); }} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
                 Пригласить в тендер
               </button>
             </div>
