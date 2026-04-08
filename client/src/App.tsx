@@ -14,6 +14,16 @@ import ServicesPage from "./pages/Services";
 import ObjectsPage from "./pages/Objects";
 import PricingPage from "./pages/Pricing";
 import ServicePageComponent from "./pages/ServicePage";
+import ObjectCategoryPage from "./pages/ObjectCategory";
+import CityPage from "./pages/CityPage";
+import NewsPage from "./pages/News";
+import VacanciesPage from "./pages/Vacancies";
+import RequisitesPage from "./pages/Requisites";
+import GuaranteePage from "./pages/Guarantee";
+import PromotionsPage from "./pages/Promotions";
+import PartnersPage from "./pages/Partners";
+import DocumentsPage from "./pages/Documents";
+import PricingServicePage from "./pages/PricingServicePage";
 import ComingSoon from "./pages/ComingSoon";
 
 function Router() {
@@ -53,111 +63,37 @@ function Router() {
       <Route path={"/servisnoe-obsluzhivanie"}>{() => <ServicePageComponent />}</Route>
 
       {/* Pricing sub-pages */}
+      <Route path={"/ceny-na-montazh-ventilyacii"}>{() => <PricingServicePage service="ventilyaciya" />}</Route>
+      <Route path={"/ceny-na-montazh-kondicionirovaniya"}>{() => <PricingServicePage service="kondicionirovanie" />}</Route>
+      <Route path={"/ceny-na-montazh-dymoudaleniya"}>{() => <PricingServicePage service="dymoudalenie" />}</Route>
+      <Route path={"/ceny-na-montazh-inzhenernyh-sistem"}>{() => <PricingServicePage service="kompleks" />}</Route>
+      <Route path={"/ceny-na-peskostruj"}>{() => <PricingServicePage service="peskostruj" />}</Route>
       <Route path={"/ceny/:slug"}>
-        {(params) => (
-          <ComingSoon
-            title={`Цены — ${params.slug?.replace(/-/g, " ")}`}
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: params.slug || "" }]}
-          />
-        )}
+        {(params) => <PricingServicePage service={params.slug || "kompleks"} />}
       </Route>
 
       {/* Object category pages */}
-      <Route path={"/promyshlennye-obekty"}>
-        {() => (
-          <ComingSoon
-            title="Промышленные объекты"
-            breadcrumb={[{ label: "Объекты", href: "/obekty" }, { label: "Промышленные" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/kommercheskie-obekty"}>
-        {() => (
-          <ComingSoon
-            title="Коммерческие объекты"
-            breadcrumb={[{ label: "Объекты", href: "/obekty" }, { label: "Коммерческие" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/premium-obekty"}>
-        {() => (
-          <ComingSoon
-            title="Премиум объекты"
-            breadcrumb={[{ label: "Объекты", href: "/obekty" }, { label: "Премиум" }]}
-          />
-        )}
-      </Route>
+      <Route path={"/promyshlennye-obekty"}>{() => <ObjectCategoryPage category="promyshlennye-obekty" />}</Route>
+      <Route path={"/kommercheskie-obekty"}>{() => <ObjectCategoryPage category="kommercheskie-obekty" />}</Route>
+      <Route path={"/premium-obekty"}>{() => <ObjectCategoryPage category="premium-obekty" />}</Route>
 
       {/* Company sub-pages */}
-      <Route path={"/licenzii-i-sertifikaty"}>
-        {() => (
-          <ComingSoon
-            title="Лицензии и сертификаты"
-            breadcrumb={[{ label: "О компании", href: "/o-kompanii" }, { label: "Лицензии" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/sertifikaty"}>
-        {() => (
-          <ComingSoon
-            title="Сертификаты"
-            breadcrumb={[{ label: "О компании", href: "/o-kompanii" }, { label: "Сертификаты" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/rekvizity"}>
-        {() => (
-          <ComingSoon
-            title="Реквизиты компании"
-            breadcrumb={[{ label: "О компании", href: "/o-kompanii" }, { label: "Реквизиты" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/garantii"}>
-        {() => (
-          <ComingSoon
-            title="Гарантии"
-            breadcrumb={[{ label: "О компании", href: "/o-kompanii" }, { label: "Гарантии" }]}
-          />
-        )}
-      </Route>
+      <Route path={"/licenzii-i-sertifikaty"} component={DocumentsPage} />
+      <Route path={"/sertifikaty"} component={DocumentsPage} />
+      <Route path={"/rekvizity"} component={RequisitesPage} />
+      <Route path={"/garantii"} component={GuaranteePage} />
+      <Route path={"/garantiya"} component={GuaranteePage} />
+      <Route path={"/akcii"} component={PromotionsPage} />
+      <Route path={"/novosti"} component={NewsPage} />
+      <Route path={"/vakansii"} component={VacanciesPage} />
+      <Route path={"/dokumenty"} component={DocumentsPage} />
+      <Route path={"/partnery"} component={PartnersPage} />
+      <Route path={"/partneram"} component={PartnersPage} />
       <Route path={"/oplata-i-dostavka"}>
         {() => (
           <ComingSoon
             title="Оплата и доставка"
             breadcrumb={[{ label: "О компании", href: "/o-kompanii" }, { label: "Оплата" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/akcii"}>
-        {() => (
-          <ComingSoon
-            title="Акции и спецпредложения"
-            breadcrumb={[{ label: "Акции" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/novosti"}>
-        {() => (
-          <ComingSoon
-            title="Новости компании"
-            breadcrumb={[{ label: "Новости" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/vakansii"}>
-        {() => (
-          <ComingSoon
-            title="Вакансии"
-            breadcrumb={[{ label: "Вакансии" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/dokumenty"}>
-        {() => (
-          <ComingSoon
-            title="Документы"
-            breadcrumb={[{ label: "Документы" }]}
           />
         )}
       </Route>
@@ -185,65 +121,10 @@ function Router() {
           />
         )}
       </Route>
-      <Route path={"/partneram"}>
-        {() => (
-          <ComingSoon
-            title="Партнёрам"
-            breadcrumb={[{ label: "Партнёрам" }]}
-          />
-        )}
-      </Route>
 
-      {/* Pricing pages from footer */}
-      <Route path={"/ceny-na-montazh-ventilyacii"}>
-        {() => (
-          <ComingSoon
-            title="Цены на монтаж вентиляции"
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: "Вентиляция" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/ceny-na-montazh-kondicionirovaniya"}>
-        {() => (
-          <ComingSoon
-            title="Цены на монтаж кондиционирования"
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: "Кондиционирование" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/ceny-na-montazh-dymoudaleniya"}>
-        {() => (
-          <ComingSoon
-            title="Цены на монтаж дымоудаления"
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: "Дымоудаление" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/ceny-na-montazh-inzhenernyh-sistem"}>
-        {() => (
-          <ComingSoon
-            title="Цены на монтаж инженерных систем"
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: "Инженерные системы" }]}
-          />
-        )}
-      </Route>
-      <Route path={"/ceny-na-peskostruj"}>
-        {() => (
-          <ComingSoon
-            title="Цены на пескоструйную обработку"
-            breadcrumb={[{ label: "Цены", href: "/ceny" }, { label: "Пескоструй" }]}
-          />
-        )}
-      </Route>
-
-      {/* City pages */}
+      {/* City pages — MUST be last before 404 */}
       <Route path={"/:city"}>
-        {(params) => (
-          <ComingSoon
-            title={`Инженерные системы — ${params.city?.replace(/-/g, " ")}`}
-            breadcrumb={[{ label: params.city || "" }]}
-          />
-        )}
+        {(params) => <CityPage city={params.city || ""} />}
       </Route>
 
       <Route path={"/404"} component={NotFound} />
