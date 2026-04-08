@@ -28,7 +28,7 @@ export default function FloatingButtons() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
-        className="w-12 h-12 bg-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full overflow-hidden border border-gray-100"
+        className="w-12 h-12 bg-[#1a1a3e] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full overflow-hidden"
         title="Написать в MAX"
       >
         <img src={MAX_LOGO} alt="MAX" className="w-8 h-8 object-contain" />
