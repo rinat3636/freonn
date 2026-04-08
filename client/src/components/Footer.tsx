@@ -19,7 +19,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: "Видео кейсы", href: "/video-kejsy" },
     { label: "Полезные материалы", href: "/poleznye-materialy" },
     { label: "Партнёрам", href: "/partneram" },
-    { label: "Контакты", href: "#contacts" },
+    { label: "Контакты", href: "/contacts" },
   ],
   "Инженерные системы": [
     { label: "Проектирование ОВиК", href: "/proektirovanie-ovik" },
