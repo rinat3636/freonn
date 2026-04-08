@@ -10,43 +10,43 @@ const projects = [
     title: "Монтаж вентиляции в производственном цеху",
     category: "Промышленность",
     area: "2400 м²",
-    // Industrial ventilation duct installation in factory
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+    // Industrial ventilation ducts in factory ceiling - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj1-factory-ventilation_e81411a7.jpg",
   },
   {
     title: "Кондиционирование в бизнес-центре",
     category: "Коммерция",
     area: "5800 м²",
-    // Office ceiling with cassette AC units — commercial HVAC
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    // Office with ceiling cassette AC unit - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj2-office-ac_0f6a2197.jpg",
   },
   {
     title: "Система дымоудаления в торговом центре",
     category: "Коммерция",
     area: "12000 м²",
-    // Shopping mall ceiling with sprinkler and smoke extraction system
-    img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800&q=80",
+    // Ceiling sprinkler fire suppression system - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj3-smoke-system_b2c1d498.jpg",
   },
   {
     title: "Вентиляция и отопление в складском комплексе",
     category: "Промышленность",
     area: "8500 м²",
-    // Large warehouse interior with industrial ventilation and heating
-    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+    // Warehouse with industrial HVAC system - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj4-warehouse_b5f2c055.jpg",
   },
   {
     title: "Умный климат-контроль в премиум-апартаментах",
     category: "Премиум",
     area: "320 м²",
-    // Premium apartment with hidden ceiling HVAC fan coil units
-    img: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
+    // Premium apartment with hidden AC grilles in walls - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj5-premium-climate_4fd38547.jpg",
   },
   {
     title: "Промышленное охлаждение на пищевом производстве",
     category: "Промышленность",
     area: "3200 м²",
-    // Industrial refrigeration and cooling system in food production facility
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    // Cold storage room with industrial refrigeration evaporators - verified CDN
+    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj6-cold-storage_ed767a25.jpg",
   },
 ];
 
