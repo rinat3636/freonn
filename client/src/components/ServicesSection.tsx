@@ -10,7 +10,7 @@ import { ArrowRight, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldA
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 const GEN_VENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-ventilation-unit-5ebe3bmzqsCGdGpvbDz2zo.webp";
 const GEN_CHILLER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-chiller-E9FzvTdbvYDJ9o4F7zSQNh.webp";
-const GEN_SANDBLAST = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-sandblasting-hbNQQVnnQzjyjyRKGHS8YY.webp";
+const GEN_SANDBLAST = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-sandblasting-real_78a6f8d6.jpg";
 
 const services = [
   {
