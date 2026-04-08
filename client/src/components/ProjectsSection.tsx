@@ -95,7 +95,7 @@ const categoryColors: Record<string, string> = {
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-[#F7F8FF]">
+    <section data-theme="light" id="projects" className="py-20 bg-[#F7F8FF]">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

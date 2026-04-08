@@ -105,7 +105,7 @@ const categoryColors: Record<string, string> = {
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section data-theme="light" id="blog" className="py-20 bg-white">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

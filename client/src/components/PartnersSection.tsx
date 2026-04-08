@@ -12,7 +12,7 @@ const brands = [
 
 export default function PartnersSection() {
   return (
-    <section className="py-14 bg-[#F7F8FF] overflow-hidden">
+    <section data-theme="light" className="py-14 bg-[#F7F8FF] overflow-hidden">
       <div className="container mb-8">
         <div className="flex items-center gap-3">
           <div className="h-0.5 w-10 bg-[#ED1C24]" />

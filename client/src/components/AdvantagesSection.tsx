@@ -61,7 +61,7 @@ export default function AdvantagesSection() {
   return (
     <>
       {/* What clients get */}
-      <section className="py-20 bg-[#0F1340] text-white relative overflow-hidden">
+      <section data-theme="dark" className="py-20 bg-[#0F1340] text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -108,7 +108,7 @@ export default function AdvantagesSection() {
       </section>
 
       {/* Advantages */}
-      <section className="py-20 bg-white">
+      <section data-theme="light" className="py-20 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

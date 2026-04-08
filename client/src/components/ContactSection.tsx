@@ -22,7 +22,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacts" className="py-20 bg-gradient-to-br from-[#0F1340] to-[#2D3092] text-white relative overflow-hidden">
+    <section data-theme="dark" id="contacts" className="py-20 bg-gradient-to-br from-[#0F1340] to-[#2D3092] text-white relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-5"
         style={{

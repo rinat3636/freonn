@@ -59,7 +59,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="relative bg-[#0F1340] text-white py-20 overflow-hidden"
+      data-theme="dark" className="relative bg-[#0F1340] text-white py-20 overflow-hidden"
     >
       {/* Subtle grid pattern */}
       <div

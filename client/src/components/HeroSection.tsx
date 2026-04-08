@@ -30,7 +30,7 @@ const quickLinks = [
 
 export default function HeroSection() {
   return (
-    <section className="relative flex items-center overflow-hidden bg-[#0F1340]">
+    <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0F1340]">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

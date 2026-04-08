@@ -83,7 +83,7 @@ export default function ObjectsSection() {
   return (
     <>
       {/* ── INDUSTRIAL ── */}
-      <section className="py-20 bg-[#F7F8FF]">
+      <section data-theme="light" className="py-20 bg-[#F7F8FF]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text */}
@@ -157,7 +157,7 @@ export default function ObjectsSection() {
       </section>
 
       {/* ── COMMERCIAL ── */}
-      <section className="py-20 bg-white">
+      <section data-theme="light" className="py-20 bg-white">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image (left on desktop) */}
@@ -233,7 +233,7 @@ export default function ObjectsSection() {
       </section>
 
       {/* ── PREMIUM ── */}
-      <section className="py-20 bg-[#0F1340] text-white relative overflow-hidden">
+      <section data-theme="dark" className="py-20 bg-[#0F1340] text-white relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{

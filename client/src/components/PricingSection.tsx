@@ -67,7 +67,7 @@ const plans = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-[#F7F8FF]">
+    <section data-theme="light" id="pricing" className="py-20 bg-[#F7F8FF]">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

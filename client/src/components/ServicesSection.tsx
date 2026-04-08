@@ -105,7 +105,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-white overflow-hidden">
+    <section data-theme="light" id="services" className="py-20 bg-white overflow-hidden">
       <div className="container">
         {/* Section header */}
         <motion.div

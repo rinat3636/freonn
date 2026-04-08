@@ -16,7 +16,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section data-theme="light" className="py-20 bg-white overflow-hidden">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

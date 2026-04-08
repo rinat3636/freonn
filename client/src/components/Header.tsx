@@ -1,8 +1,11 @@
 /*
  * FREONN HEADER — Bold Technical Expressionism
- * Always transparent background — never white
- * Mobile: only ЗАЯВКА button + burger menu
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Always transparent background
+ * Logo/buttons: white on dark sections, colored on light sections
+ * Dark sections: HeroSection (0F1340), AboutSection (0F1340),
+ *   ObjectsSection-3rd (0F1340), AdvantagesSection-1st (0F1340), ContactSection (gradient)
+ * Light sections: ServicesSection, ProcessSection, PricingSection,
+ *   ProjectsSection, PartnersSection, BlogSection, FAQSection, ObjectsSection-1,2
  */
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,6 +13,9 @@ import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { toast } from "sonner";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png";
+
+// Sections that have dark (navy) backgrounds
+const DARK_SECTION_IDS = ["hero", "about", "advantages-dark", "contacts"];
 
 const navItems = [
   { label: "О компании", href: "#about" },
@@ -35,8 +41,38 @@ const navItems = [
 const topBarLinks = ["Акции", "Оплата и доставка", "Гарантии", "Сертификаты"];
 
 export default function Header() {
+  const [isDark, setIsDark] = useState(true); // hero is dark by default
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+
+  useEffect(() => {
+    // Detect background color under header by checking scroll position
+    // against known section boundaries
+    const checkBackground = () => {
+      const scrollY = window.scrollY;
+      const headerHeight = 70;
+      const checkPoint = scrollY + headerHeight / 2;
+
+      // Get all sections and check which one contains the header midpoint
+      const sections = document.querySelectorAll("section[data-theme]");
+      let currentTheme = "dark"; // default
+
+      sections.forEach((section) => {
+        const el = section as HTMLElement;
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+        if (checkPoint >= top && checkPoint < bottom) {
+          currentTheme = el.dataset.theme || "dark";
+        }
+      });
+
+      setIsDark(currentTheme === "dark");
+    };
+
+    window.addEventListener("scroll", checkBackground, { passive: true });
+    checkBackground();
+    return () => window.removeEventListener("scroll", checkBackground);
+  }, []);
 
   // Prevent background scroll when mobile menu is open
   useEffect(() => {
@@ -57,12 +93,12 @@ export default function Header() {
       {/* Always transparent header bar */}
       <div className="bg-transparent">
         <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
-          {/* Logo — always white (inverted) */}
+          {/* Logo — white on dark, colored on light */}
           <a href="/" className="flex-shrink-0">
             <img
               src={LOGO_URL}
               alt="Freonn"
-              className="h-9 sm:h-11 w-auto brightness-0 invert"
+              className={`h-9 sm:h-11 w-auto transition-all duration-300 ${isDark ? "brightness-0 invert" : ""}`}
             />
           </a>
 
@@ -74,7 +110,11 @@ export default function Header() {
               <div key={item.label} className="relative group flex-shrink-0">
                 <a
                   href={item.href}
-                  className="flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm text-white hover:text-white/70 font-heading font-medium uppercase tracking-wide transition-colors"
+                  className={`flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm font-heading font-medium uppercase tracking-wide transition-colors ${
+                    isDark
+                      ? "text-white hover:text-white/70"
+                      : "text-[#1A1A2E] hover:text-[#2D3092]"
+                  }`}
                 >
                   {item.label}
                   {item.children && (
@@ -98,25 +138,35 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA button — desktop, always white outline */}
+          {/* CTA button — desktop */}
           <a
             href="#contacts"
-            className="hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide border-2 border-white text-white hover:bg-white hover:text-[#0F1340] transition-all duration-300 flex-shrink-0"
+            className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 border-2 ${
+              isDark
+                ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
+                : "border-[#ED1C24] text-[#ED1C24] hover:bg-[#ED1C24] hover:text-white"
+            }`}
           >
             Заявка
           </a>
 
-          {/* Mobile CTA button — always white outline */}
+          {/* Mobile CTA button */}
           <a
             href="#contacts"
-            className="lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 border-white text-white hover:bg-white hover:text-[#0F1340] transition-all duration-300"
+            className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 transition-all duration-300 ${
+              isDark
+                ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
+                : "border-[#ED1C24] text-[#ED1C24] hover:bg-[#ED1C24] hover:text-white"
+            }`}
           >
             Заявка
           </a>
 
-          {/* Mobile menu toggle — always white */}
+          {/* Mobile menu toggle */}
           <button
-            className="lg:hidden p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
+            className={`lg:hidden p-2 flex-shrink-0 transition-colors duration-300 ${
+              isDark ? "text-white hover:text-white/70" : "text-[#2D3092] hover:text-[#0F1340]"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >
@@ -125,7 +175,9 @@ export default function Header() {
 
           {/* Desktop burger */}
           <button
-            className="hidden lg:flex p-2 flex-shrink-0 text-white hover:text-white/70 transition-colors"
+            className={`hidden lg:flex p-2 flex-shrink-0 transition-colors duration-300 ${
+              isDark ? "text-white hover:text-white/70" : "text-[#2D3092] hover:text-[#0F1340]"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >

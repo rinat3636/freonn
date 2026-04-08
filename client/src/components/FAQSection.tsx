@@ -62,7 +62,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-20 bg-[#F7F8FF]">
+    <section data-theme="light" id="faq" className="py-20 bg-[#F7F8FF]">
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left: heading */}
