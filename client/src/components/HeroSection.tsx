@@ -9,9 +9,13 @@ import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/hero-bg-TSEFdwsLkkoBfLxyHqisJK.webp";
 
 const services = [
-  "Вентиляция", "Кондиционирование", "Дымоудаление",
-  "Отопление", "Холодоснабжение", "Электроснабжение",
-  "Пескоструйная обработка",
+  { label: "Вентиляция", href: "#service-ventilation" },
+  { label: "Кондиционирование", href: "#service-conditioning" },
+  { label: "Дымоудаление", href: "#service-smoke" },
+  { label: "Отопление", href: "#service-heating" },
+  { label: "Холодоснабжение", href: "#service-cooling" },
+  { label: "Электроснабжение", href: "#service-electrical" },
+  { label: "Пескоструйная обработка", href: "#service-sandblast" },
 ];
 
 const quickLinks = [
@@ -68,8 +72,8 @@ export default function HeroSection() {
               {/* Service tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {services.map((s) => (
-                  <a key={s} href="#services" className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors rounded-full">
-                    {s}
+                  <a key={s.label} href={s.href} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors rounded-full">
+                    {s.label}
                   </a>
                 ))}
               </div>

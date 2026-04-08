@@ -15,6 +15,7 @@ const GEN_SANDBLAST = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/
 const services = [
   {
     id: 1,
+    slug: "service-ventilation",
     icon: Wind,
     title: "Вентиляция",
     shortTitle: "Вентиляция",
@@ -26,6 +27,7 @@ const services = [
   },
   {
     id: 2,
+    slug: "service-conditioning",
     icon: Thermometer,
     title: "Кондиционирование",
     shortTitle: "Кондиционирование",
@@ -37,6 +39,7 @@ const services = [
   },
   {
     id: 3,
+    slug: "service-smoke",
     icon: ShieldAlert,
     title: "Дымоудаление",
     shortTitle: "Дымоудаление",
@@ -48,6 +51,7 @@ const services = [
   },
   {
     id: 4,
+    slug: "service-heating",
     icon: Flame,
     title: "Отопление и теплоснабжение",
     shortTitle: "Отопление",
@@ -59,6 +63,7 @@ const services = [
   },
   {
     id: 5,
+    slug: "service-cooling",
     icon: Snowflake,
     title: "Холодоснабжение",
     shortTitle: "Холодоснабжение",
@@ -70,6 +75,7 @@ const services = [
   },
   {
     id: 6,
+    slug: "service-water",
     icon: Droplets,
     title: "Водоснабжение и канализация",
     shortTitle: "Водоснабжение",
@@ -81,6 +87,7 @@ const services = [
   },
   {
     id: 7,
+    slug: "service-sandblast",
     icon: Hammer,
     title: "Пескоструйная обработка",
     shortTitle: "Пескоструй",
@@ -92,6 +99,7 @@ const services = [
   },
   {
     id: 8,
+    slug: "service-electrical",
     icon: Zap,
     title: "Электроснабжение и освещение",
     shortTitle: "Электроснабжение",
@@ -139,6 +147,7 @@ export default function ServicesSection() {
             return (
               <motion.div
                 key={service.id}
+                id={service.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
