@@ -268,6 +268,15 @@ export default function Header() {
               <button onClick={() => { handleTopLink(); setMobileOpen(false); }} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
                 Пригласить в тендер
               </button>
+              <a
+                href="https://max.ru/id3604084591_biz"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="btn-primary text-center text-base py-3"
+              >
+                Наши работы
+              </a>
             </div>
 
             {/* Footer links in mobile menu */}
