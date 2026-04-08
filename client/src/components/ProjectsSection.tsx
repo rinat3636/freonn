@@ -1,64 +1,82 @@
 /*
- * FREONN PROJECTS — Bold Technical Expressionism
- * Grid of completed project cards with Unsplash images
+ * FREONN PROJECTS — Modern layout with real project names from ceds.ru
+ * Grid with hover overlays, real project titles
+ * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
+const GEN_INDUSTRIAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-industrial-hvac-CUToKRXqhd5NqVLbfLUTwL.webp";
+const GEN_COMMERCIAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-commercial-ac-25u7KoLKzpAUCxypUsYPv5.webp";
+
 const projects = [
   {
-    title: "Монтаж вентиляции в производственном цеху",
-    category: "Промышленность",
-    area: "2400 м²",
-    // Industrial ventilation pipes and fans on factory wall - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj-industrial-vent_1f44b222.jpg",
-  },
-  {
-    title: "Кондиционирование в бизнес-центре",
+    title: "Монтаж вентиляции и кондиционирования в БЦ «Aero City»",
     category: "Коммерция",
-    area: "5800 м²",
-    // Cassette AC installation in office ceiling - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/commercial-cassette_41446744.jpg",
+    desc: "Поставка и монтаж систем вентиляции, кондиционирования и дымоудаления.",
+    img: GEN_COMMERCIAL,
   },
   {
-    title: "Система дымоудаления в торговом центре",
+    title: "Монтаж инженерных систем в производственном цеху Arida Home",
+    category: "Промышленность",
+    desc: "Монтаж систем вентиляции для производственного комплекса.",
+    img: GEN_INDUSTRIAL,
+  },
+  {
+    title: "Монтаж инженерных систем в отеле Доброград",
     category: "Коммерция",
-    area: "12000 м²",
-    // HVAC ductwork installation in commercial building - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj-ductwork_f5dd8a8d.jpg",
+    desc: "Поставка и монтаж систем вентиляции, кондиционирования и дымоудаления.",
+    img: `${CDN}/proj-ductwork_f5dd8a8d.jpg`,
   },
   {
-    title: "Вентиляция и отопление в складском комплексе",
+    title: "Кондиционирование на производстве Квант",
     category: "Промышленность",
-    area: "8500 м²",
-    // Industrial HVAC ducts on factory ceiling - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/industrial-ducts_c2b4961f.jpg",
+    desc: "Монтаж промышленных систем кондиционирования воздуха.",
+    img: `${CDN}/proj-industrial-vent_1f44b222.jpg`,
   },
   {
-    title: "Умный климат-контроль в премиум-апартаментах",
-    category: "Премиум",
-    area: "320 м²",
-    // Underfloor heating pipes in premium apartment - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/premium-underfloor_14faa962.jpg",
-  },
-  {
-    title: "Промышленное охлаждение на пищевом производстве",
+    title: "Монтаж приточно-вытяжной вентиляции в цеху ООО «Ресна»",
     category: "Промышленность",
-    area: "3200 м²",
-    // Fan coil unit installation in office building - verified CDN
-    img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/proj-fancoil_49fccb2c.jpg",
+    desc: "Проектирование, поставка и монтаж приточно-вытяжных систем, установка циклона.",
+    img: `${CDN}/ru-hvac-production_2fc3fdd7.jpg`,
+  },
+  {
+    title: "Вентиляция, кондиционирование и отопление для фитнес-центра Vysota",
+    category: "Коммерция",
+    desc: "Генеральное проектирование, поставка оборудования, монтаж вентиляции, кондиционирования, отопления, теплового пола, освещения.",
+    img: `${CDN}/proj-fancoil_49fccb2c.jpg`,
+  },
+  {
+    title: "Монтаж вытяжной вентиляции для лаборатории в школе Magic Castle",
+    category: "Образование",
+    desc: "Монтаж специализированной вытяжной системы вентиляции для лабораторных помещений.",
+    img: `${CDN}/ru-industrial-ventilation_4939c0aa.jpg`,
+  },
+  {
+    title: "Монтаж инженерных систем в Московском училище олимпийского резерва №1",
+    category: "Образование",
+    desc: "Комплексный монтаж систем вентиляции и кондиционирования спортивного объекта.",
+    img: `${CDN}/proj-ductwork_f5dd8a8d.jpg`,
+  },
+  {
+    title: "Монтаж системы вентиляции в школе танцев «Lotos»",
+    category: "Коммерция",
+    desc: "Установка системы вентиляции в танцевальной студии.",
+    img: `${CDN}/equip-ventilation_25987b56.jpg`,
   },
 ];
 
 const categoryColors: Record<string, string> = {
   "Промышленность": "bg-[#2D3092] text-white",
   "Коммерция": "bg-[#ED1C24] text-white",
-  "Премиум": "bg-[#0F1340] text-white",
+  "Образование": "bg-[#0F1340] text-white",
+  "Премиум": "bg-amber-600 text-white",
 };
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-[#F7F8FF]">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,47 +91,52 @@ export default function ProjectsSection() {
               Портфолио
             </span>
           </div>
-          <div className="flex items-end justify-between">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Наши выполненные проекты
             </h2>
-            <a href="#contacts" className="hidden md:flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
+            <a href="#contacts" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
               Все проекты <ArrowRight size={16} />
             </a>
           </div>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Masonry-style grid: first row 3 cols, second row 2 cols, third row 2 cols */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
+              transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+              className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 ${
+                i === 0 ? "lg:col-span-2 lg:row-span-1" : ""
+              }`}
             >
-              <div className="relative overflow-hidden aspect-[16/10]">
+              <div className={`relative overflow-hidden ${i === 0 ? "aspect-[21/9] lg:aspect-[21/9]" : "aspect-[16/10]"}`}>
                 <img
                   src={project.img}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1340]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1340]/70 via-[#0F1340]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className={`absolute top-3 left-3 px-2.5 py-1 text-xs font-heading font-semibold uppercase tracking-wide ${categoryColors[project.category] || "bg-gray-700 text-white"}`}>
                   {project.category}
                 </div>
+                {/* Hover overlay text */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white/80 text-xs font-body leading-relaxed">{project.desc}</p>
+                </div>
               </div>
-              <div className="p-5 border-l-4 border-transparent group-hover:border-[#2D3092] transition-all duration-300">
-                <h3 className="font-heading font-semibold text-[#0F1340] text-base mb-2 group-hover:text-[#2D3092] transition-colors">
+              <div className="p-5 border-t-2 border-transparent group-hover:border-[#ED1C24] transition-all duration-300">
+                <h3 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug mb-2 group-hover:text-[#2D3092] transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-400 text-sm font-body">{project.area}</span>
-                  <span className="text-[#ED1C24] text-sm font-heading font-semibold group-hover:underline">
-                    Подробнее →
-                  </span>
-                </div>
+                <span className="text-[#ED1C24] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
+                  Информация об объекте →
+                </span>
               </div>
             </motion.div>
           ))}

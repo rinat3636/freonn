@@ -1,40 +1,39 @@
 /*
- * FREONN PARTNERS — Bold Technical Expressionism
- * White section with brand logos (text-based for now)
+ * FREONN PARTNERS — Modern marquee-style layout
+ * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
 
 const brands = [
   "Daikin", "Mitsubishi Electric", "Carrier", "Trane", "Systemair",
-  "Vents", "Electrolux", "Panasonic", "LG", "Samsung", "Danfoss", "Grundfos",
+  "Вентс", "Неватом", "Electrolux", "LG", "Samsung", "Panasonic", "Haier",
+  "Gree", "Midea", "Fujitsu", "Hitachi", "Danfoss", "Grundfos",
 ];
 
 export default function PartnersSection() {
   return (
-    <section className="py-14 bg-white border-y border-gray-100">
-      <div className="container">
+    <section className="py-14 bg-[#F7F8FF] overflow-hidden">
+      <div className="container mb-8">
+        <div className="flex items-center gap-3">
+          <div className="h-0.5 w-10 bg-[#ED1C24]" />
+          <span className="text-gray-400 font-body text-sm uppercase tracking-widest">
+            Оборудование ведущих производителей
+          </span>
+        </div>
+      </div>
+
+      {/* Scrolling marquee */}
+      <div className="relative overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="flex gap-6 whitespace-nowrap"
+          style={{ width: "max-content" }}
         >
-          <p className="text-gray-400 font-heading font-semibold uppercase text-sm tracking-widest">
-            Оборудование ведущих мировых производителей
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-6 lg:gap-10"
-        >
-          {brands.map((brand) => (
+          {[...brands, ...brands].map((brand, i) => (
             <div
-              key={brand}
-              className="text-gray-300 font-heading font-bold text-base lg:text-lg uppercase tracking-wide hover:text-[#2D3092] transition-colors cursor-default"
+              key={`${brand}-${i}`}
+              className="flex-shrink-0 px-6 py-3 bg-white border border-gray-200 text-gray-500 font-heading font-semibold text-sm hover:text-[#2D3092] hover:border-[#2D3092] transition-colors cursor-default"
             >
               {brand}
             </div>

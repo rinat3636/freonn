@@ -1,25 +1,92 @@
 /*
- * FREONN OBJECTS SECTION — Bold Technical Expressionism
+ * FREONN OBJECTS SECTION — Modern layout with full ceds.ru content
  * Three sub-sections: Industrial, Commercial, Premium
- * Alternating image/text layout with angled dividers
+ * Modern alternating layout with feature lists
+ * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
-import { Factory, Building2, Home, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-// Industrial: HVAC ductwork on factory/warehouse ceiling (blue pipes)
-const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/industrial-ducts_c2b4961f.jpg";
+// Industrial: HVAC ductwork on factory/warehouse ceiling
+const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-industrial-hvac-CUToKRXqhd5NqVLbfLUTwL.webp";
 // Commercial: Cassette AC installation in office ceiling
-const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/commercial-cassette_41446744.jpg";
-// Premium: Underfloor heating pipes installation in premium apartment
-const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/premium-underfloor_14faa962.jpg";
+const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-commercial-ac-25u7KoLKzpAUCxypUsYPv5.webp";
+// Premium: Underfloor heating pipes installation
+const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-premium-home-kiMRuiEYR85DDtWXwESvdS.webp";
+
+const industrialFeatures = [
+  {
+    title: "Меньше расходов и стабильная работа всех систем",
+    desc: "Создаём системы, которые сокращают расходы и увеличивают производительность. Новейшие технологии и передовое оборудование напрямую снижают затраты на энергию, делая инвестиции более выгодными.",
+  },
+  {
+    title: "Надёжность работы без сбоев",
+    desc: "Анализируя нужды клиента, проектируем надёжные системы. Использование качественных компонентов и продуманная интеграция обеспечивают стабильную работу, избавляя от непредвиденных остановок.",
+  },
+  {
+    title: "Быстрая установка и удобство обслуживания",
+    desc: "Учитываем важность каждого рабочего дня для вашего бизнеса. Наш опыт гарантирует выполнение работ в строгие сроки, минимизируя любые возможные простои и неудобства.",
+  },
+];
+
+const industrialObjects = [
+  "Производственные цеха",
+  "Складские комплексы",
+  "Энергетические установки",
+  "Химические заводы",
+  "Пищевые производства",
+  "Объекты тяжёлой промышленности",
+];
+
+const commercialFeatures = [
+  {
+    title: "Снижение затрат и улучшение эффективности",
+    desc: "Установка современных инженерных систем позволяет сократить затраты на энергопотребление до 20%. При этом вы получаете нашу полную поддержку: от одногодичной гарантии на монтажные работы до оперативного устранения возможных недочётов.",
+  },
+  {
+    title: "Долговечное оборудование для вашего бизнеса",
+    desc: "Выбираем оборудование с гарантией до 5 лет — это обеспечивает его надёжную работу, делая жизнь проще как для вас, так и для ваших сотрудников.",
+  },
+  {
+    title: "Гарантия надёжности и регулярное обслуживание",
+    desc: "Проводим регулярное сервисное обслуживание: профилактические осмотры, чистку и настройку, что способствует предотвращению потенциальных проблем и продлению срока службы оборудования.",
+  },
+];
+
+const commercialObjects = [
+  "Рестораны, бары",
+  "Государственные учреждения",
+  "Торговые сети и ритейл",
+  "Офисные комплексы",
+  "Образовательные учреждения",
+  "Бизнес-центры",
+];
+
+const premiumFeatures = [
+  {
+    title: "Загородные дома",
+    desc: "Создаём системы, которые делают загородную жизнь ещё более комфортной и беззаботной. От интеллектуального отопления до автоматизации — ваш дом будет не только красивым, но и умным.",
+  },
+  {
+    title: "Квартиры от 100 м²",
+    desc: "В больших квартирах важна каждая деталь. Предлагаем решения, которые помогут вам создать идеальный микроклимат, безопасность и уют, соответствующие уровню вашей недвижимости.",
+  },
+  {
+    title: "Бассейны",
+    desc: "Наши инженерные системы гарантируют чистоту воды, идеальный микроклимат вокруг бассейна и автоматизацию управления параметрами воды и воздуха.",
+  },
+];
+
+const premiumTags = ["Свежий и чистый воздух", "Контроль температуры и влажности", "Безопасность", "Лёгкость управления"];
 
 export default function ObjectsSection() {
   return (
     <>
-      {/* Industrial */}
-      <section className="py-20 bg-[#F0F2FF]">
+      {/* ── INDUSTRIAL ── */}
+      <section className="py-20 bg-[#F7F8FF]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -32,24 +99,44 @@ export default function ObjectsSection() {
                   Промышленность
                 </span>
               </div>
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] mb-4 leading-tight">
-                Реализуем инженерные системы на промышленных объектах от 500 м²
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] mb-2 leading-tight">
+                Реализуем инженерные системы
               </h2>
-              <p className="text-gray-600 font-body leading-relaxed mb-6">
-                Специализируемся на создании инженерных систем для промышленных объектов: производственных цехов, складских комплексов, энергетических установок, химических заводов и пищевых производств.
+              <p className="text-[#2D3092] font-heading font-semibold text-xl mb-5">
+                на промышленных объектах от 500 м²
               </p>
-              <div className="grid sm:grid-cols-3 gap-4 mb-8">
-                {["Меньше расходов", "Стабильная работа", "Быстрая установка"].map(item => (
-                  <div key={item} className="bg-white border-l-4 border-[#2D3092] p-4">
-                    <Factory size={20} className="text-[#2D3092] mb-2" />
-                    <p className="font-heading font-semibold text-[#0F1340] text-sm uppercase">{item}</p>
+              <p className="text-gray-600 font-body leading-relaxed mb-8">
+                Специализируемся на создании инженерных систем для промышленных объектов, начиная от производственных цехов и складских комплексов, до энергетических установок, объектов тяжёлой промышленности, химических заводов и пищевых производств.
+              </p>
+
+              {/* Feature list */}
+              <div className="space-y-5 mb-8">
+                {industrialFeatures.map((f) => (
+                  <div key={f.title} className="flex gap-4">
+                    <div className="w-1 bg-[#ED1C24] flex-shrink-0 self-stretch" />
+                    <div>
+                      <h4 className="font-heading font-semibold text-[#0F1340] text-sm mb-1">{f.title}</h4>
+                      <p className="text-gray-500 text-sm font-body leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+
+              {/* Object types */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {industrialObjects.map((obj) => (
+                  <span key={obj} className="text-xs px-3 py-1.5 bg-[#0F1340] text-white font-body">
+                    {obj}
+                  </span>
+                ))}
+              </div>
+
               <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Обсудить проект
+                Обсудить проект <ArrowRight size={16} />
               </a>
             </motion.div>
+
+            {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,19 +147,20 @@ export default function ObjectsSection() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={INDUSTRIAL_BG} alt="Промышленный объект" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-[#ED1C24] text-white p-4 w-32 text-center">
-                <div className="font-display text-3xl">500+</div>
-                <div className="font-body text-xs mt-1">объектов сдано</div>
+              <div className="absolute -bottom-5 -left-5 bg-[#ED1C24] text-white p-5 shadow-xl">
+                <div className="font-display text-4xl font-bold leading-none">500+</div>
+                <div className="font-body text-xs mt-1 opacity-90">объектов сдано</div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Commercial */}
+      {/* ── COMMERCIAL ── */}
       <section className="py-20 bg-white">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Image (left on desktop) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,11 +171,13 @@ export default function ObjectsSection() {
               <div className="aspect-[4/3] overflow-hidden">
                 <img src={COMMERCIAL_BG} alt="Коммерческий объект" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-[#2D3092] text-white p-4 w-32 text-center">
-                <div className="font-display text-3xl">20%</div>
-                <div className="font-body text-xs mt-1">экономия энергии</div>
+              <div className="absolute -bottom-5 -right-5 bg-[#2D3092] text-white p-5 shadow-xl">
+                <div className="font-display text-4xl font-bold leading-none">20%</div>
+                <div className="font-body text-xs mt-1 opacity-90">экономия энергии</div>
               </div>
             </motion.div>
+
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -101,39 +191,59 @@ export default function ObjectsSection() {
                   Коммерция
                 </span>
               </div>
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] mb-4 leading-tight">
-                Инженерные системы для коммерческих объектов
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] mb-2 leading-tight">
+                Установка инженерных систем
               </h2>
-              <p className="text-gray-600 font-body leading-relaxed mb-6">
-                Проектируем и устанавливаем инженерные системы, обеспечивая их длительную и стабильную работу. Предлагаем гарантии и поддержку после завершения проекта.
+              <p className="text-[#2D3092] font-heading font-semibold text-xl mb-5">
+                для коммерческих объектов
               </p>
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                {["Рестораны, бары", "Государственные учреждения", "Торговые сети", "Офисные комплексы", "Образовательные учреждения", "Бизнес-центры"].map(item => (
-                  <div key={item} className="flex items-center gap-2">
-                    <CheckCircle2 size={14} className="text-[#2D3092] flex-shrink-0" />
-                    <span className="text-gray-600 text-sm font-body">{item}</span>
+              <p className="text-gray-600 font-body leading-relaxed mb-8">
+                Проектируем и устанавливаем инженерные системы, обеспечивая их длительную и стабильную работу. Предлагаем гарантии и поддержку после завершения проекта: от обслуживания до быстрого решения проблем и советов по улучшению.
+              </p>
+
+              {/* Feature list */}
+              <div className="space-y-5 mb-8">
+                {commercialFeatures.map((f) => (
+                  <div key={f.title} className="flex gap-4">
+                    <div className="w-1 bg-[#2D3092] flex-shrink-0 self-stretch" />
+                    <div>
+                      <h4 className="font-heading font-semibold text-[#0F1340] text-sm mb-1">{f.title}</h4>
+                      <p className="text-gray-500 text-sm font-body leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+
+              {/* Object types */}
+              <p className="text-xs text-gray-400 font-body uppercase tracking-wider mb-3">С какими объектами работаем:</p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {commercialObjects.map((obj) => (
+                  <span key={obj} className="text-xs px-3 py-1.5 border border-gray-200 text-gray-600 font-body hover:border-[#2D3092] hover:text-[#2D3092] transition-colors">
+                    {obj}
+                  </span>
+                ))}
+              </div>
+
               <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Получить расчёт
+                Получить расчёт <ArrowRight size={16} />
               </a>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Premium */}
+      {/* ── PREMIUM ── */}
       <section className="py-20 bg-[#0F1340] text-white relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
+            backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -146,30 +256,44 @@ export default function ObjectsSection() {
                   Премиум недвижимость
                 </span>
               </div>
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-4 leading-tight">
-                Современные инженерные решения для PREMIUM недвижимости
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-2 leading-tight">
+                Современные инженерные решения
               </h2>
-              <p className="text-white/80 font-body leading-relaxed mb-6">
-                Системы для умных домов, сочетающие передовые технологии, непревзойдённое качество и изысканный дизайн. Гарантируем комфорт, безопасность и статус вашей недвижимости.
+              <p className="text-[#ED1C24] font-heading font-semibold text-xl mb-5">
+                для PREMIUM недвижимости
               </p>
-              <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                {[
-                  { icon: Home, label: "Загородные дома", desc: "Интеллектуальное отопление и автоматизация" },
-                  { icon: Building2, label: "Квартиры от 100 м²", desc: "Идеальный микроклимат и безопасность" },
-                  { icon: Home, label: "Бассейны", desc: "Чистота воды и автоматизация параметров" },
-                  { icon: Building2, label: "Умный дом", desc: "Полная автоматизация всех систем" },
-                ].map(item => (
-                  <div key={item.label} className="bg-white/10 border border-white/20 p-4">
-                    <item.icon size={18} className="text-[#ED1C24] mb-2" />
-                    <div className="font-heading font-semibold text-white text-sm mb-1">{item.label}</div>
-                    <div className="text-white/60 text-xs font-body">{item.desc}</div>
+              <p className="text-white/80 font-body leading-relaxed mb-6">
+                Предлагаем системы для умных домов, которые сочетают в себе передовые технологии, непревзойдённое качество и изысканный дизайн. Решения специалистов компании Freonn гарантируют не только комфорт и безопасность, но и подчёркивают статус вашей недвижимости.
+              </p>
+
+              {/* Premium tags */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {premiumTags.map((tag) => (
+                  <span key={tag} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Feature list */}
+              <div className="space-y-5 mb-8">
+                {premiumFeatures.map((f) => (
+                  <div key={f.title} className="flex gap-4">
+                    <div className="w-1 bg-[#ED1C24] flex-shrink-0 self-stretch" />
+                    <div>
+                      <h4 className="font-heading font-semibold text-white text-sm mb-1">{f.title}</h4>
+                      <p className="text-white/60 text-sm font-body leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+
               <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
-                Узнать стоимость
+                Узнать стоимость <ArrowRight size={16} />
               </a>
             </motion.div>
+
+            {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -177,8 +301,12 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] overflow-hidden border border-white/20">
+              <div className="aspect-[4/3] overflow-hidden border border-white/10">
                 <img src={PREMIUM_BG} alt="Премиум недвижимость" className="w-full h-full object-cover" />
+              </div>
+              <div className="absolute -bottom-5 -right-5 bg-[#ED1C24] text-white p-5 shadow-xl">
+                <div className="font-display text-4xl font-bold leading-none">5 лет</div>
+                <div className="font-body text-xs mt-1 opacity-90">гарантия на оборудование</div>
               </div>
             </motion.div>
           </div>

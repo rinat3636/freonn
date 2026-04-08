@@ -1,11 +1,10 @@
 /*
- * FREONN ABOUT — Bold Technical Expressionism
- * Dark navy section with stats and company description
- * Angled top cut, white text on dark background
+ * FREONN ABOUT — Modern layout with ceds.ru content
+ * Dark navy section with stats, description, advantages
+ * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { CheckCircle2 } from "lucide-react";
 
 function useCountUp(target: number, duration: number = 2000, start: boolean = false) {
   const [count, setCount] = useState(0);
@@ -24,19 +23,19 @@ function useCountUp(target: number, duration: number = 2000, start: boolean = fa
 }
 
 const stats = [
-  { value: 10, suffix: "+", label: "лет на инженерном рынке" },
-  { value: 500, suffix: "+", label: "инженерных систем введено в эксплуатацию" },
+  { value: 15, suffix: "", label: "лет на инженерном рынке" },
+  { value: 1280, suffix: "", label: "инженерных систем введено в эксплуатацию" },
   { value: 25, suffix: "", label: "монтажных бригад" },
-  { value: 100, suffix: "%", label: "гарантия на все виды работ" },
+  { value: 5, suffix: " лет", label: "гарантия на оборудование" },
 ];
 
-const advantages = [
-  "Собственный проектный отдел",
-  "Персональный ИТР для каждого проекта",
-  "Прямые договорённости с производителями",
-  "Соблюдение сроков и стандартов безопасности",
-  "Сервисное обслуживание после сдачи объекта",
-  "Работаем с юридическими лицами",
+const cooperationFormats = [
+  "Реализация проекта «Под ключ»",
+  "Монтажные работы по вашему проекту",
+  "Только проектирование систем",
+  "Только подбор и закупка оборудования",
+  "Консультация по системам",
+  "На иных условиях — всё обсуждаемо",
 ];
 
 export default function AboutSection() {
@@ -46,7 +45,7 @@ export default function AboutSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -56,26 +55,20 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="relative bg-gradient-to-br from-[#0F1340] to-[#2D3092] text-white py-20 overflow-hidden"
-      style={{
-        clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
-        marginTop: "-4rem",
-        paddingTop: "8rem",
-        paddingBottom: "8rem",
-      }}
+      className="relative bg-[#0F1340] text-white py-20 overflow-hidden"
     >
-      {/* Decorative dot grid */}
+      {/* Subtle grid pattern */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
+          backgroundImage: "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: description */}
+        {/* Top: heading + description */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,34 +84,57 @@ export default function AboutSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6 leading-tight">
               Инженерная компания Freonn
             </h2>
-            <p className="text-white/80 font-body leading-relaxed mb-6">
-              Freonn предоставляет полный комплекс услуг по проектированию, монтажу, пусконаладке и сервисному обслуживанию внутренних инженерных систем под ключ в Москве и Московской области.
+            <p className="text-white/80 font-body leading-relaxed mb-4">
+              Freonn предоставляет полный комплекс услуг по проектированию, монтажу, пусконаладке и сервисному обслуживанию внутренних инженерных систем (вентиляция и кондиционирование) под ключ в Москве и Московской области.
             </p>
-            <p className="text-white/70 font-body leading-relaxed mb-8">
-              Выбирая нашу компанию, вы получаете надёжного партнёра, специализирующегося на сложных инженерных проектах для среднего и крупного бизнеса. Берём на себя все этапы работы — от планирования до реализации.
+            <p className="text-white/70 font-body leading-relaxed mb-4">
+              Выбирая нашу компанию, вы получаете надёжного партнёра, специализирующегося на сложных инженерных проектах для среднего и крупного бизнеса. С нами вы можете забыть о сложностях управления большими техническими проектами.
             </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {advantages.map(adv => (
-                <div key={adv} className="flex items-start gap-2">
-                  <CheckCircle2 size={16} className="text-[#ED1C24] flex-shrink-0 mt-0.5" />
-                  <span className="text-white/80 text-sm font-body">{adv}</span>
-                </div>
-              ))}
-            </div>
+            <p className="text-white/70 font-body leading-relaxed">
+              Берём на себя все этапы работы — от планирования до реализации, позволяя вам фокусироваться на том, что действительно важно.
+            </p>
           </motion.div>
 
-          {/* Right: stats */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-6"
           >
-            {stats.map((stat) => (
-              <StatCard key={stat.label} stat={stat} visible={visible} />
-            ))}
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-0.5 w-10 bg-[#ED1C24]" />
+              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+                Форматы сотрудничества
+              </span>
+            </div>
+            <div className="space-y-3">
+              {cooperationFormats.map((item, i) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="w-1.5 h-1.5 bg-[#ED1C24] flex-shrink-0 group-hover:scale-150 transition-transform" />
+                  <span className="text-white/80 font-body text-sm group-hover:text-white transition-colors">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
+                Связаться по проекту
+              </a>
+            </div>
           </motion.div>
+        </div>
+
+        {/* Stats row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          {stats.map((stat) => (
+            <StatCard key={stat.label} stat={stat} visible={visible} />
+          ))}
         </div>
       </div>
     </section>
@@ -128,11 +144,11 @@ export default function AboutSection() {
 function StatCard({ stat, visible }: { stat: typeof stats[0]; visible: boolean }) {
   const count = useCountUp(stat.value, 2000, visible);
   return (
-    <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 text-center">
-      <div className="stat-number text-5xl lg:text-6xl mb-2">
+    <div className="bg-[#0F1340] p-8 text-center hover:bg-[#1a2060] transition-colors duration-300">
+      <div className="stat-number text-5xl lg:text-6xl mb-3">
         {count}{stat.suffix}
       </div>
-      <p className="text-white/70 text-sm font-body leading-snug">{stat.label}</p>
+      <p className="text-white/60 text-sm font-body leading-snug">{stat.label}</p>
     </div>
   );
 }
