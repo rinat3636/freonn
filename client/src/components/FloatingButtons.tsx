@@ -4,8 +4,10 @@
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, ArrowUp, MessageCircle } from "lucide-react";
-import { toast } from "sonner";
+import { Phone, ArrowUp } from "lucide-react";
+
+const MAX_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/max-logo_b549f334.svg";
+const MAX_URL = "https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA";
 
 export default function FloatingButtons() {
   const [showTop, setShowTop] = useState(false);
@@ -18,17 +20,19 @@ export default function FloatingButtons() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* WhatsApp/Telegram */}
-      <motion.button
+      {/* MAX messenger */}
+      <motion.a
+        href={MAX_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
-        onClick={() => toast.info("Мессенджеры подключаются — скоро будут доступны")}
-        className="w-12 h-12 bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors hover:scale-110 active:scale-95 rounded-full"
-        title="Написать в мессенджер"
+        className="w-12 h-12 bg-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full overflow-hidden border border-gray-100"
+        title="Написать в MAX"
       >
-        <MessageCircle size={22} />
-      </motion.button>
+        <img src={MAX_LOGO} alt="MAX" className="w-8 h-8 object-contain" />
+      </motion.a>
 
       {/* Phone */}
       <motion.a
