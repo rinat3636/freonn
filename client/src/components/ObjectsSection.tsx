@@ -6,12 +6,12 @@
 import { motion } from "framer-motion";
 import { Factory, Building2, Home, CheckCircle2 } from "lucide-react";
 
-// Industrial: Russian warehouse with HVAC ventilation ducts on ceiling
-const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-warehouse-hvac_c17201cc.jpg";
-// Commercial: Moscow Neo Geo Business Center modern office interior
-const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-office-interior_6b0621cc.jpg";
-// Premium: Russian premium apartment interior design Moscow
-const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/ru-premium-apartment_ec67ced3.webp";
+// Industrial: HVAC ductwork on factory/warehouse ceiling (blue pipes)
+const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/industrial-ducts_c2b4961f.jpg";
+// Commercial: Cassette AC installation in office ceiling
+const COMMERCIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/commercial-cassette_41446744.jpg";
+// Premium: Underfloor heating pipes installation in premium apartment
+const PREMIUM_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/premium-underfloor_14faa962.jpg";
 
 export default function ObjectsSection() {
   return (
