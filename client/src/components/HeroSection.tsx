@@ -11,6 +11,7 @@ const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPU
 const services = [
   "Вентиляция", "Кондиционирование", "Дымоудаление",
   "Отопление", "Холодоснабжение", "Электроснабжение",
+  "Пескоструйная обработка",
 ];
 
 const quickLinks = [
@@ -67,9 +68,9 @@ export default function HeroSection() {
               {/* Service tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {services.map((s) => (
-                  <span key={s} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors cursor-default rounded-full">
+                  <a key={s} href="#services" className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors rounded-full">
                     {s}
-                  </span>
+                  </a>
                 ))}
               </div>
 
