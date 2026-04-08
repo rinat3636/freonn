@@ -146,8 +146,8 @@ export default function ServicesSection() {
                 className={`group flex flex-col lg:flex-row ${isEven ? "lg:flex-row-reverse" : ""} border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-colors duration-300`}
               >
                 {/* Image side */}
-                <div className="lg:w-72 xl:w-80 flex-shrink-0 overflow-hidden bg-gray-100">
-                  <div className="h-48 lg:h-full relative overflow-hidden">
+                <div className="lg:w-64 xl:w-72 flex-shrink-0 overflow-hidden bg-gray-100">
+                  <div className="h-44 sm:h-52 lg:h-full relative overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}

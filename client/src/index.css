@@ -250,9 +250,26 @@
   }
 }
 
-/* Smooth scroll */
+/* Smooth scroll + mobile fixes */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
+
+/* Prevent horizontal overflow from animated elements */
+section {
+  overflow: hidden;
+}
+
+/* Fix mobile tap highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom scrollbar */

@@ -71,7 +71,7 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2 lg:sticky lg:top-24 self-start"
+            className="lg:col-span-2 lg:sticky lg:top-24 self-start col-span-full lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-0.5 w-10 bg-[#ED1C24]" />
@@ -94,7 +94,7 @@ export default function FAQSection() {
           </motion.div>
 
           {/* Right: accordion */}
-          <div className="lg:col-span-3 space-y-2">
+          <div className="col-span-full lg:col-span-3 space-y-2">
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}

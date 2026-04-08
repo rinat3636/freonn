@@ -144,12 +144,12 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img src={INDUSTRIAL_BG} alt="Промышленный объект" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-5 -left-5 bg-[#ED1C24] text-white p-5 shadow-xl">
-                <div className="font-display text-4xl font-bold leading-none">500+</div>
-                <div className="font-body text-xs mt-1 opacity-90">объектов сдано</div>
+                <div className="absolute bottom-4 left-4 bg-[#ED1C24] text-white p-4 shadow-xl rounded-xl">
+                  <div className="font-display text-3xl font-bold leading-none">500+</div>
+                  <div className="font-body text-xs mt-1 opacity-90">объектов сдано</div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -168,12 +168,12 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1 relative"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img src={COMMERCIAL_BG} alt="Коммерческий объект" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-5 -right-5 bg-[#2D3092] text-white p-5 shadow-xl">
-                <div className="font-display text-4xl font-bold leading-none">20%</div>
-                <div className="font-body text-xs mt-1 opacity-90">экономия энергии</div>
+                <div className="absolute bottom-4 right-4 bg-[#2D3092] text-white p-4 shadow-xl rounded-xl">
+                  <div className="font-display text-3xl font-bold leading-none">20%</div>
+                  <div className="font-body text-xs mt-1 opacity-90">экономия энергии</div>
+                </div>
               </div>
             </motion.div>
 
@@ -301,12 +301,12 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] overflow-hidden border border-white/10">
+              <div className="aspect-[4/3] overflow-hidden border border-white/10 relative">
                 <img src={PREMIUM_BG} alt="Премиум недвижимость" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-5 -right-5 bg-[#ED1C24] text-white p-5 shadow-xl">
-                <div className="font-display text-4xl font-bold leading-none">5 лет</div>
-                <div className="font-body text-xs mt-1 opacity-90">гарантия на оборудование</div>
+                <div className="absolute bottom-4 right-4 bg-[#ED1C24] text-white p-4 shadow-xl rounded-xl">
+                  <div className="font-display text-3xl font-bold leading-none">5 лет</div>
+                  <div className="font-body text-xs mt-1 opacity-90">гарантия на оборудование</div>
+                </div>
               </div>
             </motion.div>
           </div>
