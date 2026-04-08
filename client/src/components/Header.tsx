@@ -61,7 +61,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full">
       {/* Main header — transparent background */}
-      <div className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-white/20" : "bg-transparent"}`}>
+      <div className="bg-white shadow-sm border-b border-gray-100">
         <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-2.5 sm:py-3">
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
@@ -99,13 +99,13 @@ export default function Header() {
           </div>
 
           {/* Mobile CTA */}
-          <a href="#contacts" className="md:hidden btn-primary text-xs py-2 px-3 flex-shrink-0">
+          <a href="#contacts" className="md:hidden text-xs py-2 px-4 flex-shrink-0 border-2 border-[#ED1C24] text-[#ED1C24] font-heading font-bold uppercase tracking-wide rounded-full hover:bg-[#ED1C24] hover:text-white transition-colors">
             Заявка
           </a>
 
           {/* Mobile menu toggle */}
           <button
-            className={`lg:hidden p-2 flex-shrink-0 ${scrolled ? "text-[#2D3092]" : "text-white"}`}
+            className="lg:hidden p-2 flex-shrink-0 text-[#2D3092]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >
@@ -114,13 +114,13 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden lg:block border-t ${scrolled ? "border-gray-100 bg-white" : "border-white/10 bg-transparent"}`}>
+        <nav className="hidden lg:block border-t border-gray-100 bg-white">
           <div className="container flex items-center gap-0 overflow-x-auto">
             {navItems.map(item => (
               <div key={item.label} className="relative group flex-shrink-0">
                 <a
                   href={item.href}
-                  className={`nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap ${scrolled ? "text-[#1A1A2E] hover:text-[#2D3092]" : "text-white/90 hover:text-white"}`}
+                  className="nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap text-[#1A1A2E] hover:text-[#2D3092]"
                 >
                   {item.label}
                   {item.children && <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />}
