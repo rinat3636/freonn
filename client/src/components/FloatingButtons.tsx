@@ -35,10 +35,12 @@ export default function FloatingButtons() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
-        className="w-12 h-12 bg-[#1a1a3e] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full"
+        className="w-12 h-12 bg-[#1a1a3e] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full relative"
         title="Написать в MAX"
       >
         <MaxIcon />
+        {/* Pulse ring */}
+        <span className="absolute inset-0 animate-ping bg-[#1a1a3e] opacity-40 rounded-full" />
       </motion.a>
 
       {/* Phone */}
