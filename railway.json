@@ -2,10 +2,10 @@
   "$schema": "https://railway.com/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "pnpm install --no-frozen-lockfile && pnpm run build:pages"
+    "buildCommand": "pnpm install --no-frozen-lockfile && pnpm run build"
   },
   "deploy": {
-    "startCommand": "npx serve dist/public -p $PORT",
+    "startCommand": "NODE_ENV=production node dist/index.js",
     "healthcheckPath": "/",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
