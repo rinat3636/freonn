@@ -41,7 +41,7 @@ export default function HeroSection() {
       {/* Red accent stripe */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ED1C24]" />
 
-      <div className="container relative z-10 py-12 sm:py-16 lg:py-20">
+      <div className="container relative z-10 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 xl:gap-16 items-center">
 
           {/* Left: headline */}

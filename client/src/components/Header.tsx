@@ -59,39 +59,9 @@ export default function Header() {
   const handleTopLink = () => toast.info("Раздел в разработке");
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      {/* Top utility bar — hidden on small mobile */}
-      <div className="bg-[#0F1340] text-white/80 text-xs">
-        <div className="container flex items-center justify-between py-1.5 gap-2">
-          {/* Left links — desktop only */}
-          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-            {topBarLinks.map(link => (
-              <button key={link} onClick={handleTopLink}
-                className="hover:text-white transition-colors font-body whitespace-nowrap">{link}</button>
-            ))}
-          </div>
-
-          {/* Right side — always visible */}
-          <div className="flex items-center gap-2 sm:gap-4 ml-auto min-w-0">
-            <a href="mailto:info@freonn.ru" className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors truncate">
-              <Mail size={11} className="flex-shrink-0" />
-              <span className="hidden md:inline">info@freonn.ru</span>
-            </a>
-            <a href="tel:88001012009" className="flex items-center gap-1.5 hover:text-white transition-colors font-semibold text-white whitespace-nowrap">
-              <Phone size={11} className="flex-shrink-0" />
-              <span className="hidden xs:inline">8(800)101-2009</span>
-              <span className="xs:hidden">2009</span>
-            </a>
-            <button onClick={handleTopLink}
-              className="bg-[#ED1C24] text-white px-3 py-1 text-xs font-heading font-semibold uppercase tracking-wide hover:bg-red-700 transition-colors rounded-full whitespace-nowrap flex-shrink-0">
-              Звонок
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Main header */}
-      <div className={`bg-white border-b border-gray-100 transition-shadow duration-300 ${scrolled ? "shadow-lg" : ""}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full">
+      {/* Main header — transparent background */}
+      <div className={`transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-white/20" : "bg-transparent"}`}>
         <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-2.5 sm:py-3">
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
@@ -135,7 +105,7 @@ export default function Header() {
 
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden p-2 text-[#2D3092] flex-shrink-0"
+            className={`lg:hidden p-2 flex-shrink-0 ${scrolled ? "text-[#2D3092]" : "text-white"}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Меню"
           >
@@ -144,13 +114,13 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:block border-t border-gray-100 bg-white">
+        <nav className={`hidden lg:block border-t ${scrolled ? "border-gray-100 bg-white" : "border-white/10 bg-transparent"}`}>
           <div className="container flex items-center gap-0 overflow-x-auto">
             {navItems.map(item => (
               <div key={item.label} className="relative group flex-shrink-0">
                 <a
                   href={item.href}
-                  className="nav-link flex items-center gap-1 px-3 xl:px-4 py-3 text-[#1A1A2E] hover:text-[#2D3092] whitespace-nowrap"
+                  className={`nav-link flex items-center gap-1 px-3 xl:px-4 py-3 whitespace-nowrap ${scrolled ? "text-[#1A1A2E] hover:text-[#2D3092]" : "text-white/90 hover:text-white"}`}
                 >
                   {item.label}
                   {item.children && <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />}
