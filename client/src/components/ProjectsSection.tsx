@@ -1,5 +1,5 @@
 /*
- * FREONN PROJECTS — Modern layout with real project names from ceds.ru
+ * FREONN PROJECTS — All 12 completed objects from ceds.ru
  * Grid with hover overlays, real project titles
  * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
@@ -14,13 +14,13 @@ const projects = [
   {
     title: "Монтаж вентиляции и кондиционирования в БЦ «Aero City»",
     category: "Коммерция",
-    desc: "Поставка и монтаж систем вентиляции, кондиционирования и дымоудаления.",
+    desc: "Установка системы вентиляции и кондиционирования, подбор оборудования, проведение монтажных работ.",
     img: GEN_COMMERCIAL,
   },
   {
     title: "Монтаж инженерных систем в производственном цеху Arida Home",
     category: "Промышленность",
-    desc: "Монтаж систем вентиляции для производственного комплекса.",
+    desc: "Монтаж систем вентиляции для компании Арида Хоум на производстве аромадиффузоров.",
     img: GEN_INDUSTRIAL,
   },
   {
@@ -32,8 +32,26 @@ const projects = [
   {
     title: "Кондиционирование на производстве Квант",
     category: "Промышленность",
-    desc: "Монтаж промышленных систем кондиционирования воздуха.",
+    desc: "Проектирование кондиционирования, монтаж вентиляции, установка систем кондиционирования, пусконаладочные работы.",
     img: `${CDN}/proj-industrial-vent_1f44b222.jpg`,
+  },
+  {
+    title: "Установка системы вентиляции в школе танцев «Lotos»",
+    category: "Коммерция",
+    desc: "Монтаж приточно-вытяжной вентиляции, подбор оборудования, проведение пусконаладочных работ.",
+    img: `${CDN}/equip-ventilation_25987b56.jpg`,
+  },
+  {
+    title: "Монтаж вытяжной вентиляции для лаборатории в школе Magic Castle",
+    category: "Образование",
+    desc: "Проектирование и монтаж системы вытяжной вентиляции, пусконаладочные работы.",
+    img: `${CDN}/ru-industrial-ventilation_4939c0aa.jpg`,
+  },
+  {
+    title: "Монтаж инженерных систем в Московском училище олимпийского резерва №1",
+    category: "Образование",
+    desc: "Монтаж вентиляции, дымоудаления, установка VRF систем, пусконаладочные работы, поставка материала и оборудования.",
+    img: `${CDN}/proj-ductwork_f5dd8a8d.jpg`,
   },
   {
     title: "Монтаж приточно-вытяжной вентиляции в цеху ООО «Ресна»",
@@ -42,28 +60,28 @@ const projects = [
     img: `${CDN}/ru-hvac-production_2fc3fdd7.jpg`,
   },
   {
-    title: "Вентиляция, кондиционирование и отопление для фитнес-центра Vysota",
-    category: "Коммерция",
-    desc: "Генеральное проектирование, поставка оборудования, монтаж вентиляции, кондиционирования, отопления, теплового пола, освещения.",
+    title: "Монтаж короба для системы кондиционирования в Третьяковской галерее",
+    category: "Культура",
+    desc: "Монтаж крышного короба для VRF-системы кондиционирования в историческом здании.",
     img: `${CDN}/proj-fancoil_49fccb2c.jpg`,
   },
   {
-    title: "Монтаж вытяжной вентиляции для лаборатории в школе Magic Castle",
-    category: "Образование",
-    desc: "Монтаж специализированной вытяжной системы вентиляции для лабораторных помещений.",
-    img: `${CDN}/ru-industrial-ventilation_4939c0aa.jpg`,
-  },
-  {
-    title: "Монтаж инженерных систем в Московском училище олимпийского резерва №1",
-    category: "Образование",
-    desc: "Комплексный монтаж систем вентиляции и кондиционирования спортивного объекта.",
-    img: `${CDN}/proj-ductwork_f5dd8a8d.jpg`,
-  },
-  {
-    title: "Монтаж системы вентиляции в школе танцев «Lotos»",
+    title: "Вентиляция, кондиционирование и отопление для фитнес-центра Vysota",
     category: "Коммерция",
-    desc: "Установка системы вентиляции в танцевальной студии.",
-    img: `${CDN}/equip-ventilation_25987b56.jpg`,
+    desc: "Генеральное проектирование, поставка оборудования, монтаж вентиляции, кондиционирования, отопления, теплового пола, освещения.",
+    img: GEN_COMMERCIAL,
+  },
+  {
+    title: "Монтаж систем вентиляции и кондиционирования в корпусе ГК «Электронинвест»",
+    category: "Промышленность",
+    desc: "Проектирование и установка систем вентиляции и кондиционирования в производственно-исследовательском корпусе.",
+    img: GEN_INDUSTRIAL,
+  },
+  {
+    title: "Монтаж системы вентиляции на пиво-безалкогольном комбинате Очаково",
+    category: "Промышленность",
+    desc: "Установка системы вентиляции, противопожарных клапанов, проведение пусконаладочных работ.",
+    img: `${CDN}/proj-industrial-vent_1f44b222.jpg`,
   },
 ];
 
@@ -71,7 +89,8 @@ const categoryColors: Record<string, string> = {
   "Промышленность": "bg-[#2D3092] text-white",
   "Коммерция": "bg-[#ED1C24] text-white",
   "Образование": "bg-[#0F1340] text-white",
-  "Премиум": "bg-amber-600 text-white",
+  "Культура": "bg-amber-600 text-white",
+  "Премиум": "bg-emerald-700 text-white",
 };
 
 export default function ProjectsSection() {
@@ -93,7 +112,7 @@ export default function ProjectsSection() {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
-              Наши выполненные проекты
+              Выполненные объекты
             </h2>
             <a href="#contacts" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
               Все проекты <ArrowRight size={16} />
@@ -101,7 +120,7 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
 
-        {/* Masonry-style grid: first row 3 cols, second row 2 cols, third row 2 cols */}
+        {/* Main featured grid: first item wide */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
             <motion.div
@@ -111,10 +130,10 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
               className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl ${
-                i === 0 ? "lg:col-span-2 lg:row-span-1" : ""
+                i === 0 ? "lg:col-span-2" : ""
               }`}
             >
-              <div className={`relative overflow-hidden ${i === 0 ? "aspect-[21/9] lg:aspect-[21/9]" : "aspect-[16/10]"}`}>
+              <div className={`relative overflow-hidden ${i === 0 ? "aspect-[21/9]" : "aspect-[16/10]"}`}>
                 <img
                   src={project.img}
                   alt={project.title}

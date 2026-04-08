@@ -25,8 +25,12 @@ function useCountUp(target: number, duration: number = 2000, start: boolean = fa
 const stats = [
   { value: 15, suffix: "", label: "лет на инженерном рынке" },
   { value: 1280, suffix: "", label: "инженерных систем введено в эксплуатацию" },
+  { value: 247, suffix: "", label: "систем на объектах от 1 000 м²" },
+  { value: 48, suffix: "", label: "постоянных клиента" },
+  { value: 12000, suffix: "", label: "единиц установленного оборудования" },
+  { value: 30000, suffix: "", label: "погонных метров воздуховодов" },
   { value: 25, suffix: "", label: "монтажных бригад" },
-  { value: 5, suffix: " лет", label: "гарантия на оборудование" },
+  { value: 96, suffix: "%", label: "проектов без корректировок" },
 ];
 
 const cooperationFormats = [
@@ -130,7 +134,24 @@ export default function AboutSection() {
           </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Trusted clients */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 p-6 border border-white/10 rounded-2xl bg-white/5"
+        >
+          <p className="text-white/70 font-body text-sm leading-relaxed">
+            Нам доверяют монтаж инженерных систем отечественные научно-исследовательские институты, предприятия группы
+            <span className="text-white font-semibold"> РОСАТОМ</span>,
+            <span className="text-white font-semibold"> Ассоциация ГК «Ташир»</span>,
+            <span className="text-white font-semibold"> ООО ТРЦ «РИО»</span>,
+            <span className="text-white font-semibold"> Леруа Мерлен Восток</span> и другие лидеры рынка.
+          </p>
+        </motion.div>
+
+        {/* Stats grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
           {stats.map((stat) => (
             <StatCard key={stat.label} stat={stat} visible={visible} />

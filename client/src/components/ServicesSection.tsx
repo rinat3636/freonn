@@ -5,11 +5,12 @@
  * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
-import { ArrowRight, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert } from "lucide-react";
+import { ArrowRight, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert, Hammer } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 const GEN_VENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-ventilation-unit-5ebe3bmzqsCGdGpvbDz2zo.webp";
 const GEN_CHILLER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-chiller-E9FzvTdbvYDJ9o4F7zSQNh.webp";
+const GEN_SANDBLAST = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-sandblasting-hbNQQVnnQzjyjyRKGHS8YY.webp";
 
 const services = [
   {
@@ -80,6 +81,17 @@ const services = [
   },
   {
     id: 7,
+    icon: Hammer,
+    title: "Пескоструйная обработка",
+    shortTitle: "Пескоструй",
+    description:
+      "Выполняем пескоструйную обработку металлических конструкций и зданий. Удаляем ржавчину, старую краску, окалину и загрязнения с металлических балок, ферм, резервуаров, фасадов и других конструкций. Подготавливаем поверхности под покраску, нанесение защитных покрытий и антикоррозийной обработки в соответствии с ГОСТ и международными стандартами.",
+    items: ["Металлические конструкции", "Фасады зданий", "Резервуары и трубопроводы", "Балки и фермы", "Антикоррозийная обработка", "Подготовка под покраску"],
+    image: GEN_SANDBLAST,
+    color: "#ED1C24",
+  },
+  {
+    id: 8,
     icon: Zap,
     title: "Электроснабжение и освещение",
     shortTitle: "Электроснабжение",

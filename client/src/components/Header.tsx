@@ -22,11 +22,13 @@ const navItems = [
       { label: "Холодоснабжение", href: "#services" },
       { label: "Водоснабжение и канализация", href: "#services" },
       { label: "Электроснабжение", href: "#services" },
+      { label: "Пескоструйная обработка", href: "#services" },
     ]
   },
   { label: "Цены", href: "#pricing" },
   { label: "Объекты", href: "#projects" },
   { label: "Блог", href: "#blog" },
+  { label: "Вопросы", href: "#faq" },
   { label: "Контакты", href: "#contacts" },
 ];
 

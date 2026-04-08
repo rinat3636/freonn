@@ -100,7 +100,7 @@ export default function ContactSection() {
                   onChange={e => setForm({ ...form, type: e.target.value })}
                   className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
                 >
-                  {["Монтаж", "Проектирование", "Обслуживание", "Комплексный проект", "Консультация"].map(opt => (
+                  {["Монтаж вентиляции", "Монтаж кондиционирования", "Монтаж дымоудаления", "Монтаж отопления", "Холодоснабжение", "Водоснабжение и канализация", "Электроснабжение", "Пескоструйная обработка", "Проектирование ОВиК", "Комплексный проект", "Пусконаладочные работы", "Сервисное обслуживание", "Консультация"].map(opt => (
                     <option key={opt} value={opt} className="bg-[#0F1340]">{opt}</option>
                   ))}
                 </select>

@@ -1,6 +1,6 @@
 /*
- * FREONN BLOG — Modern layout with real ceds.ru article topics
- * Clean article list with reading time
+ * FREONN BLOG — Full article list from ceds.ru
+ * Clean article layout with reading time
  * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
  */
 import { motion } from "framer-motion";
@@ -12,9 +12,9 @@ const articles = [
   {
     title: "Профессиональный монтаж тепловых пунктов (ИТП) в Москве",
     category: "Отопление",
-    readTime: "5 минут",
+    readTime: "7 минут",
     img: `${CDN}/equip-heating_49ba3696.jpg`,
-    excerpt: "Монтаж ИТП под ключ — это комплекс работ, выполняемый силами специализированной сертифицированной организации.",
+    excerpt: "Монтаж ИТП под ключ — это комплекс работ, выполняемый силами специализированной сертифицированной организации. Рассказываем о всех этапах и требованиях.",
   },
   {
     title: "Автоматизация инженерных систем",
@@ -50,6 +50,48 @@ const articles = [
     readTime: "9 минут",
     img: `${CDN}/equip-ventilation_25987b56.jpg`,
     excerpt: "Вентиляция в школе — система, предназначенная для обеспечения циркуляции свежего воздуха внутри учебных классов и удаления загрязнённого воздуха.",
+  },
+  {
+    title: "Кондиционирование кинотеатра",
+    category: "Кондиционирование",
+    readTime: "5 минут",
+    img: `${CDN}/equip-ac_decafa77.webp`,
+    excerpt: "Кинотеатры предъявляют особые требования к системам кондиционирования: тихая работа, равномерное распределение воздуха, точный контроль температуры.",
+  },
+  {
+    title: "Вентиляция медицинских учреждений",
+    category: "Вентиляция",
+    readTime: "7 минут",
+    img: `${CDN}/ru-hvac-production_2fc3fdd7.jpg`,
+    excerpt: "Медицинские учреждения требуют особых решений вентиляции: поддержание чистоты воздуха, зонирование давления, соответствие СанПиН.",
+  },
+  {
+    title: "Кондиционирование серверной комнаты",
+    category: "Кондиционирование",
+    readTime: "7 минут",
+    img: `${CDN}/equip-electrical_a91c8ffb.jpg`,
+    excerpt: "Серверные комнаты требуют прецизионного охлаждения с точным контролем температуры и влажности. Рассматриваем все варианты решений.",
+  },
+  {
+    title: "Воздушное отопление производственного помещения (цеха)",
+    category: "Отопление",
+    readTime: "5 минут",
+    img: `${CDN}/equip-heating_49ba3696.jpg`,
+    excerpt: "Воздушное отопление — наиболее эффективный способ обогрева производственных помещений большого объёма. Разбираем схемы и оборудование.",
+  },
+  {
+    title: "Вентиляция автостоянки (парковки, паркинга)",
+    category: "Вентиляция",
+    readTime: "5 минут",
+    img: `${CDN}/ru-industrial-ventilation_4939c0aa.jpg`,
+    excerpt: "Вентиляция паркинга — обязательное требование пожарной безопасности. Рассматриваем нормативы, схемы и оборудование для подземных и надземных стоянок.",
+  },
+  {
+    title: "Диспетчеризация систем вентиляции и кондиционирования",
+    category: "Автоматизация",
+    readTime: "8 минут",
+    img: `${CDN}/equip-electrical_a91c8ffb.jpg`,
+    excerpt: "Диспетчеризация позволяет управлять всеми инженерными системами здания из единого центра, снижая затраты на обслуживание и повышая надёжность.",
   },
 ];
 
@@ -161,15 +203,15 @@ export default function BlogSection() {
           </div>
         </div>
 
-        {/* Bottom row — remaining articles */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 pt-8 border-t border-gray-100">
-          {articles.slice(3).map((article, i) => (
+        {/* Bottom rows — remaining articles in 3 columns */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8 pt-8 border-t border-gray-100">
+          {articles.slice(4).map((article, i) => (
             <motion.article
               key={article.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
               className="group cursor-pointer"
             >
               <div className="overflow-hidden aspect-[16/9] mb-3 rounded-xl">
@@ -180,15 +222,15 @@ export default function BlogSection() {
                   loading="lazy"
                 />
               </div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
+              <div className="flex items-center gap-2 mb-2 flex-wrap">
+                <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-0.5 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                   {article.category}
                 </span>
                 <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
-                  <Clock size={11} /> {article.readTime}
+                  <Clock size={10} /> {article.readTime}
                 </span>
               </div>
-              <h3 className="font-heading font-semibold text-[#0F1340] text-sm mb-2 group-hover:text-[#2D3092] transition-colors leading-snug">
+              <h3 className="font-heading font-semibold text-[#0F1340] text-xs mb-2 group-hover:text-[#2D3092] transition-colors leading-snug line-clamp-3">
                 {article.title}
               </h3>
               <span className="text-[#ED1C24] text-xs font-heading font-semibold group-hover:underline">

@@ -13,6 +13,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import AdvantagesSection from "@/components/AdvantagesSection";
 import PartnersSection from "@/components/PartnersSection";
 import BlogSection from "@/components/BlogSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -32,6 +33,7 @@ export default function Home() {
         <AdvantagesSection />
         <PartnersSection />
         <BlogSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />
