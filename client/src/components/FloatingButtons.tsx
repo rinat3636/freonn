@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
 
-const MAX_URL = "https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA";
+const MAX_URL = "https://max.ru/id3604084591_biz";
 
 function MaxIcon() {
   return (
