@@ -10,7 +10,7 @@ const documents = [
   {
     category: "Лицензии",
     icon: Shield,
-    color: "#ED1C24",
+    color: "#B91C1C",
     items: [
       {
         title: "Лицензия МЧС России",

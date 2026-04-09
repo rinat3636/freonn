@@ -39,7 +39,7 @@ export default function NotFound() {
                 404
               </span>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-[#ED1C24]/10 rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 bg-[#B91C1C]/10 rounded-full flex items-center justify-center">
                   <span className="text-4xl">🔧</span>
                 </div>
               </div>
@@ -63,9 +63,9 @@ export default function NotFound() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#ED1C24]/30 hover:shadow-md transition-all group"
+                  className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#B91C1C]/30 hover:shadow-md transition-all group"
                 >
-                  <div className="font-heading font-semibold text-[#0F1340] text-sm mb-1 group-hover:text-[#ED1C24] transition-colors flex items-center gap-1">
+                  <div className="font-heading font-semibold text-[#0F1340] text-sm mb-1 group-hover:text-[#B91C1C] transition-colors flex items-center gap-1">
                     {link.label} <ArrowRight size={12} />
                   </div>
                   <div className="text-gray-400 text-xs font-body">{link.desc}</div>

@@ -75,7 +75,7 @@ const categoryData = {
     subtitle: "Инженерные системы для бизнеса и коммерции",
     description: "Проектируем и монтируем инженерные системы для торговых центров, бизнес-центров, ресторанов, отелей, фитнес-клубов и других коммерческих объектов. Создаём комфортный микроклимат, который повышает лояльность клиентов и продуктивность сотрудников.",
     icon: Building2,
-    color: "#ED1C24",
+    color: "#B91C1C",
     breadcrumb: [{ label: "Объекты", href: "/obekty" }, { label: "Коммерческие" }],
     projects: [
       {
@@ -283,7 +283,7 @@ export default function ObjectCategoryPage({ category }: ObjectCategoryPageProps
                       </span>
                     ))}
                   </div>
-                  <span className="text-[#ED1C24] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
+                  <span className="text-[#B91C1C] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
                     Информация об объекте →
                   </span>
                 </div>

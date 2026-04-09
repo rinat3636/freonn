@@ -1,7 +1,7 @@
 /*
  * FREONN PROCESS — Modern timeline layout
  * Horizontal timeline on desktop, vertical on mobile
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 
@@ -26,8 +26,8 @@ export default function ProcessSection() {
           className="mb-14"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
               Как мы работаем
             </span>
           </div>
@@ -57,8 +57,8 @@ export default function ProcessSection() {
                   className="flex flex-col items-center text-center px-3 group"
                 >
                   {/* Circle */}
-                  <div className="w-16 h-16 bg-white border-2 border-gray-200 group-hover:border-[#ED1C24] flex items-center justify-center mb-5 transition-colors duration-300 relative z-10 rounded-full">
-                    <span className="font-display text-xl text-[#2D3092] group-hover:text-[#ED1C24] transition-colors font-bold">
+                  <div className="w-16 h-16 bg-white border-2 border-gray-200 group-hover:border-[#B91C1C] flex items-center justify-center mb-5 transition-colors duration-300 relative z-10 rounded-full">
+                    <span className="font-display text-xl text-[#2D3092] group-hover:text-[#B91C1C] transition-colors font-bold">
                       {step.num}
                     </span>
                   </div>
@@ -105,7 +105,7 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 bg-[#F7F8FF] border-l-4 border-[#ED1C24] p-6 flex flex-col md:flex-row items-center gap-6 rounded-2xl"
+          className="mt-12 bg-[#F7F8FF] border-l-4 border-[#B91C1C] p-6 flex flex-col md:flex-row items-center gap-6 rounded-2xl"
         >
           <div className="flex-1">
             <h3 className="font-heading font-semibold text-[#0F1340] text-lg mb-1">

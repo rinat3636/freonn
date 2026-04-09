@@ -62,8 +62,8 @@ export default function ReviewsSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-10 bg-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+                <div className="h-0.5 w-10 bg-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                   Форматы работы
                 </span>
               </div>
@@ -87,9 +87,9 @@ export default function ReviewsSection() {
               {cooperationFormats.map((format, i) => (
                 <div
                   key={format}
-                  className="flex items-center gap-4 bg-white/10 border border-white/20 p-4 hover:border-[#ED1C24]/60 hover:bg-white/15 transition-all"
+                  className="flex items-center gap-4 bg-white/10 border border-white/20 p-4 hover:border-[#B91C1C]/60 hover:bg-white/15 transition-all"
                 >
-                  <div className="w-8 h-8 bg-[#ED1C24] flex items-center justify-center flex-shrink-0 font-heading font-bold text-white text-sm">
+                  <div className="w-8 h-8 bg-[#B91C1C] flex items-center justify-center flex-shrink-0 font-heading font-bold text-white text-sm">
                     {i + 1}
                   </div>
                   <span className="font-body text-white/90">{format}</span>
@@ -111,8 +111,8 @@ export default function ReviewsSection() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 Отзывы
               </span>
             </div>
@@ -168,7 +168,7 @@ export default function ReviewsSection() {
                   <meta itemProp="ratingValue" content={String(review.rating)} />
                   <meta itemProp="bestRating" content="5" />
                   {Array.from({ length: review.rating }).map((_, j) => (
-                    <Star key={j} size={14} className="text-[#ED1C24] fill-[#ED1C24]" />
+                    <Star key={j} size={14} className="text-[#B91C1C] fill-[#B91C1C]" />
                   ))}
                 </div>
                 <div itemProp="author" itemScope itemType="https://schema.org/Person">

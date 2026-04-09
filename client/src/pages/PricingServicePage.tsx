@@ -302,7 +302,7 @@ export default function PricingServicePage({ service }: PricingServicePageProps)
                         <tr key={ri} className={`border-b border-gray-100 ${ri % 2 === 0 ? "bg-white" : "bg-[#F7F8FF]"}`}>
                           <td className="font-body text-sm text-gray-700 px-4 py-3">{row.name}</td>
                           <td className="font-body text-sm text-gray-500 px-4 py-3 text-center">{row.unit}</td>
-                          <td className="font-heading font-semibold text-[#ED1C24] text-sm px-4 py-3 text-right whitespace-nowrap">{row.price}</td>
+                          <td className="font-heading font-semibold text-[#B91C1C] text-sm px-4 py-3 text-right whitespace-nowrap">{row.price}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -325,7 +325,7 @@ export default function PricingServicePage({ service }: PricingServicePageProps)
                 ))}
               </div>
             </div>
-            <div className="bg-[#ED1C24]/5 border border-[#ED1C24]/20 rounded-2xl p-6">
+            <div className="bg-[#B91C1C]/5 border border-[#B91C1C]/20 rounded-2xl p-6">
               <h3 className="font-heading font-bold text-[#0F1340] text-base mb-3">Важно знать</h3>
               <p className="text-gray-600 font-body text-sm leading-relaxed mb-4">{data.note}</p>
               <div className="flex flex-col gap-3">

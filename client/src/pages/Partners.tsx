@@ -93,7 +93,7 @@ export default function PartnersPage() {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="bg-white rounded-2xl p-5 hover:shadow-md transition-shadow"
               >
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#ED1C24]/10 text-[#ED1C24] font-body font-medium mb-3 inline-block">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#B91C1C]/10 text-[#B91C1C] font-body font-medium mb-3 inline-block">
                   {partner.category}
                 </span>
                 <h3 className="font-heading font-bold text-[#0F1340] text-base mb-1.5">{partner.name}</h3>
@@ -110,8 +110,8 @@ export default function PartnersPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Handshake size={20} className="text-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold text-sm uppercase tracking-wider">
+                <Handshake size={20} className="text-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold text-sm uppercase tracking-wider">
                   Стать партнёром
                 </span>
               </div>

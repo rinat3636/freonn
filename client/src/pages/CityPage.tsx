@@ -278,8 +278,8 @@ export default function CityPage({ city }: CityPageProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <MapPin size={16} className="text-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold text-sm uppercase tracking-wider">
+                <MapPin size={16} className="text-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold text-sm uppercase tracking-wider">
                   {cityName} и {cityData.district}
                 </span>
               </div>
@@ -318,7 +318,7 @@ export default function CityPage({ city }: CityPageProps) {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-[#ED1C24] text-white rounded-xl p-4 shadow-lg">
+              <div className="absolute -bottom-4 -left-4 bg-[#B91C1C] text-white rounded-xl p-4 shadow-lg">
                 <div className="flex items-center gap-2">
                   <Clock size={16} />
                   <div>
@@ -356,7 +356,7 @@ export default function CityPage({ city }: CityPageProps) {
                   </div>
                   <h3 className="font-heading font-semibold text-[#0F1340] text-sm mb-1.5">{service.name}</h3>
                   <p className="text-gray-500 font-body text-xs leading-relaxed">{service.desc}</p>
-                  <div className="flex items-center gap-1 mt-3 text-[#ED1C24] text-xs font-heading font-semibold">
+                  <div className="flex items-center gap-1 mt-3 text-[#B91C1C] text-xs font-heading font-semibold">
                     Подробнее <ArrowRight size={12} />
                   </div>
                 </motion.a>

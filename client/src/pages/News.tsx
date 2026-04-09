@@ -77,7 +77,7 @@ const news = [
 
 const categoryColors: Record<string, string> = {
   "Проекты": "bg-[#2D3092]/10 text-[#2D3092]",
-  "Компания": "bg-[#ED1C24]/10 text-[#ED1C24]",
+  "Компания": "bg-[#B91C1C]/10 text-[#B91C1C]",
   "Оборудование": "bg-green-100 text-green-700",
 };
 

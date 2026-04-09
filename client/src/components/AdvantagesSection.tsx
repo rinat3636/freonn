@@ -1,7 +1,7 @@
 /*
  * FREONN ADVANTAGES — Modern layout
  * What companies get from working with us (ceds.ru style)
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { Users, Wrench, Shield, Award, FileCheck, HardHat, TrendingDown, Clock, Star } from "lucide-react";
@@ -78,8 +78,8 @@ export default function AdvantagesSection() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 Результаты
               </span>
             </div>
@@ -98,7 +98,7 @@ export default function AdvantagesSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="border-t border-white/20 pt-6"
               >
-                <item.icon size={28} className="text-[#ED1C24] mb-4" />
+                <item.icon size={28} className="text-[#B91C1C] mb-4" />
                 <h3 className="font-heading font-semibold text-white text-lg mb-3">{item.title}</h3>
                 <p className="text-white/60 text-sm font-body leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -118,8 +118,8 @@ export default function AdvantagesSection() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 Преимущества
               </span>
             </div>

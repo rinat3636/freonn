@@ -10,7 +10,7 @@ import { Tag, Clock, ArrowRight, CheckCircle } from "lucide-react";
 const promotions = [
   {
     badge: "Горячее предложение",
-    badgeColor: "#ED1C24",
+    badgeColor: "#B91C1C",
     title: "Бесплатный выезд инженера",
     subtitle: "При заключении договора",
     desc: "Закажите обследование объекта и расчёт стоимости инженерных систем — выезд инженера бесплатно при последующем заключении договора на монтаж.",
@@ -131,7 +131,7 @@ export default function PromotionsPage() {
                     </span>
                   </div>
                   <h3 className="font-heading font-bold text-[#0F1340] text-base mb-1">{promo.title}</h3>
-                  <p className="text-[#ED1C24] font-heading font-semibold text-sm mb-3">{promo.subtitle}</p>
+                  <p className="text-[#B91C1C] font-heading font-semibold text-sm mb-3">{promo.subtitle}</p>
                   <p className="text-gray-500 font-body text-sm leading-relaxed mb-4">{promo.desc}</p>
                   <div className="space-y-1.5">
                     {promo.conditions.map((cond, j) => (

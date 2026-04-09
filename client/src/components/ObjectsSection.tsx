@@ -2,7 +2,7 @@
  * FREONN OBJECTS SECTION — Modern layout with full ceds.ru content
  * Three sub-sections: Industrial, Commercial, Premium
  * Modern alternating layout with feature lists
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -94,8 +94,8 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-10 bg-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+                <div className="h-0.5 w-10 bg-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                   Промышленность
                 </span>
               </div>
@@ -113,7 +113,7 @@ export default function ObjectsSection() {
               <div className="space-y-5 mb-8">
                 {industrialFeatures.map((f) => (
                   <div key={f.title} className="flex gap-4">
-                    <div className="w-1 bg-[#ED1C24] flex-shrink-0 self-stretch" />
+                    <div className="w-1 bg-[#B91C1C] flex-shrink-0 self-stretch" />
                     <div>
                       <h4 className="font-heading font-semibold text-[#0F1340] text-sm mb-1">{f.title}</h4>
                       <p className="text-gray-500 text-sm font-body leading-relaxed">{f.desc}</p>
@@ -146,7 +146,7 @@ export default function ObjectsSection() {
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img src={INDUSTRIAL_BG} alt="Промышленный объект" className="w-full h-full object-cover" />
-                <div className="absolute bottom-4 left-4 bg-[#ED1C24] text-white p-4 shadow-xl rounded-xl">
+                <div className="absolute bottom-4 left-4 bg-[#B91C1C] text-white p-4 shadow-xl rounded-xl">
                   <div className="font-display text-3xl font-bold leading-none">500+</div>
                   <div className="font-body text-xs mt-1 opacity-90">объектов сдано</div>
                 </div>
@@ -186,8 +186,8 @@ export default function ObjectsSection() {
               className="order-1 lg:order-2"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-10 bg-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+                <div className="h-0.5 w-10 bg-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                   Коммерция
                 </span>
               </div>
@@ -251,15 +251,15 @@ export default function ObjectsSection() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-10 bg-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+                <div className="h-0.5 w-10 bg-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                   Премиум недвижимость
                 </span>
               </div>
               <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-2 leading-tight">
                 Современные инженерные решения
               </h2>
-              <p className="text-[#ED1C24] font-heading font-semibold text-xl mb-5">
+              <p className="text-[#B91C1C] font-heading font-semibold text-xl mb-5">
                 для PREMIUM недвижимости
               </p>
               <p className="text-white/80 font-body leading-relaxed mb-6">
@@ -279,7 +279,7 @@ export default function ObjectsSection() {
               <div className="space-y-5 mb-8">
                 {premiumFeatures.map((f) => (
                   <div key={f.title} className="flex gap-4">
-                    <div className="w-1 bg-[#ED1C24] flex-shrink-0 self-stretch" />
+                    <div className="w-1 bg-[#B91C1C] flex-shrink-0 self-stretch" />
                     <div>
                       <h4 className="font-heading font-semibold text-white text-sm mb-1">{f.title}</h4>
                       <p className="text-white/60 text-sm font-body leading-relaxed">{f.desc}</p>
@@ -303,7 +303,7 @@ export default function ObjectsSection() {
             >
               <div className="aspect-[4/3] overflow-hidden border border-white/10 relative">
                 <img src={PREMIUM_BG} alt="Премиум недвижимость" className="w-full h-full object-cover" />
-                <div className="absolute bottom-4 right-4 bg-[#ED1C24] text-white p-4 shadow-xl rounded-xl">
+                <div className="absolute bottom-4 right-4 bg-[#B91C1C] text-white p-4 shadow-xl rounded-xl">
                   <div className="font-display text-3xl font-bold leading-none">5 лет</div>
                   <div className="font-body text-xs mt-1 opacity-90">гарантия на оборудование</div>
                 </div>

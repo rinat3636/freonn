@@ -5,7 +5,7 @@
 
 /* 
  * FREONN DESIGN SYSTEM — Bold Technical Expressionism
- * Primary Navy: #2D3092 | Dark Navy: #0F1340 | Red: #ED1C24
+ * Primary Navy: #2D3092 | Dark Navy: #0F1340 | Red: #B91C1C
  * Fonts: Russo One (display) | Oswald (headings) | Roboto (body)
  */
 
@@ -228,14 +228,14 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
   .service-card:hover {
-    border-left-color: #ED1C24;
+    border-left-color: #B91C1C;
     transform: translateY(-4px);
     box-shadow: 0 8px 30px rgba(45, 48, 146, 0.15);
   }
   .stat-number {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    color: #ED1C24;
+    color: #B91C1C;
     line-height: 1;
   }
   .nav-link {
@@ -254,7 +254,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #ED1C24;
+    background-color: #B91C1C;
     transition: width 0.3s ease;
   }
   .nav-link:hover::after {
@@ -269,7 +269,7 @@
     box-shadow: 0 8px 40px rgba(45, 48, 146, 0.12);
   }
   .pricing-card.featured {
-    border-color: #ED1C24;
+    border-color: #B91C1C;
     background: linear-gradient(135deg, #0F1340 0%, #2D3092 100%);
     color: white;
   }
@@ -308,5 +308,5 @@ section {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ED1C24;
+  background: #B91C1C;
 }

@@ -49,12 +49,12 @@ export default function FloatingButtons() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.8 }}
-        className="w-14 h-14 bg-[#ED1C24] text-white flex items-center justify-center shadow-xl hover:bg-red-700 transition-colors hover:scale-110 active:scale-95 relative rounded-full"
+        className="w-14 h-14 bg-[#B91C1C] text-white flex items-center justify-center shadow-xl hover:bg-[#991818] transition-colors hover:scale-110 active:scale-95 relative rounded-full"
         title="Позвонить"
       >
         <Phone size={24} />
         {/* Pulse ring */}
-        <span className="absolute inset-0 animate-ping bg-[#ED1C24] opacity-30 rounded-full" />
+        <span className="absolute inset-0 animate-ping bg-[#B91C1C] opacity-30 rounded-full" />
       </motion.a>
 
       {/* Scroll to top */}

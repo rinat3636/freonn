@@ -1,6 +1,6 @@
 /*
  * FREONN PARTNERS — Modern marquee-style layout
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 
@@ -15,7 +15,7 @@ export default function PartnersSection() {
     <section data-theme="light" className="py-14 bg-[#F7F8FF] overflow-hidden">
       <div className="container mb-8">
         <div className="flex items-center gap-3">
-          <div className="h-0.5 w-10 bg-[#ED1C24]" />
+          <div className="h-0.5 w-10 bg-[#B91C1C]" />
           <span className="text-gray-400 font-body text-sm uppercase tracking-widest">
             Оборудование ведущих производителей
           </span>

@@ -92,15 +92,15 @@ export default function Header() {
   // Always transparent — only text/icon colours change
   const navTextClass = isDark
     ? "text-white hover:text-white/70"
-    : "text-[#0F1340] hover:text-[#ED1C24]";
+    : "text-[#0F1340] hover:text-[#B91C1C]";
 
   const ctaBtnClass = isDark
     ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
-    : "border-[#ED1C24] text-[#ED1C24] hover:bg-[#ED1C24] hover:text-white";
+    : "border-[#B91C1C] text-[#B91C1C] hover:bg-[#B91C1C] hover:text-white";
 
   const burgerClass = isDark
     ? "text-white hover:text-white/70"
-    : "text-[#0F1340] hover:text-[#ED1C24]";
+    : "text-[#0F1340] hover:text-[#B91C1C]";
 
   const logoFilter = isDark ? "brightness-0 invert" : "";
 
@@ -132,7 +132,7 @@ export default function Header() {
                 )}
               </a>
               {item.children && (
-                <div className="absolute top-full left-0 w-64 bg-[#0F1340]/95 backdrop-blur-sm border-t-2 border-[#ED1C24] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
+                <div className="absolute top-full left-0 w-64 bg-[#0F1340]/95 backdrop-blur-sm border-t-2 border-[#B91C1C] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 rounded-b-lg">
                   {item.children.map(child => (
                     <a
                       key={child.label}
@@ -201,9 +201,9 @@ export default function Header() {
               </button>
             </div>
             {/* Contact info */}
-            <div className="px-4 py-4 bg-[#ED1C24]/10 border-b border-white/10">
+            <div className="px-4 py-4 bg-[#B91C1C]/10 border-b border-white/10">
               <a href="tel:88001012009" className="flex items-center gap-2 text-white font-heading font-semibold text-lg mb-1">
-                <Phone size={18} className="text-[#ED1C24]" /> 8(800)101-2009
+                <Phone size={18} className="text-[#B91C1C]" /> 8(800)101-2009
               </a>
               <p className="text-white/50 text-xs font-body">Бесплатно по России · Пн-Сб 9:00–19:00</p>
             </div>
@@ -215,7 +215,7 @@ export default function Header() {
                     <>
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className="w-full flex items-center justify-between py-4 px-4 border-b border-white/10 font-heading font-medium uppercase text-sm tracking-wide hover:text-[#ED1C24] transition-colors"
+                        className="w-full flex items-center justify-between py-4 px-4 border-b border-white/10 font-heading font-medium uppercase text-sm tracking-wide hover:text-[#B91C1C] transition-colors"
                       >
                         {item.label}
                         <ChevronDown size={16} className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
@@ -233,7 +233,7 @@ export default function Header() {
                                 key={child.label}
                                 href={child.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-3 px-8 text-sm text-white/70 hover:text-[#ED1C24] border-b border-white/5 font-body transition-colors"
+                                className="block py-3 px-8 text-sm text-white/70 hover:text-[#B91C1C] border-b border-white/5 font-body transition-colors"
                               >
                                 {child.label}
                               </a>
@@ -246,7 +246,7 @@ export default function Header() {
                     <a
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-4 px-4 border-b border-white/10 font-heading font-medium uppercase text-sm tracking-wide hover:text-[#ED1C24] transition-colors"
+                      className="block py-4 px-4 border-b border-white/10 font-heading font-medium uppercase text-sm tracking-wide hover:text-[#B91C1C] transition-colors"
                     >
                       {item.label}
                     </a>

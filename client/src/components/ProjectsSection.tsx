@@ -1,7 +1,7 @@
 /*
  * FREONN PROJECTS — All 12 completed objects from ceds.ru
  * Grid with hover overlays, real project titles
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -87,7 +87,7 @@ const projects = [
 
 const categoryColors: Record<string, string> = {
   "Промышленность": "bg-[#2D3092] text-white",
-  "Коммерция": "bg-[#ED1C24] text-white",
+  "Коммерция": "bg-[#B91C1C] text-white",
   "Образование": "bg-[#0F1340] text-white",
   "Культура": "bg-amber-600 text-white",
   "Премиум": "bg-emerald-700 text-white",
@@ -105,8 +105,8 @@ export default function ProjectsSection() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
               Портфолио
             </span>
           </div>
@@ -114,7 +114,7 @@ export default function ProjectsSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Выполненные объекты
             </h2>
-            <a href="/obekty" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
+            <a href="/obekty" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
               Все объекты <ArrowRight size={16} />
             </a>
           </div>
@@ -152,11 +152,11 @@ export default function ProjectsSection() {
                   <p className="text-white/80 text-xs font-body leading-relaxed">{project.desc}</p>
                 </div>
               </div>
-              <div className="p-5 border-t-2 border-transparent group-hover:border-[#ED1C24] transition-all duration-300">
+              <div className="p-5 border-t-2 border-transparent group-hover:border-[#B91C1C] transition-all duration-300">
                 <h3 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug mb-2 group-hover:text-[#2D3092] transition-colors">
                   {project.title}
                 </h3>
-                <span className="text-[#ED1C24] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
+                <span className="text-[#B91C1C] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
                   Информация об объекте →
                 </span>
               </div>

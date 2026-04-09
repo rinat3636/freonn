@@ -1,7 +1,7 @@
 /*
  * FREONN HERO — Bold Technical Expressionism
  * Fully responsive: stacks on mobile, side-by-side on desktop
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
@@ -44,7 +44,7 @@ export default function HeroSection() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0F1340]/97 via-[#0F1340]/85 to-[#0F1340]/55" />
       {/* Red accent stripe */}
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ED1C24]" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#B91C1C]" />
 
       <div className="container relative z-10 pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 xl:gap-16 items-center">
@@ -57,8 +57,8 @@ export default function HeroSection() {
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-0.5 w-10 bg-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold uppercase text-xs sm:text-sm tracking-widest">
+                <div className="h-0.5 w-10 bg-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold uppercase text-xs sm:text-sm tracking-widest">
                   Инженерная компания
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function HeroSection() {
               {/* Service tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {services.map((s) => (
-                  <a key={s.label} href={s.href} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#ED1C24] hover:text-white transition-colors rounded-full">
+                  <a key={s.label} href={s.href} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#B91C1C] hover:text-white transition-colors rounded-full">
                     {s.label}
                   </a>
                 ))}
@@ -115,18 +115,18 @@ export default function HeroSection() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
-                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/15 p-5 hover:bg-white/15 hover:border-[#ED1C24]/50 transition-all duration-300 rounded-2xl"
+                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/15 p-5 hover:bg-white/15 hover:border-[#B91C1C]/50 transition-all duration-300 rounded-2xl"
               >
-                <div className="w-10 h-10 bg-[#ED1C24]/15 flex items-center justify-center group-hover:bg-[#ED1C24] transition-colors rounded-full flex-shrink-0">
-                  <item.icon size={18} className="text-[#ED1C24] group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 bg-[#B91C1C]/15 flex items-center justify-center group-hover:bg-[#B91C1C] transition-colors rounded-full flex-shrink-0">
+                  <item.icon size={18} className="text-[#B91C1C] group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-heading font-semibold text-white text-sm mb-1 group-hover:text-[#ED1C24] transition-colors">
+                  <h3 className="font-heading font-semibold text-white text-sm mb-1 group-hover:text-[#B91C1C] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-white/55 text-xs font-body leading-snug">{item.desc}</p>
                 </div>
-                <ArrowRight size={14} className="text-white/25 group-hover:text-[#ED1C24] flex-shrink-0 mt-1 transition-all group-hover:translate-x-1" />
+                <ArrowRight size={14} className="text-white/25 group-hover:text-[#B91C1C] flex-shrink-0 mt-1 transition-all group-hover:translate-x-1" />
               </motion.a>
             ))}
 
@@ -135,24 +135,24 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.55 }}
-              className="bg-[#ED1C24] p-5 mt-2 rounded-2xl"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 p-5 mt-2 rounded-2xl"
             >
-              <div className="text-white/80 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
+              <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
               <a href="tel:88001012009" className="font-heading font-bold text-white text-xl hover:text-white/90 transition-colors">
                 8(800)101-2009
               </a>
-              <div className="text-white/70 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>
+              <div className="text-white/50 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>
             </motion.div>
           </div>
 
           {/* Mobile: phone block below content */}
           <div className="lg:hidden col-span-full">
-            <div className="bg-[#ED1C24] p-4 rounded-2xl">
-              <div className="text-white/80 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-2xl">
+              <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
               <a href="tel:88001012009" className="font-heading font-bold text-white text-lg">
                 8(800)101-2009
               </a>
-              <div className="text-white/70 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>
+              <div className="text-white/50 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>
             </div>
           </div>
         </div>

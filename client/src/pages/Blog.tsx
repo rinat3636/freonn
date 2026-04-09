@@ -157,7 +157,7 @@ const articles = [
 
 const categoryColors: Record<string, string> = {
   "Вентиляция": "bg-[#2D3092]/10 text-[#2D3092]",
-  "Кондиционирование": "bg-[#ED1C24]/10 text-[#ED1C24]",
+  "Кондиционирование": "bg-[#B91C1C]/10 text-[#B91C1C]",
   "Отопление": "bg-orange-100 text-orange-700",
   "Автоматизация": "bg-purple-100 text-purple-700",
   "Обслуживание": "bg-green-100 text-green-700",
@@ -224,7 +224,7 @@ export default function BlogPage() {
                   <p className="text-gray-500 text-xs font-body leading-relaxed line-clamp-2 mb-3">
                     {article.excerpt}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-[#ED1C24] text-xs font-heading font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-[#B91C1C] text-xs font-heading font-semibold uppercase tracking-wide group-hover:gap-2 transition-all">
                     Читать <ArrowRight size={12} />
                   </span>
                 </div>

@@ -1,7 +1,7 @@
 /*
  * FREONN PRICING — Modern layout with ceds.ru-style pricing categories
  * Horizontal cards, not square grid
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
@@ -81,8 +81,8 @@ export default function PricingSection() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
               Цены на услуги
             </span>
           </div>
@@ -127,7 +127,7 @@ export default function PricingSection() {
                   <h3 className={`font-heading font-bold text-lg mb-3 leading-tight ${plan.featured ? "text-white" : "text-[#0F1340]"}`}>
                     {plan.title}
                   </h3>
-                  <div className={`font-display text-2xl font-bold ${plan.featured ? "text-[#ED1C24]" : "text-[#2D3092]"}`}>
+                  <div className={`font-display text-2xl font-bold ${plan.featured ? "text-[#B91C1C]" : "text-[#2D3092]"}`}>
                     {plan.price}
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function PricingSection() {
                     <li key={f} className="flex items-start gap-2.5">
                       <Check
                         size={14}
-                        className={`flex-shrink-0 mt-0.5 ${plan.featured ? "text-[#ED1C24]" : "text-[#2D3092]"}`}
+                        className={`flex-shrink-0 mt-0.5 ${plan.featured ? "text-[#B91C1C]" : "text-[#2D3092]"}`}
                       />
                       <span className={`text-sm font-body leading-snug ${plan.featured ? "text-white/80" : "text-gray-600"}`}>
                         {f}

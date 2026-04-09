@@ -60,8 +60,8 @@ export default function GuaranteePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-14">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Shield size={20} className="text-[#ED1C24]" />
-                <span className="text-[#ED1C24] font-heading font-semibold text-sm uppercase tracking-wider">
+                <Shield size={20} className="text-[#B91C1C]" />
+                <span className="text-[#B91C1C] font-heading font-semibold text-sm uppercase tracking-wider">
                   Гарантия качества
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function GuaranteePage() {
                 Freonn предоставляет официальную гарантию на все выполненные работы. Мы уверены в качестве монтажа и используем только сертифицированное оборудование от проверенных производителей.
               </p>
               <div className="bg-[#0F1340] text-white rounded-2xl p-5 mb-6">
-                <div className="text-5xl font-heading font-black text-[#ED1C24] mb-1">12</div>
+                <div className="text-5xl font-heading font-black text-[#B91C1C] mb-1">12</div>
                 <div className="text-white font-heading font-bold text-lg">месяцев гарантии</div>
                 <div className="text-white/60 font-body text-sm">на все монтажные работы</div>
               </div>
@@ -125,8 +125,8 @@ export default function GuaranteePage() {
           </div>
 
           {/* Contact for warranty */}
-          <div className="mt-8 bg-[#ED1C24]/5 border border-[#ED1C24]/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
-            <Phone size={24} className="text-[#ED1C24] flex-shrink-0" />
+          <div className="mt-8 bg-[#B91C1C]/5 border border-[#B91C1C]/20 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4">
+            <Phone size={24} className="text-[#B91C1C] flex-shrink-0" />
             <div className="flex-1 text-center sm:text-left">
               <h3 className="font-heading font-bold text-[#0F1340] text-base mb-1">Гарантийный случай?</h3>
               <p className="text-gray-500 font-body text-sm">Позвоните нам или оставьте заявку — выедем в течение 24 часов.</p>

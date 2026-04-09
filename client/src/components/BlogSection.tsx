@@ -1,7 +1,7 @@
 /*
  * FREONN BLOG — Full article list from ceds.ru
  * Clean article layout with reading time
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
@@ -109,7 +109,7 @@ const articles = [
 
 const categoryColors: Record<string, string> = {
   "Вентиляция": "bg-[#2D3092]/10 text-[#2D3092]",
-  "Кондиционирование": "bg-[#ED1C24]/10 text-[#ED1C24]",
+  "Кондиционирование": "bg-[#B91C1C]/10 text-[#B91C1C]",
   "Отопление": "bg-orange-100 text-orange-700",
   "Автоматизация": "bg-purple-100 text-purple-700",
   "Обслуживание": "bg-green-100 text-green-700",
@@ -127,8 +127,8 @@ export default function BlogSection() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
               Блог
             </span>
           </div>
@@ -136,7 +136,7 @@ export default function BlogSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Новое в нашем блоге
             </h2>
-            <a href="/blog" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#ED1C24] transition-colors text-sm uppercase tracking-wide">
+            <a href="/blog" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
               Все статьи <ArrowRight size={16} />
             </a>
           </div>
@@ -174,7 +174,7 @@ export default function BlogSection() {
                 {articles[0].title}
               </h3>
               <p className="text-gray-500 text-sm font-body leading-relaxed mb-3">{articles[0].excerpt}</p>
-              <span className="inline-flex items-center gap-1 text-[#ED1C24] text-sm font-heading font-semibold group-hover:gap-2 transition-all">
+              <span className="inline-flex items-center gap-1 text-[#B91C1C] text-sm font-heading font-semibold group-hover:gap-2 transition-all">
                 Читать далее <ArrowRight size={14} />
               </span>
             </a>
@@ -250,7 +250,7 @@ export default function BlogSection() {
                 <h3 className="font-heading font-semibold text-[#0F1340] text-xs mb-2 group-hover:text-[#2D3092] transition-colors leading-snug line-clamp-3">
                   {article.title}
                 </h3>
-                <span className="text-[#ED1C24] text-xs font-heading font-semibold group-hover:underline">
+                <span className="text-[#B91C1C] text-xs font-heading font-semibold group-hover:underline">
                   Читать далее →
                 </span>
               </a>

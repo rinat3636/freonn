@@ -1,7 +1,7 @@
 /*
  * FREONN FAQ SECTION — All questions from ceds.ru
  * Accordion layout, own Freonn design
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -74,8 +74,8 @@ export default function FAQSection() {
             className="lg:col-span-2 lg:sticky lg:top-24 self-start col-span-full lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 FAQ
               </span>
             </div>
@@ -87,7 +87,7 @@ export default function FAQSection() {
             </p>
             <a
               href="/contacts"
-              className="inline-flex items-center gap-2 bg-[#ED1C24] text-white font-heading font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#c91219] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#B91C1C] text-white font-heading font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#c91219] transition-colors"
             >
               Задать вопрос
             </a>
@@ -110,14 +110,14 @@ export default function FAQSection() {
                 >
                   <span
                     className={`font-heading font-semibold text-sm leading-snug transition-colors ${
-                      openIndex === i ? "text-[#ED1C24]" : "text-[#0F1340] group-hover:text-[#2D3092]"
+                      openIndex === i ? "text-[#B91C1C]" : "text-[#0F1340] group-hover:text-[#2D3092]"
                     }`}
                   >
                     {faq.q}
                   </span>
                   <div
                     className={`w-7 h-7 flex-shrink-0 rounded-full flex items-center justify-center transition-colors ${
-                      openIndex === i ? "bg-[#ED1C24] text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#2D3092]/10 group-hover:text-[#2D3092]"
+                      openIndex === i ? "bg-[#B91C1C] text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#2D3092]/10 group-hover:text-[#2D3092]"
                     }`}
                   >
                     {openIndex === i ? <Minus size={14} /> : <Plus size={14} />}

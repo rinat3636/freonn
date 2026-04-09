@@ -169,7 +169,7 @@ export default function VacanciesPage() {
                       </span>
                     </div>
                     <h3 className="font-heading font-bold text-[#0F1340] text-lg mb-1">{vacancy.title}</h3>
-                    <p className="text-[#ED1C24] font-heading font-semibold text-base mb-4">{vacancy.salary}</p>
+                    <p className="text-[#B91C1C] font-heading font-semibold text-base mb-4">{vacancy.salary}</p>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <p className="font-heading font-semibold text-[#0F1340] text-sm mb-2">Требования:</p>

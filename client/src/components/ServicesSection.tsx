@@ -2,7 +2,7 @@
  * ServicesSection — "С какими системами работаем"
  * Modern layout: alternating horizontal service rows, NOT square cards
  * Full descriptions from ceds.ru
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { ArrowRight, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert, Hammer } from "lucide-react";
@@ -37,7 +37,7 @@ const services = [
       "Комфорт, которым можно управлять. От многофункциональных бытовых систем до сложных промышленных решений — сделаем ваше пространство действительно комфортным. Произведём монтаж систем кондиционирования различного типа: настенных, кассетных, канальных, напольно-потолочных, мульти-сплит, чиллеров, фанкойлов, мультизональных VRV и VRF систем.",
     items: ["Настенные и кассетные", "Канальные системы", "Мульти-сплит", "Чиллеры и фанкойлы", "VRV и VRF системы"],
     image: `${CDN}/equip-ac_decafa77.webp`,
-    color: "#ED1C24",
+    color: "#B91C1C",
   },
   {
     id: 3,
@@ -63,7 +63,7 @@ const services = [
       "Установим систему воздушного отопления, а также водяного, парового или электрического. Разработаем проект системы теплоснабжения по всем нормам и требованиям нормативной документации.",
     items: ["Воздушное отопление", "Водяное отопление", "Паровое отопление", "Электрическое", "Тепловые пункты (ИТП)"],
     image: `${CDN}/equip-heating_49ba3696.jpg`,
-    color: "#ED1C24",
+    color: "#B91C1C",
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ const services = [
       "Подготовим всю необходимую документацию перед установкой систем, произведём монтаж промышленного водоснабжения, водоотведения и канализации, включая необходимое оборудование. Проверим производительность и проведём пусконаладочные работы.",
     items: ["Промышленное водоснабжение", "Насосные станции", "Водоотведение", "Системы водоподготовки", "Пусконаладка"],
     image: `${CDN}/equip-water_0bb56318.jpg`,
-    color: "#ED1C24",
+    color: "#B91C1C",
   },
   {
     id: 7,
@@ -102,7 +102,7 @@ const services = [
       "Выполняем пескоструйную обработку металлических конструкций и зданий. Удаляем ржавчину, старую краску, окалину и загрязнения с металлических балок, ферм, резервуаров, фасадов и других конструкций. Подготавливаем поверхности под покраску, нанесение защитных покрытий и антикоррозийной обработки в соответствии с ГОСТ и международными стандартами.",
     items: ["Металлические конструкции", "Фасады зданий", "Резервуары и трубопроводы", "Балки и фермы", "Антикоррозийная обработка", "Подготовка под покраску"],
     image: GEN_SANDBLAST,
-    color: "#ED1C24",
+    color: "#B91C1C",
   },
   {
     id: 8,
@@ -132,8 +132,8 @@ export default function ServicesSection() {
           className="mb-14"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-semibold uppercase text-sm tracking-widest font-heading">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-semibold uppercase text-sm tracking-widest font-heading">
               Направления
             </span>
           </div>
@@ -200,7 +200,7 @@ export default function ServicesSection() {
                     {service.items.map((item) => (
                       <span
                         key={item}
-                        className="text-xs px-3 py-1 bg-gray-100 text-gray-600 font-body hover:bg-[#ED1C24] hover:text-white transition-colors cursor-default rounded-full"
+                        className="text-xs px-3 py-1 bg-gray-100 text-gray-600 font-body hover:bg-[#B91C1C] hover:text-white transition-colors cursor-default rounded-full"
                       >
                         {item}
                       </span>
@@ -209,7 +209,7 @@ export default function ServicesSection() {
 
                   <a
                     href={service.href}
-                    className="inline-flex items-center gap-2 text-[#ED1C24] font-heading font-semibold text-sm uppercase tracking-wide hover:gap-3 transition-all duration-200 group/link"
+                    className="inline-flex items-center gap-2 text-[#B91C1C] font-heading font-semibold text-sm uppercase tracking-wide hover:gap-3 transition-all duration-200 group/link"
                   >
                     Подробнее
                     <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-1" />

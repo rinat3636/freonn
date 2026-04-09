@@ -1,7 +1,7 @@
 /*
  * FREONN ABOUT — Modern layout with ceds.ru content
  * Dark navy section with stats, description, advantages
- * Brand: Freonn — dark navy #0F1340, red accent #ED1C24
+ * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -80,8 +80,8 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 О нас
               </span>
             </div>
@@ -106,8 +106,8 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <div className="h-0.5 w-10 bg-[#ED1C24]" />
-              <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+              <div className="h-0.5 w-10 bg-[#B91C1C]" />
+              <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
                 Форматы сотрудничества
               </span>
             </div>
@@ -121,7 +121,7 @@ export default function AboutSection() {
                   transition={{ duration: 0.4, delay: i * 0.07 }}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#ED1C24] flex-shrink-0 group-hover:scale-150 transition-transform rounded-full" />
+                  <div className="w-1.5 h-1.5 bg-[#B91C1C] flex-shrink-0 group-hover:scale-150 transition-transform rounded-full" />
                   <span className="text-white/80 font-body text-sm group-hover:text-white transition-colors">{item}</span>
                 </motion.div>
               ))}

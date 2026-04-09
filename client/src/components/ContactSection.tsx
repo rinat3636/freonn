@@ -57,8 +57,8 @@ export default function ContactSection() {
           className="mb-12"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="h-0.5 w-10 bg-[#ED1C24]" />
-            <span className="text-[#ED1C24] font-heading font-semibold uppercase text-sm tracking-widest">
+            <div className="h-0.5 w-10 bg-[#B91C1C]" />
+            <span className="text-[#B91C1C] font-heading font-semibold uppercase text-sm tracking-widest">
               Контакты
             </span>
           </div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                     type="text"
                     value={form.name}
                     onChange={e => setForm({ ...form, name: e.target.value })}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
+                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
                     placeholder="Иван Иванов"
                   />
                 </div>
@@ -96,7 +96,7 @@ export default function ContactSection() {
                     type="tel"
                     value={form.phone}
                     onChange={e => setForm({ ...form, phone: e.target.value })}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
+                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
                     placeholder="+7 (___) ___-__-__"
                   />
                 </div>
@@ -107,7 +107,7 @@ export default function ContactSection() {
                   type="email"
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
+                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
                   placeholder="email@company.ru"
                 />
               </div>
@@ -116,7 +116,7 @@ export default function ContactSection() {
                 <select
                   value={form.type}
                   onChange={e => setForm({ ...form, type: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors rounded-xl"
+                  className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
                 >
                   {["Монтаж вентиляции", "Монтаж кондиционирования", "Монтаж дымоудаления", "Монтаж отопления", "Холодоснабжение", "Водоснабжение и канализация", "Электроснабжение", "Пескоструйная обработка", "Проектирование ОВиК", "Комплексный проект", "Пусконаладочные работы", "Сервисное обслуживание", "Консультация"].map(opt => (
                     <option key={opt} value={opt} className="bg-[#0F1340]">{opt}</option>
@@ -129,7 +129,7 @@ export default function ContactSection() {
                   rows={4}
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
-                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#ED1C24] transition-colors resize-none rounded-xl"
+                  className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors resize-none rounded-xl"
                   placeholder="Опишите ваш объект и задачу..."
                 />
               </div>
@@ -163,31 +163,31 @@ export default function ContactSection() {
               <h3 className="font-heading font-semibold text-xl mb-6">Контактная информация</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
-                    <Phone size={18} className="text-[#ED1C24]" />
+                  <div className="w-10 h-10 bg-[#B91C1C]/20 flex items-center justify-center flex-shrink-0 rounded-full">
+                    <Phone size={18} className="text-[#B91C1C]" />
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Телефон</div>
-                    <a href="tel:88001012009" className="text-white font-heading font-semibold text-lg hover:text-[#ED1C24] transition-colors">
+                    <a href="tel:88001012009" className="text-white font-heading font-semibold text-lg hover:text-[#B91C1C] transition-colors">
                       8(800)101-2009
                     </a>
                     <div className="text-white/50 text-xs font-body">Бесплатно по России</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
-                    <Mail size={18} className="text-[#ED1C24]" />
+                  <div className="w-10 h-10 bg-[#B91C1C]/20 flex items-center justify-center flex-shrink-0 rounded-full">
+                    <Mail size={18} className="text-[#B91C1C]" />
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Email</div>
-                    <a href="mailto:info@freonn.ru" className="text-white font-body hover:text-[#ED1C24] transition-colors">
+                    <a href="mailto:info@freonn.ru" className="text-white font-body hover:text-[#B91C1C] transition-colors">
                       info@freonn.ru
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
-                    <MapPin size={18} className="text-[#ED1C24]" />
+                  <div className="w-10 h-10 bg-[#B91C1C]/20 flex items-center justify-center flex-shrink-0 rounded-full">
+                    <MapPin size={18} className="text-[#B91C1C]" />
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Адрес офиса</div>
@@ -195,8 +195,8 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#ED1C24]/20 flex items-center justify-center flex-shrink-0 rounded-full">
-                    <Clock size={18} className="text-[#ED1C24]" />
+                  <div className="w-10 h-10 bg-[#B91C1C]/20 flex items-center justify-center flex-shrink-0 rounded-full">
+                    <Clock size={18} className="text-[#B91C1C]" />
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Режим работы</div>
