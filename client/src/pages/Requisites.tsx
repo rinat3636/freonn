@@ -7,8 +7,8 @@ import { Copy, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 const requisites = [
-  { label: "Полное наименование", value: "ООО «ФРЕОНН»" },
-  { label: "Краткое наименование", value: "ООО «ФРЕОНН»" },
+  { label: "Полное наименование", value: "ООО «ЭКС»" },
+  { label: "Краткое наименование", value: "ООО «ЭКС»" },
   { label: "ИНН", value: "5024238716" },
   { label: "КПП", value: "502401001" },
   { label: "ОГРН", value: "1225000072840" },
@@ -75,7 +75,7 @@ export default function RequisitesPage() {
                 <span className="text-white font-heading font-black text-lg">F</span>
               </div>
               <div>
-                <h2 className="font-heading font-bold text-[#0F1340] text-lg">ООО «ФРЕОНН»</h2>
+                <h2 className="font-heading font-bold text-[#0F1340] text-lg">ООО «ЭКС»</h2>
                 <p className="text-gray-400 font-body text-sm">Инженерная компания</p>
               </div>
             </div>

@@ -34,6 +34,9 @@
 - [ ] Custom domain setup (freonn.ru)
 - [ ] Google/Yandex Search Console submission
 
+## Session April 9, 2026 (update 2)
+- [x] Replace ООО «Фреонн» / ООО «ФРЕОНН» with ООО «ЭКС» across all files (Footer, ContactSection, Requisites, Documents, index.html)
+
 ## Session April 9, 2026
 - [x] ServicePage fix: added useRoute hooks for all 10 alias routes (ustanovka-ventilyacii, etc.)
 - [x] Form notifications: notifyOwner (Manus) added as backup alongside MAX bot

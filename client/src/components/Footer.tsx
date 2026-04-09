@@ -159,7 +159,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/30 font-body">
-          <div>© 2011 ООО «Фреонн». Сайт носит исключительно информационный характер и не является публичной офертой.</div>
+          <div>© 2011 ООО «ЭКС». Сайт носит исключительно информационный характер и не является публичной офертой.</div>
           <div className="flex gap-4">
             <a href="/politika-konfidencialnosti" className="hover:text-white/60 transition-colors">Политика конфиденциальности</a>
             <a href="/karta-sajta" className="hover:text-white/60 transition-colors">Карта сайта</a>
