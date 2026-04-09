@@ -102,6 +102,35 @@ export default function Footer() {
                 Пн–Сб: 9:00 – 19:00
               </div>
             </div>
+            {/* Yandex rating */}
+            <a
+              href="https://yandex.ru/maps/org/freonn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-4 py-3 mb-5 transition-colors group"
+            >
+              {/* Yandex Maps pin icon */}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-7 h-7 flex-shrink-0" fill="none">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#FC3F1D"/>
+                <circle cx="12" cy="9" r="2.5" fill="white"/>
+              </svg>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-white font-heading font-bold text-lg leading-none">4,9</span>
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4].map(i => (
+                      <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className="w-3.5 h-3.5" fill="#FFC107"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z"/></svg>
+                    ))}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" className="w-3.5 h-3.5">
+                      <defs><linearGradient id="hstar"><stop offset="80%" stopColor="#FFC107"/><stop offset="80%" stopColor="#ffffff20"/></linearGradient></defs>
+                      <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78z" fill="url(#hstar)"/>
+                    </svg>
+                  </div>
+                </div>
+                <div className="text-white/50 text-xs font-body mt-0.5">Рейтинг в Яндексе</div>
+              </div>
+            </a>
+
             {/* Social */}
             <div className="flex gap-3">
               <a href="https://www.youtube.com/@freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors" title="YouTube">
