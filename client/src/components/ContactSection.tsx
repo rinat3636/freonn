@@ -226,6 +226,43 @@ export default function ContactSection() {
                 ))}
               </div>
             </div>
+
+            {/* Способы оплаты — коммерческий фактор Яндекса */}
+            <div className="bg-white/10 border border-white/20 p-6 rounded-2xl">
+              <h4 className="font-heading font-semibold text-white text-base mb-4 uppercase tracking-wide">
+                Способы оплаты
+              </h4>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { icon: "🏦", label: "Безналичный расчёт", desc: "Счёт для юрлиц и ИП" },
+                  { icon: "💳", label: "Картой онлайн", desc: "Виза, Мастеркард, МИР" },
+                  { icon: "💵", label: "Наличными", desc: "Для физических лиц" },
+                  { icon: "📊", label: "Лизинг/рассрочка", desc: "До 12 месяцев" },
+                ].map(item => (
+                  <div key={item.label} className="flex items-start gap-2">
+                    <span className="text-xl flex-shrink-0">{item.icon}</span>
+                    <div>
+                      <div className="text-white text-xs font-heading font-semibold">{item.label}</div>
+                      <div className="text-white/50 text-xs font-body">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Карта Яндекс — важный коммерческий фактор */}
+            <div className="rounded-2xl overflow-hidden border border-white/20">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A&source=constructor&ll=37.8488%2C55.6316&z=14&l=map&pt=37.8488%2C55.6316%2Cpm2rdm~"
+                width="100%"
+                height="200"
+                frameBorder="0"
+                title="Офис Freonn на карте"
+                aria-label="Офис Freonn на Яндекс.Картах"
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
           </motion.div>
         </div>
       </div>

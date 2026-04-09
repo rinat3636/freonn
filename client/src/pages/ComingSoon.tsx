@@ -1,6 +1,8 @@
 /*
  * FREONN COMING SOON PAGE — for pages under development
+ * noindex: true — не индексируем незаконченные страницы
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight } from "lucide-react";
@@ -11,6 +13,12 @@ interface ComingSoonProps {
 }
 
 export default function ComingSoon({ title, breadcrumb }: ComingSoonProps) {
+  useSEO({
+    title,
+    description: `${title} — раздел в разработке. Freonn — инженерная компания в Москве и МО.`,
+    noIndex: true,
+  });
+
   return (
     <PageLayout title={title} breadcrumb={breadcrumb}>
       <section className="py-20 bg-white">

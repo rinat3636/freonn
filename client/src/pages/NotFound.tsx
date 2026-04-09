@@ -1,52 +1,96 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
+/*
+ * FREONN 404 PAGE — noindex, nofollow
+ * Брендированная страница 404 на русском языке
+ */
+import { useEffect } from "react";
 import { useLocation } from "wouter";
+import { motion } from "framer-motion";
+import { Home, Phone, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
-  const handleGoHome = () => {
-    setLocation("/");
-  };
+  // 404 — не индексируем
+  useEffect(() => {
+    document.title = "Страница не найдена (404) | Freonn";
+    const robots = document.querySelector('meta[name="robots"]');
+    if (robots) robots.setAttribute("content", "noindex, nofollow");
+    return () => {
+      const robots = document.querySelector('meta[name="robots"]');
+      if (robots) robots.setAttribute("content", "index, follow");
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
-            </div>
-          </div>
-
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
-
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
-          </h2>
-
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
-          </p>
-
-          <div
-            id="not-found-button-group"
-            className="flex flex-col sm:flex-row gap-3 justify-center"
+    <div className="min-h-screen flex flex-col bg-[#F7F8FF]">
+      <Header />
+      <main className="flex-1 flex items-center justify-center py-20">
+        <div className="container max-w-2xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+            {/* Big 404 */}
+            <div className="relative mb-8">
+              <span className="font-heading font-bold text-[160px] leading-none text-[#0F1340]/5 select-none">
+                404
+              </span>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-20 h-20 bg-[#ED1C24]/10 rounded-full flex items-center justify-center">
+                  <span className="text-4xl">🔧</span>
+                </div>
+              </div>
+            </div>
+
+            <h1 className="font-heading font-bold text-[#0F1340] text-3xl lg:text-4xl mb-4">
+              Страница не найдена
+            </h1>
+            <p className="text-gray-500 font-body text-lg mb-8 leading-relaxed">
+              Возможно, страница была перемещена или удалена.<br />
+              Воспользуйтесь навигацией или свяжитесь с нами.
+            </p>
+
+            {/* Quick links */}
+            <div className="grid sm:grid-cols-3 gap-3 mb-8 text-left">
+              {[
+                { label: "Услуги", href: "/uslugi", desc: "Все инженерные системы" },
+                { label: "Цены", href: "/ceny", desc: "Прайс-лист на монтаж" },
+                { label: "Объекты", href: "/obekty", desc: "Выполненные проекты" },
+              ].map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#ED1C24]/30 hover:shadow-md transition-all group"
+                >
+                  <div className="font-heading font-semibold text-[#0F1340] text-sm mb-1 group-hover:text-[#ED1C24] transition-colors flex items-center gap-1">
+                    {link.label} <ArrowRight size={12} />
+                  </div>
+                  <div className="text-gray-400 text-xs font-body">{link.desc}</div>
+                </a>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={() => setLocation("/")}
+                className="btn-primary inline-flex items-center gap-2 justify-center"
+              >
+                <Home size={16} /> На главную
+              </button>
+              <a
+                href="tel:88001012009"
+                className="btn-outline inline-flex items-center gap-2 justify-center border-[#0F1340] text-[#0F1340]"
+              >
+                <Phone size={16} /> 8(800)101-2009
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }

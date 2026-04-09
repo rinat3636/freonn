@@ -121,7 +121,25 @@ export default function ReviewsSection() {
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* AggregateRating schema.org для Яндекса */}
+          <div itemScope itemType="https://schema.org/LocalBusiness" className="hidden">
+            <span itemProp="name">Freonn</span>
+            <div itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+              <meta itemProp="ratingValue" content="5.0" />
+              <meta itemProp="reviewCount" content="4" />
+              <meta itemProp="bestRating" content="5" />
+              <meta itemProp="worstRating" content="1" />
+            </div>
+          </div>
+
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            itemScope
+            itemType="https://schema.org/LocalBusiness"
+          >
+            <meta itemProp="name" content="Freonn" />
+            <meta itemProp="telephone" content="+78001012009" />
+            <meta itemProp="url" content="https://freonn.ru" />
             {reviews.map((review, i) => (
               <motion.div
                 key={review.name}
@@ -130,18 +148,31 @@ export default function ReviewsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow border-t-4 border-[#2D3092]"
+                itemProp="review"
+                itemScope
+                itemType="https://schema.org/Review"
               >
                 <Quote size={24} className="text-[#2D3092]/20 mb-3" />
-                <p className="text-gray-600 text-sm font-body leading-relaxed mb-4 italic">
+                <p
+                  className="text-gray-600 text-sm font-body leading-relaxed mb-4 italic"
+                  itemProp="reviewBody"
+                >
                   "{review.text}"
                 </p>
-                <div className="flex gap-0.5 mb-3">
+                <div
+                  className="flex gap-0.5 mb-3"
+                  itemProp="reviewRating"
+                  itemScope
+                  itemType="https://schema.org/Rating"
+                >
+                  <meta itemProp="ratingValue" content={String(review.rating)} />
+                  <meta itemProp="bestRating" content="5" />
                   {Array.from({ length: review.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-[#ED1C24] fill-[#ED1C24]" />
                   ))}
                 </div>
-                <div>
-                  <div className="font-heading font-semibold text-[#0F1340] text-sm">{review.name}</div>
+                <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                  <div className="font-heading font-semibold text-[#0F1340] text-sm" itemProp="name">{review.name}</div>
                   <div className="text-gray-400 text-xs font-body">{review.role}</div>
                 </div>
               </motion.div>

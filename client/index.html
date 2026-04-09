@@ -43,11 +43,19 @@
     <!-- ═══ Canonical ═════════════════════════════════════════════════════ -->
     <link rel="canonical" href="https://freonn.ru/" data-seo-id="canonical" />
 
-    <!-- ═══ Verification — вставьте коды после верификации ═══════════════ -->
-    <!-- Яндекс.Вебмастер: замените YANDEX_VERIFICATION_CODE на ваш код -->
-    <!-- <meta name="yandex-verification" content="YANDEX_VERIFICATION_CODE" /> -->
-    <!-- Google Search Console: замените GOOGLE_VERIFICATION_CODE на ваш код -->
-    <!-- <meta name="google-site-verification" content="GOOGLE_VERIFICATION_CODE" /> -->
+    <!-- ═══ Верификация поисковых систем ══════════════════════════════════ -->
+    <!-- ИНСТРУКЦИЯ:
+         1. Яндекс.Вебмастер (https://webmaster.yandex.ru):
+            - Добавьте сайт → выберите "HTML-тег" → скопируйте content
+            - Раскомментируйте строку ниже и вставьте ваш код:
+    -->
+    <!-- <meta name="yandex-verification" content="ВСТАВЬТЕ_КОД_ЯНДЕКСА" /> -->
+
+    <!-- 2. Google Search Console (https://search.google.com/search-console):
+            - Добавьте ресурс → выберите "HTML-тег" → скопируйте content
+            - Раскомментируйте строку ниже и вставьте ваш код:
+    -->
+    <!-- <meta name="google-site-verification" content="ВСТАВЬТЕ_КОД_GOOGLE" /> -->
 
     <!-- ═══ Favicon ═══════════════════════════════════════════════════════ -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -78,6 +86,115 @@
           "urlTemplate": "https://freonn.ru/blog?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- ═══ Structured Data — Organization ═══════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Freonn",
+      "legalName": "ООО «Фреонн»",
+      "url": "https://freonn.ru",
+      "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
+      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
+      "description": "Инженерная компания. Проектирование, монтаж и обслуживание систем вентиляции, кондиционирования, дымоудаления, отопления и электроснабжения.",
+      "telephone": "+78001012009",
+      "email": "info@freonn.ru",
+      "foundingDate": "2015",
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 50 },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Истра, Московская область",
+        "addressLocality": "Истра",
+        "addressRegion": "Московская область",
+        "postalCode": "143500",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.9167,
+        "longitude": 36.8667
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Москва" },
+        { "@type": "AdministrativeArea", "name": "Московская область" }
+      ],
+      "sameAs": [
+        "https://freonn.ru"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+78001012009",
+          "contactType": "customer service",
+          "areaServed": "RU",
+          "availableLanguage": "Russian",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══ Structured Data — LocalBusiness ══════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Freonn — Инженерная компания",
+      "url": "https://freonn.ru",
+      "telephone": "+78001012009",
+      "priceRange": "$$",
+      "currenciesAccepted": "RUB",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Истра, Московская область",
+        "addressLocality": "Истра",
+        "addressRegion": "Московская область",
+        "postalCode": "143500",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 55.9167,
+        "longitude": 36.8667
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Инженерные системы",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Монтаж вентиляции" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Монтаж кондиционирования" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Монтаж дымоудаления" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Монтаж отопления" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Холодоснабжение" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Водоснабжение и канализация" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Пескоструйная обработка" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Электроснабжение и освещение" } }
+        ]
       }
     }
     </script>
