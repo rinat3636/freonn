@@ -2,10 +2,12 @@
  * FREONN HERO — Bold Technical Expressionism
  * Fully responsive: stacks on mobile, side-by-side on desktop
  * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
+ * Background: user video + team photo (2s) loop, blue overlay
  */
 import { motion } from "framer-motion";
 import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
 import { ymGoal } from "@/lib/ym";
+import { useEffect, useRef, useState } from "react";
 
 const services = [
   { label: "Вентиляция", href: "/ventilyaciya" },
@@ -33,41 +35,63 @@ const quickLinks = [
 ];
 
 export default function HeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  // showPhoto: false = video playing, true = photo showing
+  const [showPhoto, setShowPhoto] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      // When video ends — show photo for 2 seconds, then restart video
+      setShowPhoto(true);
+      setTimeout(() => {
+        setShowPhoto(false);
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }, 2000);
+    };
+
+    video.addEventListener("ended", handleEnded);
+    return () => video.removeEventListener("ended", handleEnded);
+  }, []);
+
   return (
     <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0A0E2E]">
-      {/* Blue gradient background */}
+
+      {/* ── VIDEO background ── */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+        style={{ opacity: showPhoto ? 0 : 1 }}
+        aria-hidden="true"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* ── TEAM PHOTO — shown for 2s after video ends ── */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
+        style={{
+          backgroundImage: "url(/hero-team.jpg)",
+          opacity: showPhoto ? 1 : 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* ── Blue overlay (always on top of video/photo) ── */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, #0A0E2E 0%, #0F1B4D 30%, #112266 55%, #0D1A55 75%, #080C28 100%)"
+          background: "linear-gradient(135deg, rgba(10,14,46,0.88) 0%, rgba(15,27,77,0.80) 50%, rgba(10,14,46,0.75) 100%)",
         }}
         aria-hidden="true"
       />
-      {/* Subtle radial glow — top right */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(ellipse 70% 60% at 75% 30%, rgba(30,80,180,0.35) 0%, transparent 70%)"
-        }}
-        aria-hidden="true"
-      />
-      {/* Subtle radial glow — bottom left */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(ellipse 50% 50% at 15% 80%, rgba(15,50,130,0.3) 0%, transparent 65%)"
-        }}
-        aria-hidden="true"
-      />
-      {/* Grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px"
-        }}
-        aria-hidden="true"
-      />
+
       {/* Red accent stripe */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#B91C1C]" />
 
