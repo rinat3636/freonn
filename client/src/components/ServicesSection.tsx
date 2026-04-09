@@ -141,9 +141,7 @@ export default function ServicesSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] max-w-xl">
               Монтаж инженерных систем в Москве и МО под ключ
             </h2>
-            <p className="text-gray-500 max-w-md text-sm leading-relaxed font-body">
-              Проектирование, монтаж и обслуживание вентиляции, кондиционирования, дымоудаления и отопления для промышленных, коммерческих и премиум-объектов.
-            </p>
+            {/* hidden subtitle */}
           </div>
         </motion.div>
 
