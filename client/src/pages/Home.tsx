@@ -58,10 +58,10 @@ export default function Home() {
         ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Московская область",
+          streetAddress: "ул. Ленина, д. 2Б",
           addressCountry: "RU",
           addressRegion: "Московская область",
-          addressLocality: "Истра",
+          addressLocality: "Дзержинский",
           postalCode: "143500",
         },
         geo: {

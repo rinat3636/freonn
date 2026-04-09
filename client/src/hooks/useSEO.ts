@@ -228,7 +228,7 @@ export function useSEO({
         "@type": "PostalAddress",
         addressCountry: "RU",
         addressRegion: "Московская область",
-        addressLocality: "Истра",
+        addressLocality: "Дзержинский",
         postalCode: "143500",
       },
       geo: {
