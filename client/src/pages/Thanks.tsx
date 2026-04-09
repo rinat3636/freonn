@@ -2,17 +2,22 @@
  * FREONN THANKS PAGE — /spasibo
  * Shown after successful form submission for Yandex.Metrika conversion tracking
  */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSEO } from "@/hooks/useSEO";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { ymGoal } from "@/lib/ym";
 import { CheckCircle, Phone, ArrowRight, Clock } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 
+const REDIRECT_SECONDS = 5;
+
 export default function ThanksPage() {
+  const [, navigate] = useLocation();
+  const [countdown, setCountdown] = useState(REDIRECT_SECONDS);
+
   useSEO({
     title: "Спасибо за заявку — Freonn",
     description: "Ваша заявка принята. Наш специалист свяжется с вами в ближайшее время.",
@@ -24,6 +29,21 @@ export default function ThanksPage() {
   useEffect(() => {
     ymGoal("form_submit");
   }, []);
+
+  // Countdown timer with auto-redirect
+  useEffect(() => {
+    if (countdown <= 0) {
+      navigate("/");
+      return;
+    }
+    const timer = setTimeout(() => setCountdown((c) => c - 1), 1000);
+    return () => clearTimeout(timer);
+  }, [countdown, navigate]);
+
+  // SVG circle progress
+  const radius = 20;
+  const circumference = 2 * Math.PI * radius;
+  const progress = (countdown / REDIRECT_SECONDS) * circumference;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -90,7 +110,7 @@ export default function ThanksPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
           >
             <a
               href="tel:88001012009"
@@ -107,6 +127,47 @@ export default function ThanksPage() {
               На главную
               <ArrowRight className="w-4 h-4" />
             </Link>
+          </motion.div>
+
+          {/* Countdown timer */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="relative w-14 h-14">
+              <svg className="w-14 h-14 -rotate-90" viewBox="0 0 48 48">
+                {/* Background circle */}
+                <circle
+                  cx="24"
+                  cy="24"
+                  r={radius}
+                  fill="none"
+                  stroke="#E5E7EB"
+                  strokeWidth="3"
+                />
+                {/* Progress circle */}
+                <circle
+                  cx="24"
+                  cy="24"
+                  r={radius}
+                  fill="none"
+                  stroke="#0F1340"
+                  strokeWidth="3"
+                  strokeDasharray={circumference}
+                  strokeDashoffset={circumference - progress}
+                  strokeLinecap="round"
+                  style={{ transition: "stroke-dashoffset 0.9s linear" }}
+                />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-lg font-bold text-[#0F1340]">
+                {countdown}
+              </span>
+            </div>
+            <p className="text-sm text-gray-400">
+              Переход на главную через {countdown} сек.
+            </p>
           </motion.div>
         </div>
       </main>
