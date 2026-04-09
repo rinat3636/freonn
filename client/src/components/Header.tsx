@@ -69,28 +69,52 @@ export default function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [location] = useLocation();
 
-  // Update theme-color based on route
+  // Update theme-color based on scroll position — matches visible section bg
   useEffect(() => {
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    if (!metaTheme) {
-      const meta = document.createElement('meta');
+    // Ensure meta tag exists
+    let meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta') as HTMLMetaElement;
       meta.name = 'theme-color';
       document.head.appendChild(meta);
     }
-    const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
-    if (!meta) return;
-    // Find matching route (longest prefix wins)
-    let matched = "#ffffff";
-    let matchLen = 0;
-    for (const { prefix, color } of ROUTE_THEME_COLORS) {
-      if (location === "/" && prefix === "/") { matched = color; break; }
-      if (prefix !== "/" && location.startsWith(prefix) && prefix.length > matchLen) {
-        matched = color;
-        matchLen = prefix.length;
-      }
-    }
-    if (location === "/") matched = "#0A0E2E";
-    meta.setAttribute('content', matched);
+
+    const setColor = (color: string) => {
+      const m = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+      if (m) m.setAttribute('content', color);
+    };
+
+    const updateThemeColor = () => {
+      const scrollY = window.scrollY;
+      let matched = location === '/' ? '#0A0E2E' : '#ffffff';
+
+      const themeSections = document.querySelectorAll('[data-theme]');
+      themeSections.forEach((section) => {
+        const el = section as HTMLElement;
+        const top = el.offsetTop - 10;
+        const bottom = top + el.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          const theme = el.dataset.theme;
+          if (theme === 'dark') {
+            // Check if it's the Hero section (has video bg)
+            matched = el.classList.contains('bg-[#0A0E2E]') ? '#0A0E2E' : '#0F1340';
+          } else {
+            // light sections: check actual bg color
+            if (el.classList.contains('bg-[#F7F8FF]')) matched = '#F7F8FF';
+            else matched = '#ffffff';
+          }
+        }
+      });
+
+      setColor(matched);
+    };
+
+    // Set initial color based on route
+    setColor(location === '/' ? '#0A0E2E' : '#ffffff');
+    updateThemeColor();
+
+    window.addEventListener('scroll', updateThemeColor, { passive: true });
+    return () => window.removeEventListener('scroll', updateThemeColor);
   }, [location]);
 
   useEffect(() => {
