@@ -160,7 +160,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: 0.05 }}
-                className={`group flex flex-col lg:flex-row ${isEven ? "lg:flex-row-reverse" : ""} border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-colors duration-300`}
+                className={`group flex flex-col lg:flex-row border-b border-gray-100 last:border-0 hover:bg-gray-50/80 transition-colors duration-300`}
               >
                 {/* Image side */}
                 <div className="lg:w-64 xl:w-72 flex-shrink-0 overflow-hidden bg-gray-100">
