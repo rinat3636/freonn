@@ -70,11 +70,7 @@ export default function Header() {
 
       const dark = currentTheme === "dark";
       setIsDark(dark);
-      // Update browser theme-color for mobile status bar
-      const metaTheme = document.querySelector('meta[name="theme-color"]');
-      if (metaTheme) {
-        metaTheme.setAttribute('content', dark ? '#112060' : '#ffffff');
-      }
+      // theme-color stays transparent — no status bar background
     };
 
     window.addEventListener("scroll", checkBackground, { passive: true });
