@@ -9,7 +9,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { notifyOwner } from "./notification";
-import { storagePut } from "../storage";
+import { firebaseStoragePut } from "../firebaseStorage";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -77,7 +77,7 @@ async function startServer() {
       }
       const ext = req.file.originalname.split(".").pop() || "bin";
       const key = `form-attachments/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
-      const { url } = await storagePut(key, req.file.buffer, req.file.mimetype);
+      const { url } = await firebaseStoragePut(key, req.file.buffer, req.file.mimetype);
       res.json({ success: true, url, filename: req.file.originalname });
     } catch (e) {
       console.error("[upload-file] Error:", e);
