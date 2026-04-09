@@ -4,7 +4,7 @@
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Paperclip, X as XIcon } from "lucide-react";
 import { toast } from "sonner";
 import { ymGoal } from "@/lib/ym";
 
@@ -23,6 +23,43 @@ export default function ContactSection() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
   const [phoneDigits, setPhoneDigits] = useState("");
   const [sending, setSending] = useState(false);
+  const [file, setFile] = useState<File | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [fileUrl, setFileUrl] = useState<string | null>(null);
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files?.[0];
+    if (!selected) return;
+    if (selected.size > 20 * 1024 * 1024) {
+      toast.error("Файл слишком большой. Максимум 20 МБ.");
+      return;
+    }
+    setFile(selected);
+    setUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", selected);
+      const res = await fetch("/api/upload-file", { method: "POST", body: fd });
+      const data = await res.json();
+      if (data.success) {
+        setFileUrl(data.url);
+        toast.success("Файл загружен!");
+      } else {
+        toast.error("Ошибка загрузки файла");
+        setFile(null);
+      }
+    } catch {
+      toast.error("Ошибка загрузки файла");
+      setFile(null);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const removeFile = () => {
+    setFile(null);
+    setFileUrl(null);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,6 +74,8 @@ export default function ContactSection() {
           email: form.email,
           service: form.type,
           message: form.message,
+          fileUrl: fileUrl || undefined,
+          fileName: file?.name || undefined,
         }),
       });
       if (res.ok) {
@@ -44,6 +83,8 @@ export default function ContactSection() {
         toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
         setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
         setPhoneDigits("");
+        setFile(null);
+        setFileUrl(null);
       } else {
         toast.error("Ошибка при отправке. Позвоните нам: 8(800)101-2009");
       }
@@ -156,9 +197,37 @@ export default function ContactSection() {
                   placeholder="Опишите ваш объект и задачу..."
                 />
               </div>
+              {/* File attachment */}
+              <div>
+                <label className="block text-white/70 text-sm font-body mb-1.5">Прикрепить документ (необязательно)</label>
+                {file ? (
+                  <div className="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-4 py-2.5">
+                    <Paperclip size={16} className="text-[#B91C1C] flex-shrink-0" />
+                    <span className="text-white/80 text-sm font-body flex-1 truncate">
+                      {uploading ? "Загружаем..." : file.name}
+                    </span>
+                    {!uploading && (
+                      <button type="button" onClick={removeFile} className="text-white/50 hover:text-white transition-colors flex-shrink-0">
+                        <XIcon size={16} />
+                      </button>
+                    )}
+                  </div>
+                ) : (
+                  <label className="flex items-center gap-2 bg-white/10 border border-dashed border-white/30 hover:border-[#B91C1C] rounded-xl px-4 py-3 cursor-pointer transition-colors group">
+                    <Paperclip size={16} className="text-white/50 group-hover:text-[#B91C1C] transition-colors flex-shrink-0" />
+                    <span className="text-white/50 group-hover:text-white/80 text-sm font-body transition-colors">Нажмите для выбора файла (PDF, Word, Excel, до 20 МБ)</span>
+                    <input
+                      type="file"
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg,.zip,.rar,.dwg,.dxf"
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                )}
+              </div>
               <button
                 type="submit"
-                disabled={sending}
+                disabled={sending || uploading}
                 className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {sending ? "Отправляем..." : (

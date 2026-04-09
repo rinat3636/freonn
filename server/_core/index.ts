@@ -2,12 +2,14 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
+import multer from "multer";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { notifyOwner } from "./notification";
+import { storagePut } from "../storage";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -65,10 +67,28 @@ async function startServer() {
     }
   }
 
+  // File upload endpoint — stores file to S3 and returns URL
+  const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 20 * 1024 * 1024 } });
+  app.post("/api/upload-file", upload.single("file"), async (req: express.Request, res: express.Response) => {
+    try {
+      if (!req.file) {
+        res.status(400).json({ success: false, error: "Файл не получен" });
+        return;
+      }
+      const ext = req.file.originalname.split(".").pop() || "bin";
+      const key = `form-attachments/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+      const { url } = await storagePut(key, req.file.buffer, req.file.mimetype);
+      res.json({ success: true, url, filename: req.file.originalname });
+    } catch (e) {
+      console.error("[upload-file] Error:", e);
+      res.status(500).json({ success: false, error: "Ошибка загрузки файла" });
+    }
+  });
+
   // Form submission → MAX bot
   app.post("/api/submit-form", async (req, res) => {
     try {
-      const { name, phone, email, service, message } = req.body || {};
+      const { name, phone, email, service, message, fileUrl, fileName } = req.body || {};
       if (!name || !phone) {
         res.status(400).json({ success: false, error: "Имя и телефон обязательны" });
         return;
@@ -81,6 +101,7 @@ async function startServer() {
         email ? `📧 Email: ${email}` : null,
         service ? `🔧 Услуга: ${service}` : null,
         message ? `💬 Сообщение: ${message}` : null,
+        fileUrl ? `📎 Документ: ${fileName || "файл"} — ${fileUrl}` : null,
       ]
         .filter(Boolean)
         .join("\n");

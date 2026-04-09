@@ -87,3 +87,8 @@
 - [x] Добавить трекинг phone_click в Header, HeroSection, ContactSection, FloatingButtons, Footer
 - [x] Добавить трекинг messenger_click в FloatingButtons, Footer, ObjectCategory
 - [x] Добавить трекинг phone_click в страницы: NotFound, BlogArticle, ServicePage, CityPage, Requisites, Guarantee, PricingServicePage
+
+## Загрузка файла в форму заявки (April 9, 2026)
+- [x] Добавить поле загрузки файла в ContactSection
+- [x] tRPC endpoint для загрузки файла на S3
+- [x] Передача URL файла вместе с заявкой (емайл/уведомление)й в уведомление
