@@ -87,7 +87,7 @@ export default function PageLayout({ children, title, breadcrumb }: PageLayoutPr
         </div>
       )}
 
-      <main className="flex-1">
+      <main className="flex-1" data-theme="light">
         {children}
       </main>
 
