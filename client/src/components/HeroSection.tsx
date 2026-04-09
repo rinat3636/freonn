@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
 import { ymGoal } from "@/lib/ym";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/hero-bg-TSEFdwsLkkoBfLxyHqisJK.webp";
-
 const services = [
   { label: "Вентиляция", href: "/ventilyaciya" },
   { label: "Кондиционирование", href: "/kondicionirovanie" },
@@ -36,16 +34,40 @@ const quickLinks = [
 
 export default function HeroSection() {
   return (
-    <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0F1340]">
-      {/* Background image — decorative, LCP preloaded in index.html */}
+    <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0A0E2E]">
+      {/* Blue gradient background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${HERO_BG})` }}
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(135deg, #0A0E2E 0%, #0F1B4D 30%, #112266 55%, #0D1A55 75%, #080C28 100%)"
+        }}
         aria-hidden="true"
-        role="presentation"
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F1340]/97 via-[#0F1340]/85 to-[#0F1340]/55" />
+      {/* Subtle radial glow — top right */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 70% 60% at 75% 30%, rgba(30,80,180,0.35) 0%, transparent 70%)"
+        }}
+        aria-hidden="true"
+      />
+      {/* Subtle radial glow — bottom left */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 50% 50% at 15% 80%, rgba(15,50,130,0.3) 0%, transparent 65%)"
+        }}
+        aria-hidden="true"
+      />
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "60px 60px"
+        }}
+        aria-hidden="true"
+      />
       {/* Red accent stripe */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#B91C1C]" />
 
