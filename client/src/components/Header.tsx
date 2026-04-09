@@ -5,6 +5,7 @@
  * On light sections (data-theme="light"): colored logo (normal), dark navy nav, red-border button "ЗАЯВКА", dark burger.
  */
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { toast } from "sonner";
@@ -40,11 +41,57 @@ const topBarLinks = [
   { label: "Сертификаты", href: "/sertifikaty" },
 ];
 
+// theme-color map: route prefix -> color
+const ROUTE_THEME_COLORS: { prefix: string; color: string }[] = [
+  { prefix: "/", color: "#0A0E2E" }, // Home — dark hero
+  { prefix: "/thanks", color: "#0F1340" },
+  { prefix: "/contacts", color: "#ffffff" },
+  { prefix: "/o-kompanii", color: "#ffffff" },
+  { prefix: "/uslugi", color: "#ffffff" },
+  { prefix: "/ustanovka-", color: "#ffffff" },
+  { prefix: "/vozdushnoe-", color: "#ffffff" },
+  { prefix: "/holodosnabzhenie", color: "#ffffff" },
+  { prefix: "/vodosnabzhenie-", color: "#ffffff" },
+  { prefix: "/elektrosnabzhenie-", color: "#ffffff" },
+  { prefix: "/peskostrujnaya-", color: "#ffffff" },
+  { prefix: "/ceny", color: "#ffffff" },
+  { prefix: "/obekty", color: "#ffffff" },
+  { prefix: "/blog", color: "#ffffff" },
+  { prefix: "/faq", color: "#ffffff" },
+  { prefix: "/garantii", color: "#ffffff" },
+  { prefix: "/akcii", color: "#ffffff" },
+];
+
 export default function Header() {
   // isDark: true = over dark bg (white elements), false = over light bg (colored elements)
   const [isDark, setIsDark] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [location] = useLocation();
+
+  // Update theme-color based on route
+  useEffect(() => {
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (!metaTheme) {
+      const meta = document.createElement('meta');
+      meta.name = 'theme-color';
+      document.head.appendChild(meta);
+    }
+    const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+    if (!meta) return;
+    // Find matching route (longest prefix wins)
+    let matched = "#ffffff";
+    let matchLen = 0;
+    for (const { prefix, color } of ROUTE_THEME_COLORS) {
+      if (location === "/" && prefix === "/") { matched = color; break; }
+      if (prefix !== "/" && location.startsWith(prefix) && prefix.length > matchLen) {
+        matched = color;
+        matchLen = prefix.length;
+      }
+    }
+    if (location === "/") matched = "#0A0E2E";
+    meta.setAttribute('content', matched);
+  }, [location]);
 
   useEffect(() => {
     const checkBackground = () => {
