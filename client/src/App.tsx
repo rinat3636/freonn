@@ -25,6 +25,7 @@ import PartnersPage from "./pages/Partners";
 import DocumentsPage from "./pages/Documents";
 import PricingServicePage from "./pages/PricingServicePage";
 import ComingSoon from "./pages/ComingSoon";
+import ThanksPage from "./pages/Thanks";
 
 function Router() {
   return (
@@ -122,6 +123,7 @@ function Router() {
         )}
       </Route>
 
+      <Route path={"/spasibo"} component={ThanksPage} />
       {/* City pages — MUST be last before 404 */}
       <Route path={"/:city"}>
         {(params) => <CityPage city={params.city || ""} />}

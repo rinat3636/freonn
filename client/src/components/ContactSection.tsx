@@ -4,6 +4,7 @@
  */
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Phone, Mail, MapPin, Clock, Send, Paperclip, X as XIcon } from "lucide-react";
 import { toast } from "sonner";
 import { ymGoal } from "@/lib/ym";
@@ -20,6 +21,7 @@ function formatPhone(digits: string): string {
 }
 
 export default function ContactSection() {
+  const [, navigate] = useLocation();
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
   const [phoneDigits, setPhoneDigits] = useState("");
   const [sending, setSending] = useState(false);
@@ -80,11 +82,11 @@ export default function ContactSection() {
       });
       if (res.ok) {
         ymGoal("form_submit", { service: form.type });
-        toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
         setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
         setPhoneDigits("");
         setFile(null);
         setFileUrl(null);
+        navigate("/spasibo");
       } else {
         toast.error("Ошибка при отправке. Позвоните нам: 8(800)101-2009");
       }
