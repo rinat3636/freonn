@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/hero-bg-TSEFdwsLkkoBfLxyHqisJK.webp";
 
@@ -141,7 +142,7 @@ export default function HeroSection() {
               className="bg-white/8 backdrop-blur-sm border border-[#B91C1C]/60 p-5 mt-2 rounded-2xl hover:border-[#B91C1C] transition-all duration-300"
             >
               <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
-              <a href="tel:88001012009" className="font-heading font-bold text-white text-xl hover:text-white/90 transition-colors">
+              <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="font-heading font-bold text-white text-xl hover:text-white/90 transition-colors">
                 8(800)101-2009
               </a>
               <div className="text-white/50 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>
@@ -152,7 +153,7 @@ export default function HeroSection() {
           <div className="lg:hidden col-span-full">
             <div className="bg-white/8 backdrop-blur-sm border border-[#B91C1C]/60 p-4 rounded-2xl">
               <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
-              <a href="tel:88001012009" className="font-heading font-bold text-white text-lg">
+              <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="font-heading font-bold text-white text-lg">
                 8(800)101-2009
               </a>
               <div className="text-white/50 text-xs font-body mt-0.5">Бесплатно по России · Пн–Сб 9:00–19:00</div>

@@ -75,3 +75,15 @@
 - [ ] Усилить LocalBusiness/ProfessionalService JSON-LD сигналы
 - [ ] Обновить robots.txt для ускорения переиндексации
 - [ ] Создать инструкцию по регистрации в Яндекс.Вебмастере
+
+## Яндекс.Метрика — Цели и трекинг (April 9, 2026)
+- [x] Добавить цель "Отправка формы заявки" (JS-событие: form_submit, ID: 545368654)
+- [x] Добавить цель "Клик по телефону" (все номера, ID: 545368823)
+- [x] Добавить цель "Переход в мессенджер" (все мессенджеры, ID: 545369005)
+- [x] Подтвердить сайт в Яндекс.Вебмастере (уже активен)
+- [x] Настроить регион "Москва" в Яндекс.Вебмастере (заявка принята, 7 дней)
+- [x] Создать утилиту ymGoal (client/src/lib/ym.ts)
+- [x] Добавить трекинг form_submit в ContactSection
+- [x] Добавить трекинг phone_click в Header, HeroSection, ContactSection, FloatingButtons, Footer
+- [x] Добавить трекинг messenger_click в FloatingButtons, Footer, ObjectCategory
+- [x] Добавить трекинг phone_click в страницы: NotFound, BlogArticle, ServicePage, CityPage, Requisites, Guarantee, PricingServicePage

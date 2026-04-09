@@ -1,3 +1,4 @@
+import { ymGoal } from "@/lib/ym";
 /*
  * FREONN REQUISITES PAGE — /rekvizity
  */
@@ -89,7 +90,7 @@ export default function RequisitesPage() {
           <div className="mt-6 bg-[#F7F8FF] rounded-2xl p-5">
             <p className="text-gray-500 font-body text-sm text-center">
               Для получения счёта, договора или закрывающих документов — свяжитесь с нами по телефону{" "}
-              <a href="tel:88001012009" className="text-[#2D3092] font-semibold hover:underline">8(800)101-2009</a>{" "}
+              <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="text-[#2D3092] font-semibold hover:underline">8(800)101-2009</a>{" "}
               или по email{" "}
               <a href="mailto:info@freonn.ru" className="text-[#2D3092] font-semibold hover:underline">info@freonn.ru</a>
             </p>

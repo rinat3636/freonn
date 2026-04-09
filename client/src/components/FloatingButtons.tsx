@@ -5,6 +5,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const MAX_URL = "https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA";
 
@@ -32,6 +33,7 @@ export default function FloatingButtons() {
         href={MAX_URL}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => ymGoal("messenger_click", { messenger: "MAX" })}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
@@ -46,6 +48,7 @@ export default function FloatingButtons() {
       {/* Phone */}
       <motion.a
         href="tel:88001012009"
+        onClick={() => ymGoal("phone_click")}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.8 }}

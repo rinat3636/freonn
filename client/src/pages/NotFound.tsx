@@ -1,3 +1,4 @@
+import { ymGoal } from "@/lib/ym";
 /*
  * FREONN 404 PAGE — noindex, nofollow
  * Брендированная страница 404 на русском языке
@@ -81,7 +82,7 @@ export default function NotFound() {
                 <Home size={16} /> На главную
               </button>
               <a
-                href="tel:88001012009"
+                href="tel:88001012009" onClick={() => ymGoal("phone_click")}
                 className="btn-dark inline-flex items-center gap-2 justify-center"
               >
                 <Phone size={16} /> 8(800)101-2009

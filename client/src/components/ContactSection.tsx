@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
+import { ymGoal } from "@/lib/ym";
 
 // Format digits into +7 (XXX) XXX-XX-XX mask
 function formatPhone(digits: string): string {
@@ -39,6 +40,7 @@ export default function ContactSection() {
         }),
       });
       if (res.ok) {
+        ymGoal("form_submit", { service: form.type });
         toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
         setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
         setPhoneDigits("");
@@ -189,7 +191,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Телефон</div>
-                    <a href="tel:88001012009" className="text-white font-heading font-semibold text-lg hover:text-[#B91C1C] transition-colors">
+                    <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="text-white font-heading font-semibold text-lg hover:text-[#B91C1C] transition-colors">
                       8(800)101-2009
                     </a>
                     <div className="text-white/50 text-xs font-body">Бесплатно по России</div>

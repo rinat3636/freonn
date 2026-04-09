@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import { toast } from "sonner";
+import { ymGoal } from "@/lib/ym";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png";
 
@@ -202,7 +203,7 @@ export default function Header() {
             </div>
             {/* Contact info */}
             <div className="px-4 py-4 bg-[#B91C1C]/10 border-b border-white/10">
-              <a href="tel:88001012009" className="flex items-center gap-2 text-white font-heading font-semibold text-lg mb-1">
+              <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="flex items-center gap-2 text-white font-heading font-semibold text-lg mb-1">
                 <Phone size={18} className="text-[#B91C1C]" /> 8(800)101-2009
               </a>
               <p className="text-white/50 text-xs font-body">Бесплатно по России · Пн-Сб 9:00–19:00</p>
