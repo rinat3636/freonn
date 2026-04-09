@@ -103,12 +103,7 @@ export default function Footer() {
               </div>
             </div>
             {/* Yandex rating */}
-            <a
-              href="https://yandex.ru/maps/org/freonn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-4 py-3 mb-5 transition-colors group"
-            >
+            <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3 mb-5">
               {/* Yandex Maps pin icon */}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-7 h-7 flex-shrink-0" fill="none">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#FC3F1D"/>
@@ -129,7 +124,7 @@ export default function Footer() {
                 </div>
                 <div className="text-white/50 text-xs font-body mt-0.5">Рейтинг в Яндексе</div>
               </div>
-            </a>
+            </div>
 
             {/* Social */}
             <div className="flex gap-3">
