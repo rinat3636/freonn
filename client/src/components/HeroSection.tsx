@@ -118,7 +118,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}
-                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-white/15 p-5 hover:bg-white/15 hover:border-[#B91C1C]/50 transition-all duration-300 rounded-2xl"
+                className="group flex items-start gap-4 bg-white/8 backdrop-blur-sm border border-[#B91C1C]/60 p-5 hover:bg-[#B91C1C]/15 hover:border-[#B91C1C] transition-all duration-300 rounded-2xl"
               >
                 <div className="w-10 h-10 bg-[#B91C1C]/15 flex items-center justify-center group-hover:bg-[#B91C1C] transition-colors rounded-full flex-shrink-0">
                   <item.icon size={18} className="text-[#B91C1C] group-hover:text-white transition-colors" />
@@ -138,7 +138,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.55 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 p-5 mt-2 rounded-2xl"
+              className="bg-white/8 backdrop-blur-sm border border-[#B91C1C]/60 p-5 mt-2 rounded-2xl hover:border-[#B91C1C] transition-all duration-300"
             >
               <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
               <a href="tel:88001012009" className="font-heading font-bold text-white text-xl hover:text-white/90 transition-colors">
@@ -150,7 +150,7 @@ export default function HeroSection() {
 
           {/* Mobile: phone block below content */}
           <div className="lg:hidden col-span-full">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-4 rounded-2xl">
+            <div className="bg-white/8 backdrop-blur-sm border border-[#B91C1C]/60 p-4 rounded-2xl">
               <div className="text-white/60 text-xs font-body mb-1 uppercase tracking-wider">Бесплатная консультация</div>
               <a href="tel:88001012009" className="font-heading font-bold text-white text-lg">
                 8(800)101-2009
