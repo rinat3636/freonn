@@ -4,7 +4,7 @@
  * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 
@@ -166,9 +166,7 @@ export default function BlogSection() {
                 <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-1 tracking-wide rounded-full ${categoryColors[articles[0].category] || "bg-gray-100 text-gray-600"}`}>
                   {articles[0].category}
                 </span>
-                <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
-                  <Clock size={11} /> {articles[0].readTime}
-                </span>
+
               </div>
               <h3 className="font-heading font-bold text-[#0F1340] text-xl mb-2 group-hover:text-[#2D3092] transition-colors leading-snug">
                 {articles[0].title}
@@ -205,9 +203,7 @@ export default function BlogSection() {
                       <span className={`text-xs font-heading font-semibold uppercase px-2 py-0.5 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                         {article.category}
                       </span>
-                      <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
-                        <Clock size={10} /> {article.readTime}
-                      </span>
+
                     </div>
                     <h3 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug group-hover:text-[#2D3092] transition-colors line-clamp-2">
                       {article.title}
@@ -243,9 +239,7 @@ export default function BlogSection() {
                   <span className={`text-xs font-heading font-semibold uppercase px-2.5 py-0.5 tracking-wide rounded-full ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                     {article.category}
                   </span>
-                  <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
-                    <Clock size={10} /> {article.readTime}
-                  </span>
+
                 </div>
                 <h3 className="font-heading font-semibold text-[#0F1340] text-xs mb-2 group-hover:text-[#2D3092] transition-colors leading-snug line-clamp-3">
                   {article.title}

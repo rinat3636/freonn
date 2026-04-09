@@ -4,7 +4,7 @@
 import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 
@@ -214,9 +214,7 @@ export default function BlogPage() {
                     <span className={`text-xs px-2.5 py-1 rounded-full font-body font-medium ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
                       {article.category}
                     </span>
-                    <span className="flex items-center gap-1 text-gray-400 text-xs font-body">
-                      <Clock size={12} /> {article.readTime}
-                    </span>
+
                   </div>
                   <h2 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug mb-2 group-hover:text-[#2D3092] transition-colors line-clamp-2">
                     {article.title}

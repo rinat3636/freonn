@@ -6,7 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import { useRoute } from "wouter";
 import { motion } from "framer-motion";
 import { useSEO } from "@/hooks/useSEO";
-import { Clock, ArrowLeft, Phone } from "lucide-react";
+import { ArrowLeft, Phone } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 
@@ -548,9 +548,7 @@ export default function BlogArticlePage() {
             <span className={`text-xs px-3 py-1 rounded-full font-body font-medium ${categoryColors[article.category] || "bg-gray-100 text-gray-600"}`}>
               {article.category}
             </span>
-            <span className="flex items-center gap-1.5 text-gray-400 text-sm font-body">
-              <Clock size={14} /> {article.readTime}
-            </span>
+
           </div>
 
           {/* Hero image */}
