@@ -230,11 +230,10 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
         { "@type": "AdministrativeArea", name: "Московская область" },
       ],
       serviceType: service.title,
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "RUB",
-        availability: "https://schema.org/InStock",
-        url: `https://freonn.ru/${resolvedSlug}`,
+      termsOfService: "https://freonn.ru/uslugi",
+      serviceOutput: {
+        "@type": "Thing",
+        name: service.title,
       },
     },
   });

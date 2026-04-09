@@ -259,10 +259,9 @@ export default function CityPage({ city }: CityPageProps) {
       },
       areaServed: { "@type": "City", name: cityName },
       serviceType: "Монтаж инженерных систем",
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "RUB",
-        availability: "https://schema.org/InStock",
+      serviceOutput: {
+        "@type": "Thing",
+        name: "Монтаж инженерных систем",
       },
     },
   });

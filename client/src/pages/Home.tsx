@@ -28,8 +28,8 @@ export default function Home() {
     jsonLd: [
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://freonn.ru/#localbusiness",
+        "@type": ["ProfessionalService", "HomeAndConstructionBusiness"],
+        "@id": "https://freonn.ru/#business",
         name: "Freonn — Инженерная компания",
         legalName: "ООО «ЭКС»",
         alternateName: "Freonn",
@@ -39,9 +39,6 @@ export default function Home() {
         email: "info@freonn.ru",
         image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
         logo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
-        priceRange: "$$",
-        currenciesAccepted: "RUB",
-        paymentAccepted: "Cash, Credit Card, Bank Transfer",
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -73,23 +70,19 @@ export default function Home() {
           { "@type": "City", name: "Москва" },
           { "@type": "AdministrativeArea", name: "Московская область" },
         ],
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Инженерные системы",
-          itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Монтаж вентиляции", url: "https://freonn.ru/ustanovka-ventilyacii" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Монтаж кондиционирования", url: "https://freonn.ru/ustanovka-kondicionirovaniya" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Монтаж дымоудаления", url: "https://freonn.ru/ustanovka-dymoudaleniya" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Воздушное отопление", url: "https://freonn.ru/vozdushnoe-otoplenie" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Холодоснабжение", url: "https://freonn.ru/holodosnabzhenie" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Водоснабжение и канализация", url: "https://freonn.ru/vodosnabzhenie-i-kanalizaciya" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Электроснабжение и освещение", url: "https://freonn.ru/elektrosnabzhenie-i-osveshenie" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Пескоструйная обработка", url: "https://freonn.ru/peskostrujnaya-obrabotka" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Проектирование ОВиК", url: "https://freonn.ru/proektirovanie-ovik" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Пусконаладочные работы", url: "https://freonn.ru/puskonaladochnye-raboty" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Сервисное обслуживание", url: "https://freonn.ru/servisnoe-obsluzhivanie" } },
-          ],
-        },
+        knowsAbout: [
+          "Монтаж вентиляции",
+          "Монтаж кондиционирования",
+          "Монтаж дымоудаления",
+          "Воздушное отопление",
+          "Холодоснабжение",
+          "Водоснабжение и канализация",
+          "Электроснабжение и освещение",
+          "Пескоструйная обработка",
+          "Проектирование ОВиК",
+          "Пусконаладочные работы",
+          "Сервисное обслуживание"
+        ],
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.9",
