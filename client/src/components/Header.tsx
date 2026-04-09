@@ -70,7 +70,7 @@ export default function Header() {
 
       const dark = currentTheme === "dark";
       setIsDark(dark);
-      // theme-color stays transparent — no status bar background
+
     };
 
     window.addEventListener("scroll", checkBackground, { passive: true });
@@ -108,7 +108,7 @@ export default function Header() {
   const logoFilter = ""; // logo always in original colors
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
       <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
         {/* Logo */}
         <a href="/" className="flex-shrink-0">
