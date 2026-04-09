@@ -73,7 +73,7 @@ export default function Header() {
       // Update browser theme-color for mobile status bar
       const metaTheme = document.querySelector('meta[name="theme-color"]');
       if (metaTheme) {
-        metaTheme.setAttribute('content', dark ? '#0F1340' : '#ffffff');
+        metaTheme.setAttribute('content', dark ? '#0A0E2E' : '#ffffff');
       }
     };
 
