@@ -109,7 +109,7 @@ export default function Header() {
     ? "text-white hover:text-white/70"
     : "text-[#0F1340] hover:text-[#B91C1C]";
 
-  const logoFilter = isDark ? "brightness-0 invert" : "";
+  const logoFilter = ""; // logo always in original colors
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent">
