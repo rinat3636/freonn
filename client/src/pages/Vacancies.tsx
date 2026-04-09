@@ -1,6 +1,7 @@
 /*
  * FREONN VACANCIES PAGE — /vakansii
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
@@ -114,6 +115,13 @@ const benefits = [
 ];
 
 export default function VacanciesPage() {
+
+  useSEO({
+    title: "Вакансии — работа в инженерной компании Freonn",
+    description: "Открытые вакансии в Freonn: монтажники вентиляции, инженеры-проектировщики, менеджеры. Официальное трудоустройство, достойная зарплата, обучение.",
+    keywords: "вакансии монтажник вентиляции, работа инженер Москва, вакансии инженерная компания",
+    canonical: "/vakansii",
+  });
   return (
     <PageLayout
       title="Вакансии"

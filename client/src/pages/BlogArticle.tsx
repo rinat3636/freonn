@@ -5,6 +5,7 @@
 import PageLayout from "@/components/PageLayout";
 import { useRoute } from "wouter";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import { Clock, ArrowLeft, Phone } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
@@ -480,6 +481,16 @@ export default function BlogArticlePage() {
   const [, params] = useRoute("/blog/:slug");
   const slug = params?.slug || "";
   const article = articles[slug];
+
+  useSEO(article ? {
+    title: article.title,
+    description: article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160),
+    keywords: article.category.toLowerCase() + ', инженерные системы, Freonn',
+    canonical: '/blog/' + slug,
+  } : {
+    title: 'Статья не найдена',
+    description: 'Статья не найдена',
+  });
 
   if (!article) {
     return (

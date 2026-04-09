@@ -2,6 +2,7 @@
  * FREONN HOME PAGE — Bold Technical Expressionism
  * Assembles all sections in order matching ceds.ru structure
  */
+import { useSEO } from "@/hooks/useSEO";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -19,6 +20,13 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
 export default function Home() {
+  useSEO({
+    title: "Монтаж инженерных систем в Москве и МО",
+    description: "Freonn — проектирование, монтаж и обслуживание вентиляции, кондиционирования, дымоудаления, отопления и электроснабжения в Москве и Московской области. Более 1280 выполненных объектов.",
+    keywords: "монтаж вентиляции Москва, кондиционирование офиса, дымоудаление, инженерные системы, проектирование вентиляции МО",
+    canonical: "/",
+  });
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

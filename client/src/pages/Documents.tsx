@@ -1,6 +1,7 @@
 /*
  * FREONN DOCUMENTS PAGE — /dokumenty
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
 import { FileText, Shield, Award, Download } from "lucide-react";
@@ -86,6 +87,13 @@ const documents = [
 ];
 
 export default function DocumentsPage() {
+
+  useSEO({
+    title: "Документы и лицензии — Freonn",
+    description: "Лицензии МЧС, допуск СРО, сертификаты ISO и производителей оборудования. Freonn работает в полном соответствии с законодательством РФ.",
+    keywords: "лицензия МЧС монтаж, допуск СРО вентиляция, сертификаты инженерная компания",
+    canonical: "/sertifikaty",
+  });
   return (
     <PageLayout
       title="Документы и лицензии"

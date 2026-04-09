@@ -4,6 +4,7 @@
  */
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
+import { useSEO } from "@/hooks/useSEO";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, MapPin, Clock, Phone, Wind, Thermometer, Flame, Snowflake, ShieldAlert, Droplets, Zap, Hammer } from "lucide-react";
 
@@ -82,6 +83,13 @@ export default function CityPage({ city }: CityPageProps) {
   const cityName = cityNames[city] || city.charAt(0).toUpperCase() + city.slice(1).replace(/-/g, " ");
   const title = `Инженерные системы в ${cityName}е`;
   const titleGenitive = cityNames[city] ? `${cityName}` : cityName;
+
+  useSEO({
+    title: `Монтаж вентиляции и кондиционирования в ${cityName} — Freonn`,
+    description: `Проектирование и монтаж инженерных систем в ${cityName}: вентиляция, кондиционирование, дымоудаление, отопление. Бесплатный выезд инженера, гарантия 1 год.`,
+    keywords: `монтаж вентиляции ${cityName}, кондиционирование ${cityName}, инженерные системы ${cityName}`,
+    canonical: `/${city}`,
+  });
 
   return (
     <PageLayout

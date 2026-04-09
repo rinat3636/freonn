@@ -4,6 +4,7 @@
  */
 import PageLayout from "@/components/PageLayout";
 import { useRoute } from "wouter";
+import { useSEO } from "@/hooks/useSEO";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Phone, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert, Hammer } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
@@ -158,6 +159,13 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
   }
 
   const Icon = service.icon;
+
+  useSEO({
+    title: `${service.title} в Москве и МО — цены, проектирование, монтаж`,
+    description: `${service.description.slice(0, 160)}`,
+    keywords: `${service.title.toLowerCase()} Москва, монтаж ${service.title.toLowerCase()} цена, ${service.title.toLowerCase()} МО`,
+    canonical: `/${resolvedSlug}`,
+  });
 
   return (
     <PageLayout

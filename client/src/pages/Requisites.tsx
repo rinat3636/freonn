@@ -1,6 +1,7 @@
 /*
  * FREONN REQUISITES PAGE — /rekvizity
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { Copy, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -54,6 +55,13 @@ function CopyRow({ label, value }: { label: string; value: string }) {
 }
 
 export default function RequisitesPage() {
+
+  useSEO({
+    title: "Реквизиты компании Freonn",
+    description: "Официальные реквизиты ООО Freonn: ИНН, КПП, ОГРН, банковские реквизиты для заключения договора на монтаж инженерных систем.",
+    keywords: "реквизиты Freonn, ИНН инженерная компания, договор монтаж вентиляции",
+    canonical: "/rekvizity",
+  });
   return (
     <PageLayout
       title="Реквизиты компании"

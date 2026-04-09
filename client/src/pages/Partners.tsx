@@ -1,6 +1,7 @@
 /*
  * FREONN PARTNERS PAGE — /partnery
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
@@ -38,6 +39,13 @@ const partnerBenefits = [
 ];
 
 export default function PartnersPage() {
+
+  useSEO({
+    title: "Партнёры — Freonn инженерная компания",
+    description: "Официальные партнёры Freonn: производители оборудования, поставщики материалов, проектные организации. Сотрудничество и дилерские программы.",
+    keywords: "партнёры инженерная компания, дилер вентиляция, поставщик кондиционеры Москва",
+    canonical: "/partnery",
+  });
   return (
     <PageLayout
       title="Партнёры"

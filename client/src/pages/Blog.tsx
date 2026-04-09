@@ -1,6 +1,7 @@
 /*
  * FREONN BLOG PAGE — /blog
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
@@ -163,6 +164,13 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function BlogPage() {
+
+  useSEO({
+    title: "Блог — статьи об инженерных системах",
+    description: "Полезные статьи о вентиляции, кондиционировании, дымоудалении и отоплении. Советы по выбору оборудования, нормы проектирования, разбор реальных объектов.",
+    keywords: "блог вентиляция, статьи кондиционирование, инженерные системы статьи, нормы вентиляции",
+    canonical: "/blog",
+  });
   return (
     <PageLayout
       title="Блог — статьи об инженерных системах"

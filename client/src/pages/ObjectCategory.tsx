@@ -4,6 +4,7 @@
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import { ArrowRight, CheckCircle, Building2, Factory, Star } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
@@ -198,6 +199,23 @@ interface ObjectCategoryPageProps {
 export default function ObjectCategoryPage({ category }: ObjectCategoryPageProps) {
   const data = categoryData[category];
   const Icon = data.icon;
+
+  const seoTitles: Record<string, string> = {
+    "promyshlennye-obekty": "Инженерные системы для промышленных объектов — Freonn",
+    "kommercheskie-obekty": "Инженерные системы для коммерческих объектов — Freonn",
+    "premium-obekty": "Инженерные системы для премиум-объектов — Freonn",
+  };
+  const seoDescs: Record<string, string> = {
+    "promyshlennye-obekty": "Проектирование и монтаж инженерных систем для промышленных предприятий: вентиляция, кондиционирование, дымоудаление, отопление. Опыт 15+ лет.",
+    "kommercheskie-obekty": "Монтаж вентиляции и кондиционирования в торговых центрах, офисах, ресторанах. Под ключ, гарантия 1 год.",
+    "premium-obekty": "Инженерные системы премиум-класса для элитной недвижимости. Индивидуальный подход, скрытый монтаж, лучшее оборудование.",
+  };
+  useSEO({
+    title: seoTitles[category] || data.title + " — Freonn",
+    description: seoDescs[category] || data.description.slice(0, 160),
+    keywords: data.title.toLowerCase() + ", инженерные системы, вентиляция, кондиционирование",
+    canonical: "/" + category,
+  });
 
   return (
     <PageLayout title={data.title} breadcrumb={data.breadcrumb}>

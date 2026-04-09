@@ -5,6 +5,7 @@
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import { ArrowRight, CheckCircle, Phone } from "lucide-react";
 
 interface PriceRow {
@@ -260,6 +261,13 @@ interface PricingServicePageProps {
 
 export default function PricingServicePage({ service }: PricingServicePageProps) {
   const data = pricingData[service] || pricingData["kompleks"];
+
+  useSEO({
+    title: `Цены на ${data.title.toLowerCase()} — Freonn`,
+    description: data.description.slice(0, 160),
+    keywords: `цены ${data.title.toLowerCase()}, стоимость монтажа, прайс-лист, Freonn`,
+    canonical: `/ceny/${service}`,
+  });
 
   return (
     <PageLayout title={data.title} breadcrumb={data.breadcrumb}>

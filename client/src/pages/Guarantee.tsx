@@ -1,6 +1,7 @@
 /*
  * FREONN GUARANTEE PAGE — /garantiya
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
@@ -41,6 +42,13 @@ const conditions = [
 ];
 
 export default function GuaranteePage() {
+
+  useSEO({
+    title: "Гарантии на монтаж инженерных систем — Freonn",
+    description: "Freonn предоставляет гарантию до 5 лет на все виды монтажных работ. Официальный договор, гарантийное обслуживание, техническая поддержка.",
+    keywords: "гарантия монтаж вентиляции, гарантийное обслуживание кондиционирование, гарантия инженерные системы",
+    canonical: "/garantii",
+  });
   return (
     <PageLayout
       title="Гарантия на работы"

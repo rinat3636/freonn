@@ -1,6 +1,7 @@
 /*
  * FREONN NEWS PAGE — /novosti
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
@@ -81,6 +82,13 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function NewsPage() {
+
+  useSEO({
+    title: "Новости компании Freonn",
+    description: "Последние новости инженерной компании Freonn: новые объекты, сертификаты, акции, обновления оборудования и технологий монтажа.",
+    keywords: "новости Freonn, инженерная компания новости, вентиляция новости",
+    canonical: "/novosti",
+  });
   return (
     <PageLayout
       title="Новости компании"

@@ -1,6 +1,7 @@
 /*
  * FREONN PROMOTIONS PAGE — /akcii
  */
+import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
@@ -94,6 +95,13 @@ const promotions = [
 ];
 
 export default function PromotionsPage() {
+
+  useSEO({
+    title: "Акции и скидки — монтаж инженерных систем",
+    description: "Актуальные акции и специальные предложения от Freonn: скидки на монтаж вентиляции, бесплатный выезд инженера, рассрочка на оборудование.",
+    keywords: "акции монтаж вентиляции, скидки кондиционирование, спецпредложения инженерные системы",
+    canonical: "/akcii",
+  });
   return (
     <PageLayout
       title="Акции и спецпредложения"
