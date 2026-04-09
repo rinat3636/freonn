@@ -266,9 +266,9 @@ export default function Header() {
               <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
                 Вызвать инженера
               </a>
-              <button onClick={() => { handleTopLink(); setMobileOpen(false); }} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
+              <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
                 Пригласить в тендер
-              </button>
+              </a>
               <a
                 href="https://max.ru/id3604084591_biz"
                 target="_blank"
