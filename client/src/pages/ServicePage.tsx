@@ -148,6 +148,16 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
   const [matchWater] = useRoute("/vodosnabzhenie");
   const [matchSand] = useRoute("/peskostrujnaya-obrabotka");
   const [matchElec] = useRoute("/elektrosnabzhenie");
+  const [matchUstVent] = useRoute("/ustanovka-ventilyacii");
+  const [matchUstAC] = useRoute("/ustanovka-kondicionirovaniya");
+  const [matchUstSmoke] = useRoute("/ustanovka-dymoudaleniya");
+  const [matchVozdOtop] = useRoute("/vozdushnoe-otoplenie");
+  const [matchVodoKan] = useRoute("/vodosnabzhenie-i-kanalizaciya");
+  const [matchElecOsv] = useRoute("/elektrosnabzhenie-i-osveshchenie");
+  const [matchProekt] = useRoute("/proektirovanie-ovik");
+  const [matchMontazh] = useRoute("/montazh-ovik");
+  const [matchPusko] = useRoute("/puskonaladochnye-raboty");
+  const [matchServis] = useRoute("/servisnoe-obsluzhivanie");
 
   let slug = propSlug || "";
   if (matchVent) slug = "ventilyaciya";
@@ -158,6 +168,16 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
   else if (matchWater) slug = "vodosnabzhenie";
   else if (matchSand) slug = "peskostrujnaya-obrabotka";
   else if (matchElec) slug = "elektrosnabzhenie";
+  else if (matchUstVent) slug = "ustanovka-ventilyacii";
+  else if (matchUstAC) slug = "ustanovka-kondicionirovaniya";
+  else if (matchUstSmoke) slug = "ustanovka-dymoudaleniya";
+  else if (matchVozdOtop) slug = "vozdushnoe-otoplenie";
+  else if (matchVodoKan) slug = "vodosnabzhenie-i-kanalizaciya";
+  else if (matchElecOsv) slug = "elektrosnabzhenie-i-osveshchenie";
+  else if (matchProekt) slug = "proektirovanie-ovik";
+  else if (matchMontazh) slug = "montazh-ovik";
+  else if (matchPusko) slug = "puskonaladochnye-raboty";
+  else if (matchServis) slug = "servisnoe-obsluzhivanie";
 
   // Resolve aliases
   const resolvedSlug = slugAliases[slug] || slug;

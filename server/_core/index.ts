@@ -7,6 +7,7 @@ import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { notifyOwner } from "./notification";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -84,6 +85,15 @@ async function startServer() {
         .filter(Boolean)
         .join("\n");
       await sendMaxMessage(text);
+      // Also send via Manus notifyOwner as backup
+      try {
+        await notifyOwner({
+          title: `Новая заявка с freonn.ru — ${name}`,
+          content: text,
+        });
+      } catch {
+        // notifyOwner failure is non-critical
+      }
       res.json({ success: true });
     } catch (e) {
       console.error("[submit-form] Error:", e);

@@ -29,10 +29,15 @@
 - [x] sitemap.xml created with all URLs
 
 ## Pending
-- [ ] Form submission notification to MAX channel
+- [x] Form submission notification to MAX channel (MAX bot + notifyOwner backup)
 - [ ] Replace stock photos with real project photos
 - [ ] Custom domain setup (freonn.ru)
 - [ ] Google/Yandex Search Console submission
+
+## Session April 9, 2026
+- [x] ServicePage fix: added useRoute hooks for all 10 alias routes (ustanovka-ventilyacii, etc.)
+- [x] Form notifications: notifyOwner (Manus) added as backup alongside MAX bot
+- [x] All pages verified — no empty/placeholder content found (4 ComingSoon pages are intentional)
 
 ## SEO Максимальная проработка (Апрель 2025)
 - [x] useSEO хук расширен: JSON-LD, BreadcrumbList, ogType article, noIndex, publishedTime
