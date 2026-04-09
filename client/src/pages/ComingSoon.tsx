@@ -38,10 +38,10 @@ export default function ComingSoon({ title, breadcrumb }: ComingSoonProps) {
               Этот раздел сайта находится в разработке. Пока вы можете связаться с нами напрямую — мы ответим на все вопросы.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+              <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
                 <Phone size={16} /> Связаться с нами
               </a>
-              <a href="/" className="btn-outline inline-flex items-center gap-2 justify-center border-[#0F1340] text-[#0F1340]">
+              <a href="/" className="btn-dark inline-flex items-center gap-2 justify-center">
                 На главную <ArrowRight size={16} />
               </a>
             </div>

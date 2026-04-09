@@ -145,7 +145,7 @@ export default function PromotionsPage() {
                 <div className="p-4 pt-0">
                   <a
                     href="/contacts"
-                    className="w-full btn-primary inline-flex items-center justify-center gap-2 text-sm"
+                    className="w-full btn-dark inline-flex items-center justify-center gap-2 text-sm"
                   >
                     {promo.cta} <ArrowRight size={14} />
                   </a>
@@ -160,7 +160,7 @@ export default function PromotionsPage() {
             <p className="text-gray-500 font-body text-sm mb-4">
               Для крупных объектов и постоянных клиентов мы готовы рассмотреть индивидуальные условия. Свяжитесь с нами.
             </p>
-            <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+            <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
               Обсудить условия <ArrowRight size={14} />
             </a>
           </div>

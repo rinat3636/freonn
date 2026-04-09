@@ -196,7 +196,7 @@ export default function VacanciesPage() {
                   <div className="lg:ml-4 flex-shrink-0">
                     <a
                       href="/contacts"
-                      className="btn-primary inline-flex items-center gap-2 whitespace-nowrap"
+                      className="btn-dark inline-flex items-center gap-2 whitespace-nowrap"
                     >
                       Откликнуться <ArrowRight size={14} />
                     </a>
@@ -213,7 +213,7 @@ export default function VacanciesPage() {
             <p className="text-gray-500 font-body text-sm mb-4">
               Отправьте нам своё резюме — мы рассмотрим вашу кандидатуру и свяжемся при появлении подходящей позиции.
             </p>
-            <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+            <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
               Отправить резюме <ArrowRight size={14} />
             </a>
           </div>

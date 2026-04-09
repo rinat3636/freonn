@@ -168,7 +168,7 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
       <PageLayout title="Услуга не найдена" breadcrumb={[{ label: "Услуги", href: "/uslugi" }, { label: "Не найдено" }]}>
         <div className="container py-20 text-center">
           <p className="text-gray-500 font-body mb-6">Запрашиваемая услуга не найдена.</p>
-          <a href="/uslugi" className="btn-primary inline-flex items-center gap-2">
+          <a href="/uslugi" className="btn-dark inline-flex items-center gap-2">
             Все услуги <ArrowRight size={16} />
           </a>
         </div>
@@ -251,10 +251,10 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
                 ))}
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+                <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
                   <Phone size={16} /> Получить расчёт
                 </a>
-                <a href="tel:88001012009" className="btn-outline inline-flex items-center gap-2 justify-center border-[#0F1340] text-[#0F1340]">
+                <a href="tel:88001012009" className="btn-dark inline-flex items-center gap-2 justify-center">
                   8(800)101-2009
                 </a>
               </div>
@@ -310,10 +310,10 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
               {service.lsiText}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
                 <Phone size={16} /> Получить бесплатный расчёт
               </a>
-              <a href="/uslugi" className="btn-outline inline-flex items-center gap-2 border-[#0F1340] text-[#0F1340]">
+              <a href="/uslugi" className="btn-dark inline-flex items-center gap-2">
                 Все услуги <ArrowRight size={16} />
               </a>
             </div>

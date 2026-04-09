@@ -528,7 +528,7 @@ export default function BlogArticlePage() {
       <PageLayout title="Статья не найдена" breadcrumb={[{ label: "Блог", href: "/blog" }, { label: "Не найдено" }]}>
         <div className="container py-20 text-center">
           <p className="text-gray-500 font-body mb-6">Запрашиваемая статья не найдена.</p>
-          <a href="/blog" className="btn-primary inline-flex items-center gap-2">
+          <a href="/blog" className="btn-dark inline-flex items-center gap-2">
             <ArrowLeft size={16} /> Вернуться в блог
           </a>
         </div>
@@ -628,10 +628,10 @@ export default function BlogArticlePage() {
             Наши инженеры ответят на все вопросы и подготовят коммерческое предложение для вашего объекта.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+            <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
               <Phone size={16} /> Оставить заявку
             </a>
-            <a href="tel:88001012009" className="btn-outline inline-flex items-center gap-2 justify-center border-[#0F1340] text-[#0F1340]">
+            <a href="tel:88001012009" className="btn-dark inline-flex items-center gap-2 justify-center">
               8(800)101-2009
             </a>
           </div>

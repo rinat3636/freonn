@@ -267,7 +267,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="btn-primary text-center text-base py-3"
+                className="btn-outline text-center text-base py-3"
               >
                 Наши работы
               </a>

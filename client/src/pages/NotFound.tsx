@@ -76,13 +76,13 @@ export default function NotFound() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button
                 onClick={() => setLocation("/")}
-                className="btn-primary inline-flex items-center gap-2 justify-center"
+                className="btn-dark inline-flex items-center gap-2 justify-center"
               >
                 <Home size={16} /> На главную
               </button>
               <a
                 href="tel:88001012009"
-                className="btn-outline inline-flex items-center gap-2 justify-center border-[#0F1340] text-[#0F1340]"
+                className="btn-dark inline-flex items-center gap-2 justify-center"
               >
                 <Phone size={16} /> 8(800)101-2009
               </a>

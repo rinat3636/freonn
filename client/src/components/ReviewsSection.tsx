@@ -73,7 +73,7 @@ export default function ReviewsSection() {
               <p className="text-white/70 font-body leading-relaxed mb-8">
                 Наши клиенты видят реальное сокращение затрат и улучшение работы своих предприятий. Делаем ваш бизнес более экономичным и приятным для каждого сотрудника.
               </p>
-              <a href="#contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="#contacts" className="btn-dark inline-flex items-center gap-2">
                 Связаться по проекту
               </a>
             </motion.div>

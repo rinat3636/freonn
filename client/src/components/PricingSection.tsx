@@ -114,7 +114,7 @@ export default function PricingSection() {
               }`}
             >
               {plan.featured && (
-                <div className="bg-[#ED1C24] text-white text-xs font-heading font-semibold uppercase tracking-wider text-center py-1.5 px-4">
+                <div className="bg-[#0F1340] text-white text-xs font-heading font-semibold uppercase tracking-wider text-center py-1.5 px-4">
                   Рекомендуем
                 </div>
               )}
@@ -150,8 +150,8 @@ export default function PricingSection() {
                   href={plan.href}
                   className={`flex items-center justify-center gap-2 py-3 font-heading font-semibold uppercase text-sm tracking-wide transition-all rounded-full ${
                     plan.featured
-                      ? "bg-[#ED1C24] text-white hover:bg-red-700"
-                      : "bg-[#0F1340] text-white hover:bg-[#2D3092]"
+                      ? "bg-white/10 text-white border border-white/25 hover:bg-white/20 hover:border-white/50 backdrop-blur-sm"
+                      : "bg-[#0F1340]/8 text-[#0F1340] border border-[#0F1340]/25 hover:bg-[#0F1340]/15 hover:border-[#0F1340]/45 backdrop-blur-sm"
                   }`}
                 >
                   {plan.cta} <ArrowRight size={14} />
@@ -177,7 +177,7 @@ export default function PricingSection() {
               Отправьте его нам для пересчёта. Предложим вариант, который может оказаться не только выгоднее по цене, но и лучше соответствовать вашим потребностям.
             </p>
           </div>
-          <a href="/contacts" className="btn-primary flex-shrink-0">
+          <a href="/contacts" className="btn-dark flex-shrink-0">
             Отправить на пересчёт
           </a>
         </motion.div>

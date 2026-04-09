@@ -76,7 +76,7 @@ export default function GuaranteePage() {
                 <div className="text-white font-heading font-bold text-lg">месяцев гарантии</div>
                 <div className="text-white/60 font-body text-sm">на все монтажные работы</div>
               </div>
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
                 Связаться с нами <ArrowRight size={16} />
               </a>
             </div>
@@ -132,7 +132,7 @@ export default function GuaranteePage() {
               <p className="text-gray-500 font-body text-sm">Позвоните нам или оставьте заявку — выедем в течение 24 часов.</p>
             </div>
             <div className="flex gap-3">
-              <a href="tel:88001012009" className="btn-primary whitespace-nowrap">8(800)101-2009</a>
+              <a href="tel:88001012009" className="btn-dark whitespace-nowrap">8(800)101-2009</a>
             </div>
           </div>
         </div>

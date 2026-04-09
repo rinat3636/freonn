@@ -301,7 +301,7 @@ export default function ObjectCategoryPage({ category }: ObjectCategoryPageProps
             Оставьте заявку — наш инженер свяжется с вами в течение 30 минут и рассчитает стоимость.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+            <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
               Получить расчёт <ArrowRight size={16} />
             </a>
             <a href="tel:88001012009" className="btn-outline border-white/30 text-white hover:bg-white/10 inline-flex items-center gap-2 justify-center">

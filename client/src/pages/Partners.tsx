@@ -129,7 +129,7 @@ export default function PartnersPage() {
                   </div>
                 ))}
               </div>
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
                 Обсудить партнёрство <ArrowRight size={16} />
               </a>
             </div>

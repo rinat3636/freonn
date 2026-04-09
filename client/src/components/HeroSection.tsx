@@ -85,7 +85,7 @@ export default function HeroSection() {
                 <a href="/o-kompanii" className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm text-white/90 hover:bg-white/20 hover:border-white/50 hover:text-white transition-all duration-300">
                   О компании <ArrowRight size={15} />
                 </a>
-                <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center gap-2 text-sm sm:text-base">
+                <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm text-white/90 hover:bg-white/20 hover:border-white/50 hover:text-white transition-all duration-300">
                   Наши работы <ArrowRight size={15} />
                 </a>
               </div>

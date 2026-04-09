@@ -329,10 +329,10 @@ export default function PricingServicePage({ service }: PricingServicePageProps)
               <h3 className="font-heading font-bold text-[#0F1340] text-base mb-3">Важно знать</h3>
               <p className="text-gray-600 font-body text-sm leading-relaxed mb-4">{data.note}</p>
               <div className="flex flex-col gap-3">
-                <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+                <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
                   Получить точный расчёт <ArrowRight size={14} />
                 </a>
-                <a href="tel:88001012009" className="btn-outline border-[#0F1340] text-[#0F1340] inline-flex items-center gap-2 justify-center">
+                <a href="tel:88001012009" className="btn-dark inline-flex items-center gap-2 justify-center">
                   <Phone size={14} /> 8(800)101-2009
                 </a>
               </div>
