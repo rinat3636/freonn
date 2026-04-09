@@ -68,7 +68,13 @@ export default function Header() {
         });
       }
 
-      setIsDark(currentTheme === "dark");
+      const dark = currentTheme === "dark";
+      setIsDark(dark);
+      // Update browser theme-color for mobile status bar
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) {
+        metaTheme.setAttribute('content', dark ? '#0F1340' : '#ffffff');
+      }
     };
 
     window.addEventListener("scroll", checkBackground, { passive: true });
