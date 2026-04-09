@@ -18,7 +18,7 @@ export default function PageLayout({ children, title, breadcrumb }: PageLayoutPr
       <Header />
       {/* Page hero / breadcrumb */}
       {(title || breadcrumb) && (
-        <div className="bg-[#0F1340] text-white pt-24 pb-10">
+        <div className="bg-[#0F1340] text-white pt-24 pb-10" data-theme="dark">
           <div className="container">
             {breadcrumb && (
               <nav className="flex items-center gap-2 text-xs text-white/50 font-body mb-3">
