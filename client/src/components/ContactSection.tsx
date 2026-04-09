@@ -7,8 +7,20 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
 
+// Format digits into +7 (XXX) XXX-XX-XX mask
+function formatPhone(digits: string): string {
+  const d = digits.replace(/\D/g, "").slice(0, 10);
+  let result = "";
+  if (d.length > 0) result += "(" + d.slice(0, 3);
+  if (d.length >= 3) result += ") " + d.slice(3, 6);
+  if (d.length >= 6) result += "-" + d.slice(6, 8);
+  if (d.length >= 8) result += "-" + d.slice(8, 10);
+  return result;
+}
+
 export default function ContactSection() {
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
+  const [phoneDigits, setPhoneDigits] = useState("");
   const [sending, setSending] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,6 +41,7 @@ export default function ContactSection() {
       if (res.ok) {
         toast.success("Заявка отправлена! Мы свяжемся с вами в ближайшее время.");
         setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
+        setPhoneDigits("");
       } else {
         toast.error("Ошибка при отправке. Позвоните нам: 8(800)101-2009");
       }
@@ -91,14 +104,22 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <label className="block text-white/70 text-sm font-body mb-1.5">Телефон *</label>
-                  <input
-                    required
-                    type="tel"
-                    value={form.phone}
-                    onChange={e => setForm({ ...form, phone: e.target.value })}
-                    className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
-                    placeholder="+7 (___) ___-__-__"
-                  />
+                  <div className="flex items-center bg-white/10 border border-white/20 focus-within:border-[#B91C1C] transition-colors rounded-xl overflow-hidden">
+                    <span className="pl-4 pr-1 py-2.5 text-sm font-body text-white select-none whitespace-nowrap">+7</span>
+                    <input
+                      required
+                      type="tel"
+                      inputMode="numeric"
+                      value={formatPhone(phoneDigits)}
+                      onChange={e => {
+                        const raw = e.target.value.replace(/\D/g, "").slice(0, 10);
+                        setPhoneDigits(raw);
+                        setForm({ ...form, phone: "+7" + raw });
+                      }}
+                      className="flex-1 bg-transparent text-white placeholder-white/40 pr-4 py-2.5 text-sm font-body focus:outline-none"
+                      placeholder="(___) ___-__-__"
+                    />
+                  </div>
                 </div>
               </div>
               <div>
