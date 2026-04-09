@@ -1,7 +1,8 @@
 /*
  * FREONN HEADER — Bold Technical Expressionism
- * Transparent on dark sections (data-theme="dark"), solid navy on light sections or when scrolled
- * Works the same on ALL pages via data-theme detection
+ * Always transparent background.
+ * On dark sections (data-theme="dark"): white logo (inverted), white nav, white border button "ЗАЯВКА", white burger.
+ * On light sections (data-theme="light"): colored logo (normal), dark navy nav, red-border button "ЗАЯВКА", dark burger.
  */
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,7 +40,7 @@ const topBarLinks = [
 ];
 
 export default function Header() {
-  // isDark: true = white text (over dark bg), false = dark text (over light bg)
+  // isDark: true = over dark bg (white elements), false = over light bg (colored elements)
   const [isDark, setIsDark] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -50,13 +51,10 @@ export default function Header() {
       const headerHeight = 70;
       const checkPoint = scrollY + headerHeight / 2;
 
-      // Check sections with data-theme attribute
       const sections = document.querySelectorAll("[data-theme]");
-      let currentTheme = "light"; // default to light (shows dark text)
+      let currentTheme = "dark"; // default to dark (white elements)
 
       if (sections.length === 0) {
-        // No data-theme sections found — check if we're near top of page
-        // If scrolled less than 100px, assume dark hero; otherwise light
         currentTheme = scrollY < 100 ? "dark" : "light";
       } else {
         sections.forEach((section) => {
@@ -64,7 +62,7 @@ export default function Header() {
           const top = el.offsetTop;
           const bottom = top + el.offsetHeight;
           if (checkPoint >= top && checkPoint < bottom) {
-            currentTheme = el.dataset.theme || "light";
+            currentTheme = el.dataset.theme || "dark";
           }
         });
       }
@@ -73,9 +71,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", checkBackground, { passive: true });
-    // Run on mount and on route changes
     checkBackground();
-
     return () => window.removeEventListener("scroll", checkBackground);
   }, []);
 
@@ -93,20 +89,30 @@ export default function Header() {
 
   const handleTopLink = () => toast.info("Раздел в разработке");
 
-  // Background: transparent over dark sections, solid navy over light sections
-  const headerBg = isDark
-    ? "bg-transparent"
-    : "bg-[#0F1340] shadow-lg";
+  // Always transparent — only text/icon colours change
+  const navTextClass = isDark
+    ? "text-white hover:text-white/70"
+    : "text-[#0F1340] hover:text-[#ED1C24]";
+
+  const ctaBtnClass = isDark
+    ? "border-white text-white hover:bg-white hover:text-[#0F1340]"
+    : "border-[#ED1C24] text-[#ED1C24] hover:bg-[#ED1C24] hover:text-white";
+
+  const burgerClass = isDark
+    ? "text-white hover:text-white/70"
+    : "text-[#0F1340] hover:text-[#ED1C24]";
+
+  const logoFilter = isDark ? "brightness-0 invert" : "";
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${headerBg}`}>
+    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent">
       <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
-        {/* Logo — always white (header is always dark or navy) */}
+        {/* Logo */}
         <a href="/" className="flex-shrink-0">
           <img
             src={LOGO_URL}
             alt="Freonn"
-            className="h-9 sm:h-11 w-auto brightness-0 invert"
+            className={`h-9 sm:h-11 w-auto transition-all duration-300 ${logoFilter}`}
           />
         </a>
 
@@ -118,7 +124,7 @@ export default function Header() {
             <div key={item.label} className="relative group flex-shrink-0">
               <a
                 href={item.href}
-                className="flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm font-heading font-medium uppercase tracking-wide transition-colors text-white hover:text-white/70"
+                className={`flex items-center gap-1 px-3 xl:px-4 py-2 whitespace-nowrap text-sm font-heading font-medium uppercase tracking-wide transition-colors duration-300 ${navTextClass}`}
               >
                 {item.label}
                 {item.children && (
@@ -145,7 +151,7 @@ export default function Header() {
         {/* CTA button — desktop */}
         <a
           href="/contacts"
-          className="hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 border-2 border-white text-white hover:bg-white hover:text-[#0F1340]"
+          className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 border-2 ${ctaBtnClass}`}
         >
           Заявка
         </a>
@@ -153,14 +159,14 @@ export default function Header() {
         {/* Mobile CTA button */}
         <a
           href="/contacts"
-          className="lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 transition-all duration-300 border-white text-white hover:bg-white hover:text-[#0F1340]"
+          className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 transition-all duration-300 ${ctaBtnClass}`}
         >
           Заявка
         </a>
 
         {/* Mobile menu toggle */}
         <button
-          className="lg:hidden p-2 flex-shrink-0 transition-colors duration-300 text-white hover:text-white/70"
+          className={`lg:hidden p-2 flex-shrink-0 transition-colors duration-300 ${burgerClass}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Меню"
         >
@@ -169,7 +175,7 @@ export default function Header() {
 
         {/* Desktop burger */}
         <button
-          className="hidden lg:flex p-2 flex-shrink-0 transition-colors duration-300 text-white hover:text-white/70"
+          className={`hidden lg:flex p-2 flex-shrink-0 transition-colors duration-300 ${burgerClass}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Меню"
         >
@@ -194,7 +200,6 @@ export default function Header() {
                 <X size={24} />
               </button>
             </div>
-
             {/* Contact info */}
             <div className="px-4 py-4 bg-[#ED1C24]/10 border-b border-white/10">
               <a href="tel:88001012009" className="flex items-center gap-2 text-white font-heading font-semibold text-lg mb-1">
@@ -202,7 +207,6 @@ export default function Header() {
               </a>
               <p className="text-white/50 text-xs font-body">Бесплатно по России · Пн-Сб 9:00–19:00</p>
             </div>
-
             {/* Nav links */}
             <div className="flex flex-col">
               {navItems.map(item => (
@@ -250,7 +254,6 @@ export default function Header() {
                 </div>
               ))}
             </div>
-
             {/* Bottom CTA */}
             <div className="p-4 mt-2 flex flex-col gap-3">
               <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
@@ -269,7 +272,6 @@ export default function Header() {
                 Наши работы
               </a>
             </div>
-
             {/* Footer links in mobile menu */}
             <div className="px-4 pb-6 flex flex-wrap gap-3">
               {topBarLinks.map(link => (
