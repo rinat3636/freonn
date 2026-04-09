@@ -123,13 +123,16 @@ export default function ProjectsSection() {
         {/* Main featured grid: first item wide */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, i) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href="https://max.ru/id3604084591_biz"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl ${
+              className={`group cursor-pointer overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl block ${
                 i === 0 ? "lg:col-span-2" : ""
               }`}
             >
@@ -157,7 +160,7 @@ export default function ProjectsSection() {
                   Информация об объекте →
                 </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

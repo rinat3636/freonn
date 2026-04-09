@@ -232,38 +232,44 @@ export default function ObjectCategoryPage({ category }: ObjectCategoryPageProps
           <h2 className="font-heading font-bold text-[#0F1340] text-2xl mb-8">Выполненные проекты</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.projects.map((project, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href="https://max.ru/id3604084591_biz"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow block group"
               >
                 <div className="aspect-[16/9] overflow-hidden">
                   <img
                     src={project.img}
                     alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug mb-3">
+                  <h3 className="font-heading font-semibold text-[#0F1340] text-sm leading-snug mb-3 group-hover:text-[#2D3092] transition-colors">
                     {project.title}
                   </h3>
                   <div className="flex items-center gap-4 text-xs text-gray-500 font-body mb-3">
                     <span>📍 {project.location}</span>
                     <span>📐 {project.area}</span>
                   </div>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
                     {project.systems.map((s, j) => (
                       <span key={j} className="text-xs px-2 py-0.5 rounded-full font-body" style={{ backgroundColor: `${data.color}10`, color: data.color }}>
                         {s}
                       </span>
                     ))}
                   </div>
+                  <span className="text-[#ED1C24] text-xs font-heading font-semibold uppercase tracking-wide group-hover:underline">
+                    Информация об объекте →
+                  </span>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
