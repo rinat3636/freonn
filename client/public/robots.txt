@@ -1,6 +1,34 @@
+# robots.txt — freonn.ru
+# Инженерная компания Freonn | ООО «ЭКС»
+# Обновлено: 2026-04-09
+
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /404
+Disallow: /admin/
 
+# Яндекс
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /404
+Disallow: /admin/
+Host: freonn.ru
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /404
+Disallow: /admin/
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /404
+
+# Sitemap
 Sitemap: https://freonn.ru/sitemap.xml

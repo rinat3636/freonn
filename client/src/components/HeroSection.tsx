@@ -36,10 +36,12 @@ const quickLinks = [
 export default function HeroSection() {
   return (
     <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0F1340]">
-      {/* Background image */}
+      {/* Background image — decorative, LCP preloaded in index.html */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${HERO_BG})` }}
+        aria-hidden="true"
+        role="presentation"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0F1340]/97 via-[#0F1340]/85 to-[#0F1340]/55" />
@@ -64,6 +66,7 @@ export default function HeroSection() {
               </div>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-none mb-4 tracking-tight">
                 FREONN
+                <span className="sr-only"> — Монтаж инженерных систем в Москве и МО</span>
               </h1>
               <p className="text-white/80 text-base sm:text-lg font-body leading-relaxed mb-5 max-w-xl">
                 Монтаж инженерных систем под ключ в Москве и МО: вентиляция, кондиционирование, дымоудаление, отопление, электроснабжение. Проектирование и обслуживание для промышленности, бизнеса и премиум недвижимости.

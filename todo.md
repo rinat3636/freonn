@@ -58,3 +58,14 @@
 - [x] HeroSection: ключевые слова в подзаголовке, внутренние ссылки на страницы услуг
 - [x] ServicesSection: H2 с ключевой фразой "монтаж инженерных систем под ключ"
 - [x] robots.txt обновлён
+
+## SEO Максимальная оптимизация (April 9, 2026)
+- [ ] Аудит текущего SEO — index.html, useSEO хук, sitemap, robots.txt
+- [ ] index.html: полные мета-теги, OG, Twitter Card, canonical, preconnect, favicon
+- [ ] useSEO хук: og:image, og:locale, geo.*, article:published_time, hreflang
+- [ ] JSON-LD: Organization + LocalBusiness на главной, Service на страницах услуг, FAQ, BreadcrumbList
+- [ ] sitemap.xml: правильный домен freonn.ru, все URL, приоритеты, changefreq
+- [ ] robots.txt: Sitemap ссылка, запрет служебных путей
+- [ ] Семантика: H1 только один на странице, H2/H3 с ключевыми словами
+- [ ] Alt-теги: все изображения с описательным alt
+- [ ] Внутренняя перелинковка: связанные услуги, хлебные крошки
