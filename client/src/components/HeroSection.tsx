@@ -9,13 +9,13 @@ import { ArrowRight, FolderOpen, Tag, Phone } from "lucide-react";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/hero-bg-TSEFdwsLkkoBfLxyHqisJK.webp";
 
 const services = [
-  { label: "Вентиляция", href: "#service-ventilation" },
-  { label: "Кондиционирование", href: "#service-conditioning" },
-  { label: "Дымоудаление", href: "#service-smoke" },
-  { label: "Отопление", href: "#service-heating" },
-  { label: "Холодоснабжение", href: "#service-cooling" },
-  { label: "Электроснабжение", href: "#service-electrical" },
-  { label: "Пескоструйная обработка", href: "#service-sandblast" },
+  { label: "Вентиляция", href: "/ventilyaciya" },
+  { label: "Кондиционирование", href: "/kondicionirovanie" },
+  { label: "Дымоудаление", href: "/dymoudalenie" },
+  { label: "Отопление", href: "/otoplenie" },
+  { label: "Холодоснабжение", href: "/holodosnabzhenie" },
+  { label: "Электроснабжение", href: "/elektrosnabzhenie" },
+  { label: "Пескоструйная обработка", href: "/peskostrujnaya-obrabotka" },
 ];
 
 const quickLinks = [
@@ -66,7 +66,7 @@ export default function HeroSection() {
                 FREONN
               </h1>
               <p className="text-white/80 text-base sm:text-lg font-body leading-relaxed mb-5 max-w-xl">
-                Проектирование, монтаж и обслуживание инженерных систем для промышленности, бизнеса и премиум недвижимости в Москве и МО.
+                Монтаж инженерных систем под ключ в Москве и МО: вентиляция, кондиционирование, дымоудаление, отопление, электроснабжение. Проектирование и обслуживание для промышленности, бизнеса и премиум недвижимости.
               </p>
 
               {/* Service tags */}

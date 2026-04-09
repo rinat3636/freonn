@@ -139,10 +139,10 @@ export default function ServicesSection() {
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340] max-w-xl">
-              С какими системами работаем
+              Монтаж инженерных систем в Москве и МО под ключ
             </h2>
             <p className="text-gray-500 max-w-md text-sm leading-relaxed font-body">
-              Зарекомендовали себя как надёжного исполнителя сложнейших инженерных задач для лидеров рынка.
+              Проектирование, монтаж и обслуживание вентиляции, кондиционирования, дымоудаления и отопления для промышленных, коммерческих и премиум-объектов.
             </p>
           </div>
         </motion.div>

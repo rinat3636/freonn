@@ -10,8 +10,38 @@ export default function ContactsPage() {
   useSEO({
     title: "Контакты — Freonn инженерная компания",
     description: "Свяжитесь с нами: 8(800)101-2009 (бесплатно). Офис в Москве. Выезд инженера по Москве и МО. Оставьте заявку онлайн — ответим в течение 15 минут.",
-    keywords: "контакты Freonn, телефон инженерной компании, заявка на вентиляцию, вызов инженера Москва",
+    keywords: "контакты Freonn, телефон инженерной компании, заявка на вентиляцию, вызов инженера Москва, адрес офиса",
     canonical: "/contacts",
+    breadcrumbs: [{ name: "Контакты", url: "/contacts" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Контакты Freonn",
+      url: "https://freonn.ru/contacts",
+      description: "Контактная информация инженерной компании Freonn. Телефон, адрес, форма обратной связи.",
+      mainEntity: {
+        "@type": "LocalBusiness",
+        name: "Freonn",
+        telephone: "+78001012009",
+        email: "info@freonn.ru",
+        url: "https://freonn.ru",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "RU",
+          addressRegion: "Москва",
+          addressLocality: "Москва",
+          postalCode: "121099",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            opens: "09:00",
+            closes: "19:00",
+          },
+        ],
+      },
+    },
   });
   return (
     <PageLayout

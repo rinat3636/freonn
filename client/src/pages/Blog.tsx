@@ -168,8 +168,21 @@ export default function BlogPage() {
   useSEO({
     title: "Блог — статьи об инженерных системах",
     description: "Полезные статьи о вентиляции, кондиционировании, дымоудалении и отоплении. Советы по выбору оборудования, нормы проектирования, разбор реальных объектов.",
-    keywords: "блог вентиляция, статьи кондиционирование, инженерные системы статьи, нормы вентиляции",
+    keywords: "блог вентиляция, статьи кондиционирование, инженерные системы статьи, нормы вентиляции, проектирование вентиляции",
     canonical: "/blog",
+    breadcrumbs: [{ name: "Блог", url: "/blog" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Блог Freonn — статьи об инженерных системах",
+      description: "Полезные статьи о вентиляции, кондиционировании, дымоудалении и отоплении.",
+      url: "https://freonn.ru/blog",
+      publisher: {
+        "@type": "Organization",
+        name: "Freonn",
+        url: "https://freonn.ru",
+      },
+    },
   });
   return (
     <PageLayout

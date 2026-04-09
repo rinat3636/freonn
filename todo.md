@@ -33,3 +33,20 @@
 - [ ] Replace stock photos with real project photos
 - [ ] Custom domain setup (freonn.ru)
 - [ ] Google/Yandex Search Console submission
+
+## SEO Максимальная проработка (Апрель 2025)
+- [x] useSEO хук расширен: JSON-LD, BreadcrumbList, ogType article, noIndex, publishedTime
+- [x] JSON-LD LocalBusiness на главной (рейтинг, часы работы, geo, hasOfferCatalog)
+- [x] JSON-LD Service на страницах услуг и городских страницах
+- [x] JSON-LD FAQPage на странице FAQ (8 вопросов)
+- [x] JSON-LD Article на страницах блога
+- [x] JSON-LD ContactPage на странице контактов
+- [x] JSON-LD CollectionPage на странице блога
+- [x] JSON-LD Organization на каждой странице (через useSEO)
+- [x] JSON-LD BreadcrumbList на всех страницах с breadcrumbs
+- [x] JSON-LD WebSite + SearchAction в index.html
+- [x] index.html: geo meta, yandex-region, og:locale ru_RU, preconnect, верификационные плейсхолдеры
+- [x] sitemap.xml расширен: lastmod, priority, image sitemap, 80+ URL
+- [x] HeroSection: ключевые слова в подзаголовке, внутренние ссылки на страницы услуг
+- [x] ServicesSection: H2 с ключевой фразой "монтаж инженерных систем под ключ"
+- [x] robots.txt обновлён

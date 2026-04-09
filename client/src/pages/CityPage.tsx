@@ -87,8 +87,29 @@ export default function CityPage({ city }: CityPageProps) {
   useSEO({
     title: `Монтаж вентиляции и кондиционирования в ${cityName} — Freonn`,
     description: `Проектирование и монтаж инженерных систем в ${cityName}: вентиляция, кондиционирование, дымоудаление, отопление. Бесплатный выезд инженера, гарантия 1 год.`,
-    keywords: `монтаж вентиляции ${cityName}, кондиционирование ${cityName}, инженерные системы ${cityName}`,
+    keywords: `монтаж вентиляции ${cityName}, кондиционирование ${cityName}, инженерные системы ${cityName}, дымоудаление ${cityName}, отопление ${cityName}`,
     canonical: `/${city}`,
+    breadcrumbs: [{ name: cityName, url: `/${city}` }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `Монтаж инженерных систем в ${cityName}`,
+      description: `Проектирование и монтаж вентиляции, кондиционирования, дымоудаления и отопления в ${cityName}. Бесплатный выезд инженера.`,
+      url: `https://freonn.ru/${city}`,
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Freonn",
+        url: "https://freonn.ru",
+        telephone: "+78001012009",
+      },
+      areaServed: { "@type": "City", name: cityName },
+      serviceType: "Монтаж инженерных систем",
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "RUB",
+        availability: "https://schema.org/InStock",
+      },
+    },
   });
 
   return (

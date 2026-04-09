@@ -163,8 +163,42 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
   useSEO({
     title: `${service.title} в Москве и МО — цены, проектирование, монтаж`,
     description: `${service.description.slice(0, 160)}`,
-    keywords: `${service.title.toLowerCase()} Москва, монтаж ${service.title.toLowerCase()} цена, ${service.title.toLowerCase()} МО`,
+    keywords: `${service.title.toLowerCase()} Москва, монтаж ${service.title.toLowerCase()} цена, ${service.title.toLowerCase()} МО, ${service.title.toLowerCase()} под ключ`,
     canonical: `/${resolvedSlug}`,
+    breadcrumbs: [
+      { name: "Услуги", url: "/uslugi" },
+      { name: service.title, url: `/${resolvedSlug}` },
+    ],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: service.description,
+      url: `https://freonn.ru/${resolvedSlug}`,
+      provider: {
+        "@type": "LocalBusiness",
+        name: "Freonn",
+        url: "https://freonn.ru",
+        telephone: "+78001012009",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "RU",
+          addressRegion: "Москва",
+          addressLocality: "Москва",
+        },
+      },
+      areaServed: [
+        { "@type": "City", name: "Москва" },
+        { "@type": "AdministrativeArea", name: "Московская область" },
+      ],
+      serviceType: service.title,
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "RUB",
+        availability: "https://schema.org/InStock",
+        url: `https://freonn.ru/${resolvedSlug}`,
+      },
+    },
   });
 
   return (

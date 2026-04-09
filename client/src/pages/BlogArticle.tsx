@@ -485,11 +485,42 @@ export default function BlogArticlePage() {
   useSEO(article ? {
     title: article.title,
     description: article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160),
-    keywords: article.category.toLowerCase() + ', инженерные системы, Freonn',
+    keywords: article.category.toLowerCase() + ', инженерные системы, Freonn, монтаж вентиляции',
     canonical: '/blog/' + slug,
+    ogType: 'article',
+    publishedTime: '2024-01-01T00:00:00+03:00',
+    breadcrumbs: [
+      { name: 'Блог', url: '/blog' },
+      { name: article.title, url: '/blog/' + slug },
+    ],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title,
+      description: article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160),
+      url: 'https://freonn.ru/blog/' + slug,
+      datePublished: '2024-01-01T00:00:00+03:00',
+      dateModified: '2024-06-01T00:00:00+03:00',
+      author: {
+        "@type": "Organization",
+        name: "Freonn",
+        url: "https://freonn.ru",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Freonn",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
+        },
+      },
+      articleSection: article.category,
+      inLanguage: "ru-RU",
+    },
   } : {
     title: 'Статья не найдена',
     description: 'Статья не найдена',
+    noIndex: true,
   });
 
   if (!article) {
