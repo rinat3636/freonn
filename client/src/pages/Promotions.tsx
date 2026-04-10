@@ -101,6 +101,17 @@ export default function PromotionsPage() {
     description: "Актуальные акции и специальные предложения от Freonn: скидки на монтаж вентиляции, бесплатный выезд инженера, рассрочка на оборудование.",
     keywords: "акции монтаж вентиляции, скидки кондиционирование, спецпредложения инженерные системы",
     canonical: "/akcii",
+    breadcrumbs: [{ name: "Акции и спецпредложения", url: "/akcii" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://freonn.ru/akcii#webpage",
+      name: "Акции и скидки — монтаж инженерных систем",
+      description: "Актуальные акции и специальные предложения от Freonn.",
+      url: "https://freonn.ru/akcii",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      publisher: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout

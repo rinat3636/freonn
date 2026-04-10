@@ -167,6 +167,22 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core React runtime — cached separately
+          "react-vendor": ["react", "react-dom"],
+          // Routing
+          "router": ["wouter"],
+          // Animation library
+          "motion": ["framer-motion"],
+          // Icons
+          "icons": ["lucide-react"],
+        },
+      },
+    },
   },
   server: {
     host: true,

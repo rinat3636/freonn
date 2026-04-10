@@ -332,6 +332,8 @@ export default function CityPage({ city }: CityPageProps) {
                   src={`${CDN}/freonn-ventilation-unit-5ebe3bmzqsCGdGpvbDz2zo.webp`}
                   alt={`Монтаж инженерных систем в ${cityName}е`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-[#B91C1C] text-white rounded-xl p-4 shadow-lg">

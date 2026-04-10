@@ -2,6 +2,7 @@
  * FREONN FAQ SECTION — All questions from ceds.ru
  * Accordion layout, own Freonn design
  * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
+ * schema.org FAQPage микроразметка для rich snippets Google/Яндекс
  */
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -61,8 +62,27 @@ const faqs = [
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  // schema.org FAQPage JSON-LD для rich snippets Google/Яндекс
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <section data-theme="light" id="faq" className="py-20 bg-[#F7F8FF]">
+      {/* schema.org FAQPage JSON-LD — rich snippets для поисковых систем */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left: heading */}
@@ -93,8 +113,12 @@ export default function FAQSection() {
             </a>
           </motion.div>
 
-          {/* Right: accordion */}
-          <div className="col-span-full lg:col-span-3 space-y-2">
+          {/* Right: accordion — itemScope FAQPage для микроданных */}
+          <div
+            className="col-span-full lg:col-span-3 space-y-2"
+            itemScope
+            itemType="https://schema.org/FAQPage"
+          >
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
@@ -103,15 +127,20 @@ export default function FAQSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm"
+                itemProp="mainEntity"
+                itemScope
+                itemType="https://schema.org/Question"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-5 text-left group"
+                  aria-expanded={openIndex === i}
                 >
                   <span
                     className={`font-heading font-semibold text-sm leading-snug transition-colors ${
                       openIndex === i ? "text-[#B91C1C]" : "text-[#0F1340] group-hover:text-[#2D3092]"
                     }`}
+                    itemProp="name"
                   >
                     {faq.q}
                   </span>
@@ -119,25 +148,37 @@ export default function FAQSection() {
                     className={`w-7 h-7 flex-shrink-0 rounded-full flex items-center justify-center transition-colors ${
                       openIndex === i ? "bg-[#B91C1C] text-white" : "bg-gray-100 text-gray-500 group-hover:bg-[#2D3092]/10 group-hover:text-[#2D3092]"
                     }`}
+                    aria-hidden="true"
                   >
                     {openIndex === i ? <Minus size={14} /> : <Plus size={14} />}
                   </div>
                 </button>
-                <AnimatePresence initial={false}>
-                  {openIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-5 pb-5 text-gray-600 text-sm font-body leading-relaxed border-t border-gray-100 pt-3">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  itemProp="acceptedAnswer"
+                  itemScope
+                  itemType="https://schema.org/Answer"
+                >
+                  <AnimatePresence initial={false}>
+                    {openIndex === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div
+                          className="px-5 pb-5 text-gray-600 text-sm font-body leading-relaxed border-t border-gray-100 pt-3"
+                          itemProp="text"
+                        >
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  {/* Скрытый текст для поисковых роботов (не зависит от состояния аккордеона) */}
+                  <meta itemProp="text" content={faq.a} />
+                </div>
               </motion.div>
             ))}
           </div>

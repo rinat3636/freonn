@@ -322,6 +322,8 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
                 src={service.image}
                 alt={service.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>

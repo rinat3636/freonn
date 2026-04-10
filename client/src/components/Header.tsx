@@ -187,6 +187,10 @@ export default function Header() {
             src={LOGO_URL}
             alt="Freonn"
             className={`h-9 sm:h-11 w-auto transition-all duration-300 ${logoFilter}`}
+            fetchPriority="high"
+            decoding="async"
+            width="160"
+            height="44"
           />
         </a>
 
@@ -269,7 +273,7 @@ export default function Header() {
           >
             {/* Mobile menu header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-              <img src={LOGO_URL} alt="Freonn" className="h-9 w-auto brightness-0 invert" />
+              <img src={LOGO_URL} alt="Freonn" className="h-9 w-auto brightness-0 invert" loading="lazy" decoding="async" width="160" height="36" />
               <button onClick={() => setMobileOpen(false)} className="p-2 text-white/80 hover:text-white">
                 <X size={24} />
               </button>

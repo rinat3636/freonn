@@ -137,10 +137,12 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-white/70 text-sm font-body mb-1.5">Ваше имя *</label>
+                  <label htmlFor="contact-name" className="block text-white/70 text-sm font-body mb-1.5">Ваше имя *</label>
                   <input
+                    id="contact-name"
                     required
                     type="text"
+                    autoComplete="name"
                     value={form.name}
                     onChange={e => setForm({ ...form, name: e.target.value })}
                     className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
@@ -148,12 +150,14 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-white/70 text-sm font-body mb-1.5">Телефон *</label>
+                  <label htmlFor="contact-phone" className="block text-white/70 text-sm font-body mb-1.5">Телефон *</label>
                   <div className="flex items-center bg-white/10 border border-white/20 focus-within:border-[#B91C1C] transition-colors rounded-xl overflow-hidden">
                     <span className="pl-4 pr-1 py-2.5 text-sm font-body text-white select-none whitespace-nowrap">+7</span>
                     <input
+                      id="contact-phone"
                       required
                       type="tel"
+                      autoComplete="tel"
                       inputMode="numeric"
                       value={formatPhone(phoneDigits)}
                       onChange={e => {
@@ -168,9 +172,11 @@ export default function ContactSection() {
                 </div>
               </div>
               <div>
-                <label className="block text-white/70 text-sm font-body mb-1.5">Email</label>
+                <label htmlFor="contact-email" className="block text-white/70 text-sm font-body mb-1.5">Email</label>
                 <input
+                  id="contact-email"
                   type="email"
+                  autoComplete="email"
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
                   className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
@@ -178,8 +184,9 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label className="block text-white/70 text-sm font-body mb-1.5">Тип услуги</label>
+                <label htmlFor="contact-type" className="block text-white/70 text-sm font-body mb-1.5">Тип услуги</label>
                 <select
+                  id="contact-type"
                   value={form.type}
                   onChange={e => setForm({ ...form, type: e.target.value })}
                   className="w-full bg-white/10 border border-white/20 text-white px-4 py-2.5 text-sm font-body focus:outline-none focus:border-[#B91C1C] transition-colors rounded-xl"
@@ -190,8 +197,9 @@ export default function ContactSection() {
                 </select>
               </div>
               <div>
-                <label className="block text-white/70 text-sm font-body mb-1.5">Описание задачи</label>
+                <label htmlFor="contact-message" className="block text-white/70 text-sm font-body mb-1.5">Описание задачи</label>
                 <textarea
+                  id="contact-message"
                   rows={4}
                   value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}

@@ -145,7 +145,7 @@ export default function ObjectsSection() {
               className="relative"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img src={INDUSTRIAL_BG} alt="Промышленный объект" className="w-full h-full object-cover" />
+                <img src={INDUSTRIAL_BG} alt="Промышленный объект" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute bottom-4 left-4 bg-[#B91C1C] text-white p-4 shadow-xl rounded-xl">
                   <div className="font-display text-3xl font-bold leading-none">500+</div>
                   <div className="font-body text-xs mt-1 opacity-90">объектов сдано</div>
@@ -169,7 +169,7 @@ export default function ObjectsSection() {
               className="order-2 lg:order-1 relative"
             >
               <div className="aspect-[4/3] overflow-hidden relative">
-                <img src={COMMERCIAL_BG} alt="Коммерческий объект" className="w-full h-full object-cover" />
+                <img src={COMMERCIAL_BG} alt="Коммерческий объект" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute bottom-4 right-4 bg-[#2D3092] text-white p-4 shadow-xl rounded-xl">
                   <div className="font-display text-3xl font-bold leading-none">20%</div>
                   <div className="font-body text-xs mt-1 opacity-90">экономия энергии</div>
@@ -302,7 +302,7 @@ export default function ObjectsSection() {
               className="relative"
             >
               <div className="aspect-[4/3] overflow-hidden border border-white/10 relative">
-                <img src={PREMIUM_BG} alt="Премиум недвижимость" className="w-full h-full object-cover" />
+                <img src={PREMIUM_BG} alt="Премиум недвижимость" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute bottom-4 right-4 bg-[#B91C1C] text-white p-4 shadow-xl rounded-xl">
                   <div className="font-display text-3xl font-bold leading-none">5 лет</div>
                   <div className="font-body text-xs mt-1 opacity-90">гарантия на оборудование</div>

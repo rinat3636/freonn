@@ -1,0 +1,59 @@
+{
+  "name": "Freonn — Инженерная компания",
+  "short_name": "Freonn",
+  "description": "Проектирование, монтаж и обслуживание инженерных систем в Москве и МО. Вентиляция, кондиционирование, дымоудаление, отопление.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F1340",
+  "theme_color": "#0F1340",
+  "lang": "ru",
+  "dir": "ltr",
+  "orientation": "any",
+  "scope": "/",
+  "categories": ["business", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Оставить заявку",
+      "short_name": "Заявка",
+      "description": "Отправить заявку на монтаж инженерных систем",
+      "url": "/contacts",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Услуги",
+      "short_name": "Услуги",
+      "description": "Все инженерные услуги Freonn",
+      "url": "/uslugi",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Цены",
+      "short_name": "Цены",
+      "description": "Стоимость монтажа инженерных систем",
+      "url": "/ceny",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    }
+  ]
+}

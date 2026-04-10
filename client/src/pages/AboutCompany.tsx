@@ -15,6 +15,17 @@ export default function AboutCompanyPage() {
     description: "Freonn — инженерная компания с 15-летним опытом. Монтаж вентиляции, кондиционирования, дымоудаления и отопления в Москве и МО. Более 1280 выполненных объектов.",
     keywords: "инженерная компания Москва, монтаж вентиляции, о компании Freonn, история компании",
     canonical: "/o-kompanii",
+    breadcrumbs: [{ name: "О компании", url: "/o-kompanii" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": "https://freonn.ru/o-kompanii#webpage",
+      name: "О компании Freonn",
+      description: "Freonn — инженерная компания с 15-летним опытом. Более 1280 выполненных объектов.",
+      url: "https://freonn.ru/o-kompanii",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      about: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout

@@ -269,7 +269,7 @@ Freonn проектирует системы охлаждения серверн
 
 Freonn выполнил монтаж систем воздушного отопления на десятках производственных объектов в Москве и Московской области.`,
   },
-  "ventilyaciya-avtostoyankи": {
+  "ventilyaciya-avtostoyanka": {
     title: "Вентиляция автостоянки (парковки, паркинга)",
     category: "Вентиляция",
     readTime: "5 минут",
@@ -953,6 +953,8 @@ export default function BlogArticlePage() {
               src={article.img}
               alt={article.title}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 

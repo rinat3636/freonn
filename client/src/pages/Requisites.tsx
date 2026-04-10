@@ -62,6 +62,17 @@ export default function RequisitesPage() {
     description: "Официальные реквизиты ООО Freonn: ИНН, КПП, ОГРН, банковские реквизиты для заключения договора на монтаж инженерных систем.",
     keywords: "реквизиты Freonn, ИНН инженерная компания, договор монтаж вентиляции",
     canonical: "/rekvizity",
+    breadcrumbs: [{ name: "Реквизиты", url: "/rekvizity" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://freonn.ru/rekvizity#webpage",
+      name: "Реквизиты компании Freonn",
+      description: "Официальные реквизиты ООО «ЭКС» (Freonn): ИНН, КПП, ОГРН, банковские реквизиты.",
+      url: "https://freonn.ru/rekvizity",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      about: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout

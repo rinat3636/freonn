@@ -45,6 +45,17 @@ export default function PartnersPage() {
     description: "Официальные партнёры Freonn: производители оборудования, поставщики материалов, проектные организации. Сотрудничество и дилерские программы.",
     keywords: "партнёры инженерная компания, дилер вентиляция, поставщик кондиционеры Москва",
     canonical: "/partnery",
+    breadcrumbs: [{ name: "Партнёры", url: "/partnery" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://freonn.ru/partnery#webpage",
+      name: "Партнёры — Freonn инженерная компания",
+      description: "Официальные партнёры Freonn: производители оборудования, поставщики материалов.",
+      url: "https://freonn.ru/partnery",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      about: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout
@@ -138,6 +149,8 @@ export default function PartnersPage() {
                 src={`${CDN}/freonn-industrial-hvac-CUToKRXqhd5NqVLbfLUTwL.webp`}
                 alt="Партнёрство Freonn"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

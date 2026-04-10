@@ -64,6 +64,11 @@
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="9GQLZNEzJO036LGMxUjXG78sW0LGDNmDqUyaTQ1nuww" />
 
+    <!-- ═══ PWA / Theme ════════════════════════════════════════════════════ -->
+    <meta name="theme-color" content="#0F1340" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0F1340" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <!-- ═══ Favicon ═══════════════════════════════════════════════════════ -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -74,6 +79,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="msapplication-TileColor" content="#0F1340" />
     <meta name="msapplication-TileImage" content="/favicon-120.png" />
+
+    <!-- ═══ Preload LCP hero image (Core Web Vitals) ══════════════════════ -->
+    <link
+      rel="preload"
+      as="image"
+      href="/hero-team.jpg"
+      fetchpriority="high"
+    />
 
     <!-- ═══ Preconnect (Core Web Vitals) ════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

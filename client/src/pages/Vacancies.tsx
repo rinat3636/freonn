@@ -121,6 +121,25 @@ export default function VacanciesPage() {
     description: "Открытые вакансии в Freonn: монтажники вентиляции, инженеры-проектировщики, менеджеры. Официальное трудоустройство, достойная зарплата, обучение.",
     keywords: "вакансии монтажник вентиляции, работа инженер Москва, вакансии инженерная компания",
     canonical: "/vakansii",
+    breadcrumbs: [{ name: "Вакансии", url: "/vakansii" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "@id": "https://freonn.ru/vakansii#jobposting",
+      title: "Инженер-проектировщик ОВиК",
+      description: "Открытые вакансии в Freonn: монтажники вентиляции, инженеры-проектировщики, менеджеры.",
+      hiringOrganization: { "@id": "https://freonn.ru/#organization" },
+      jobLocation: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Москва",
+          addressCountry: "RU",
+        },
+      },
+      employmentType: "FULL_TIME",
+      datePosted: "2026-01-01",
+    },
   });
   return (
     <PageLayout

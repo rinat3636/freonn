@@ -88,6 +88,16 @@ export default function NewsPage() {
     description: "Последние новости инженерной компании Freonn: новые объекты, сертификаты, акции, обновления оборудования и технологий монтажа.",
     keywords: "новости Freonn, инженерная компания новости, вентиляция новости",
     canonical: "/novosti",
+    breadcrumbs: [{ name: "Новости", url: "/novosti" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://freonn.ru/novosti#blog",
+      name: "Новости компании Freonn",
+      description: "Последние новости инженерной компании Freonn.",
+      url: "https://freonn.ru/novosti",
+      publisher: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout

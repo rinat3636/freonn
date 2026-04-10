@@ -95,6 +95,17 @@ export default function DocumentsPage() {
     description: "Лицензии МЧС, допуск СРО, сертификаты ISO и производителей оборудования. Freonn работает в полном соответствии с законодательством РФ.",
     keywords: "лицензия МЧС монтаж, допуск СРО вентиляция, сертификаты инженерная компания",
     canonical: "/sertifikaty",
+    breadcrumbs: [{ name: "Документы и лицензии", url: "/sertifikaty" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://freonn.ru/sertifikaty#webpage",
+      name: "Документы и лицензии — Freonn",
+      description: "Лицензии МЧС, допуск СРО, сертификаты ISO и производителей оборудования.",
+      url: "https://freonn.ru/sertifikaty",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      about: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout

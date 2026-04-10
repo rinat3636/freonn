@@ -14,6 +14,20 @@ export default function ServicesPage() {
     description: "Полный спектр инженерных услуг: вентиляция, кондиционирование, дымоудаление, отопление, холодоснабжение, водоснабжение, электроснабжение. Проектирование и монтаж под ключ.",
     keywords: "услуги монтаж вентиляции, кондиционирование офиса, дымоудаление монтаж, инженерные системы под ключ",
     canonical: "/uslugi",
+    breadcrumbs: [{ name: "Услуги", url: "/uslugi" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://freonn.ru/uslugi#service",
+      name: "Монтаж инженерных систем в Москве",
+      description: "Полный спектр инженерных услуг: вентиляция, кондиционирование, дымоудаление, отопление, холодоснабжение, водоснабжение, электроснабжение.",
+      provider: { "@id": "https://freonn.ru/#organization" },
+      areaServed: [
+        { "@type": "City", name: "Москва" },
+        { "@type": "AdministrativeArea", name: "Московская область" },
+      ],
+      url: "https://freonn.ru/uslugi",
+    },
   });
   return (
     <PageLayout

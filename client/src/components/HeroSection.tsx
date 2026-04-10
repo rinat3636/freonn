@@ -66,9 +66,11 @@ export default function HeroSection() {
         autoPlay
         muted
         playsInline
+        poster="/hero-team.jpg"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
         style={{ opacity: showPhoto ? 0 : 1 }}
         aria-hidden="true"
+        preload="none"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>

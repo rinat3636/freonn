@@ -60,13 +60,13 @@ const cities: { label: string; href: string }[] = [
   { label: "Москва", href: "/moskva" },
   { label: "Московская область", href: "/moskovskaya-oblast" },
   { label: "Дзержинский", href: "/dzerzhinskij" },
-  { label: "Люберцы", href: "/lyubery" },
+  { label: "Люберцы", href: "/lyubertsy" },
   { label: "Мытищи", href: "/mytishchi" },
-  { label: "Одинцово", href: "/odincovo" },
+  { label: "Одинцово", href: "/odintsovo" },
   { label: "Подольск", href: "/podolsk" },
   { label: "Зеленоград", href: "/zelenograd" },
   { label: "Раменское", href: "/ramenskoe" },
-  { label: "Долгопрудный", href: "/dolgoprudnyj" },
+  { label: "Долгопрудный", href: "/dolgoprudny" },
   { label: "Ногинск", href: "/noginsk" },
   { label: "Истра", href: "/istra" },
   { label: "Домодедово", href: "/domodedovo" },
@@ -82,7 +82,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 sm:gap-8">
           {/* Logo & description */}
           <div className="col-span-2 sm:col-span-3 lg:col-span-2">
-            <img src={LOGO_URL} alt="Freonn" className="h-10 w-auto mb-4" />
+            <img src={LOGO_URL} alt="Freonn" className="h-10 w-auto mb-4" loading="lazy" decoding="async" width="160" height="40" />
             <p className="text-white/60 text-sm font-body leading-relaxed mb-6 max-w-xs">
               Инженерная компания Freonn — проектирование, монтаж и обслуживание инженерных систем для промышленности, бизнеса и премиум недвижимости в Москве и Московской области.
             </p>

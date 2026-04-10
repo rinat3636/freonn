@@ -49,6 +49,17 @@ export default function GuaranteePage() {
     description: "Freonn предоставляет гарантию до 5 лет на все виды монтажных работ. Официальный договор, гарантийное обслуживание, техническая поддержка.",
     keywords: "гарантия монтаж вентиляции, гарантийное обслуживание кондиционирование, гарантия инженерные системы",
     canonical: "/garantii",
+    breadcrumbs: [{ name: "Гарантия", url: "/garantii" }],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://freonn.ru/garantii#webpage",
+      name: "Гарантии на монтаж инженерных систем — Freonn",
+      description: "Freonn предоставляет гарантию до 5 лет на все виды монтажных работ.",
+      url: "https://freonn.ru/garantii",
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      about: { "@id": "https://freonn.ru/#organization" },
+    },
   });
   return (
     <PageLayout
@@ -86,6 +97,8 @@ export default function GuaranteePage() {
                 src={`${CDN}/freonn-ventilation-unit-5ebe3bmzqsCGdGpvbDz2zo.webp`}
                 alt="Гарантия качества Freonn"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

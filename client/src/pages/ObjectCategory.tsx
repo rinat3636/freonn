@@ -216,6 +216,20 @@ export default function ObjectCategoryPage({ category }: ObjectCategoryPageProps
     description: seoDescs[category] || data.description.slice(0, 160),
     keywords: data.title.toLowerCase() + ", инженерные системы, вентиляция, кондиционирование",
     canonical: "/" + category,
+    breadcrumbs: [
+      { name: "Объекты", url: "/obekty" },
+      { name: data.title, url: `/${category}` },
+    ],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `https://freonn.ru/${category}#webpage`,
+      name: seoTitles[category] || data.title + " — Freonn",
+      description: seoDescs[category] || data.description.slice(0, 160),
+      url: `https://freonn.ru/${category}`,
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      author: { "@id": "https://freonn.ru/#organization" },
+    },
   });
 
   return (

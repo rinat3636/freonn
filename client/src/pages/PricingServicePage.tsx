@@ -268,6 +268,20 @@ export default function PricingServicePage({ service }: PricingServicePageProps)
     description: data.description.slice(0, 160),
     keywords: `цены ${data.title.toLowerCase()}, стоимость монтажа, прайс-лист, Freonn`,
     canonical: `/ceny/${service}`,
+    breadcrumbs: [
+      { name: "Цены", url: "/ceny" },
+      { name: data.title, url: `/ceny/${service}` },
+    ],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `https://freonn.ru/ceny/${service}#webpage`,
+      name: `Цены на ${data.title.toLowerCase()} — Freonn`,
+      description: data.description.slice(0, 160),
+      url: `https://freonn.ru/ceny/${service}`,
+      isPartOf: { "@id": "https://freonn.ru/#website" },
+      provider: { "@id": "https://freonn.ru/#organization" },
+    },
   });
 
   return (
