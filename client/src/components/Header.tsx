@@ -97,7 +97,7 @@ export default function Header() {
           const theme = el.dataset.theme;
           if (theme === 'dark') {
             // Check if it's the Hero section (has video bg)
-            matched = el.classList.contains('bg-[#0A0E2E]') ? '#0A0E2E' : '#0F1340';
+            matched = el.classList.contains('bg-[#0A0E2E]') ? '#1a2a6c' : '#1e3a7a';
           } else {
             // light sections: check actual bg color
             if (el.classList.contains('bg-[#F7F8FF]')) matched = '#F7F8FF';
@@ -110,7 +110,7 @@ export default function Header() {
     };
 
     // Set initial color based on route
-    setColor(location === '/' ? '#0A0E2E' : '#ffffff');
+    setColor(location === '/' ? '#1a2a6c' : '#ffffff');
     updateThemeColor();
 
     window.addEventListener('scroll', updateThemeColor, { passive: true });
