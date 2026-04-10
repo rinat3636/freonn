@@ -6,6 +6,8 @@ import { ymGoal } from "@/lib/ym";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { useSEO } from "@/hooks/useSEO";
+import { useAICityContent } from "@/hooks/useAICityContent";
+import { useAISEO } from "@/hooks/useAISEO";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, MapPin, Clock, Phone, Wind, Thermometer, Flame, Snowflake, ShieldAlert, Droplets, Zap, Hammer } from "lucide-react";
 
@@ -238,12 +240,26 @@ export default function CityPage({ city }: CityPageProps) {
   const cityName = cityNames[city] || city.charAt(0).toUpperCase() + city.slice(1).replace(/-/g, " ");
   const title = `Инженерные системы в ${cityName}е`;
   const titleGenitive = cityNames[city] ? `${cityName}` : cityName;
-  const cityData = getCityData(city, cityName);
+  const staticCityData = getCityData(city, cityName);
+
+  // AI-генерация уникального LSI-контента для города (с fallback на статику)
+  const aiCityContent = useAICityContent(city, cityName, staticCityData);
+  const cityData = aiCityContent;
+
+  // AI-генерация мета-тегов (с fallback на статику)
+  const aiMeta = useAISEO({
+    type: "city",
+    fallbackTitle: `Монтаж вентиляции и кондиционирования в ${cityName} — Freonn`,
+    fallbackDescription: `Проектирование и монтаж инженерных систем в ${cityName}: вентиляция, кондиционирование, дымоудаление, отопление. Бесплатный выезд инженера, гарантия 1 год.`,
+    fallbackKeywords: `монтаж вентиляции ${cityName}, кондиционирование ${cityName}, инженерные системы ${cityName}, дымоудаление ${cityName}, отопление ${cityName}`,
+    data: { cityName },
+    cacheKey: `city_${city}`,
+  });
 
   useSEO({
-    title: `Монтаж вентиляции и кондиционирования в ${cityName} — Freonn`,
-    description: `Проектирование и монтаж инженерных систем в ${cityName}: вентиляция, кондиционирование, дымоудаление, отопление. Бесплатный выезд инженера, гарантия 1 год.`,
-    keywords: `монтаж вентиляции ${cityName}, кондиционирование ${cityName}, инженерные системы ${cityName}, дымоудаление ${cityName}, отопление ${cityName}`,
+    title: aiMeta.title,
+    description: aiMeta.description,
+    keywords: aiMeta.keywords,
     canonical: `/${city}`,
     breadcrumbs: [{ name: cityName, url: `/${city}` }],
     jsonLd: {
@@ -386,6 +402,25 @@ export default function CityPage({ city }: CityPageProps) {
           </div>
         </div>
       </section>
+
+      {/* AI FAQ Section — показывается если AI вернул FAQ */}
+      {aiCityContent.faq && aiCityContent.faq.length > 0 && (
+        <section className="py-14 bg-[#F7F8FF]">
+          <div className="container max-w-3xl">
+            <h2 className="font-heading font-bold text-[#0F1340] text-2xl mb-8">
+              Часто задаваемые вопросы — {cityName}
+            </h2>
+            <div className="space-y-4">
+              {aiCityContent.faq.map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 shadow-sm">
+                  <h3 className="font-heading font-semibold text-[#0F1340] text-base mb-2">{item.q}</h3>
+                  <p className="text-gray-600 font-body text-sm leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-12 bg-[#0F1340] text-white">

@@ -7,6 +7,7 @@ import PageLayout from "@/components/PageLayout";
 import { useRoute } from "wouter";
 import { motion } from "framer-motion";
 import { useSEO } from "@/hooks/useSEO";
+import { useAISEO } from "@/hooks/useAISEO";
 import { ArrowLeft, Phone } from "lucide-react";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
@@ -483,10 +484,20 @@ export default function BlogArticlePage() {
   const slug = params?.slug || "";
   const article = articles[slug];
 
+  // AI-генерация мета-тегов для статьи
+  const aiMeta = useAISEO({
+    type: "blog",
+    fallbackTitle: article?.title || "Статья",
+    fallbackDescription: article ? article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160) : "",
+    fallbackKeywords: article ? article.category.toLowerCase() + ', инженерные системы, Freonn, монтаж вентиляции' : "",
+    data: article ? { title: article.title, category: article.category, content: article.content.slice(0, 300) } : {},
+    cacheKey: `blog_${slug}`,
+  });
+
   useSEO(article ? {
-    title: article.title,
-    description: article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160),
-    keywords: article.category.toLowerCase() + ', инженерные системы, Freonn, монтаж вентиляции',
+    title: aiMeta.title,
+    description: aiMeta.description || article.content.replace(/[#*]/g, '').replace(/\n/g, ' ').slice(0, 160),
+    keywords: aiMeta.keywords || article.category.toLowerCase() + ', инженерные системы, Freonn, монтаж вентиляции',
     canonical: '/blog/' + slug,
     ogType: 'article',
     publishedTime: '2024-01-01T00:00:00+03:00',

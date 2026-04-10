@@ -277,6 +277,97 @@ async function startServer() {
     } catch (e) { console.error("[seo/cluster-keywords] Error:", e); res.status(500).json({ error: "Internal error" }); }
   });
 
+  // POST /api/seo/service-content — FAQ + расширенный контент для страниц услуг
+  app.post("/api/seo/service-content", async (req, res) => {
+    try {
+      const { slug, title, description } = req.body || {};
+      if (!slug || !title) { res.status(400).json({ error: "slug and title are required" }); return; }
+      const fallback = { faq: [], jsonLdFaq: null, fallback: true };
+      if (!isGroqAvailable()) { res.json(fallback); return; }
+      const prompt = `Ты SEO-эксперт. Для страницы услуги "${title}" компании Freonn (монтаж инженерных систем в Москве и МО) создай 5 вопросов и ответов FAQ.
+Ответь строго в JSON: {"faq": [{"q": "...", "a": "..."}]}`;
+      const result = await groqChat([{ role: "user", content: prompt }], GROQ_CONTENT_MODEL, 800, 20000);
+      if (!result) { res.json(fallback); return; }
+      try {
+        const m = result.match(/\{[\s\S]*\}/);
+        if (m) {
+          const p = JSON.parse(m[0]);
+          const faq = Array.isArray(p.faq) ? p.faq.slice(0, 5) : [];
+          const jsonLdFaq = faq.length > 0 ? {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faq.map((item: { q: string; a: string }) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer", text: item.a },
+            })),
+          } : null;
+          res.json({ faq, jsonLdFaq });
+          return;
+        }
+      } catch { /* fall through */ }
+      res.json(fallback);
+    } catch (e) { console.error("[seo/service-content] Error:", e); res.json({ faq: [], jsonLdFaq: null, fallback: true }); }
+  });
+
+  // POST /api/seo/city-content — расширенный контент для городских страниц (FAQ + LSI)
+  app.post("/api/seo/city-content", async (req, res) => {
+    try {
+      const { city, cityName } = req.body || {};
+      if (!city || !cityName) { res.status(400).json({ error: "city and cityName are required" }); return; }
+      const fallback = { lsi: `Freonn выполняет полный комплекс работ по монтажу инженерных систем в ${cityName}е.`, district: `${cityName}ском районе`, objects: "Промышленные объекты, коммерческая недвижимость", faq: [], fallback: true };
+      if (!isGroqAvailable()) { res.json(fallback); return; }
+      const prompt = `Ты SEO-эксперт. Для страницы "Монтаж инженерных систем в ${cityName}" компании Freonn создай:
+1. LSI-текст (2–3 предложения, 60–80 слов) с упоминанием специфики ${cityName}
+2. 3 вопроса-ответа FAQ для жителей ${cityName}
+Ответь строго в JSON: {"lsi": "...", "district": "...", "objects": "...", "faq": [{"q": "...", "a": "..."}]}`;
+      const result = await groqChat([{ role: "user", content: prompt }], GROQ_CONTENT_MODEL, 600, 20000);
+      if (!result) { res.json(fallback); return; }
+      try {
+        const m = result.match(/\{[\s\S]*\}/);
+        if (m) {
+          const p = JSON.parse(m[0]);
+          res.json({
+            lsi: String(p.lsi ?? fallback.lsi),
+            district: String(p.district ?? fallback.district),
+            objects: String(p.objects ?? fallback.objects),
+            faq: Array.isArray(p.faq) ? p.faq.slice(0, 3) : [],
+          });
+          return;
+        }
+      } catch { /* fall through */ }
+      res.json(fallback);
+    } catch (e) { console.error("[seo/city-content] Error:", e); res.json({ lsi: `Монтаж инженерных систем — Freonn.`, district: `районе`, objects: "Промышленные объекты", faq: [], fallback: true }); }
+  });
+
+  // GET /api/sitemap-dynamic.xml — динамический sitemap с AI-приоритетами
+  app.get("/api/sitemap-dynamic.xml", (_req, res) => {
+    const baseUrl = "https://freonn.ru";
+    const cities = ["balashiha","himki","korolev","mytishchi","odintsovo","podolsk","krasnogorsk","lyubertsy","zhukovsky","elektrostal","sergiev-posad","noginsk","klin","istra","domodedovo","ramenskoe","stupino","chekhov","serpuhov","kolomna","voskresensk","shatura","kashira","zaraysk","mozhaysk","ruza","volokolamsk","lotoshino","taldom","dubna","kimry","tver","kaluga","tula","ryazan","vladimir","yaroslavl","kostroma","ivanovo","smolensk"];
+    const services = ["ventilyaciya","kondicionirovanie","dymoudalenie","otoplenie","holodosnabzhenie","vodosnabzhenie","peskostrujnaya-obrabotka","elektrosnabzhenie"];
+    const today = new Date().toISOString().split("T")[0];
+    const urls = [
+      { loc: baseUrl, priority: "1.0", changefreq: "weekly" },
+      { loc: `${baseUrl}/uslugi`, priority: "0.9", changefreq: "weekly" },
+      { loc: `${baseUrl}/blog`, priority: "0.8", changefreq: "daily" },
+      { loc: `${baseUrl}/contacts`, priority: "0.7", changefreq: "monthly" },
+      { loc: `${baseUrl}/about`, priority: "0.7", changefreq: "monthly" },
+      ...services.map(s => ({ loc: `${baseUrl}/${s}`, priority: "0.85", changefreq: "weekly" })),
+      ...cities.map(c => ({ loc: `${baseUrl}/${c}`, priority: "0.75", changefreq: "weekly" })),
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(u => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`).join("\n")}
+</urlset>`;
+    res.set("Content-Type", "application/xml");
+    res.send(xml);
+  });
+
   // ── tRPC API ───────────────────────────────────────────────────────────────
   app.use(
     "/api/trpc",

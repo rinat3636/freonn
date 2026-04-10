@@ -6,6 +6,8 @@ import { ymGoal } from "@/lib/ym";
 import PageLayout from "@/components/PageLayout";
 import { useRoute } from "wouter";
 import { useSEO } from "@/hooks/useSEO";
+import { useAIServiceContent } from "@/hooks/useAIServiceContent";
+import { useAISEO } from "@/hooks/useAISEO";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Phone, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert, Hammer } from "lucide-react";
 import ContactSection from "@/components/ContactSection";
@@ -199,44 +201,75 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
 
   const Icon = service.icon;
 
+  // AI-генерация FAQ и контента для страницы услуги
+  const aiService = useAIServiceContent(resolvedSlug, service.title, service.description);
+
+  // AI-генерация мета-тегов
+  const aiMeta = useAISEO({
+    type: "service",
+    fallbackTitle: `${service.title} в Москве и МО — цены, проектирование, монтаж`,
+    fallbackDescription: service.description.slice(0, 160),
+    fallbackKeywords: `${service.title.toLowerCase()} Москва, монтаж ${service.title.toLowerCase()} цена, ${service.title.toLowerCase()} МО, ${service.title.toLowerCase()} под ключ`,
+    data: { serviceName: service.title, serviceDescription: service.description },
+    cacheKey: `service_${resolvedSlug}`,
+  });
+
   useSEO({
-    title: `${service.title} в Москве и МО — цены, проектирование, монтаж`,
-    description: `${service.description.slice(0, 160)}`,
-    keywords: `${service.title.toLowerCase()} Москва, монтаж ${service.title.toLowerCase()} цена, ${service.title.toLowerCase()} МО, ${service.title.toLowerCase()} под ключ`,
+    title: aiMeta.title,
+    description: aiMeta.description,
+    keywords: aiMeta.keywords,
     canonical: `/${resolvedSlug}`,
     breadcrumbs: [
       { name: "Услуги", url: "/uslugi" },
       { name: service.title, url: `/${resolvedSlug}` },
     ],
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: service.title,
-      description: service.description,
-      url: `https://freonn.ru/${resolvedSlug}`,
-      provider: {
-        "@type": "LocalBusiness",
-        name: "Freonn",
-        url: "https://freonn.ru",
-        telephone: "+78001012009",
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "RU",
-          addressRegion: "Москва",
-          addressLocality: "Москва",
+    jsonLd: aiService.jsonLdFaq
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: service.title,
+            description: service.description,
+            url: `https://freonn.ru/${resolvedSlug}`,
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Freonn",
+              url: "https://freonn.ru",
+              telephone: "+78001012009",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "RU",
+                addressRegion: "Москва",
+                addressLocality: "Москва",
+              },
+            },
+            areaServed: [
+              { "@type": "City", name: "Москва" },
+              { "@type": "AdministrativeArea", name: "Московская область" },
+            ],
+            serviceType: service.title,
+            serviceOutput: { "@type": "Thing", name: service.title },
+          },
+          aiService.jsonLdFaq,
+        ]
+      : {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+          url: `https://freonn.ru/${resolvedSlug}`,
+          provider: {
+            "@type": "LocalBusiness",
+            name: "Freonn",
+            url: "https://freonn.ru",
+            telephone: "+78001012009",
+          },
+          areaServed: [
+            { "@type": "City", name: "Москва" },
+            { "@type": "AdministrativeArea", name: "Московская область" },
+          ],
+          serviceType: service.title,
         },
-      },
-      areaServed: [
-        { "@type": "City", name: "Москва" },
-        { "@type": "AdministrativeArea", name: "Московская область" },
-      ],
-      serviceType: service.title,
-      termsOfService: "https://freonn.ru/uslugi",
-      serviceOutput: {
-        "@type": "Thing",
-        name: service.title,
-      },
-    },
   });
 
   return (
@@ -336,6 +369,25 @@ export default function ServicePageComponent({ slug: propSlug }: { slug?: string
               <a href="/uslugi" className="btn-dark inline-flex items-center gap-2">
                 Все услуги <ArrowRight size={16} />
               </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* AI FAQ Section */}
+      {aiService.faq && aiService.faq.length > 0 && (
+        <section className="py-14 bg-[#F7F8FF]">
+          <div className="container max-w-3xl">
+            <h2 className="font-heading font-bold text-[#0F1340] text-2xl mb-8">
+              Часто задаваемые вопросы
+            </h2>
+            <div className="space-y-4">
+              {aiService.faq.map((item, i) => (
+                <div key={i} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                  <h3 className="font-heading font-semibold text-[#0F1340] text-base mb-2">{item.q}</h3>
+                  <p className="text-gray-600 font-body text-sm leading-relaxed">{item.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
