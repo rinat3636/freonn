@@ -10,6 +10,7 @@ import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { notifyOwner } from "./notification";
 import { uploadFileToSupabase } from "../supabaseStorage";
+import { groqChat, groqChatStream, isGroqAvailable, GROQ_CONTENT_MODEL } from "../groq";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -29,6 +30,28 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
   }
   throw new Error(`No available port found starting from ${startPort}`);
 }
+
+// ─── Freonn AI system prompt ──────────────────────────────────────────────────
+const FREONN_SYSTEM_PROMPT = `Ты — AI-консультант инженерной компании Freonn (freonn.ru).
+Компания специализируется на проектировании, монтаже и обслуживании инженерных систем:
+вентиляция, кондиционирование, дымоудаление, отопление, холодоснабжение, водоснабжение, электроснабжение, пескоструйная обработка.
+Работаем в Москве и Московской области. Опыт 15+ лет, 1280+ объектов, 25 бригад.
+Телефон: 8(800)101-2009 (бесплатно). Email: info@freonn.ru.
+
+Правила:
+- Отвечай кратко, профессионально, по-русски.
+- Если вопрос не по теме инженерных систем — вежливо перенаправь к нашим услугам.
+- Не называй цены точно — предлагай оставить заявку для расчёта.
+- Всегда предлагай вызвать инженера или оставить заявку на сайте.
+- Максимум 3–4 предложения на ответ.`;
+
+const FALLBACK_ANSWERS = [
+  "Здравствуйте! Я консультант Freonn. Для точного ответа на ваш вопрос рекомендую позвонить нашим инженерам: **8(800)101-2009** (бесплатно) или оставить заявку на сайте — мы перезвоним в течение 30 минут.",
+  "Спасибо за вопрос! Наши специалисты готовы проконсультировать вас бесплатно. Позвоните по номеру **8(800)101-2009** или напишите на info@freonn.ru — мы подберём оптимальное решение для вашего объекта.",
+  "Отличный вопрос! Для точного расчёта стоимости и сроков нам нужно изучить ваш объект. Оставьте заявку на сайте или позвоните: **8(800)101-2009** — выезд инженера в течение 1 дня, расчёт бесплатно.",
+];
+
+const getRandomFallback = () => FALLBACK_ANSWERS[Math.floor(Math.random() * FALLBACK_ANSWERS.length)];
 
 async function startServer() {
   const app = express();
@@ -120,7 +143,141 @@ async function startServer() {
     }
   });
 
-  // tRPC API
+  // ── Groq AI эндпоинты ──────────────────────────────────────────────────────
+  // SAFETY: все функции обёрнуты в try/catch с fallback.
+  // Если GROQ_API_KEY не задан или API недоступен — сайт работает штатно.
+
+  // GET /api/groq/status — проверка доступности токена
+  app.get("/api/groq/status", (_req, res) => {
+    res.json({ available: isGroqAvailable() });
+  });
+
+  // POST /api/ai/chat — AI-консультант (streaming + non-streaming)
+  app.post("/api/ai/chat", async (req, res) => {
+    try {
+      const { messages = [], stream = false } = req.body || {};
+      if (!Array.isArray(messages) || messages.length === 0) {
+        res.status(400).json({ error: "messages array is required" });
+        return;
+      }
+      const conversation = [
+        { role: "system" as const, content: FREONN_SYSTEM_PROMPT },
+        ...messages.slice(-10).map((m: { role: string; content: string }) => ({
+          role: (m.role === "user" ? "user" : "assistant") as "user" | "assistant",
+          content: String(m.content ?? ""),
+        })),
+      ];
+
+      if (stream) {
+        res.setHeader("Content-Type", "text/event-stream");
+        res.setHeader("Cache-Control", "no-cache");
+        res.setHeader("Connection", "keep-alive");
+        res.flushHeaders();
+        if (!isGroqAvailable()) {
+          res.write(`data: ${JSON.stringify({ content: getRandomFallback() })}\n\n`);
+          res.write("data: [DONE]\n\n");
+          res.end();
+          return;
+        }
+        try {
+          for await (const chunk of groqChatStream(conversation)) {
+            res.write(`data: ${JSON.stringify({ content: chunk })}\n\n`);
+          }
+        } catch {
+          res.write(`data: ${JSON.stringify({ content: "\n\n" + getRandomFallback() })}\n\n`);
+        }
+        res.write("data: [DONE]\n\n");
+        res.end();
+        return;
+      }
+
+      const result = await groqChat(conversation);
+      if (result) {
+        res.json({ content: result });
+      } else {
+        res.json({ content: getRandomFallback(), fallback: true });
+      }
+    } catch (e) {
+      console.error("[ai/chat] Error:", e);
+      res.json({ content: getRandomFallback(), fallback: true });
+    }
+  });
+
+  // POST /api/seo/meta — генерация мета-тегов
+  app.post("/api/seo/meta", async (req, res) => {
+    try {
+      const { type, data } = req.body || {};
+      if (!type || !data) { res.status(400).json({ error: "type and data are required" }); return; }
+      const fallbackMeta: Record<string, { title: string; description: string; keywords: string }> = {
+        service: { title: `${data.name ?? "Услуга"} в Москве — Freonn`, description: `Профессиональный монтаж ${data.name ?? "инженерных систем"} в Москве и МО. Звоните: 8(800)101-2009`, keywords: `${data.name ?? "инженерные системы"}, монтаж, Москва` },
+        city: { title: `Монтаж инженерных систем в ${data.cityName ?? "городе"} — Freonn`, description: `Freonn — монтаж вентиляции, кондиционирования и отопления в ${data.cityName ?? "вашем городе"}. Бесплатный расчёт.`, keywords: `монтаж вентиляции ${data.cityName ?? ""}, Freonn` },
+        blog: { title: `${data.articleTitle ?? "Статья"} — Блог Freonn`, description: data.excerpt ?? "Экспертные статьи об инженерных системах.", keywords: `${data.category ?? "инженерные системы"}, Freonn` },
+      };
+      if (!isGroqAvailable()) { res.json({ ...fallbackMeta[type] ?? fallbackMeta.service, fallback: true }); return; }
+      const prompts: Record<string, string> = {
+        service: `Напиши SEO Title (до 60 символов) и Meta Description (до 160 символов) для страницы услуги "${data.name}" компании Freonn. Ответь в JSON: {"title":"...","description":"...","keywords":"..."}`,
+        city: `Напиши SEO Title (до 60 символов) и Meta Description (до 160 символов) для страницы "Монтаж инженерных систем в ${data.cityName}" компании Freonn. Ответь в JSON: {"title":"...","description":"...","keywords":"..."}`,
+        blog: `Напиши SEO Title (до 60 символов) и Meta Description (до 160 символов) для статьи "${data.articleTitle}". Ответь в JSON: {"title":"...","description":"...","keywords":"..."}`,
+      };
+      const result = await groqChat([{ role: "user", content: prompts[type] ?? prompts.service }], GROQ_CONTENT_MODEL, 300);
+      if (!result) { res.json({ ...fallbackMeta[type] ?? fallbackMeta.service, fallback: true }); return; }
+      try {
+        const jsonMatch = result.match(/\{[\s\S]*\}/);
+        if (jsonMatch) { const p = JSON.parse(jsonMatch[0]); res.json({ title: String(p.title ?? "").slice(0, 65), description: String(p.description ?? "").slice(0, 165), keywords: String(p.keywords ?? "") }); return; }
+      } catch { /* fall through */ }
+      res.json({ ...fallbackMeta[type] ?? fallbackMeta.service, fallback: true });
+    } catch (e) { console.error("[seo/meta] Error:", e); res.status(500).json({ error: "Internal error" }); }
+  });
+
+  // POST /api/seo/city-text — SEO-текст для городской страницы
+  app.post("/api/seo/city-text", async (req, res) => {
+    try {
+      const { city, cityName } = req.body || {};
+      if (!city || !cityName) { res.status(400).json({ error: "city and cityName are required" }); return; }
+      const fallback = { lsi: `Freonn выполняет полный комплекс работ по монтажу инженерных систем в ${cityName}е. Работаем с промышленными предприятиями и коммерческой недвижимостью.`, district: `${cityName}ском районе`, objects: "Промышленные объекты, коммерческая недвижимость, ЖК", fallback: true };
+      if (!isGroqAvailable()) { res.json(fallback); return; }
+      const prompt = `Напиши уникальный SEO-текст (2–3 предложения, 60–80 слов) для страницы "Монтаж инженерных систем в ${cityName}" компании Freonn. Включи LSI: вентиляция, кондиционирование, дымоудаление, отопление. Упомяни специфику ${cityName}. Ответь в JSON: {"lsi": "...", "district": "...", "objects": "..."}`;
+      const result = await groqChat([{ role: "user", content: prompt }], GROQ_CONTENT_MODEL, 300);
+      if (!result) { res.json(fallback); return; }
+      try { const m = result.match(/\{[\s\S]*\}/); if (m) { const p = JSON.parse(m[0]); res.json({ lsi: String(p.lsi ?? fallback.lsi), district: String(p.district ?? fallback.district), objects: String(p.objects ?? fallback.objects) }); return; } } catch { /* fall through */ }
+      res.json(fallback);
+    } catch (e) { console.error("[seo/city-text] Error:", e); res.json({ lsi: `Монтаж инженерных систем — Freonn.`, district: `районе`, objects: "Промышленные объекты", fallback: true }); }
+  });
+
+  // POST /api/seo/generate-article — генерация статьи блога
+  app.post("/api/seo/generate-article", async (req, res) => {
+    try {
+      const { topic, category, keywords = [] } = req.body || {};
+      if (!topic || !category) { res.status(400).json({ error: "topic and category are required" }); return; }
+      if (!isGroqAvailable()) { res.status(503).json({ error: "Groq API недоступен. Добавьте GROQ_API_KEY.", fallback: true }); return; }
+      const kwList = (keywords as string[]).length > 0 ? (keywords as string[]).join(", ") : "вентиляция, монтаж, инженерные системы";
+      const prompt = `Напиши экспертную SEO-статью для блога Freonn.\nТема: "${topic}"\nКатегория: ${category}\nКлючевые слова: ${kwList}\nОбъём: 600–800 слов. Структура: введение, 3–4 раздела H2, заключение с призывом. Формат: Markdown.\nВ конце JSON-блок:\n\`\`\`json\n{"title":"...","description":"...","slug":"...","excerpt":"..."}\n\`\`\``;
+      const result = await groqChat([{ role: "user", content: prompt }], GROQ_CONTENT_MODEL, 2048, 30000);
+      if (!result) { res.status(503).json({ error: "Groq API не ответил.", fallback: true }); return; }
+      const jsonMatch = result.match(/```json\s*([\s\S]*?)```/);
+      let meta = { title: topic, description: "", slug: "", excerpt: "" };
+      if (jsonMatch) { try { meta = { ...meta, ...JSON.parse(jsonMatch[1]) }; } catch { /* ignore */ } }
+      const content = result.replace(/```json[\s\S]*?```/, "").trim();
+      res.json({ content, meta, topic, category });
+    } catch (e) { console.error("[seo/generate-article] Error:", e); res.status(500).json({ error: "Internal error" }); }
+  });
+
+  // POST /api/seo/cluster-keywords — кластеризация семантики
+  app.post("/api/seo/cluster-keywords", async (req, res) => {
+    try {
+      const { keywords = [] } = req.body || {};
+      if (!Array.isArray(keywords) || keywords.length === 0) { res.status(400).json({ error: "keywords array is required" }); return; }
+      if (!isGroqAvailable()) { res.status(503).json({ error: "Groq API недоступен.", fallback: true }); return; }
+      const batch = (keywords as string[]).slice(0, 100);
+      const prompt = `Кластеризуй ключевые слова для сайта Freonn.ru по страницам: вентиляция, кондиционирование, дымоудаление, отопление, холодоснабжение, водоснабжение, электроснабжение, пескоструй, блог.\nКлючевые слова:\n${batch.join("\n")}\nОтветь в JSON: {"clusters": [{"page": "...", "intent": "commercial|informational", "keywords": ["..."]}]}`;
+      const result = await groqChat([{ role: "user", content: prompt }], GROQ_CONTENT_MODEL, 2048, 30000);
+      if (!result) { res.status(503).json({ error: "Groq API не ответил.", fallback: true }); return; }
+      try { const m = result.match(/\{[\s\S]*\}/); if (m) { res.json(JSON.parse(m[0])); return; } } catch { /* fall through */ }
+      res.json({ raw: result, clusters: [] });
+    } catch (e) { console.error("[seo/cluster-keywords] Error:", e); res.status(500).json({ error: "Internal error" }); }
+  });
+
+  // ── tRPC API ───────────────────────────────────────────────────────────────
   app.use(
     "/api/trpc",
     createExpressMiddleware({
@@ -144,6 +301,7 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
+    console.log(`[Groq] API available: ${isGroqAvailable()}`);
   });
 }
 
