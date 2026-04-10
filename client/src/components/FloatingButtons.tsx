@@ -1,11 +1,12 @@
 /*
  * FREONN FLOATING BUTTONS — Bold Technical Expressionism
- * Fixed bottom-right: MAX button + phone button + scroll-to-top
+ * Fixed bottom-right: AI chat + MAX button + phone button + scroll-to-top
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, ArrowUp } from "lucide-react";
 import { ymGoal } from "@/lib/ym";
+import FreonnAIChat from "./FreonnAIChat";
 
 const MAX_URL = "https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA";
 
@@ -27,54 +28,60 @@ export default function FloatingButtons() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* MAX messenger */}
-      <motion.a
-        href={MAX_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => ymGoal("messenger_click", { messenger: "MAX" })}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 1 }}
-        className="w-12 h-12 bg-[#1a1a3e] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full relative"
-        title="Написать в MAX"
-      >
-        <MaxIcon />
-        {/* Pulse ring */}
-        <span className="absolute inset-0 animate-ping bg-[#1a1a3e] opacity-40 rounded-full" />
-      </motion.a>
+    <>
+      {/* AI Chat widget — renders its own floating button + window */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        {/* AI Chat button (rendered inside FreonnAIChat) */}
+        <FreonnAIChat />
 
-      {/* Phone */}
-      <motion.a
-        href="tel:88001012009"
-        onClick={() => ymGoal("phone_click")}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.8 }}
-        className="w-14 h-14 bg-[#B91C1C] text-white flex items-center justify-center shadow-xl hover:bg-[#991818] transition-colors hover:scale-110 active:scale-95 relative rounded-full"
-        title="Позвонить"
-      >
-        <Phone size={24} />
-        {/* Pulse ring */}
-        <span className="absolute inset-0 animate-ping bg-[#B91C1C] opacity-30 rounded-full" />
-      </motion.a>
+        {/* MAX messenger */}
+        <motion.a
+          href={MAX_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => ymGoal("messenger_click", { messenger: "MAX" })}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1 }}
+          className="w-12 h-12 bg-[#1a1a3e] flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full relative"
+          title="Написать в MAX"
+        >
+          <MaxIcon />
+          {/* Pulse ring */}
+          <span className="absolute inset-0 animate-ping bg-[#1a1a3e] opacity-40 rounded-full" />
+        </motion.a>
 
-      {/* Scroll to top */}
-      <AnimatePresence>
-        {showTop && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-10 h-10 bg-[#2D3092] text-white flex items-center justify-center shadow-md hover:bg-[#0F1340] transition-colors hover:scale-110 active:scale-95 rounded-full"
-            title="Наверх"
-          >
-            <ArrowUp size={18} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-    </div>
+        {/* Phone */}
+        <motion.a
+          href="tel:88001012009"
+          onClick={() => ymGoal("phone_click")}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.8 }}
+          className="w-14 h-14 bg-[#B91C1C] text-white flex items-center justify-center shadow-xl hover:bg-[#991818] transition-colors hover:scale-110 active:scale-95 relative rounded-full"
+          title="Позвонить"
+        >
+          <Phone size={24} />
+          {/* Pulse ring */}
+          <span className="absolute inset-0 animate-ping bg-[#B91C1C] opacity-30 rounded-full" />
+        </motion.a>
+
+        {/* Scroll to top */}
+        <AnimatePresence>
+          {showTop && (
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="w-10 h-10 bg-[#2D3092] text-white flex items-center justify-center shadow-md hover:bg-[#0F1340] transition-colors hover:scale-110 active:scale-95 rounded-full"
+              title="Наверх"
+            >
+              <ArrowUp size={18} />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
+    </>
   );
 }
