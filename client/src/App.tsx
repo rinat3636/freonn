@@ -26,6 +26,7 @@ import DocumentsPage from "./pages/Documents";
 import PricingServicePage from "./pages/PricingServicePage";
 import ComingSoon from "./pages/ComingSoon";
 import ThanksPage from "./pages/Thanks";
+import ServiceObjectPage, { SERVICES, OBJECT_TYPES } from "./pages/ServiceObjectPage";
 
 function Router() {
   return (
@@ -124,6 +125,21 @@ function Router() {
       </Route>
 
       <Route path={"/spasibo"} component={ThanksPage} />
+
+      {/* Service × Object matrix landing pages */}
+      {Object.keys(SERVICES).flatMap(svc =>
+        Object.keys(OBJECT_TYPES).map(obj => {
+          const svcData = SERVICES[svc];
+          const objData = OBJECT_TYPES[obj];
+          const path = `/${svcData.slug}-${objData.slug}`;
+          return (
+            <Route key={path} path={path}>
+              {() => <ServiceObjectPage service={svc} objectType={obj} />}
+            </Route>
+          );
+        })
+      )}
+
       {/* City pages — MUST be last before 404 */}
       <Route path={"/:city"}>
         {(params) => <CityPage city={params.city || ""} />}
