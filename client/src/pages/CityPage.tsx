@@ -237,6 +237,8 @@ interface CityPageProps {
 }
 
 export default function CityPage({ city }: CityPageProps) {
+  // Если город не в списке известных — закрываем страницу от индексации
+  const isKnownCity = city in cityNames;
   const cityName = cityNames[city] || city.charAt(0).toUpperCase() + city.slice(1).replace(/-/g, " ");
   const title = `Инженерные системы в ${cityName}е`;
   const titleGenitive = cityNames[city] ? `${cityName}` : cityName;
@@ -261,6 +263,7 @@ export default function CityPage({ city }: CityPageProps) {
     description: aiMeta.description,
     keywords: aiMeta.keywords,
     canonical: `/${city}`,
+    noIndex: !isKnownCity,
     breadcrumbs: [{ name: cityName, url: `/${city}` }],
     jsonLd: {
       "@context": "https://schema.org",

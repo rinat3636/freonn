@@ -1,13 +1,16 @@
 # robots.txt — freonn.ru
 # Инженерная компания Freonn | ООО «ЭКС»
 # Монтаж инженерных систем в Москве и МО
-# Обновлено: 2026-04-10
+# Обновлено: 2026-04-11
 
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /404
 Disallow: /admin/
+# Закрываем несуществующие страницы (перехватываются CityPage)
+Disallow: /about
+Disallow: /about/
 
 # Яндекс — приоритетный поисковик
 User-agent: Yandex
@@ -15,6 +18,9 @@ Allow: /
 Disallow: /api/
 Disallow: /404
 Disallow: /admin/
+# Закрываем несуществующие страницы (перехватываются CityPage)
+Disallow: /about
+Disallow: /about/
 Host: freonn.ru
 Crawl-delay: 1
 
@@ -24,6 +30,8 @@ Allow: /
 Disallow: /api/
 Disallow: /404
 Disallow: /admin/
+Disallow: /about
+Disallow: /about/
 Crawl-delay: 2
 
 # Bing
@@ -31,6 +39,8 @@ User-agent: Bingbot
 Allow: /
 Disallow: /api/
 Disallow: /404
+Disallow: /about
+Disallow: /about/
 Crawl-delay: 3
 
 # Sitemap
