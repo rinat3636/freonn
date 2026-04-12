@@ -25,6 +25,7 @@ const services = [
     items: ["Приточная вентиляция", "Вытяжная вентиляция", "Приточно-вытяжная", "Рекуперация тепла", "Автоматизация"],
     image: GEN_VENT,
     color: "#2D3092",
+    price: "от 500 руб/м²",
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ const services = [
     items: ["Настенные и кассетные", "Канальные системы", "Мульти-сплит", "Чиллеры и фанкойлы", "VRV и VRF системы"],
     image: `${CDN}/equip-ac_decafa77.webp`,
     color: "#B91C1C",
+    price: "от 800 руб/м²",
   },
   {
     id: 3,
@@ -51,6 +53,7 @@ const services = [
     items: ["Системы дымоудаления", "Противодымная вентиляция", "Клапаны дымоудаления", "Автоматика управления", "Лицензия МЧС"],
     image: `${CDN}/equip-smoke_77c22382.webp`,
     color: "#2D3092",
+    price: "от 600 руб/м²",
   },
   {
     id: 4,
@@ -64,6 +67,7 @@ const services = [
     items: ["Воздушное отопление", "Водяное отопление", "Паровое отопление", "Электрическое", "Тепловые пункты (ИТП)"],
     image: `${CDN}/equip-heating_49ba3696.jpg`,
     color: "#B91C1C",
+    price: "от 600 руб/м²",
   },
   {
     id: 5,
@@ -77,6 +81,7 @@ const services = [
     items: ["Промышленные чиллеры", "Технологическое охлаждение", "Холодильные камеры", "Прецизионное охлаждение", "Фреоновые системы"],
     image: GEN_CHILLER,
     color: "#2D3092",
+    price: "по запросу",
   },
   {
     id: 6,
@@ -90,6 +95,7 @@ const services = [
     items: ["Промышленное водоснабжение", "Насосные станции", "Водоотведение", "Системы водоподготовки", "Пусконаладка"],
     image: `${CDN}/equip-water_0bb56318.jpg`,
     color: "#B91C1C",
+    price: "по запросу",
   },
   {
     id: 7,
@@ -103,6 +109,7 @@ const services = [
     items: ["Металлические конструкции", "Фасады зданий", "Резервуары и трубопроводы", "Балки и фермы", "Антикоррозийная обработка", "Подготовка под покраску"],
     image: GEN_SANDBLAST,
     color: "#B91C1C",
+    price: "от 350 руб/м²",
   },
   {
     id: 8,
@@ -116,6 +123,7 @@ const services = [
     items: ["Силовые кабельные линии", "Электрощитовые", "Промышленное освещение", "Системы АВР", "Заземление и молниезащита"],
     image: `${CDN}/equip-electrical_a91c8ffb.jpg`,
     color: "#2D3092",
+    price: "от 400 руб/м²",
   },
 ];
 
@@ -194,7 +202,7 @@ export default function ServicesSection() {
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-5">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {service.items.map((item) => (
                       <span
                         key={item}
@@ -203,6 +211,16 @@ export default function ServicesSection() {
                         {item}
                       </span>
                     ))}
+                  </div>
+
+                  {/* Price badge */}
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="inline-flex items-center gap-1.5 text-[#B91C1C] font-heading font-bold text-sm bg-[#B91C1C]/8 border border-[#B91C1C]/20 px-3 py-1 rounded-full">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1L7.545 4.13L11 4.635L8.5 7.07L9.09 10.51L6 8.885L2.91 10.51L3.5 7.07L1 4.635L4.455 4.13L6 1Z" fill="#B91C1C"/>
+                      </svg>
+                      {service.price}
+                    </span>
                   </div>
 
                   <a
