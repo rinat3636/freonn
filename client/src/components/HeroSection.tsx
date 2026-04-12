@@ -38,10 +38,52 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   // showPhoto: false = video playing, true = photo showing
   const [showPhoto, setShowPhoto] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Запускаем видео только когда браузер готов (не блокируем первую отрисовку)
+    const startVideo = () => {
+      video.src = "/hero-video.mp4";
+      video.load();
+      video.play().catch(() => {});
+      setVideoLoaded(true);
+    };
+
+    // На мобильных — запускаем после первого взаимодействия, на десктопе — сразу
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      const onInteract = () => {
+        startVideo();
+        window.removeEventListener("touchstart", onInteract);
+        window.removeEventListener("scroll", onInteract);
+      };
+      window.addEventListener("touchstart", onInteract, { passive: true });
+      window.addEventListener("scroll", onInteract, { passive: true });
+      // Fallback: запустить через 3 секунды в любом случае
+      const fallback = setTimeout(startVideo, 3000);
+      return () => {
+        clearTimeout(fallback);
+        window.removeEventListener("touchstart", onInteract);
+        window.removeEventListener("scroll", onInteract);
+      };
+    } else {
+      // Десктоп: запускаем после idle или через 500ms
+      const id = (window as any).requestIdleCallback
+        ? (window as any).requestIdleCallback(startVideo, { timeout: 1500 })
+        : setTimeout(startVideo, 500);
+      return () => {
+        if ((window as any).cancelIdleCallback) (window as any).cancelIdleCallback(id);
+        else clearTimeout(id);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoLoaded) return;
 
     const handleEnded = () => {
       // When video ends — show photo for 2 seconds, then restart video
@@ -55,7 +97,7 @@ export default function HeroSection() {
 
     video.addEventListener("ended", handleEnded);
     return () => video.removeEventListener("ended", handleEnded);
-  }, []);
+  }, [videoLoaded]);
 
   return (
     <section data-theme="dark" className="relative flex items-center overflow-hidden bg-[#0A0E2E]">
@@ -63,7 +105,6 @@ export default function HeroSection() {
       {/* ── VIDEO background ── */}
       <video
         ref={videoRef}
-        autoPlay
         muted
         playsInline
         poster="/hero-team.jpg"
@@ -71,9 +112,7 @@ export default function HeroSection() {
         style={{ opacity: showPhoto ? 0 : 1 }}
         aria-hidden="true"
         preload="none"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      />
 
       {/* ── TEAM PHOTO — shown for 2s after video ends ── */}
       <div
