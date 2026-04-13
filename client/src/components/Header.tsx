@@ -182,7 +182,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
       <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
         {/* Logo */}
-        <a href="/" className="flex-shrink-0 flex flex-col items-start">
+        <a href="/" className="flex-shrink-0 flex flex-col items-center">
           <img
             src={LOGO_URL}
             alt="Freonn"
