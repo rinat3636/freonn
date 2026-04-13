@@ -34,7 +34,7 @@ export default function FreonnAIChat() {
   // Phone form state
   const [phoneForm, setPhoneForm] = useState<PhoneFormState>("hidden");
   const [phoneName, setPhoneName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("+7");
   const [phoneError, setPhoneError] = useState("");
 
   // Auto-scroll to bottom on new messages
@@ -85,15 +85,14 @@ export default function FreonnAIChat() {
     await sendMessage(prompt);
   };
 
-  const handleClear = () => {
-    clearMessages();
+  const handleClear = () => {    setPhoneError("");
     setPhoneForm("hidden");
     setPhoneName("");
-    setPhoneNumber("");
-    setPhoneError("");
-  };
+    setPhoneNumber("+7");
+    setPhoneError("");  };
 
   const handleLeavePhone = () => {
+    setPhoneNumber("+7");
     setPhoneForm("open");
     setPhoneError("");
   };
@@ -129,6 +128,17 @@ export default function FreonnAIChat() {
       setPhoneError("Ошибка сети. Позвоните нам: 8(800)101-2009");
       setPhoneForm("open");
     }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let val = e.target.value;
+    // Фиксируем +7 — нельзя удалить
+    if (!val.startsWith("+7")) {
+      val = "+7" + val.replace(/^\+?7?/, "");
+    }
+    // Оставляем только цифры после +7
+    const digits = val.slice(2).replace(/\D/g, "").slice(0, 10);
+    setPhoneNumber("+7" + digits);
   };
 
   const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -296,8 +306,9 @@ export default function FreonnAIChat() {
                       type="tel"
                       placeholder="+7 (___) ___-__-__"
                       value={phoneNumber}
-                      onChange={e => setPhoneNumber(e.target.value)}
+                      onChange={handlePhoneChange}
                       onKeyDown={handlePhoneKeyDown}
+                      onFocus={e => { if (e.target.value === "+7") { setTimeout(() => { const el = e.target; el.setSelectionRange(el.value.length, el.value.length); }, 0); } }}
                       disabled={phoneForm === "sending"}
                       className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D3092]/30 focus:border-[#2D3092] disabled:opacity-50"
                     />
