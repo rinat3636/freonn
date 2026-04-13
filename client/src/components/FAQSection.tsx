@@ -113,11 +113,9 @@ export default function FAQSection() {
             </a>
           </motion.div>
 
-          {/* Right: accordion — itemScope FAQPage для микроданных */}
+          {/* Right: accordion */}
           <div
             className="col-span-full lg:col-span-3 space-y-2"
-            itemScope
-            itemType="https://schema.org/FAQPage"
           >
             {faqs.map((faq, i) => (
               <motion.div
@@ -127,9 +125,6 @@ export default function FAQSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.04 }}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm"
-                itemProp="mainEntity"
-                itemScope
-                itemType="https://schema.org/Question"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -140,7 +135,6 @@ export default function FAQSection() {
                     className={`font-heading font-semibold text-sm leading-snug transition-colors ${
                       openIndex === i ? "text-[#B91C1C]" : "text-[#0F1340] group-hover:text-[#2D3092]"
                     }`}
-                    itemProp="name"
                   >
                     {faq.q}
                   </span>
@@ -153,11 +147,7 @@ export default function FAQSection() {
                     {openIndex === i ? <Minus size={14} /> : <Plus size={14} />}
                   </div>
                 </button>
-                <div
-                  itemProp="acceptedAnswer"
-                  itemScope
-                  itemType="https://schema.org/Answer"
-                >
+                <div>
                   <AnimatePresence initial={false}>
                     {openIndex === i && (
                       <motion.div
@@ -169,15 +159,13 @@ export default function FAQSection() {
                       >
                         <div
                           className="px-5 pb-5 text-gray-600 text-sm font-body leading-relaxed border-t border-gray-100 pt-3"
-                          itemProp="text"
                         >
                           {faq.a}
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  {/* Скрытый текст для поисковых роботов (не зависит от состояния аккордеона) */}
-                  <meta itemProp="text" content={faq.a} />
+
                 </div>
               </motion.div>
             ))}
