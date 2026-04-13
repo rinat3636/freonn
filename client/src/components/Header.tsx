@@ -182,7 +182,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
       <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
         {/* Logo */}
-        <a href="/" className="flex-shrink-0">
+        <a href="/" className="flex-shrink-0 flex flex-col items-start">
           <img
             src={LOGO_URL}
             alt="Freonn"
@@ -192,6 +192,11 @@ export default function Header() {
             width="160"
             height="44"
           />
+          <span className="text-[9px] sm:text-[10px] font-heading font-bold tracking-[0.25em] uppercase leading-none mt-0.5 select-none">
+            {'Engineering'.split('').map((char, i) => (
+              <span key={i} style={{ color: i % 2 === 0 ? '#B91C1C' : '#2D3092' }}>{char}</span>
+            ))}
+          </span>
         </a>
 
         <div className="flex-1" />
