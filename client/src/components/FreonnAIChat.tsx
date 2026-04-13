@@ -308,7 +308,16 @@ export default function FreonnAIChat() {
                       value={phoneNumber}
                       onChange={handlePhoneChange}
                       onKeyDown={handlePhoneKeyDown}
-                      onFocus={e => { if (e.target.value === "+7") { setTimeout(() => { const el = e.target; el.setSelectionRange(el.value.length, el.value.length); }, 0); } }}
+                      onFocus={e => {
+                        // Курсор в конец
+                        if (e.target.value === "+7") {
+                          setTimeout(() => { const el = e.target; el.setSelectionRange(el.value.length, el.value.length); }, 0);
+                        }
+                        // Скроллим поле в видимую область когда открывается клавиатура
+                        setTimeout(() => {
+                          e.target.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }, 300);
+                      }}
                       disabled={phoneForm === "sending"}
                       className="w-full rounded-lg border border-gray-200 px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2D3092]/30 focus:border-[#2D3092] disabled:opacity-50"
                     />
