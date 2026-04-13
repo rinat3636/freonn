@@ -60,6 +60,30 @@ async function startServer() {
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
+  // ── 301-редиректы старых WordPress URL → правильные страницы ──────────────────────────
+  const legacyRedirects: Record<string, string> = {
+    "/shop":         "/uslugi",
+    "/wp-login.php": "/",
+    "/wp-admin":     "/",
+    "/cart":         "/uslugi",
+    "/checkout":     "/uslugi",
+    "/product":      "/uslugi",
+    "/products":     "/uslugi",
+    "/store":        "/uslugi",
+  };
+  app.use((req, res, next) => {
+    const pathname = req.path.replace(/\/$/, "") || "/";
+    // Точные совпадения
+    if (legacyRedirects[pathname]) {
+      return res.redirect(301, legacyRedirects[pathname]);
+    }
+    // Любые пути начинающиеся с /wp-, /product/, /shop/
+    if (/^\/(wp-content|wp-includes|wp-json|wp-admin|wp-login|shop\/|product\/)/i.test(req.path)) {
+      return res.redirect(301, "/uslugi");
+    }
+    next();
+  });
+
   // ── www → non-www redirect (SEO: устраняем дубли домена) ───────────────────────────
   app.use((req, res, next) => {
     const host = req.headers.host || "";
