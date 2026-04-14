@@ -12,7 +12,7 @@ const TELEGRAM_URL = "https://t.me/freonnru";
 
 function TelegramIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" className="w-7 h-7">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" className="w-full h-full">
       <defs>
         <linearGradient id="tg-grad" x1="120" y1="0" x2="120" y2="240" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#2AABEE"/>
@@ -84,7 +84,7 @@ export default function FloatingButtons() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.6 }}
-          className="w-14 h-14 bg-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 rounded-full"
+          className="w-14 h-14 overflow-hidden shadow-lg hover:scale-110 active:scale-95 rounded-full"
           title="Написать в Telegram"
         >
           <TelegramIcon />
