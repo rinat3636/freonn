@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-04-14">
+  <shop>
+    <name>Freonn Engineering</name>
+    <company>ООО Фреонн Инжиниринг</company>
+    <url>https://freonn.ru</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Вентиляция</category>
+      <category id="2">Кондиционирование</category>
+      <category id="3">Дымоудаление</category>
+      <category id="4">Отопление</category>
+      <category id="5">Холодоснабжение</category>
+      <category id="6">Электроснабжение</category>
+      <category id="7">Пескоструйная обработка</category>
+    </categories>
+    <offers>
+      <offer id="1" type="vendor.model">
+        <url>https://freonn.ru/ventilyaciya</url>
+        <name>Монтаж вентиляции под ключ в Москве</name>
+        <categoryId>1</categoryId>
+        <description>Проектирование и монтаж систем вентиляции любой сложности: приточно-вытяжные, канальные, промышленные. Работаем в Москве и МО. Гарантия на все виды работ.</description>
+        <price>50000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="2" type="vendor.model">
+        <url>https://freonn.ru/kondicionirovanie</url>
+        <name>Монтаж кондиционирования в Москве</name>
+        <categoryId>2</categoryId>
+        <description>Установка и монтаж кондиционеров всех типов: настенные, кассетные, канальные, мульти-сплит, чиллеры, фанкойлы, VRV и VRF системы. Москва и МО.</description>
+        <price>30000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="3" type="vendor.model">
+        <url>https://freonn.ru/dymoudalenie</url>
+        <name>Монтаж системы дымоудаления в Москве</name>
+        <categoryId>3</categoryId>
+        <description>Проектирование и монтаж систем дымоудаления и противодымной вентиляции. Обеспечиваем безопасные условия эвакуации. Работаем в Москве и МО.</description>
+        <price>80000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="4" type="vendor.model">
+        <url>https://freonn.ru/otoplenie</url>
+        <name>Монтаж отопления под ключ в Москве</name>
+        <categoryId>4</categoryId>
+        <description>Проектирование и монтаж систем отопления для промышленных объектов, офисов и жилых помещений. Москва и Московская область.</description>
+        <price>60000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="5" type="vendor.model">
+        <url>https://freonn.ru/holodosnabzhenie</url>
+        <name>Монтаж холодоснабжения в Москве</name>
+        <categoryId>5</categoryId>
+        <description>Проектирование и монтаж систем холодоснабжения для промышленных и коммерческих объектов. Чиллеры, фанкойлы, прецизионные кондиционеры.</description>
+        <price>100000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="6" type="vendor.model">
+        <url>https://freonn.ru/elektrosnabzhenie</url>
+        <name>Монтаж электроснабжения в Москве</name>
+        <categoryId>6</categoryId>
+        <description>Проектирование и монтаж систем электроснабжения для промышленных и коммерческих объектов. Москва и МО. Полный цикл работ под ключ.</description>
+        <price>70000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+      <offer id="7" type="vendor.model">
+        <url>https://freonn.ru/ceny-na-peskostruj</url>
+        <name>Пескоструйная обработка металла в Москве</name>
+        <categoryId>7</categoryId>
+        <description>Профессиональная пескоструйная обработка металлоконструкций, труб, оборудования. Подготовка поверхностей под покраску. Москва и МО.</description>
+        <price>5000</price>
+        <currencyId>RUR</currencyId>
+        <vendor>Freonn Engineering</vendor>
+        <picture>https://freonn.ru/og-image.jpg</picture>
+        <delivery>false</delivery>
+        <local_delivery_cost>0</local_delivery_cost>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
