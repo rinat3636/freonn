@@ -4,6 +4,7 @@
  */
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const reviews = [
   {
@@ -73,7 +74,7 @@ export default function ReviewsSection() {
               <p className="text-white/70 font-body leading-relaxed mb-8">
                 Наши клиенты видят реальное сокращение затрат и улучшение работы своих предприятий. Делаем ваш бизнес более экономичным и приятным для каждого сотрудника.
               </p>
-              <a href="#contacts" className="btn-dark inline-flex items-center gap-2">
+              <a href="#contacts" onClick={() => ymGoal("reviews_contact_click")} className="btn-dark inline-flex items-center gap-2">
                 Связаться по проекту
               </a>
             </motion.div>

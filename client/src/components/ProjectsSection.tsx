@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 const GEN_INDUSTRIAL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-industrial-hvac-CUToKRXqhd5NqVLbfLUTwL.webp";
@@ -114,7 +115,7 @@ export default function ProjectsSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Выполненные объекты
             </h2>
-            <a href="/obekty" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
+            <a href="/obekty" onClick={() => ymGoal("projects_all_click")} className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
               Все объекты <ArrowRight size={16} />
             </a>
           </div>
@@ -128,6 +129,7 @@ export default function ProjectsSection() {
               href="https://max.ru/id3604084591_biz"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => ymGoal("project_card_click", { project: project.title })}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

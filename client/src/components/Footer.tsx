@@ -90,7 +90,7 @@ export default function Footer() {
               <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
                 <Phone size={14} className="text-[#B91C1C] flex-shrink-0" /> 8(800)101-2009
               </a>
-              <a href="mailto:info@freonn.ru" className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
+              <a href="mailto:info@freonn.ru" onClick={() => ymGoal("email_click")} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
                 <Mail size={14} className="text-[#B91C1C] flex-shrink-0" /> info@freonn.ru
               </a>
               <div className="flex items-start gap-2 text-white/60 text-sm font-body">
@@ -128,13 +128,13 @@ export default function Footer() {
 
             {/* Social */}
             <div className="flex gap-3">
-              <a href="https://www.youtube.com/@freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors" title="YouTube">
+              <a href="https://www.youtube.com/@freonn" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("social_click", { platform: "YouTube" })} className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors" title="YouTube">
                 <Youtube size={16} />
               </a>
-              <a href="https://vk.com/freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors text-xs font-bold" title="ВКонтакте">
+              <a href="https://vk.com/freonn" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("social_click", { platform: "VK" })} className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors text-xs font-bold" title="ВКонтакте">
                 ВК
               </a>
-              <a href="https://dzen.ru/freonn" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors text-xs font-bold" title="Яндекс Дзен">
+              <a href="https://dzen.ru/freonn" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("social_click", { platform: "Dzen" })} className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors text-xs font-bold" title="Яндекс Дзен">
                 Дз
               </a>
               <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("messenger_click", { messenger: "MAX" })} className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors" title="MAX — наши работы">

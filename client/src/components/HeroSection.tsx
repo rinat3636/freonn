@@ -163,20 +163,20 @@ export default function HeroSection() {
               {/* Service tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {services.map((s) => (
-                  <a key={s.label} href={s.href} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#B91C1C] hover:text-white transition-colors rounded-full">
+                  <a key={s.label} href={s.href} onClick={() => ymGoal("service_tag_click", { tag: s.label })} className="text-xs px-3 py-1.5 border border-white/20 text-white/70 font-body hover:border-[#B91C1C] hover:text-white transition-colors rounded-full">
                     {s.label}
                   </a>
                 ))}
               </div>
 
               <div className="flex flex-col gap-3">
-                <a href="/contacts" className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
+                <a href="/contacts" onClick={() => ymGoal("hero_engineer_click")} className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
                   <Phone size={15} /> Вызвать инженера <ArrowRight size={15} />
                 </a>
-                <a href="/o-kompanii" className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
+                <a href="/o-kompanii" onClick={() => ymGoal("hero_about_click")} className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
                   О компании <ArrowRight size={15} />
                 </a>
-                <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
+                <a href="https://max.ru/id3604084591_biz" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("hero_works_click")} className="flex items-center justify-center gap-2 text-sm sm:text-base font-heading font-semibold uppercase tracking-wide px-7 py-3 rounded-full border border-[#B91C1C]/70 bg-white/8 backdrop-blur-sm text-white hover:bg-[#B91C1C]/20 hover:border-[#B91C1C] transition-all duration-300">
                   Наши работы <ArrowRight size={15} />
                 </a>
               </div>
@@ -203,6 +203,7 @@ export default function HeroSection() {
               <motion.a
                 key={item.title}
                 href={item.href}
+                onClick={() => ymGoal("hero_quicklink_click", { link: item.title })}
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.12 }}

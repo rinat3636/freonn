@@ -7,6 +7,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const faqs = [
   {
@@ -107,6 +108,7 @@ export default function FAQSection() {
             </p>
             <a
               href="/contacts"
+              onClick={() => ymGoal("faq_ask_click")}
               className="inline-flex items-center gap-2 bg-[#B91C1C] text-white font-heading font-semibold text-sm px-6 py-3 rounded-full hover:bg-[#c91219] transition-colors"
             >
               Задать вопрос
@@ -127,7 +129,7 @@ export default function FAQSection() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm"
               >
                 <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  onClick={() => { setOpenIndex(openIndex === i ? null : i); ymGoal("faq_expand", { question: faq.q }); }}
                   className="w-full flex items-center justify-between gap-4 p-5 text-left group"
                   aria-expanded={openIndex === i}
                 >

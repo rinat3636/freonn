@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 
@@ -136,7 +137,7 @@ export default function BlogSection() {
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-[#0F1340]">
               Новое в нашем блоге
             </h2>
-            <a href="/blog" className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
+            <a href="/blog" onClick={() => ymGoal("blog_all_click")} className="inline-flex items-center gap-2 text-[#2D3092] font-heading font-semibold hover:text-[#B91C1C] transition-colors text-sm uppercase tracking-wide">
               Все статьи <ArrowRight size={16} />
             </a>
           </div>
@@ -152,7 +153,7 @@ export default function BlogSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 group cursor-pointer"
           >
-            <a href={articles[0].href} className="block">
+            <a href={articles[0].href} onClick={() => ymGoal("blog_article_click", { article: articles[0].title })} className="block">
               <div className="overflow-hidden aspect-[16/8] mb-4 relative rounded-2xl">
                 <img
                   src={articles[0].img}
@@ -189,7 +190,7 @@ export default function BlogSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group cursor-pointer flex gap-4 border-b border-gray-100 pb-5 last:border-0"
               >
-                <a href={article.href} className="flex gap-4 w-full">
+                <a href={article.href} onClick={() => ymGoal("blog_article_click", { article: article.title })} className="flex gap-4 w-full">
                   <div className="w-20 h-16 flex-shrink-0 overflow-hidden rounded-lg">
                     <img
                       src={article.img}
@@ -226,7 +227,7 @@ export default function BlogSection() {
               transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
               className="group cursor-pointer"
             >
-              <a href={article.href} className="block">
+              <a href={article.href} onClick={() => ymGoal("blog_article_click", { article: article.title })} className="block">
                 <div className="overflow-hidden aspect-[16/9] mb-3 rounded-xl">
                   <img
                     src={article.img}

@@ -9,6 +9,7 @@ import { useAISEO } from "@/hooks/useAISEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle, ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 import { useState, useEffect } from "react";
 
 // ─── Данные матрицы ────────────────────────────────────────────────────────────
@@ -226,10 +227,10 @@ export default function ServiceObjectPage({ service, objectType }: ServiceObject
               {obj.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2 justify-center">
+              <a href="/contacts" onClick={() => ymGoal("sop_contact_click")} className="btn-primary inline-flex items-center gap-2 justify-center">
                 Получить расчёт бесплатно <ArrowRight size={16} />
               </a>
-              <a href="tel:88001012009" className="btn-outline-white inline-flex items-center gap-2 justify-center">
+              <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="btn-outline-white inline-flex items-center gap-2 justify-center">
                 <Phone size={16} /> 8(800)101-2009
               </a>
             </div>
@@ -299,10 +300,10 @@ export default function ServiceObjectPage({ service, objectType }: ServiceObject
             Выезд инженера и расчёт стоимости — бесплатно. Перезвоним в течение 30 минут.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/contacts" className="bg-white text-[#B91C1C] font-heading font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition inline-flex items-center gap-2 justify-center">
+            <a href="/contacts" onClick={() => ymGoal("sop_bottom_contact_click")} className="bg-white text-[#B91C1C] font-heading font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition inline-flex items-center gap-2 justify-center">
               Оставить заявку <ArrowRight size={16} />
             </a>
-            <a href="tel:88001012009" className="border-2 border-white text-white font-heading font-bold px-6 py-3 rounded-full hover:bg-white/10 transition inline-flex items-center gap-2 justify-center">
+            <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="border-2 border-white text-white font-heading font-bold px-6 py-3 rounded-full hover:bg-white/10 transition inline-flex items-center gap-2 justify-center">
               <Phone size={16} /> 8(800)101-2009
             </a>
           </div>

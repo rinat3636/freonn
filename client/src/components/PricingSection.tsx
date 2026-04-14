@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const plans = [
   {
@@ -148,6 +149,7 @@ export default function PricingSection() {
 
                 <a
                   href={plan.href}
+                  onClick={() => ymGoal("pricing_plan_click", { plan: plan.title })}
                   className={`flex items-center justify-center gap-2 py-3 font-heading font-semibold uppercase text-sm tracking-wide transition-all rounded-full ${
                     plan.featured
                       ? "bg-white/10 text-white border border-white/25 hover:bg-white/20 hover:border-white/50 backdrop-blur-sm"
@@ -177,7 +179,7 @@ export default function PricingSection() {
               Отправьте его нам для пересчёта. Предложим вариант, который может оказаться не только выгоднее по цене, но и лучше соответствовать вашим потребностям.
             </p>
           </div>
-          <a href="/contacts" className="btn-dark flex-shrink-0">
+          <a href="/contacts" onClick={() => ymGoal("pricing_recalc_click")} className="btn-dark flex-shrink-0">
             Отправить на пересчёт
           </a>
         </motion.div>

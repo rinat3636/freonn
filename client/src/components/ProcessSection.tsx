@@ -4,6 +4,7 @@
  * Brand: Freonn — dark navy #0F1340, red accent #B91C1C
  */
 import { motion } from "framer-motion";
+import { ymGoal } from "@/lib/ym";
 
 const steps = [
   { num: "01", title: "Заявка и консультация", desc: "Принимаем заявку, выезжаем на объект или проводим онлайн-консультацию для оценки задачи." },
@@ -115,7 +116,7 @@ export default function ProcessSection() {
               Организуем выезд инженера для оценки объекта и подготовки коммерческого предложения.
             </p>
           </div>
-          <a href="/contacts" className="btn-dark flex-shrink-0">
+          <a href="/contacts" onClick={() => ymGoal("process_contact_click")} className="btn-dark flex-shrink-0">
             Вызвать инженера
           </a>
         </motion.div>

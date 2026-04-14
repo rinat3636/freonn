@@ -5,6 +5,7 @@
  */
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { ymGoal } from "@/lib/ym";
 
 function useCountUp(target: number, duration: number = 2000, start: boolean = false) {
   const [count, setCount] = useState(0);
@@ -127,7 +128,7 @@ export default function AboutSection() {
               ))}
             </div>
             <div className="mt-8">
-              <a href="/contacts" className="btn-primary inline-flex items-center gap-2">
+              <a href="/contacts" onClick={() => ymGoal("about_contact_click")} className="btn-primary inline-flex items-center gap-2">
                 Связаться по проекту
               </a>
             </div>

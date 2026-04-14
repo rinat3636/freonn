@@ -234,6 +234,7 @@ export default function Header() {
         {/* CTA button — desktop */}
         <a
           href="/contacts"
+          onClick={() => ymGoal("header_cta_click")}
           className={`hidden lg:inline-flex items-center text-sm py-2 px-5 xl:px-6 rounded-full font-heading font-bold uppercase tracking-wide transition-all duration-300 flex-shrink-0 border-2 ${ctaBtnClass}`}
         >
           Заявка
@@ -242,6 +243,7 @@ export default function Header() {
         {/* Mobile CTA button */}
         <a
           href="/contacts"
+          onClick={() => ymGoal("header_cta_click")}
           className={`lg:hidden text-xs py-2 px-4 flex-shrink-0 font-heading font-bold uppercase tracking-wide rounded-full border-2 transition-all duration-300 ${ctaBtnClass}`}
         >
           Заявка
@@ -315,7 +317,7 @@ export default function Header() {
                               <a
                                 key={child.label}
                                 href={child.href}
-                                onClick={() => setMobileOpen(false)}
+                                onClick={() => { setMobileOpen(false); ymGoal("nav_child_click", { label: child.label }); }}
                                 className="block py-3 px-8 text-sm text-white/70 hover:text-[#B91C1C] border-b border-white/5 font-body transition-colors"
                               >
                                 {child.label}
@@ -328,7 +330,7 @@ export default function Header() {
                   ) : (
                     <a
                       href={item.href}
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => { setMobileOpen(false); ymGoal("nav_click", { label: item.label }); }}
                       className="block py-4 px-4 border-b border-white/10 font-heading font-medium uppercase text-sm tracking-wide hover:text-[#B91C1C] transition-colors"
                     >
                       {item.label}
@@ -339,17 +341,17 @@ export default function Header() {
             </div>
             {/* Bottom CTA */}
             <div className="p-4 mt-2 flex flex-col gap-3">
-              <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-primary text-center text-base py-3">
+              <a href="/contacts" onClick={() => { setMobileOpen(false); ymGoal("mobile_engineer_click"); }} className="btn-primary text-center text-base py-3">
                 Вызвать инженера
               </a>
-              <a href="/contacts" onClick={() => setMobileOpen(false)} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
+              <a href="/contacts" onClick={() => { setMobileOpen(false); ymGoal("mobile_tender_click"); }} className="btn-outline text-center text-base py-3 border-white text-white rounded-full">
                 Пригласить в тендер
               </a>
               <a
                 href="https://max.ru/id3604084591_biz"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => { setMobileOpen(false); ymGoal("mobile_works_click"); }}
                 className="btn-outline text-center text-base py-3"
               >
                 Наши работы

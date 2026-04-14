@@ -6,6 +6,7 @@ import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import { motion } from "framer-motion";
 import { Phone, ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 interface ComingSoonProps {
   title: string;
@@ -38,10 +39,10 @@ export default function ComingSoon({ title, breadcrumb }: ComingSoonProps) {
               Этот раздел сайта находится в разработке. Пока вы можете связаться с нами напрямую — мы ответим на все вопросы.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="/contacts" className="btn-dark inline-flex items-center gap-2 justify-center">
+              <a href="/contacts" onClick={() => ymGoal("coming_soon_contact_click")} className="btn-dark inline-flex items-center gap-2 justify-center">
                 <Phone size={16} /> Связаться с нами
               </a>
-              <a href="/" className="btn-dark inline-flex items-center gap-2 justify-center">
+              <a href="/" onClick={() => ymGoal("coming_soon_home_click")} className="btn-dark inline-flex items-center gap-2 justify-center">
                 На главную <ArrowRight size={16} />
               </a>
             </div>

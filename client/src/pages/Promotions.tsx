@@ -5,6 +5,7 @@ import { useSEO } from "@/hooks/useSEO";
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
+import { ymGoal } from "@/lib/ym";
 import { Tag, Clock, ArrowRight, CheckCircle } from "lucide-react";
 
 const promotions = [
@@ -156,6 +157,7 @@ export default function PromotionsPage() {
                 <div className="p-4 pt-0">
                   <a
                     href="/contacts"
+                    onClick={() => ymGoal("promo_cta_click", { promo: promo.title })}
                     className="w-full btn-dark inline-flex items-center justify-center gap-2 text-sm"
                   >
                     {promo.cta} <ArrowRight size={14} />
@@ -171,7 +173,7 @@ export default function PromotionsPage() {
             <p className="text-gray-500 font-body text-sm mb-4">
               Для крупных объектов и постоянных клиентов мы готовы рассмотреть индивидуальные условия. Свяжитесь с нами.
             </p>
-            <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
+            <a href="/contacts" onClick={() => ymGoal("promo_discuss_click")} className="btn-dark inline-flex items-center gap-2">
               Обсудить условия <ArrowRight size={14} />
             </a>
           </div>

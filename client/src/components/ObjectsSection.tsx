@@ -6,6 +6,7 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 // Industrial: HVAC ductwork on factory/warehouse ceiling
 const INDUSTRIAL_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-industrial-hvac-CUToKRXqhd5NqVLbfLUTwL.webp";
@@ -131,7 +132,7 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="/promyshlennye-obekty" className="btn-dark inline-flex items-center gap-2">
+              <a href="/promyshlennye-obekty" onClick={() => ymGoal("objects_industrial_click")} className="btn-dark inline-flex items-center gap-2">
                 Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>
@@ -224,7 +225,7 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="/kommercheskie-obekty" className="btn-dark inline-flex items-center gap-2">
+              <a href="/kommercheskie-obekty" onClick={() => ymGoal("objects_commercial_click")} className="btn-dark inline-flex items-center gap-2">
                 Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>
@@ -288,7 +289,7 @@ export default function ObjectsSection() {
                 ))}
               </div>
 
-              <a href="/premium-obekty" className="btn-dark inline-flex items-center gap-2">
+              <a href="/premium-obekty" onClick={() => ymGoal("objects_premium_click")} className="btn-dark inline-flex items-center gap-2">
                 Подробнее <ArrowRight size={16} />
               </a>
             </motion.div>

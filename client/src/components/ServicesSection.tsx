@@ -6,6 +6,7 @@
  */
 import { motion } from "framer-motion";
 import { ArrowRight, Wind, Thermometer, Flame, Droplets, Zap, Snowflake, ShieldAlert, Hammer } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 const GEN_VENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-ventilation-unit-5ebe3bmzqsCGdGpvbDz2zo.webp";
@@ -225,6 +226,7 @@ export default function ServicesSection() {
                   <div className="flex items-center gap-2 mb-4">
                     <a
                       href={service.priceHref}
+                      onClick={() => ymGoal("service_price_click", { service: service.title })}
                       className="inline-flex items-center gap-1.5 text-[#B91C1C] font-heading font-bold text-sm bg-[#B91C1C]/8 border border-[#B91C1C]/20 px-3 py-1 rounded-full hover:bg-[#B91C1C] hover:text-white transition-colors duration-200"
                     >
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,6 +238,7 @@ export default function ServicesSection() {
 
                   <a
                     href={service.href}
+                    onClick={() => ymGoal("service_detail_click", { service: service.title })}
                     className="inline-flex items-center gap-2 text-[#B91C1C] font-heading font-semibold text-sm uppercase tracking-wide hover:gap-3 transition-all duration-200 group/link"
                   >
                     Подробнее

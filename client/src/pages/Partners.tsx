@@ -6,6 +6,7 @@ import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Handshake } from "lucide-react";
+import { ymGoal } from "@/lib/ym";
 
 const CDN = "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW";
 
@@ -140,7 +141,7 @@ export default function PartnersPage() {
                   </div>
                 ))}
               </div>
-              <a href="/contacts" className="btn-dark inline-flex items-center gap-2">
+              <a href="/contacts" onClick={() => ymGoal("partners_contact_click")} className="btn-dark inline-flex items-center gap-2">
                 Обсудить партнёрство <ArrowRight size={16} />
               </a>
             </div>
