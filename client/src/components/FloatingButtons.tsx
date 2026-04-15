@@ -2,28 +2,13 @@
  * FREONN FLOATING BUTTONS — Bold Technical Expressionism
  * Fixed bottom-right: AI chat + MAX button + phone button + scroll-to-top
  */
-import { motion } from "framer-motion";
-import { Phone } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, ArrowUp } from "lucide-react";
 import { ymGoal } from "@/lib/ym";
 import FreonnAIChat from "./FreonnAIChat";
 
 const MAX_URL = "https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA";
-const TELEGRAM_URL = "https://t.me/freonnru";
-
-function TelegramIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" className="w-full h-full">
-      <defs>
-        <linearGradient id="tg-grad" x1="120" y1="0" x2="120" y2="240" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#2AABEE"/>
-          <stop offset="1" stopColor="#229ED9"/>
-        </linearGradient>
-      </defs>
-      <circle cx="120" cy="120" r="120" fill="url(#tg-grad)"/>
-      <path fill="#fff" d="M54 117.3l109.4-42.2c5.1-1.8 9.5.4 7.9 7.6l-18.6 87.7c-1.4 6.1-5 7.6-10.1 4.7l-28-20.6-13.5 13c-1.5 1.5-2.8 2.7-5.7 2.7l2-28.6 51.8-46.8c2.2-2-0.5-3.1-3.4-1.1L76.5 139.4 49.3 131c-6-1.9-6.1-6 1.7-8.7z"/>
-    </svg>
-  );
-}
 
 function MaxIcon() {
   return (
@@ -34,7 +19,18 @@ function MaxIcon() {
 }
 
 export default function FloatingButtons() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    ymGoal("scroll_to_top");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -75,20 +71,22 @@ export default function FloatingButtons() {
           <span className="absolute inset-0 animate-ping bg-[#B91C1C] opacity-30 rounded-full" />
         </motion.a>
 
-        {/* Telegram */}
-        <motion.a
-          href={TELEGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => ymGoal("messenger_click", { messenger: "Telegram" })}
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.6 }}
-          className="w-14 h-14 overflow-hidden shadow-lg hover:scale-110 active:scale-95 rounded-full"
-          title="Написать в Telegram"
-        >
-          <TelegramIcon />
-        </motion.a>
+        {/* Scroll to top — появляется при скролле вниз */}
+        <AnimatePresence>
+          {showScrollTop && (
+            <motion.button
+              onClick={scrollToTop}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="w-14 h-14 bg-[#2D3092] text-white flex items-center justify-center shadow-lg hover:bg-[#1e2070] transition-colors hover:scale-110 active:scale-95 rounded-full"
+              title="Наверх"
+            >
+              <ArrowUp size={24} />
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );
