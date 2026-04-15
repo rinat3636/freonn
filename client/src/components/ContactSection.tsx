@@ -123,6 +123,40 @@ export default function ContactSection() {
           <h2 className="font-heading font-bold text-3xl lg:text-4xl">
             Свяжитесь с нами
           </h2>
+          {/* Мессенджеры */}
+          <div className="flex items-center gap-3 mt-5">
+            <a
+              href="https://t.me/freonnru"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => ymGoal("messenger_click", { messenger: "Telegram" })}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-white text-sm font-body font-medium"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" className="w-5 h-5 flex-shrink-0 rounded-full">
+                <defs>
+                  <linearGradient id="tg-contact" x1="120" y1="0" x2="120" y2="240" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="#2AABEE"/>
+                    <stop offset="1" stopColor="#229ED9"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="120" cy="120" r="120" fill="url(#tg-contact)"/>
+                <path fill="#fff" d="M54 117.3l109.4-42.2c5.1-1.8 9.5.4 7.9 7.6l-18.6 87.7c-1.4 6.1-5 7.6-10.1 4.7l-28-20.6-13.5 13c-1.5 1.5-2.8 2.7-5.7 2.7l2-28.6 51.8-46.8c2.2-2-0.5-3.1-3.4-1.1L76.5 139.4 49.3 131c-6-1.9-6.1-6 1.7-8.7z"/>
+              </svg>
+              Telegram
+            </a>
+            <a
+              href="https://max.ru/u/f9LHodD0cOKaaN2mz0PfvjFBVqonxag-nu9wJD4VwYn1oKPsJlN6H4e2nVA"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => ymGoal("messenger_click", { messenger: "MAX" })}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors text-white text-sm font-body font-medium"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" className="w-5 h-5 flex-shrink-0">
+                <path fill="#fff" d="M350.4,9.6C141.8,20.5,4.1,184.1,12.8,390.4c3.8,90.3,40.1,168,48.7,253.7,2.2,22.2-4.2,49.6,21.4,59.3,31.5,11.9,79.8-8.1,106.2-26.4,9-6.1,17.6-13.2,24.2-22,27.3,18.1,53.2,35.6,85.7,43.4,143.1,34.3,299.9-44.2,369.6-170.3C799.6,291.2,622.5-4.6,350.4,9.6h0ZM269.4,504c-11.3,8.8-22.2,20.8-34.7,27.7-18.1,9.7-23.7-.4-30.5-16.4-21.4-50.9-24-137.6-11.5-190.9,16.8-72.5,72.9-136.3,150-143.1,78-6.9,150.4,32.7,183.1,104.2,72.4,159.1-112.9,316.2-256.4,218.6h0Z"/>
+              </svg>
+              MAX
+            </a>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
