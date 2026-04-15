@@ -428,37 +428,6 @@ ${batch.join("\n")}
     }
   });
 
-  // ── Form submission → MAX bot ──────────────────────────────────────────────
-  app.post("/api/submit-form", async (req, res) => {
-    try {
-      const { name, phone, email, service, message } = req.body || {};
-
-      if (!name || !phone) {
-        res.status(400).json({ success: false, error: "Имя и телефон обязательны" });
-        return;
-      }
-
-      const text = [
-        "📋 *Новая заявка с сайта freonn.ru*",
-        "",
-        `👤 Имя: ${name}`,
-        `📞 Телефон: ${phone}`,
-        email ? `📧 Email: ${email}` : null,
-        service ? `🔧 Услуга: ${service}` : null,
-        message ? `💬 Сообщение: ${message}` : null,
-      ]
-        .filter(Boolean)
-        .join("\n");
-
-      await sendMaxMessage(text);
-
-      res.json({ success: true });
-    } catch (e) {
-      console.error("[submit-form] Error:", e);
-      res.status(500).json({ success: false, error: "Ошибка сервера" });
-    }
-  });
-
   // ── Static files ───────────────────────────────────────────────────────────
   const staticPath =
     process.env.NODE_ENV === "production"
