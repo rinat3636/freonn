@@ -1,5 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
+import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import PreloaderScreen from "./components/PreloaderScreen";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -153,6 +155,8 @@ function Router() {
 }
 
 function App() {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
     <ErrorBoundary>
       <ThemeProvider
@@ -161,6 +165,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          {!preloaderDone && (
+            <PreloaderScreen onDone={() => setPreloaderDone(true)} />
+          )}
           <Router />
         </TooltipProvider>
       </ThemeProvider>
