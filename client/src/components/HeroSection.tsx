@@ -124,11 +124,24 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Light overlay — diagonal white top-left to transparent bottom-right ── */}
+      {/* ── Light overlay: white left (85-90%) → lighter right (50-60%), desktop; uniform on mobile ── */}
+      {/* Desktop */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hidden sm:block"
         style={{
-          background: "linear-gradient(to right, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0.85) 80%, rgba(255,255,255,0.95) 100%)",
+          background: "linear-gradient(to right, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0.65) 60%, rgba(255,255,255,0.50) 100%)",
+          backdropFilter: "blur(3px)",
+          WebkitBackdropFilter: "blur(3px)",
+        }}
+        aria-hidden="true"
+      />
+      {/* Mobile: равномерный белый фон для читаемости */}
+      <div
+        className="absolute inset-0 sm:hidden"
+        style={{
+          background: "rgba(255,255,255,0.82)",
+          backdropFilter: "blur(3px)",
+          WebkitBackdropFilter: "blur(3px)",
         }}
         aria-hidden="true"
       />
