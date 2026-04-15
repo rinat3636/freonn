@@ -99,7 +99,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.20) 70%, rgba(255,255,255,0.0) 100%)",
+          background: "linear-gradient(to right, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.40) 70%, rgba(255,255,255,0.10) 100%)",
         }}
         aria-hidden="true"
       />
