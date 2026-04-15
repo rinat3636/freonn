@@ -36,8 +36,6 @@ const quickLinks = [
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  // showPhoto: false = video playing, true = photo showing
-  const [showPhoto, setShowPhoto] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
@@ -81,47 +79,20 @@ export default function HeroSection() {
     }
   }, []);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !videoLoaded) return;
 
-    const handleEnded = () => {
-      // When video ends — show photo for 2 seconds, then restart video
-      setShowPhoto(true);
-      setTimeout(() => {
-        setShowPhoto(false);
-        video.currentTime = 0;
-        video.play().catch(() => {});
-      }, 2000);
-    };
-
-    video.addEventListener("ended", handleEnded);
-    return () => video.removeEventListener("ended", handleEnded);
-  }, [videoLoaded]);
 
   return (
     <section data-theme="light" className="relative flex items-center overflow-hidden bg-[#f0f0f0]">
 
-      {/* ── VIDEO background ── */}
+      {/* ── VIDEO background (loop) ── */}
       <video
         ref={videoRef}
         muted
+        loop
         playsInline
-        poster="/hero-team.jpg"
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-        style={{ opacity: showPhoto ? 0 : 1 }}
+        className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
         preload="none"
-      />
-
-      {/* ── TEAM PHOTO — shown for 2s after video ends ── */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-        style={{
-          backgroundImage: "url(/hero-team.jpg)",
-          opacity: showPhoto ? 1 : 0,
-        }}
-        aria-hidden="true"
       />
 
       {/* ── Overlay: лёгкий белый слева → прозрачный справа, видео видно ── */}
