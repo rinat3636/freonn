@@ -124,20 +124,11 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Overlay: плотный белый слева → полупрозрачный справа, без blur ── */}
-      {/* Desktop */}
+      {/* ── Overlay: лёгкий белый слева → прозрачный справа, видео видно ── */}
       <div
-        className="absolute inset-0 hidden sm:block"
+        className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.92) 35%, rgba(255,255,255,0.60) 60%, rgba(255,255,255,0.38) 80%, rgba(255,255,255,0.20) 100%)",
-        }}
-        aria-hidden="true"
-      />
-      {/* Mobile: плотный чистый белый */}
-      <div
-        className="absolute inset-0 sm:hidden"
-        style={{
-          background: "rgba(255,255,255,0.88)",
+          background: "linear-gradient(to right, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.20) 70%, rgba(255,255,255,0.0) 100%)",
         }}
         aria-hidden="true"
       />
