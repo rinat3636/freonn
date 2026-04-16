@@ -100,7 +100,7 @@ export default function GroupSection() {
                 </div>
                 <div>
                   <p className="text-white/30 text-xs font-heading uppercase tracking-widest mb-1">
-                    FREONN СТРОЙ
+                    FREONN PRO
                   </p>
                   <h3 className="text-2xl font-heading font-black text-white">
                     Промышленные здания
