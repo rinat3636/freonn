@@ -96,7 +96,7 @@ export default function GroupSection() {
               {/* Logo + Title */}
               <div className="flex items-center gap-5 mb-5">
                 <div className="w-16 h-16 rounded-xl flex items-center justify-center bg-white flex-shrink-0 p-2">
-                  <img src={LOGO_PRO} alt="Freonn Строй" className="w-full h-full object-contain" />
+                  <img src={LOGO_PRO} alt="Freonn Pro" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <p className="text-white/30 text-xs font-heading uppercase tracking-widest mb-1">
