@@ -342,6 +342,53 @@ export default function ContactSection() {
               </div>
             </div>
 
+            {/* freonn.pro sister site */}
+            <a
+              href="https://freonn.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-5 rounded-2xl transition-all duration-300 group"
+              style={{
+                background: 'rgba(237,28,36,0.06)',
+                border: '1px solid rgba(237,28,36,0.2)',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(237,28,36,0.5)';
+                e.currentTarget.style.background = 'rgba(237,28,36,0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(237,28,36,0.2)';
+                e.currentTarget.style.background = 'rgba(237,28,36,0.06)';
+              }}
+            >
+              <div
+                className="w-10 h-10 flex items-center justify-center flex-shrink-0 rounded-xl"
+                style={{ background: 'rgba(237,28,36,0.15)', border: '1px solid rgba(237,28,36,0.3)' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </div>
+              <div className="flex-1">
+                <div className="text-white/30 text-xs font-heading uppercase tracking-widest mb-0.5">
+                  Группа компаний
+                </div>
+                <div className="text-[#ED1C24] font-heading font-bold text-base">
+                  Промышленные здания — freonn.pro
+                </div>
+                <div className="text-white/40 text-xs font-body mt-0.5">
+                  Ангары, склады, производственные цеха под ключ
+                </div>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(237,28,36,0.4)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-[#ED1C24] transition-colors flex-shrink-0">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+
             {/* Реквизиты */}
             <div className="bg-white/10 border border-white/20 p-6 rounded-2xl">
               <h4 className="font-heading font-semibold text-white text-base mb-4 uppercase tracking-wide">

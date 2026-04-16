@@ -164,6 +164,30 @@ export default function HeroSection() {
                   </div>
                 ))}
               </div>
+
+              {/* freonn.pro sister site pill */}
+              <motion.a
+                href="https://freonn.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.75 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mt-5 transition-all duration-300 group"
+                style={{
+                  background: 'rgba(237,28,36,0.06)',
+                  border: '1px solid rgba(237,28,36,0.2)',
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(237,28,36,0.12)'; e.currentTarget.style.borderColor = 'rgba(237,28,36,0.4)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(237,28,36,0.06)'; e.currentTarget.style.borderColor = 'rgba(237,28,36,0.2)'; }}
+              >
+                <span className="text-[#0F1340]/40 text-xs font-heading uppercase tracking-widest">Группа:</span>
+                <span className="text-[#B91C1C] font-heading font-bold text-sm">Промышленные здания — freonn.pro</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B91C1C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 group-hover:opacity-100 transition-opacity">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </motion.a>
             </motion.div>
           </div>
 

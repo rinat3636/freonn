@@ -152,6 +152,37 @@ export default function AboutSection() {
           </p>
         </motion.div>
 
+        {/* freonn.pro group banner */}
+        <motion.a
+          href="https://freonn.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 mb-10 transition-all duration-300 group rounded-2xl"
+          style={{
+            background: 'rgba(237,28,36,0.06)',
+            border: '1px solid rgba(237,28,36,0.2)',
+            textDecoration: 'none',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(237,28,36,0.12)'; e.currentTarget.style.borderColor = 'rgba(237,28,36,0.4)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(237,28,36,0.06)'; e.currentTarget.style.borderColor = 'rgba(237,28,36,0.2)'; }}
+        >
+          <div>
+            <div className="text-white/30 text-xs font-heading uppercase tracking-widest mb-1">Группа компаний FREONN</div>
+            <div className="text-[#ED1C24] font-heading font-bold text-lg">Промышленные здания — freonn.pro</div>
+            <div className="text-white/40 text-sm font-body mt-1">Ангары, склады, производственные цеха под ключ — с 2011 года</div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <span className="text-[#ED1C24] font-heading font-semibold text-sm opacity-60 group-hover:opacity-100 transition-opacity">Перейти</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+        </motion.a>
+
         {/* Stats grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
           {stats.map((stat) => (
