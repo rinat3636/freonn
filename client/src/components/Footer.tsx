@@ -142,7 +142,7 @@ export default function Footer() {
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(237,28,36,0.06)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(237,28,36,0.2)'; }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Металлические здания — freonn.pro
+              Промышленные здания — freonn.pro
             </a>
 
             {/* Social */}
@@ -206,7 +206,7 @@ export default function Footer() {
           <div>© 2011 ООО «ЭКС». Сайт носит исключительно информационный характер и не является публичной офертой.
             {' · '}
             <a href="https://freonn.pro" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors" style={{ color: 'rgba(237,28,36,0.5)' }}>
-              Металлические здания: freonn.pro
+              Промышленные здания: freonn.pro
             </a>
           </div>
           <div className="flex gap-4">
