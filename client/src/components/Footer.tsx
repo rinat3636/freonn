@@ -126,6 +126,25 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* freonn.pro sister site link */}
+            <a
+              href="https://freonn.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-heading uppercase tracking-wider transition-all duration-200"
+              style={{
+                background: 'rgba(237,28,36,0.06)',
+                border: '1px solid rgba(237,28,36,0.2)',
+                color: '#ED1C24',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(237,28,36,0.12)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(237,28,36,0.4)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(237,28,36,0.06)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(237,28,36,0.2)'; }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Металлические здания — freonn.pro
+            </a>
+
             {/* Social */}
             <div className="flex gap-3">
               <a href="https://www.youtube.com/@freonn" target="_blank" rel="noopener noreferrer" onClick={() => ymGoal("social_click", { platform: "YouTube" })} className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#B91C1C] flex items-center justify-center transition-colors" title="YouTube">
@@ -184,7 +203,12 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/30 font-body">
-          <div>© 2011 ООО «ЭКС». Сайт носит исключительно информационный характер и не является публичной офертой.</div>
+          <div>© 2011 ООО «ЭКС». Сайт носит исключительно информационный характер и не является публичной офертой.
+            {' · '}
+            <a href="https://freonn.pro" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors" style={{ color: 'rgba(237,28,36,0.5)' }}>
+              Металлические здания: freonn.pro
+            </a>
+          </div>
           <div className="flex gap-4">
             <a href="/politika-konfidencialnosti" className="hover:text-white/60 transition-colors">Политика конфиденциальности</a>
             <a href="/karta-sajta" className="hover:text-white/60 transition-colors">Карта сайта</a>

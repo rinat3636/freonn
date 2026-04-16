@@ -16,6 +16,7 @@ import PartnersSection from "@/components/PartnersSection";
 import BlogSection from "@/components/BlogSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
+import GroupSection from "@/components/GroupSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
@@ -122,6 +123,7 @@ export default function Home() {
         <BlogSection />
         <FAQSection />
         <ContactSection />
+        <GroupSection />
       </main>
       <Footer />
       <FloatingButtons />

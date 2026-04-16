@@ -231,6 +231,24 @@ export default function Header() {
           ))}
         </nav>
 
+        {/* freonn.pro sister site link — desktop */}
+        <a
+          href="https://freonn.pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden lg:inline-flex items-center gap-1.5 text-xs py-1.5 px-3 rounded-full font-heading font-semibold uppercase tracking-wider transition-all duration-300 flex-shrink-0"
+          style={{
+            background: 'rgba(237,28,36,0.08)',
+            border: '1px solid rgba(237,28,36,0.25)',
+            color: '#ED1C24',
+            textDecoration: 'none',
+          }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(237,28,36,0.15)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(237,28,36,0.5)'; }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(237,28,36,0.08)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(237,28,36,0.25)'; }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:'10px',height:'10px'}}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          freonn.pro
+        </a>
         {/* CTA button — desktop */}
         <a
           href="/contacts"
@@ -355,6 +373,22 @@ export default function Header() {
                 className="btn-outline text-center text-base py-3"
               >
                 Наши работы
+              </a>
+              <a
+                href="https://freonn.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => { setMobileOpen(false); ymGoal("mobile_freonn_pro_click"); }}
+                className="flex items-center justify-center gap-2 text-center text-sm py-3 rounded-full font-heading font-semibold uppercase tracking-wider transition-all duration-200"
+                style={{
+                  background: 'rgba(237,28,36,0.08)',
+                  border: '1px solid rgba(237,28,36,0.25)',
+                  color: '#ED1C24',
+                  textDecoration: 'none',
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{width:'12px',height:'12px'}}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Металлические здания — freonn.pro
               </a>
             </div>
             {/* Footer links in mobile menu */}
