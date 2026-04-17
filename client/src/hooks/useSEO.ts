@@ -223,7 +223,7 @@ export function useSEO({
       description:
         "Проектирование, монтаж и обслуживание инженерных систем: вентиляция, кондиционирование, дымоудаление, отопление, электроснабжение. Москва и МО.",
       telephone: "+78001012009",
-      email: "info@freonn.ru",
+      email: "freonn@internet.ru",
       address: {
         "@type": "PostalAddress",
         addressCountry: "RU",

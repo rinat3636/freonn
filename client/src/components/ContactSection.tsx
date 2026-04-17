@@ -316,8 +316,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <div className="text-white/60 text-xs font-body mb-0.5">Email</div>
-                    <a href="mailto:info@freonn.ru" className="text-white font-body hover:text-[#B91C1C] transition-colors">
-                      info@freonn.ru
+                    <a href="mailto:freonn@internet.ru" className="text-white font-body hover:text-[#B91C1C] transition-colors">
+                      freonn@internet.ru
                     </a>
                   </div>
                 </div>

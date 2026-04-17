@@ -90,8 +90,8 @@ export default function Footer() {
               <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
                 <Phone size={14} className="text-[#B91C1C] flex-shrink-0" /> 8(800)101-2009
               </a>
-              <a href="mailto:info@freonn.ru" onClick={() => ymGoal("email_click")} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
-                <Mail size={14} className="text-[#B91C1C] flex-shrink-0" /> info@freonn.ru
+              <a href="mailto:freonn@internet.ru" onClick={() => ymGoal("email_click")} className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-body">
+                <Mail size={14} className="text-[#B91C1C] flex-shrink-0" /> freonn@internet.ru
               </a>
               <div className="flex items-start gap-2 text-white/60 text-sm font-body">
                 <MapPin size={14} className="text-[#B91C1C] flex-shrink-0 mt-0.5" />

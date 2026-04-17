@@ -166,8 +166,8 @@ export default function DocumentsPage() {
               <h3 className="font-heading font-bold text-white text-base mb-1">Нужны копии документов?</h3>
               <p className="text-white/60 font-body text-sm">Запросите пакет документов по email или при встрече в офисе.</p>
             </div>
-            <a href="mailto:info@freonn.ru" onClick={() => ymGoal("documents_email_click")} className="btn-dark whitespace-nowrap">
-              info@freonn.ru
+            <a href="mailto:freonn@internet.ru" onClick={() => ymGoal("documents_email_click")} className="btn-dark whitespace-nowrap">
+              freonn@internet.ru
             </a>
           </div>
         </div>

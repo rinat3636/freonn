@@ -37,7 +37,7 @@ export default function Home() {
         description: "Проектирование, монтаж и обслуживание инженерных систем: вентиляция, кондиционирование, дымоудаление, отопление, электроснабжение в Москве и МО.",
         url: "https://freonn.ru",
         telephone: "+78001012009",
-        email: "info@freonn.ru",
+        email: "freonn@internet.ru",
         image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
         logo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
         openingHoursSpecification: [

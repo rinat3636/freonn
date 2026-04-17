@@ -23,7 +23,7 @@ const requisites = [
   { label: "ОКВЭД", value: "43.22 — Производство санитарно-технических работ, монтаж отопительных систем и систем кондиционирования воздуха" },
   { label: "Генеральный директор", value: "Бондарев Денис Сергеевич" },
   { label: "Телефон", value: "8(800)101-2009" },
-  { label: "Email", value: "info@freonn.ru" },
+  { label: "Email", value: "freonn@internet.ru" },
   { label: "Сайт", value: "freonn.ru" },
 ];
 
@@ -103,7 +103,7 @@ export default function RequisitesPage() {
               Для получения счёта, договора или закрывающих документов — свяжитесь с нами по телефону{" "}
               <a href="tel:88001012009" onClick={() => ymGoal("phone_click")} className="text-[#2D3092] font-semibold hover:underline">8(800)101-2009</a>{" "}
               или по email{" "}
-              <a href="mailto:info@freonn.ru" className="text-[#2D3092] font-semibold hover:underline">info@freonn.ru</a>
+              <a href="mailto:freonn@internet.ru" className="text-[#2D3092] font-semibold hover:underline">freonn@internet.ru</a>
             </p>
           </div>
         </div>

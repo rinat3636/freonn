@@ -23,7 +23,7 @@ export default function ContactsPage() {
         "@type": "LocalBusiness",
         name: "Freonn",
         telephone: "+78001012009",
-        email: "info@freonn.ru",
+        email: "freonn@internet.ru",
         url: "https://freonn.ru",
         address: {
           "@type": "PostalAddress",

@@ -45,7 +45,7 @@ const PAGES: Array<{ url: string; type: string; name: string; context: string }>
   { url: "/ceny", type: "pricing", name: "Цены", context: "Прайс-лист на монтаж инженерных систем: стоимость вентиляции, кондиционирования, отопления в Москве." },
   { url: "/blog", type: "blog", name: "Блог", context: "Экспертные статьи об инженерных системах: вентиляция, кондиционирование, отопление, автоматизация." },
   { url: "/faq", type: "faq", name: "Вопросы и ответы", context: "Ответы на частые вопросы о монтаже инженерных систем, стоимости, сроках и гарантиях." },
-  { url: "/contacts", type: "contacts", name: "Контакты", context: "Контакты Freonn: телефон 8(800)101-2009, email info@freonn.ru, адрес в Дзержинском." },
+  { url: "/contacts", type: "contacts", name: "Контакты", context: "Контакты Freonn: телефон 8(800)101-2009, email freonn@internet.ru, адрес в Дзержинском." },
   { url: "/garantii", type: "guarantee", name: "Гарантии", context: "Гарантии Freonn: 1 год на монтажные работы, гарантия производителя на оборудование, сервисное обслуживание." },
   { url: "/partnery", type: "partners", name: "Партнёрам", context: "Партнёрская программа Freonn: сотрудничество с проектировщиками, застройщиками, управляющими компаниями." },
   { url: "/vakansii", type: "vacancies", name: "Вакансии", context: "Вакансии в Freonn: монтажники инженерных систем, инженеры-проектировщики, прорабы." },
