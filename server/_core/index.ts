@@ -419,6 +419,17 @@ ${urls.map(u => `  <url>
     serveStatic(app);
   }
 
+  // ── Express error handler (must be last middleware) ────────────────────────
+  // Catches errors passed via next(err) and prevents unhandled crash.
+  app.use((err: Error, _req: import("express").Request, res: import("express").Response, _next: import("express").NextFunction) => {
+    // Ignore HTTP parse errors from abruptly-closed connections (bots/scanners)
+    if (err.message === "Parse Error") return;
+    console.error("[Express error]", err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: "Internal server error" });
+    }
+  });
+
   const preferredPort = parseInt(process.env.PORT || "3000");
   const port = await findAvailablePort(preferredPort);
 
@@ -431,5 +442,20 @@ ${urls.map(u => `  <url>
     console.log(`[Groq] API available: ${isGroqAvailable()}`);
   });
 }
+
+// ── Global error handlers ──────────────────────────────────────────────────
+// Prevents Node.js from crashing on unhandled errors (e.g. HTTP Parse Error
+// caused by bots/scanners closing connections mid-request).
+process.on("uncaughtException", (err: NodeJS.ErrnoException) => {
+  // Ignore benign network-level parse errors from abruptly-closed connections
+  if (err.code === "HPE_INVALID_METHOD" || err.message === "Parse Error") {
+    return;
+  }
+  console.error("[uncaughtException]", err);
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error("[unhandledRejection]", reason);
+});
 
 startServer().catch(console.error);
