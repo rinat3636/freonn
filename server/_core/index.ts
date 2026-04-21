@@ -379,7 +379,8 @@ async function startServer() {
   // GET /api/sitemap-dynamic.xml — динамический sitemap с AI-приоритетами
   app.get("/api/sitemap-dynamic.xml", (_req, res) => {
     const baseUrl = "https://freonn.ru";
-    const cities = ["balashiha","himki","korolev","mytishchi","odintsovo","podolsk","krasnogorsk","lyubertsy","zhukovsky","elektrostal","sergiev-posad","noginsk","klin","istra","domodedovo","ramenskoe","stupino","chekhov","serpuhov","kolomna","voskresensk","shatura","kashira","zaraysk","mozhaysk","ruza","volokolamsk","lotoshino","taldom","dubna","kimry","tver","kaluga","tula","ryazan","vladimir","yaroslavl","kostroma","ivanovo","smolensk"];
+    // Только города с реальными страницами в CityPage.tsx (правильные slug без опечаток)
+    const cities = ["moskva","moskovskaya-oblast","dzerzhinskij","balashikha","khimki","korolev","mytishchi","odintsovo","podolsk","krasnogorsk","lyubertsy","zhukovsky","elektrostal","sergiev-posad","noginsk","klin","istra","domodedovo","ramenskoe","stupino","chekhov","serpukhov","kolomna","voskresensk","kashira","mozhaisk","ruza","volokolamsk","taldom","dubna","dmitrov","dolgoprudny","fryazevo","pushkino","lobnya","krasnoznamensk","zelenograd","troitsk","shcherbinka","shchelkovo","naro-fominsk","orekhovo-zuevo","protvino","solnechnogorsk"];
     const services = ["ventilyaciya","kondicionirovanie","dymoudalenie","otoplenie","holodosnabzhenie","vodosnabzhenie","peskostrujnaya-obrabotka","elektrosnabzhenie"];
     const today = new Date().toISOString().split("T")[0];
     const urls = [
@@ -387,7 +388,7 @@ async function startServer() {
       { loc: `${baseUrl}/uslugi`, priority: "0.9", changefreq: "weekly" },
       { loc: `${baseUrl}/blog`, priority: "0.8", changefreq: "daily" },
       { loc: `${baseUrl}/contacts`, priority: "0.7", changefreq: "monthly" },
-      { loc: `${baseUrl}/about`, priority: "0.7", changefreq: "monthly" },
+      { loc: `${baseUrl}/o-kompanii`, priority: "0.7", changefreq: "monthly" },
       ...services.map(s => ({ loc: `${baseUrl}/${s}`, priority: "0.85", changefreq: "weekly" })),
       ...cities.map(c => ({ loc: `${baseUrl}/${c}`, priority: "0.75", changefreq: "weekly" })),
     ];
