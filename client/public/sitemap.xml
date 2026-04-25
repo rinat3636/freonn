@@ -6,1171 +6,1171 @@
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://freonn.ru/</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://freonn.ru/o-kompanii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/contacts</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/uslugi</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/obekty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/faq</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ustanovka-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ustanovka-kondicionirovaniya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ustanovka-dymoudaleniya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vozdushnoe-otoplenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-i-kanalizaciya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-i-osveshchenie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/proektirovanie-ovik</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/montazh-ovik</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/puskonaladochnye-raboty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/servisnoe-obsluzhivanie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny-na-montazh-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny-na-montazh-kondicionirovaniya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny-na-montazh-dymoudaleniya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny-na-montazh-inzhenernyh-sistem</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ceny-na-peskostruj</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/promyshlennye-obekty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kommercheskie-obekty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/premium-obekty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/licenzii-i-sertifikaty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/sertifikaty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/rekvizity</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://freonn.ru/garantii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/akcii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/novosti</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vakansii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dokumenty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://freonn.ru/partnery</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/montazh-teplovyh-punktov</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/avtomatizaciya-sistem</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/tekhnicheskij-audit</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/montazh-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kkb-dlya-pritochnoj-ustanovki</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-v-shkole</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kondicionirovanie-kinoteatra</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-medicinskih-uchrezhdenij</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kondicionirovanie-servernoj-komnaty</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/vozdushnoe-otoplenie-ceha</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-avtostoyanka</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/dispetcherizaciya-sistem</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kratnost-i-raschet-vozduhoobmena</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyacionnoe-oborudovanie</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/rekuperator</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kondicionirovanie-vozduha</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/filtry-dlya-vytyazhek</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kanalnye-ventilyatory</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-pod-klyuch</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/proektirovanie-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/obsluzhivanie-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/vrf-sistemy</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/chillery-i-fankojly</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/dymoudalenie-pod-klyuch</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/teplovye-nasosy</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/energoeffektivnost-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/montazh-kondicionirovaniya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-sklada</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/kondicionirovanie-pod-klyuch</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/ventilyaciya-promyshlennyh-predpriyatij</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/blog/avtomatika-ventilyacii</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ventilyaciya-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kondicionirovanie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dymoudalenie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/otoplenie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/holodosnabzhenie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/vodosnabzhenie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrosnabzhenie-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-sklad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-ofis</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-tc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-zavod</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-restoran</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-gostinica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-shkola</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-bolnica</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-parking</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/peskostrujnaya-obrabotka-dc</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/istra</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/odintsovo</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/khimki</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/mytishchi</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/podolsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/balashikha</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/korolev</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/lyubertsy</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/serpukhov</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/klin</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/solnechnogorsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/volokolamsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ruza</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/mozhaisk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/naro-fominsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/chekhov</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/domodedovo</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/ramenskoe</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/elektrostal</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/noginsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/shchelkovo</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/fryazevo</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/pushkino</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/sergiev-posad</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dmitrov</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dubna</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/taldom</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/orekhovo-zuevo</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/voskresensk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kolomna</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/kashira</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/stupino</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/protvino</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/zhukovsky</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/lobnya</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/dolgoprudny</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/krasnogorsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/krasnoznamensk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/zelenograd</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/troitsk</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freonn.ru/shcherbinka</loc>
-    <lastmod>2026-04-10</lastmod>
+    <lastmod>2026-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

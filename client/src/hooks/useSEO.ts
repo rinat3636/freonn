@@ -110,7 +110,7 @@ export function useSEO({
   tags,
 }: SEOProps) {
   useEffect(() => {
-    const fullTitle = title.includes(SITE_NAME)
+    const fullTitle = title.toLowerCase().includes(SITE_NAME.toLowerCase()) || title.toLowerCase().includes("freonn")
       ? title
       : `${title} | ${SITE_NAME}`;
     const resolvedCanonical = canonical
@@ -158,7 +158,7 @@ export function useSEO({
     setMeta("og:image:type", resolvedImage.endsWith(".png") ? "image/png" : "image/jpeg", true);
     setMeta("og:image:alt", resolvedOgTitle, true);
     setMeta("og:url", resolvedCanonical, true);
-    setMeta("og:updated_time", new Date().toISOString(), true);
+    setMeta("og:updated_time", modifiedTime || publishedTime || "2026-04-25T00:00:00+03:00", true);
 
     // ── Article-specific OG tags ───────────────────────────────────────────
     if (ogType === "article") {
