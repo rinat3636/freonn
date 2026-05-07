@@ -70,6 +70,9 @@ async function startServer() {
     "/product":      "/uslugi",
     "/products":     "/uslugi",
     "/store":        "/uslugi",
+    "/feed":         "/",
+    "/xmlrpc.php":   "/",
+    "/sitemap_index.xml": "/sitemap.xml",
   };
   app.use((req, res, next) => {
     const pathname = req.path.replace(/\/$/, "") || "/";
@@ -77,9 +80,18 @@ async function startServer() {
     if (legacyRedirects[pathname]) {
       return res.redirect(301, legacyRedirects[pathname]);
     }
-    // Любые пути начинающиеся с /wp-, /product/, /shop/
+    // Паттерны WordPress и устаревших URL
     if (/^\/(wp-content|wp-includes|wp-json|wp-admin|wp-login|shop\/|product\/)/i.test(req.path)) {
       return res.redirect(301, "/uslugi");
+    }
+    // WordPress рубрики, метки, авторы, пагинация, фид
+    if (/^\/(category|tag|author|page|feed)\//i.test(req.path)) {
+      const dest = /^\/(tag|author)\//i.test(req.path) ? "/blog" : "/uslugi";
+      return res.redirect(301, dest);
+    }
+    // WordPress date-based archives: /2020/01/15/...
+    if (/^\/\d{4}\/\d{2}\//i.test(req.path)) {
+      return res.redirect(301, "/blog");
     }
     next();
   });

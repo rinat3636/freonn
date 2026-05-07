@@ -3,6 +3,7 @@ import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 import { groqChat, groqChatStream, isGroqAvailable, GROQ_CONTENT_MODEL } from "./groq.js";
+import { isValidSpaPath } from "./spaRoutes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -436,9 +437,10 @@ ${batch.join("\n")}
 
   app.use(express.static(staticPath));
 
-  // Handle client-side routing
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
+  // SPA fallback: 200 для известных маршрутов, 404 для несуществующих
+  app.get("*", (req, res) => {
+    const status = isValidSpaPath(req.path) ? 200 : 404;
+    res.status(status).sendFile(path.join(staticPath, "index.html"));
   });
 
   const port = process.env.PORT || 3000;

@@ -3,26 +3,21 @@ import { ymGoal } from "@/lib/ym";
  * FREONN 404 PAGE — noindex, nofollow
  * Брендированная страница 404 на русском языке
  */
-import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { Home, Phone, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
 
-  // 404 — не индексируем
-  useEffect(() => {
-    document.title = "Страница не найдена (404) | Freonn";
-    const robots = document.querySelector('meta[name="robots"]');
-    if (robots) robots.setAttribute("content", "noindex, nofollow");
-    return () => {
-      const robots = document.querySelector('meta[name="robots"]');
-      if (robots) robots.setAttribute("content", "index, follow");
-    };
-  }, []);
+  useSEO({
+    title: "Страница не найдена (404) | Freonn",
+    description: "Запрашиваемая страница не найдена. Перейдите на главную или воспользуйтесь навигацией.",
+    noIndex: true,
+  });
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F8FF]">

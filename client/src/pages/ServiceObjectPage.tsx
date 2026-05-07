@@ -7,6 +7,7 @@
 import { useSEO } from "@/hooks/useSEO";
 import { useAISEO } from "@/hooks/useAISEO";
 import PageLayout from "@/components/PageLayout";
+import NotFound from "@/pages/NotFound";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { ymGoal } from "@/lib/ym";
@@ -125,9 +126,8 @@ export default function ServiceObjectPage({ service, objectType }: ServiceObject
   const [faq, setFaq] = useState<Array<{ q: string; a: string }>>(STATIC_FAQ.default);
   const [faqLoaded, setFaqLoaded] = useState(false);
 
-  // Если нет данных — 404-like fallback
   if (!svc || !obj) {
-    return null;
+    return <NotFound />;
   }
 
   const pageTitle = `${svc.name} в ${obj.namePrep} — монтаж под ключ`;

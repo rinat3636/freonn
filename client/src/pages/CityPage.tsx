@@ -5,6 +5,7 @@ import { ymGoal } from "@/lib/ym";
  */
 import PageLayout from "@/components/PageLayout";
 import ContactSection from "@/components/ContactSection";
+import NotFound from "@/pages/NotFound";
 import { useSEO } from "@/hooks/useSEO";
 import { useAICityContent } from "@/hooks/useAICityContent";
 import { useAISEO } from "@/hooks/useAISEO";
@@ -255,11 +256,16 @@ interface CityPageProps {
 }
 
 export default function CityPage({ city }: CityPageProps) {
-  // Если город не в списке известных — закрываем страницу от индексации
   const isKnownCity = city in cityNames;
-  const cityName = cityNames[city] || city.charAt(0).toUpperCase() + city.slice(1).replace(/-/g, " ");
+
+  // Неизвестный slug — показываем 404, не создаём мусорный контент
+  if (!isKnownCity) {
+    return <NotFound />;
+  }
+
+  const cityName = cityNames[city];
   const title = `Инженерные системы в ${cityName}е`;
-  const titleGenitive = cityNames[city] ? `${cityName}` : cityName;
+  const titleGenitive = cityName;
   const staticCityData = getCityData(city, cityName);
 
   // AI-генерация уникального LSI-контента для города (с fallback на статику)
@@ -281,7 +287,6 @@ export default function CityPage({ city }: CityPageProps) {
     description: aiMeta.description,
     keywords: aiMeta.keywords,
     canonical: `/${city}`,
-    noIndex: !isKnownCity,
     breadcrumbs: [{ name: cityName, url: `/${city}` }],
     jsonLd: {
       "@context": "https://schema.org",

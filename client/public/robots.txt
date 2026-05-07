@@ -70,13 +70,20 @@ Disallow: /about/
 Disallow: /shop
 Disallow: /shop/
 Disallow: /cart
+Disallow: /cart/
+Disallow: /checkout
+Disallow: /checkout/
 Disallow: /product
+Disallow: /product/
 Disallow: /products
+Disallow: /products/
 Disallow: /store
+Disallow: /store/
 Disallow: /wp-admin/
 Disallow: /wp-login.php
 Disallow: /wp-content/
 Disallow: /wp-includes/
+Disallow: /wp-json/
 Crawl-delay: 2
 
 # Bing
@@ -84,14 +91,26 @@ User-agent: Bingbot
 Allow: /
 Disallow: /api/
 Disallow: /404
+Disallow: /admin/
 Disallow: /about
 Disallow: /about/
 Disallow: /shop
+Disallow: /shop/
 Disallow: /cart
+Disallow: /cart/
+Disallow: /checkout
+Disallow: /checkout/
 Disallow: /product
+Disallow: /product/
+Disallow: /products
+Disallow: /products/
 Disallow: /store
+Disallow: /store/
 Disallow: /wp-admin/
+Disallow: /wp-login.php
 Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
 Crawl-delay: 3
 
 # Sitemap
