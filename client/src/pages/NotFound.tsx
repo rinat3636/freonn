@@ -16,6 +16,7 @@ export default function NotFound() {
   useSEO({
     title: "Страница не найдена (404) | Freonn",
     description: "Запрашиваемая страница не найдена. Перейдите на главную или воспользуйтесь навигацией.",
+    canonical: "/404",
     noIndex: true,
   });
 

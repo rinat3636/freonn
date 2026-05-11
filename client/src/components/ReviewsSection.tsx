@@ -122,17 +122,6 @@ export default function ReviewsSection() {
             </h2>
           </motion.div>
 
-          {/* AggregateRating schema.org для Яндекса */}
-          <div itemScope itemType="https://schema.org/LocalBusiness" className="hidden">
-            <span itemProp="name">Freonn</span>
-            <div itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
-              <meta itemProp="ratingValue" content="5.0" />
-              <meta itemProp="reviewCount" content="4" />
-              <meta itemProp="bestRating" content="5" />
-              <meta itemProp="worstRating" content="1" />
-            </div>
-          </div>
-
           <div
             className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
             itemScope
@@ -141,6 +130,12 @@ export default function ReviewsSection() {
             <meta itemProp="name" content="Freonn" />
             <meta itemProp="telephone" content="+78001012009" />
             <meta itemProp="url" content="https://freonn.ru" />
+            <div itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating" className="sr-only">
+              <meta itemProp="ratingValue" content="5" />
+              <meta itemProp="reviewCount" content="4" />
+              <meta itemProp="bestRating" content="5" />
+              <meta itemProp="worstRating" content="1" />
+            </div>
             {reviews.map((review, i) => (
               <motion.div
                 key={review.name}

@@ -29,7 +29,6 @@
     <!-- ═══ Open Graph ════════════════════════════════════════════════════ -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />
-    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:site_name" content="Freonn — Инженерная компания" />
     <meta property="og:title" content="Freonn — Монтаж инженерных систем в Москве и МО" />
     <meta property="og:description" content="Проектирование, монтаж и обслуживание инженерных систем: вентиляция, кондиционирование, дымоудаление, отопление. Более 1280 выполненных объектов. Гарантия 3 года." />
@@ -99,150 +98,146 @@
     <!-- ═══ Fonts ══════════════════════════════════════════════════════════ -->
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-    <!-- ═══ Structured Data — WebSite + SearchAction ═════════════════════ -->
+    <!-- ═══ Structured Data — единый @graph (WebSite, Organization, услуги) ═══ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://freonn.ru/#website",
-      "name": "Freonn — Инженерная компания",
-      "url": "https://freonn.ru",
-      "description": "Проектирование, монтаж и обслуживание инженерных систем в Москве и МО",
-      "inLanguage": "ru-RU",
-      "publisher": {
-        "@id": "https://freonn.ru/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://freonn.ru/blog?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <!-- ═══ Structured Data — Organization ═══════════════════════════════ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://freonn.ru/#organization",
-      "name": "Freonn",
-      "legalName": "ООО «ЭКС»",
-      "alternateName": "Freonn — Инженерная компания",
-      "url": "https://freonn.ru",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
-        "width": 200,
-        "height": 60
-      },
-      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
-      "description": "Инженерная компания. Проектирование, монтаж и обслуживание систем вентиляции, кондиционирования, дымоудаления, отопления и электроснабжения. Москва и МО.",
-      "telephone": "+78001012009",
-      "email": "freonn@internet.ru",
-      "foundingDate": "2011",
-      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 50 },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Ленина, д. 2Б",
-        "addressLocality": "Дзержинский",
-        "addressRegion": "Московская область",
-        "postalCode": "143500",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 55.9167,
-        "longitude": 36.8667
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Москва" },
-        { "@type": "AdministrativeArea", "name": "Московская область" }
-      ],
-      "sameAs": [
-        "https://freonn.ru"
-      ],
-      "contactPoint": [
+      "@graph": [
         {
-          "@type": "ContactPoint",
-          "telephone": "+78001012009",
-          "contactType": "customer service",
-          "areaServed": "RU",
-          "availableLanguage": "Russian",
-          "hoursAvailable": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-            "opens": "09:00",
-            "closes": "19:00"
+          "@type": "WebSite",
+          "@id": "https://freonn.ru/#website",
+          "name": "Freonn — Инженерная компания",
+          "url": "https://freonn.ru",
+          "description": "Проектирование, монтаж и обслуживание инженерных систем в Москве и МО",
+          "inLanguage": "ru-RU",
+          "publisher": { "@id": "https://freonn.ru/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://freonn.ru/blog?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
           }
-        }
-      ],
-      "knowsAbout": [
-        "Вентиляция",
-        "Кондиционирование",
-        "Дымоудаление",
-        "Отопление",
-        "Электроснабжение",
-        "Водоснабжение",
-        "Инженерные системы",
-        "ОВиК"
-      ]
-    }
-    </script>
-
-    <!-- ═══ Structured Data — LocalBusiness ══════════════════════════════ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["ProfessionalService", "HomeAndConstructionBusiness"],
-      "@id": "https://freonn.ru/#business",
-      "name": "Freonn — Инженерная компания",
-      "url": "https://freonn.ru",
-      "telephone": "+78001012009",
-      "email": "freonn@internet.ru",
-      "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ул. Ленина, д. 2Б",
-        "addressLocality": "Дзержинский",
-        "addressRegion": "Московская область",
-        "postalCode": "143500",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 55.9167,
-        "longitude": 36.8667
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-          "opens": "09:00",
-          "closes": "19:00"
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "10:00",
-          "closes": "17:00"
+          "@type": "Organization",
+          "@id": "https://freonn.ru/#organization",
+          "name": "Freonn",
+          "legalName": "ООО «ЭКС»",
+          "alternateName": "Freonn — Инженерная компания",
+          "url": "https://freonn.ru",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/freonn-logo_62401a1b.png",
+            "width": 200,
+            "height": 60
+          },
+          "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
+          "description": "Инженерная компания. Проектирование, монтаж и обслуживание систем вентиляции, кондиционирования, дымоудаления, отопления и электроснабжения. Москва и МО.",
+          "telephone": "+78001012009",
+          "email": "freonn@internet.ru",
+          "foundingDate": "2011",
+          "numberOfEmployees": { "@type": "QuantitativeValue", "value": 50 },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Ленина, д. 2Б",
+            "addressLocality": "Дзержинский",
+            "addressRegion": "Московская область",
+            "postalCode": "143500",
+            "addressCountry": "RU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.9167,
+            "longitude": 36.8667
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Москва" },
+            { "@type": "AdministrativeArea", "name": "Московская область" }
+          ],
+          "sameAs": [
+            "https://freonn.ru",
+            "https://vk.com/freonn",
+            "https://www.youtube.com/@freonn",
+            "https://dzen.ru/freonn"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+78001012009",
+              "contactType": "customer service",
+              "areaServed": "RU",
+              "availableLanguage": "Russian",
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "09:00",
+                "closes": "19:00"
+              }
+            }
+          ],
+          "knowsAbout": [
+            "Вентиляция",
+            "Кондиционирование",
+            "Дымоудаление",
+            "Отопление",
+            "Электроснабжение",
+            "Водоснабжение",
+            "Инженерные системы",
+            "ОВиК"
+          ]
+        },
+        {
+          "@type": ["ProfessionalService", "HomeAndConstructionBusiness"],
+          "@id": "https://freonn.ru/#business",
+          "parentOrganization": { "@id": "https://freonn.ru/#organization" },
+          "name": "Freonn — Инженерная компания",
+          "url": "https://freonn.ru",
+          "telephone": "+78001012009",
+          "email": "freonn@internet.ru",
+          "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663524928365/d5oRPUYjSRzESZKpUgG9pW/og-cover_freonn.jpg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Ленина, д. 2Б",
+            "addressLocality": "Дзержинский",
+            "addressRegion": "Московская область",
+            "postalCode": "143500",
+            "addressCountry": "RU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 55.9167,
+            "longitude": 36.8667
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday"],
+              "opens": "10:00",
+              "closes": "17:00"
+            }
+          ],
+          "knowsAbout": [
+            "Монтаж вентиляции",
+            "Монтаж кондиционирования",
+            "Монтаж дымоудаления",
+            "Воздушное отопление",
+            "Холодоснабжение",
+            "Водоснабжение и канализация",
+            "Электроснабжение и освещение",
+            "Пескоструйная обработка",
+            "Проектирование ОВиК",
+            "Пусконаладочные работы",
+            "Сервисное обслуживание"
+          ]
         }
-      ],
-      "knowsAbout": [
-        "Монтаж вентиляции",
-        "Монтаж кондиционирования",
-        "Монтаж дымоудаления",
-        "Воздушное отопление",
-        "Холодоснабжение",
-        "Водоснабжение и канализация",
-        "Электроснабжение и освещение",
-        "Пескоструйная обработка",
-        "Проектирование ОВиК",
-        "Пусконаладочные работы",
-        "Сервисное обслуживание"
       ]
     }
     </script>

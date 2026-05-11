@@ -25,6 +25,11 @@ export interface SEOProps {
   section?: string;
   /** Article tags */
   tags?: string[];
+  /**
+   * Не подставлять geo.* / yandex-region (центр Москвы) — для городских лендингов,
+   * чтобы мета не противоречила контенту страницы.
+   */
+  omitRegionMeta?: boolean;
 }
 
 export const SITE_NAME = "Freonn — Инженерная компания";
@@ -108,6 +113,7 @@ export function useSEO({
   author,
   section,
   tags,
+  omitRegionMeta = false,
 }: SEOProps) {
   useEffect(() => {
     const fullTitle = title.toLowerCase().includes(SITE_NAME.toLowerCase()) || title.toLowerCase().includes("freonn")
@@ -138,12 +144,18 @@ export function useSEO({
     setMeta("author", resolvedAuthor);
     setMeta("copyright", "© 2011–2026 ООО «ЭКС» (Freonn)");
 
-    // ── Geo / Yandex region ────────────────────────────────────────────────
-    setMeta("geo.region", "RU-MOW");
-    setMeta("geo.placename", "Москва");
-    setMeta("geo.position", "55.7558;37.6173");
-    setMeta("ICBM", "55.7558, 37.6173");
-    setMeta("yandex-region", "213");
+    // ── Geo / Yandex region (только если не городской лендинг) ────────────
+    if (omitRegionMeta) {
+      ["geo.region", "geo.placename", "geo.position", "ICBM", "yandex-region"].forEach((n) =>
+        removeMeta(n)
+      );
+    } else {
+      setMeta("geo.region", "RU-MOW");
+      setMeta("geo.placename", "Москва");
+      setMeta("geo.position", "55.7558;37.6173");
+      setMeta("ICBM", "55.7558, 37.6173");
+      setMeta("yandex-region", "213");
+    }
 
     // ── Open Graph ─────────────────────────────────────────────────────────
     setMeta("og:type", ogType === "article" ? "article" : "website", true);
@@ -202,48 +214,8 @@ export function useSEO({
     setLink("alternate", resolvedCanonical, "hreflang-ru", { hreflang: "ru" });
     setLink("alternate", resolvedCanonical, "hreflang-default", { hreflang: "x-default" });
 
-    // ── JSON-LD ────────────────────────────────────────────────────────────
+    // ── JSON-LD (без дубля Organization — см. index.html @graph) ───────────
     const schemas: object[] = [];
-
-    // Always inject Organization schema
-    schemas.push({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
-      name: "Freonn",
-      legalName: "ООО «ЭКС»",
-      alternateName: "Freonn — Инженерная компания",
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: LOGO_URL,
-        width: 200,
-        height: 60,
-      },
-      description:
-        "Проектирование, монтаж и обслуживание инженерных систем: вентиляция, кондиционирование, дымоудаление, отопление, электроснабжение. Москва и МО.",
-      telephone: "+78001012009",
-      email: "freonn@internet.ru",
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "RU",
-        addressRegion: "Московская область",
-        addressLocality: "Дзержинский",
-        postalCode: "143500",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 55.9167,
-        longitude: 36.8667,
-      },
-      areaServed: [
-        { "@type": "City", name: "Москва" },
-        { "@type": "AdministrativeArea", name: "Московская область" },
-      ],
-      sameAs: ["https://freonn.ru"],
-      foundingDate: "2011",
-      numberOfEmployees: { "@type": "QuantitativeValue", value: 50 },
-    });
 
     // BreadcrumbList if breadcrumbs provided
     if (breadcrumbs && breadcrumbs.length > 0) {
@@ -273,7 +245,11 @@ export function useSEO({
       schemas.push(...arr);
     }
 
-    setJsonLd(schemas, "page-schema");
+    if (schemas.length > 0) {
+      setJsonLd(schemas, "page-schema");
+    } else {
+      removeJsonLd("page-schema");
+    }
 
     return () => {
       removeJsonLd("page-schema");
@@ -298,5 +274,6 @@ export function useSEO({
     JSON.stringify(jsonLd),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     JSON.stringify(tags),
+    omitRegionMeta,
   ]);
 }

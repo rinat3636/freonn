@@ -41,6 +41,7 @@ const VALID_STATIC_PATHS = new Set([
   "/akcii","/novosti","/vakansii","/dokumenty","/partnery","/partneram",
   "/oplata-i-dostavka","/sotrudniki","/video-kejsy","/poleznye-materialy",
   "/spasibo","/404",
+  "/politika-konfidencialnosti","/karta-sajta",
 ]);
 
 export function isValidSpaPath(pathname: string): boolean {

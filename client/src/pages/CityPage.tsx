@@ -287,6 +287,7 @@ export default function CityPage({ city }: CityPageProps) {
     description: aiMeta.description,
     keywords: aiMeta.keywords,
     canonical: `/${city}`,
+    omitRegionMeta: true,
     breadcrumbs: [{ name: cityName, url: `/${city}` }],
     jsonLd: {
       "@context": "https://schema.org",

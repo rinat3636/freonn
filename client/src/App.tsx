@@ -28,6 +28,8 @@ import DocumentsPage from "./pages/Documents";
 import PricingServicePage from "./pages/PricingServicePage";
 import ComingSoon from "./pages/ComingSoon";
 import ThanksPage from "./pages/Thanks";
+import PolitikaKonfidencialnostiPage from "./pages/PolitikaKonfidencialnosti";
+import KartaSajtaPage from "./pages/KartaSajta";
 import ServiceObjectPage, { SERVICES, OBJECT_TYPES } from "./pages/ServiceObjectPage";
 
 function Router() {
@@ -127,6 +129,8 @@ function Router() {
       </Route>
 
       <Route path={"/spasibo"} component={ThanksPage} />
+      <Route path={"/politika-konfidencialnosti"} component={PolitikaKonfidencialnostiPage} />
+      <Route path={"/karta-sajta"} component={KartaSajtaPage} />
 
       {/* Service × Object matrix landing pages */}
       {Object.keys(SERVICES).flatMap(svc =>
