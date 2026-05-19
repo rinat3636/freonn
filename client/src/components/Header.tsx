@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
 import UnifiedAccountBanner from "@/components/freonn-group/UnifiedAccountBanner";
 import { AuthNavActions } from "@/components/freonn-group/AuthNavActions";
-import { isFreonnApiConfigured } from "@/lib/freonn-group/config";
+import { isFreonnAuthNavVisible } from "@/lib/freonn-group/config";
 import { toast } from "sonner";
 import { ymGoal } from "@/lib/ym";
 
@@ -66,7 +66,7 @@ const ROUTE_THEME_COLORS: { prefix: string; color: string }[] = [
 ];
 
 export default function Header() {
-  const showFreonnAuth = isFreonnApiConfigured();
+  const showFreonnAuth = isFreonnAuthNavVisible();
   const headerTop = showFreonnAuth ? 36 : 0;
   // isDark: true = over dark bg (white elements), false = over light bg (colored elements)
   const [isDark, setIsDark] = useState(true);
