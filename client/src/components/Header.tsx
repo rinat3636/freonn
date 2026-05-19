@@ -8,6 +8,9 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
+import UnifiedAccountBanner from "@/components/freonn-group/UnifiedAccountBanner";
+import { AuthNavActions } from "@/components/freonn-group/AuthNavActions";
+import { isFreonnApiConfigured } from "@/lib/freonn-group/config";
 import { toast } from "sonner";
 import { ymGoal } from "@/lib/ym";
 
@@ -63,6 +66,8 @@ const ROUTE_THEME_COLORS: { prefix: string; color: string }[] = [
 ];
 
 export default function Header() {
+  const showFreonnAuth = isFreonnApiConfigured();
+  const headerTop = showFreonnAuth ? 36 : 0;
   // isDark: true = over dark bg (white elements), false = over light bg (colored elements)
   const [isDark, setIsDark] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -179,7 +184,13 @@ export default function Header() {
   const logoFilter = ""; // logo always in original colors
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+    <>
+    {showFreonnAuth ? (
+      <div className="fixed inset-x-0 top-0 z-[60]">
+        <UnifiedAccountBanner />
+      </div>
+    ) : null}
+    <header className="fixed left-0 right-0 z-50 w-full transition-all duration-300 bg-transparent" style={{ top: headerTop, paddingTop: 'env(safe-area-inset-top)' }}>
       <div className="container flex items-center gap-3 sm:gap-4 lg:gap-6 py-3 sm:py-4">
         {/* Logo */}
         <a href="/" className="flex-shrink-0 flex flex-col items-center">
@@ -231,6 +242,12 @@ export default function Header() {
           ))}
         </nav>
 
+        {showFreonnAuth ? (
+          <div className="hidden lg:block flex-shrink-0">
+            <AuthNavActions />
+          </div>
+        ) : null}
+
         {/* CTA button — desktop */}
         <a
           href="/contacts"
@@ -239,6 +256,12 @@ export default function Header() {
         >
           Заявка
         </a>
+
+        {showFreonnAuth ? (
+          <div className="lg:hidden flex-shrink-0 scale-90">
+            <AuthNavActions className="gap-1" />
+          </div>
+        ) : null}
 
         {/* Mobile CTA button */}
         <a
@@ -339,6 +362,12 @@ export default function Header() {
                 </div>
               ))}
             </div>
+            {showFreonnAuth ? (
+              <div className="px-4 pt-4">
+                <AuthNavActions variant="stack" onNavigate={() => setMobileOpen(false)} />
+              </div>
+            ) : null}
+
             {/* Bottom CTA */}
             <div className="p-4 mt-2 flex flex-col gap-3">
               <a href="/contacts" onClick={() => { setMobileOpen(false); ymGoal("mobile_engineer_click"); }} className="btn-primary text-center text-base py-3">
@@ -369,5 +398,6 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }

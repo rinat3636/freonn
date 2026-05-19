@@ -118,6 +118,19 @@ export default function FreonnAIChat() {
         }),
       });
       if (res.ok) {
+        try {
+          const { isLoggedIn } = await import("@/lib/freonn-group/auth-storage");
+          const { isFreonnApiConfigured } = await import("@/lib/freonn-group/config");
+          const { submitFreonnRequest } = await import("@/lib/freonn-group/orders");
+          if (isFreonnApiConfigured() && isLoggedIn()) {
+            await submitFreonnRequest({
+              serviceLabel: "Обратный звонок",
+              message: `AI-чат: ${name}, ${phone}`,
+            });
+          }
+        } catch (syncErr) {
+          console.warn("[FreonnAIChat] Freonn Group request sync", syncErr);
+        }
         setPhoneForm("sent");
         ymGoal("phone_left_in_chat");
       } else {

@@ -6,6 +6,8 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { FreonnAuthProvider } from "./contexts/FreonnAuthContext";
+import UnifiedLoginPage from "./components/freonn-group/UnifiedLoginPage";
 import Home from "./pages/Home";
 import ContactsPage from "./pages/Contacts";
 import AboutCompanyPage from "./pages/AboutCompany";
@@ -28,6 +30,7 @@ import DocumentsPage from "./pages/Documents";
 import PricingServicePage from "./pages/PricingServicePage";
 import ComingSoon from "./pages/ComingSoon";
 import ThanksPage from "./pages/Thanks";
+import AppCallback from "./pages/auth/AppCallback";
 import PolitikaKonfidencialnostiPage from "./pages/PolitikaKonfidencialnosti";
 import KartaSajtaPage from "./pages/KartaSajta";
 import ServiceObjectPage, { SERVICES, OBJECT_TYPES } from "./pages/ServiceObjectPage";
@@ -129,6 +132,8 @@ function Router() {
       </Route>
 
       <Route path={"/spasibo"} component={ThanksPage} />
+      <Route path={"/auth/login"} component={UnifiedLoginPage} />
+      <Route path={"/auth/app-callback"} component={AppCallback} />
       <Route path={"/politika-konfidencialnosti"} component={PolitikaKonfidencialnostiPage} />
       <Route path={"/karta-sajta"} component={KartaSajtaPage} />
 
@@ -167,6 +172,7 @@ function App() {
         defaultTheme="light"
         // switchable
       >
+        <FreonnAuthProvider>
         <TooltipProvider>
           <Toaster />
           {!preloaderDone && (
@@ -174,6 +180,7 @@ function App() {
           )}
           <Router />
         </TooltipProvider>
+        </FreonnAuthProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

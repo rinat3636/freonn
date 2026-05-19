@@ -81,6 +81,20 @@ export default function ContactSection() {
         }),
       });
       if (res.ok) {
+        try {
+          const { isLoggedIn } = await import("@/lib/freonn-group/auth-storage");
+          const { isFreonnApiConfigured } = await import("@/lib/freonn-group/config");
+          const { submitFreonnRequest } = await import("@/lib/freonn-group/orders");
+          if (isFreonnApiConfigured() && isLoggedIn()) {
+            await submitFreonnRequest({
+              serviceLabel: form.type,
+              message: form.message,
+              fileUrl: fileUrl || undefined,
+            });
+          }
+        } catch (syncErr) {
+          console.warn("[Contact] Freonn Group request sync", syncErr);
+        }
         ymGoal("form_submit", { service: form.type });
         setForm({ name: "", phone: "", email: "", message: "", type: "Монтаж" });
         setPhoneDigits("");
